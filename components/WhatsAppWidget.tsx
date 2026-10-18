@@ -1,34 +1,30 @@
 "use client";
 
 import React from "react";
-import { MessageSquare } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 
 export function WhatsAppWidget() {
   const phoneNumber = "94770000000";
   const defaultMessage = encodeURIComponent(
-    "Hello Talent Bridge team, I would like to inquire about your executive recruitment and talent solutions."
+    "Hello Talent Bridge! I would like to make an inquiry."
   );
 
   return (
-    <aside
-      aria-label="Direct Support Concierge"
-      className="fixed bottom-6 right-6 z-50 flex items-center group"
-    >
-      {/* Tooltip on hover */}
-      <div className="hidden md:flex items-center gap-2 mr-3 px-3.5 py-2 bg-slate-950 text-white text-xs font-medium rounded-xl shadow-2xl border border-slate-800 opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 pointer-events-none">
-        <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-        Chat with our Advisory Team
+    <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end group">
+      {/* Tooltip */}
+      <div className="mb-2 bg-[#1A1A1A] text-white text-[11px] uppercase tracking-[1.5px] py-2 px-3.5 shadow-soft border border-white/10 transition-all duration-300 pointer-events-none opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0">
+        <span>WhatsApp Inquiries</span>
       </div>
 
       <a
         href={`https://wa.me/${phoneNumber}?text=${defaultMessage}`}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Chat on WhatsApp"
-        className="w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#1EBE5D] text-white flex items-center justify-center shadow-2xl hover:scale-105 active:scale-95 transition-all duration-200 ring-4 ring-emerald-500/20"
+        aria-label="Direct WhatsApp Chat with Talent Bridge"
+        className="flex items-center justify-center w-12 h-12 bg-[#1A1A1A] hover:bg-[#2E6F95] text-white border border-white/20 hover:border-[#2E6F95] shadow-soft hover:shadow-[0_4px_20px_rgba(46,111,149,0.35)] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#2E6F95]"
       >
-        <MessageSquare className="w-7 h-7 fill-white" />
+        <MessageCircle className="w-5 h-5 text-white stroke-[2]" />
       </a>
-    </aside>
+    </div>
   );
 }

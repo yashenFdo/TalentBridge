@@ -1,46 +1,57 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Playfair_Display, Montserrat } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppWidget } from "@/components/WhatsAppWidget";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Talent Bridge | The Right Talent. The Right Direction.",
+  title: "Talent Bridge — The Right Talent. The Right Direction.",
   description:
-    "Specialized recruitment and human capital advisory connecting leading organizations with exceptional leaders. High-touch, calibrated vetting over automated volume.",
+    "Talent Bridge connects ambitious businesses with qualified professionals across Sri Lanka & globally. Recruitment, talent sourcing, executive search & career solutions.",
+  authors: [{ name: "Talent Bridge" }],
+  creator: "Talent Bridge",
   keywords: [
-    "Recruitment",
-    "Executive Search",
-    "Talent Solutions",
-    "Headhunting",
-    "Career Direction",
-    "Human Capital Advisory",
-    "Sri Lanka Recruitment",
-    "C-Suite Search",
+    "Talent Bridge",
+    "Executive Search Sri Lanka",
+    "Recruitment Consultancy Colombo",
+    "Talent Acquisition",
+    "Professional Staffing Solutions",
+    "Career Advisory",
   ],
-  authors: [{ name: "Talent Bridge Advisory" }],
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
   openGraph: {
-    title: "Talent Bridge | The Right Talent. The Right Direction.",
-    description: "Executive recruitment made simple, reliable, and people-focused.",
+    title: "Talent Bridge — The Right Talent. The Right Direction.",
+    description:
+      "Talent Bridge connects ambitious businesses with qualified professionals across Sri Lanka & globally. Recruitment, talent sourcing, executive search & career solutions.",
     url: "https://talentbridge.lk",
     siteName: "Talent Bridge",
     locale: "en_US",
     type: "website",
   },
-  robots: {
-    index: true,
-    follow: true,
+  twitter: {
+    card: "summary_large_image",
+    title: "Talent Bridge — The Right Talent. The Right Direction.",
+    description:
+      "Talent Bridge connects ambitious businesses with qualified professionals across Sri Lanka & globally. Recruitment, talent sourcing, executive search & career solutions.",
   },
 };
 
@@ -52,9 +63,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${playfair.variable} ${montserrat.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#F8FAFC] text-[#0F172A] selection:bg-blue-600 selection:text-white">
+      <body className="min-h-screen flex flex-col bg-white text-[#4A4A4A] font-sans antialiased">
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

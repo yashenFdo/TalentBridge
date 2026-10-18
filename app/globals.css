@@ -1,71 +1,269 @@
 @import "tailwindcss";
 
 :root {
-  /* Surface & Neutral Tones */
-  --color-bg-canvas: #F8FAFC;         /* slate-50: Main page background */
-  --color-surface-white: #FFFFFF;     /* Pure white for elevated cards */
-  --color-surface-subtle: #F1F5F9;    /* slate-100: Soft gray fills */
-  --color-border-subtle: #E2E8F0;     /* slate-200: Hairline dividers */
-  --color-border-prominent: #CBD5E1;  /* slate-300: Active borders */
+  --bg-base: #fff;
+  --bg-surface: #fff;
+  --bg-alabaster: #faf9f6;
+  --text-heading: #1a1a1a;
+  --text-body: #4a4a4a;
+  --text-light: #999;
+  --dark: #111;
+  --dark-accent: #1c1c1c;
+  --accent: #2e6f95;
+  --accent-dark: #1f4e6b;
+  --accent-light: #dceaf2;
+  --tint: #eef4f8;
+  --tint-dark: #cfdde7;
+  --border-tint: #e2ecf2;
+}
 
-  /* Dark Theme / Contrasting Anchors */
-  --color-slate-950: #0B0F19;         /* Hero dark panels, primary footer */
-  --color-slate-900: #0F172A;         /* Primary brand headings */
-  --color-slate-800: #1E293B;         /* Dark card backgrounds */
-
-  /* Accent & Interaction */
-  --color-brand-primary: #2563EB;     /* Electric Cobalt/Blue */
-  --color-brand-hover: #1D4ED8;       /* Blue-700 for active hover */
-  --color-brand-glow: rgba(37, 99, 235, 0.15); /* Soft ambient aura */
-  --color-brand-badge-bg: #EFF6FF;   /* Light blue tint for tags */
-  --color-brand-badge-text: #1D4ED8; /* High-contrast blue for tags */
-
-  /* WhatsApp Action Accent */
-  --color-whatsapp: #25D366;
-  --color-whatsapp-hover: #1EBE5D;
+@theme {
+  --color-border: #e2ecf2;
+  --color-accent: #2e6f95;
+  --color-accent-dark: #1f4e6b;
+  --color-accent-light: #dceaf2;
+  --color-accent-tint: #eef4f8;
+  --color-surface-alabaster: #faf9f6;
+  --color-headings: #1a1a1a;
+  --color-body: #4a4a4a;
+  --color-text-light: #999;
+  --color-dark: #111;
+  --color-dark-accent: #1c1c1c;
 }
 
 html {
   scroll-behavior: smooth;
-  color-scheme: light;
-}
-
-body {
-  background-color: var(--color-bg-canvas);
-  color: var(--color-slate-900);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  background-color: var(--bg-base);
+  color: var(--text-body);
+  font-family: var(--font-montserrat), "Montserrat", system-ui, -apple-system, sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
 ::selection {
-  background-color: #2563EB;
-  color: #FFFFFF;
+  background-color: var(--accent-light);
+  color: var(--accent-dark);
 }
 
-/* Glassmorphism utility */
-.glass-panel {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-playfair), "Playfair Display", Georgia, serif;
+  color: var(--text-heading);
+  line-height: 1.2;
 }
 
-.glass-panel-dark {
-  background: rgba(11, 15, 25, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+h1, h2 {
+  font-weight: 400;
 }
 
-/* Custom hairline borders and transitions */
-.hairline-border {
-  border: 1px solid var(--color-border-subtle);
+h3 {
+  font-weight: 600;
 }
 
-.card-elevated {
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+p {
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--text-body);
 }
 
-.card-elevated:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.07), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+.font-serif {
+  font-family: var(--font-playfair), "Playfair Display", Georgia, serif !important;
+}
+
+.font-sans {
+  font-family: var(--font-montserrat), "Montserrat", system-ui, -apple-system, sans-serif !important;
+}
+
+/* Button & Link Styles matching talent-bridge-1.vercel.app */
+.btn-primary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 35px;
+  font-family: var(--font-montserrat), "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-radius: 0;
+  background-color: #1a1a1a;
+  color: #fff;
+  border: 1px solid #1a1a1a;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all .4s cubic-bezier(.25, .8, .25, 1);
+  user-select: none;
+  text-decoration: none;
+  z-index: 1;
+}
+
+.btn-primary:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent);
+  transition: left .4s cubic-bezier(.25, .8, .25, 1);
+  z-index: -1;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  border-color: var(--accent);
+  box-shadow: 0 15px 40px rgba(46, 111, 149, .25);
+}
+
+.btn-primary:hover:before {
+  left: 0;
+}
+
+.btn-outline {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 35px;
+  font-family: var(--font-montserrat), "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-radius: 0;
+  border: 1px solid var(--accent);
+  background-color: transparent;
+  color: #1a1a1a;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all .4s cubic-bezier(.25, .8, .25, 1);
+  user-select: none;
+  text-decoration: none;
+}
+
+.btn-outline:hover {
+  background-color: #1a1a1a;
+  color: #fff;
+  border-color: #1a1a1a;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
+}
+
+.btn-accent {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 35px;
+  font-family: var(--font-montserrat), "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-radius: 0;
+  background-color: var(--accent);
+  color: #fff;
+  border: 1px solid var(--accent);
+  cursor: pointer;
+  overflow: hidden;
+  transition: all .4s cubic-bezier(.25, .8, .25, 1);
+  user-select: none;
+  text-decoration: none;
+}
+
+.btn-accent:hover {
+  background-color: #1a1a1a;
+  border-color: #1a1a1a;
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .15);
+}
+
+.btn-nav {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  font-family: var(--font-montserrat), "Montserrat", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 0;
+  border: 1px solid var(--accent);
+  background-color: transparent;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+  text-decoration: none;
+}
+
+.btn-nav:hover {
+  background-color: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  box-shadow: 0 15px 40px rgba(46, 111, 149, .2);
+}
+
+.text-link-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-montserrat), "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent-dark);
+  text-decoration: none;
+  transition: all .2s ease-in-out;
+}
+
+.text-link-cta span.arrow {
+  transition: transform .25s cubic-bezier(.25, .8, .25, 1);
+  display: inline-block;
+}
+
+.text-link-cta:hover span.arrow {
+  transform: translateX(5px);
+}
+
+.text-link-cta:hover {
+  color: var(--accent);
+}
+
+.nav-link-item {
+  position: relative;
+  display: inline-block;
+  font-family: var(--font-montserrat), "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #1a1a1a;
+  padding-bottom: 4px;
+  transition: color .2s ease;
+}
+
+.nav-link-item:hover {
+  color: var(--accent);
+}
+
+.nav-link-item.active {
+  color: var(--accent-dark);
+  font-weight: 600;
+}
+
+.shadow-soft {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.shadow-soft-hover:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }

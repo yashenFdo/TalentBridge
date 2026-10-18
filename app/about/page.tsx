@@ -1,211 +1,247 @@
 import React from "react";
 import Link from "next/link";
-import { 
-  Building2, 
-  ShieldCheck, 
-  Target, 
-  Users2, 
-  Award, 
-  CheckCircle2, 
-  ArrowRight,
-  Sparkles,
-  MapPin,
-  Clock
-} from "lucide-react";
-import { SITE_CONFIG } from "@/lib/site-config";
+import type { Metadata } from "next";
 
-export const metadata = {
-  title: "About Us | Talent Bridge Human Capital Advisory",
+export const metadata: Metadata = {
+  title: "About Us | Building Trusted Bridges Between Talent & Opportunity",
   description:
-    "Learn about Talent Bridge's founding vision, leadership team, ethical standard, and commitment to high-touch bilateral recruitment.",
+    "We were founded to elevate recruitment from a transactional numbers game into a disciplined, people-centered partnership.",
 };
 
-const leadershipTeam = [
-  {
-    name: "Dinesh Samarawickrama",
-    title: "Managing Partner & Head of Executive Search",
-    bio: "Over 18 years in executive headhunting and human capital advisory across APAC and South Asia. Formerly led regional leadership mandates for global financial and enterprise tech firms.",
-    focus: "C-Suite Search & Board Advisory",
-  },
-  {
-    name: "Anoushka Perera",
-    title: "Partner — Technology & High-Growth Practices",
-    bio: "Specializes in placing engineering leaders, product visionaries, and growth architects into venture-backed tech companies and enterprise transformations.",
-    focus: "Technical Leadership & Product",
-  },
-  {
-    name: "Kavinda Fernando",
-    title: "Principal — Organizational Culture & Calibration",
-    bio: "Pioneered Talent Bridge's bilateral culture-calibration methodology. Focused on retention analytics, organizational design, and psychometric alignment.",
-    focus: "Culture Calibration & Assessment",
-  },
-];
-
 export default function AboutPage() {
+  const coreValues = [
+    {
+      title: "Integrity",
+      text: "Unwavering honesty, transparency, and ethical conduct in every candidate recommendation and business partnership.",
+    },
+    {
+      title: "Professionalism",
+      text: "Setting high standards of precision, confidentiality, timeliness, and excellence in all our talent engagements.",
+    },
+    {
+      title: "People First",
+      text: "Recognizing that behind every resume and vacancy are human aspirations, livelihoods, and corporate futures.",
+    },
+    {
+      title: "Trust",
+      text: "Building long-term, dependable relationships anchored in consistency, clarity, and dependable delivery.",
+    },
+    {
+      title: "Commitment",
+      text: "Dedicated persistence until the ideal match is made, supporting both parties through onboarding and beyond.",
+    },
+    {
+      title: "Growth",
+      text: "Empowering businesses to expand their competitive edge and enabling professionals to achieve new career heights.",
+    },
+  ];
+
+  const milestones = [
+    {
+      phase: "Phase 1",
+      badge: "Established",
+      title: "Foundation & Vision",
+      text: "Established Talent Bridge with a dedicated mission to transform recruitment into a transparent, people-centric partnership.",
+    },
+    {
+      phase: "Phase 2",
+      badge: "Growth",
+      title: "Cross-Industry Expansion",
+      text: "Broadened talent networks across Technology, Finance, Engineering, Healthcare, and Executive Management sectors.",
+    },
+    {
+      phase: "Phase 3",
+      badge: "Innovation",
+      title: "Precision Matching Platform",
+      text: "Refined our proprietary candidate screening methodology combining human insight with structured skill verification.",
+    },
+    {
+      phase: "Present & Future",
+      badge: "Ongoing",
+      title: "Empowering Next-Gen Workforce",
+      text: "Continuing to bridge aspirations and opportunities with expanded regional reach and specialized executive search.",
+    },
+  ];
+
   return (
-    <div className="min-h-screen bg-[#F8FAFC]">
-      
-      {/* Hero Header */}
-      <section className="pt-36 pb-20 bg-white border-b border-slate-200 relative overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-b from-blue-50/70 to-transparent pointer-events-none -z-10" />
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-semibold tracking-wider uppercase mb-6">
-              <span className="w-2 h-2 rounded-full bg-blue-600" />
-              About Talent Bridge
-            </div>
-
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-950 mb-6 leading-tight">
-              Bridging organizational vision with exceptional leadership.
-            </h1>
-
-            <p className="text-lg sm:text-xl text-slate-600 leading-relaxed font-normal">
-              Talent Bridge was established on a single uncompromising thesis: recruitment is not a numbers game or a resume distribution service. It is a strategic advisory discipline requiring deep bilateral advocacy, calibrated vetting, and mutual accountability.
-            </p>
-          </div>
+    <div className="pt-10 pb-20">
+      <div className="max-w-[1200px] mx-auto px-5 pt-12">
+        {/* Title */}
+        <div className="mb-16 text-center mx-auto max-w-3xl">
+          <span className="block text-[11px] font-semibold uppercase tracking-[4px] mb-3 text-[#2E6F95]">
+            Our Story &amp; Purpose
+          </span>
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-[38px] font-normal leading-[1.2] tracking-normal text-[#1A1A1A]">
+            Building Trusted Bridges Between Talent &amp; Opportunity
+          </h2>
+          <div className="w-[60px] h-[1px] my-5 bg-[#2E6F95] mx-auto" aria-hidden="true" />
+          <p className="text-base font-light leading-relaxed max-w-[700px] mx-auto text-[#4A4A4A]">
+            We were founded to elevate recruitment from a transactional numbers game into a disciplined,
+            people-centered partnership.
+          </p>
         </div>
-      </section>
 
-      {/* Core Principles & Founding Vision */}
-      <section className="py-24 border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            
-            <div className="lg:col-span-1">
-              <span className="text-xs font-bold uppercase tracking-widest text-blue-600">
-                Our Founding Vision
-              </span>
-              <h2 className="text-3xl font-bold text-slate-950 mt-3 tracking-tight">
-                Why We Exist
-              </h2>
-              <p className="text-slate-600 text-sm sm:text-base mt-4 leading-relaxed">
-                In an era where automated platforms flood hiring managers with hundreds of generic resumes, finding real leaders has never been harder. 
-              </p>
-              <p className="text-slate-600 text-sm sm:text-base mt-4 leading-relaxed">
-                Talent Bridge cuts through this noise by restoring craft, discretion, and human calibration to executive search.
-              </p>
-            </div>
-
-            <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {[
-                {
-                  icon: Target,
-                  title: "Calibrated Precision",
-                  desc: "We accept only a limited number of concurrent mandates, ensuring each client receives deep partner focus and rigorous candidate vetting."
-                },
-                {
-                  icon: ShieldCheck,
-                  title: "Absolute Discretion",
-                  desc: "Strict non-disclosure protocols protect organizational plans, sensitive replacement searches, and executive career privacy at all times."
-                },
-                {
-                  icon: Users2,
-                  title: "Bilateral Alignment",
-                  desc: "We represent both enterprise goals and candidate trajectories with equal weight. High retention happens only when both parties succeed."
-                },
-                {
-                  icon: Award,
-                  title: "The 90-Day Guarantee",
-                  desc: "Every executive placement is backed by our continuous check-in protocol at 30, 60, and 90 days to guarantee mutual long-term alignment."
-                }
-              ].map((item, idx) => {
-                const Icon = item.icon;
-                return (
-                  <div key={idx} className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-all">
-                    <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6">
-                      <Icon className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-lg font-bold text-slate-950 mb-2">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm text-slate-600 leading-relaxed">
-                      {item.desc}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* Leadership & Advisory Team */}
-      <section className="py-24 bg-white border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          <div className="max-w-2xl mb-16">
-            <span className="text-xs font-bold uppercase tracking-widest text-blue-600">
-              Senior Leadership
+        {/* Origin & Tagline */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-24">
+          <div className="lg:col-span-7 space-y-6">
+            <span className="block text-[11px] font-semibold uppercase tracking-[3px] text-[#2E6F95]">
+              Our Origin
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-950 mt-3 tracking-tight">
-              Advisors Driven by Outcomes
+            <h2 className="font-serif text-3xl sm:text-4xl font-normal text-[#1A1A1A] leading-tight">
+              Recruitment Redefined Around People, Purpose, and Precision.
             </h2>
-            <p className="text-slate-600 text-base mt-4">
-              Our partners bring decades of combined human capital, executive search, and enterprise leadership experience.
+            <div className="w-[50px] h-[1px] bg-[#2E6F95]" />
+            <p className="text-[#4A4A4A] font-light text-base leading-relaxed">
+              Talent Bridge was founded on a simple yet profound realization: traditional recruitment too often treats
+              hiring as a transactional numbers game. Resumes are forwarded without context, cultural alignment is
+              overlooked, and long-term retention suffers.
+            </p>
+            <p className="text-[#4A4A4A] font-light text-base leading-relaxed">
+              We established Talent Bridge to serve as an authentic bridge—an active, empathetic connector that takes the
+              time to comprehend the strategic trajectory of growing organizations while nurturing the career milestones
+              of ambitious professionals.
+            </p>
+          </div>
+          <div className="lg:col-span-5">
+            <div className="bg-[#1A1A1A] text-white p-10 sm:p-12 shadow-soft relative">
+              <span className="block text-[11px] font-semibold uppercase tracking-[3px] text-[#DCEAF2] mb-4">
+                Our Anchor Tagline
+              </span>
+              <p className="font-serif text-2xl sm:text-3xl font-normal text-white leading-snug mb-6">
+                &ldquo;The Right Talent. The Right Direction.&rdquo;
+              </p>
+              <div className="w-[40px] h-[1px] bg-[#2E6F95] mb-6" />
+              <p className="text-slate-300 font-light text-sm leading-relaxed">
+                Every placement we facilitate is guided by one north star: making sure the talent is qualified,
+                motivated, and pointed in the right direction.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Vision & Mission */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
+          <div className="bg-[#FAF9F6] p-10 sm:p-12 border border-[#E2ECF2] shadow-soft">
+            <span className="block text-[10px] font-semibold uppercase tracking-[3px] text-[#2E6F95] mb-3">
+              Where We Are Headed
+            </span>
+            <h3 className="font-serif text-2xl sm:text-3xl font-normal text-[#1A1A1A] mb-4">
+              Our Vision
+            </h3>
+            <div className="w-[40px] h-[1px] bg-[#2E6F95]/40 mb-4" />
+            <p className="text-[#4A4A4A] font-light text-base leading-relaxed">
+              &ldquo;To become a trusted bridge between talent and opportunity, helping businesses grow and individuals
+              build meaningful careers.&rdquo;
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {leadershipTeam.map((leader, idx) => (
-              <div 
+          <div className="bg-[#FAF9F6] p-10 sm:p-12 border border-[#E2ECF2] shadow-soft">
+            <span className="block text-[10px] font-semibold uppercase tracking-[3px] text-[#2E6F95] mb-3">
+              What We Do Daily
+            </span>
+            <h3 className="font-serif text-2xl sm:text-3xl font-normal text-[#1A1A1A] mb-4">
+              Our Mission
+            </h3>
+            <div className="w-[40px] h-[1px] bg-[#2E6F95]/40 mb-4" />
+            <p className="text-[#4A4A4A] font-light text-base leading-relaxed">
+              &ldquo;To connect the right talent with the right opportunities through a professional, transparent and
+              people-focused recruitment process.&rdquo;
+            </p>
+          </div>
+        </div>
+
+        {/* Core Values */}
+        <div className="mb-24">
+          <div className="mb-16 text-center mx-auto max-w-3xl">
+            <span className="block text-[11px] font-semibold uppercase tracking-[4px] mb-3 text-[#2E6F95]">
+              Our Foundation
+            </span>
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-[38px] font-normal leading-[1.2] tracking-normal text-[#1A1A1A]">
+              Core Values
+            </h2>
+            <div className="w-[60px] h-[1px] my-5 bg-[#2E6F95] mx-auto" aria-hidden="true" />
+            <p className="text-base font-light leading-relaxed max-w-[700px] mx-auto text-[#4A4A4A]">
+              The non-negotiable principles that govern every candidate interaction, client recommendation, and recruitment decision.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {coreValues.map((val, idx) => (
+              <div
                 key={idx}
-                className="bg-[#F8FAFC] rounded-3xl p-8 border border-slate-200 hover:border-blue-200 hover:shadow-xl transition-all flex flex-col justify-between"
+                className="bg-white p-8 sm:p-10 border border-[#E2ECF2] shadow-soft hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition-all duration-400 ease-in-out flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-14 h-14 rounded-2xl bg-slate-950 text-white font-bold flex items-center justify-center text-xl mb-6 shadow-sm">
-                    {leader.name.split(" ").map(n => n[0]).join("")}
-                  </div>
-                  <span className="text-xs font-semibold text-blue-600 uppercase tracking-wider block mb-2">
-                    {leader.focus}
+                  <span className="block text-[10px] font-semibold uppercase tracking-[3px] text-[#2E6F95] mb-2">
+                    Guiding Principle
                   </span>
-                  <h3 className="text-xl font-bold text-slate-950 mb-1">
-                    {leader.name}
+                  <h3 className="font-serif text-2xl font-normal text-[#1A1A1A] mb-3">
+                    {val.title}
                   </h3>
-                  <div className="text-xs font-medium text-slate-500 mb-4">
-                    {leader.title}
-                  </div>
-                  <p className="text-sm text-slate-600 leading-relaxed">
-                    {leader.bio}
+                  <div className="w-[30px] h-[1px] bg-[#2E6F95]/40 mb-4" />
+                  <p className="text-[#4A4A4A] font-light text-sm leading-relaxed">
+                    {val.text}
                   </p>
-                </div>
-
-                <div className="mt-8 pt-4 border-t border-slate-200/60 flex items-center justify-between text-xs text-slate-500">
-                  <span>Talent Bridge Partner</span>
-                  <span className="font-semibold text-slate-900">Colombo, LK</span>
                 </div>
               </div>
             ))}
           </div>
-
         </div>
-      </section>
 
-      {/* Call to Action Bar */}
-      <section className="py-20 bg-slate-950 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
-            <div className="max-w-2xl">
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-3">
-                Experience calibrated recruitment.
-              </h2>
-              <p className="text-slate-400 text-base">
-                Connect directly with a managing partner to discuss leadership requirements or explore confidential mandates.
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-4">
-              <Link
-                href="/contact"
-                className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all shadow-md"
-              >
-                Schedule an Advisory Call
-              </Link>
+        {/* Milestones of Growth */}
+        <div className="mb-20">
+          <div className="mb-16 text-center mx-auto max-w-3xl">
+            <span className="block text-[11px] font-semibold uppercase tracking-[4px] mb-3 text-[#2E6F95]">
+              Our Journey
+            </span>
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-[38px] font-normal leading-[1.2] tracking-normal text-[#1A1A1A]">
+              Milestones of Growth
+            </h2>
+            <div className="w-[60px] h-[1px] my-5 bg-[#2E6F95] mx-auto" aria-hidden="true" />
+            <p className="text-base font-light leading-relaxed max-w-[700px] mx-auto text-[#4A4A4A]">
+              Our steady evolution from ambitious vision to dependable recruitment and talent solutions partner.
+            </p>
+          </div>
+
+          <div className="max-w-[900px] mx-auto">
+            <div className="space-y-8">
+              {milestones.map((m, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white p-8 sm:p-10 border border-[#E2ECF2] shadow-soft flex flex-col sm:flex-row items-start sm:items-baseline justify-between gap-6"
+                >
+                  <div className="sm:w-1/4">
+                    <span className="font-serif text-2xl font-normal text-[#2E6F95] block">
+                      {m.phase}
+                    </span>
+                    <span className="text-[10px] font-semibold uppercase tracking-[2px] text-[#999] block mt-1">
+                      {m.badge}
+                    </span>
+                  </div>
+                  <div className="sm:w-3/4 sm:pl-8 sm:border-l sm:border-[#E2ECF2]/70">
+                    <h3 className="font-serif text-xl font-normal text-[#1A1A1A] mb-2">
+                      {m.title}
+                    </h3>
+                    <p className="text-[#4A4A4A] font-light text-sm leading-relaxed">
+                      {m.text}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
-      </section>
 
+        {/* Start a Conversation CTA */}
+        <div className="text-center pt-8 border-t border-[#E2ECF2]">
+          <Link
+            href="/contact"
+            className="btn-primary !py-4 !px-10 !text-[13px] !tracking-[3px]"
+          >
+            <span className="relative z-10 flex items-center gap-2">Start a Conversation with Us</span>
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }
