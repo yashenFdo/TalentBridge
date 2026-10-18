@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 48" fill="none" aria-label="Talent Bridge Logo">
+  <!-- Architectural Bridge Geometric Icon -->
+  <g transform="translate(4, 6)">
+    <!-- Base Arch and Structural Columns -->
+    <rect x="0" y="26" width="36" height="4" rx="2" fill="#0B0F19"/>
+    <!-- Diagonal suspension cable 1 -->
+    <path d="M4 26 C8 12, 14 6, 18 6" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
+    <!-- Diagonal suspension cable 2 -->
+    <path d="M32 26 C28 12, 22 6, 18 6" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
+    <!-- Central Pylon Column -->
+    <rect x="16.5" y="4" width="3" height="24" rx="1.5" fill="#0B0F19"/>
+    <!-- Apex Energy Node -->
+    <circle cx="18" cy="4" r="3.5" fill="#2563EB"/>
+    <circle cx="18" cy="4" r="1.5" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Clean Executive Typography -->
+  <text x="52" y="31" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="21" font-weight="800" letter-spacing="-0.03em" fill="#0B0F19">
+    Talent<tspan font-weight="500" fill="#334155">Bridge</tspan>
+  </text>
+
+  <!-- Signature Electric Cobalt Accent Dot -->
+  <circle cx="204" cy="27" r="4" fill="#2563EB"/>
+</svg>

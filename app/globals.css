@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+:root {
+  /* Surface & Neutral Tones */
+  --color-bg-canvas: #F8FAFC;         /* slate-50: Main page background */
+  --color-surface-white: #FFFFFF;     /* Pure white for elevated cards */
+  --color-surface-subtle: #F1F5F9;    /* slate-100: Soft gray fills */
+  --color-border-subtle: #E2E8F0;     /* slate-200: Hairline dividers */
+  --color-border-prominent: #CBD5E1;  /* slate-300: Active borders */
+
+  /* Dark Theme / Contrasting Anchors */
+  --color-slate-950: #0B0F19;         /* Hero dark panels, primary footer */
+  --color-slate-900: #0F172A;         /* Primary brand headings */
+  --color-slate-800: #1E293B;         /* Dark card backgrounds */
+
+  /* Accent & Interaction */
+  --color-brand-primary: #2563EB;     /* Electric Cobalt/Blue */
+  --color-brand-hover: #1D4ED8;       /* Blue-700 for active hover */
+  --color-brand-glow: rgba(37, 99, 235, 0.15); /* Soft ambient aura */
+  --color-brand-badge-bg: #EFF6FF;   /* Light blue tint for tags */
+  --color-brand-badge-text: #1D4ED8; /* High-contrast blue for tags */
+
+  /* WhatsApp Action Accent */
+  --color-whatsapp: #25D366;
+  --color-whatsapp-hover: #1EBE5D;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+body {
+  background-color: var(--color-bg-canvas);
+  color: var(--color-slate-900);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: #2563EB;
+  color: #FFFFFF;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.glass-panel-dark {
+  background: rgba(11, 15, 25, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Custom hairline borders and transitions */
+.hairline-border {
+  border: 1px solid var(--color-border-subtle);
+}
+
+.card-elevated {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+
+.card-elevated:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.07), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+}
