@@ -1,97 +1,87 @@
+"use client";
+
 import React from "react";
-import Link from "next/link";
-import { ArrowRight, ShieldCheck, CheckCircle2, Users, Clock, Award } from "lucide-react";
-import { SITE_CONFIG } from "@/lib/site-config";
+import Image from "next/image";
+import { Phone, MapPin } from "lucide-react";
+import { HeroInteractiveForm } from "@/components/HeroInteractiveForm";
 
 export function HeroSection() {
   return (
-    <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden border-b border-slate-200 bg-white">
-      {/* Subtle Ambient Background Gradients & Architectural Grid */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] bg-gradient-to-b from-blue-50/70 via-blue-50/20 to-transparent pointer-events-none -z-10" />
-      <div className="absolute -top-24 right-1/4 w-96 h-96 bg-blue-100/50 rounded-full blur-3xl pointer-events-none -z-10" />
-      <div className="absolute top-48 -left-20 w-80 h-80 bg-slate-100/80 rounded-full blur-2xl pointer-events-none -z-10" />
+    <section className="pt-24 pb-8 sm:pt-28 sm:pb-12 bg-[#FAF9F5]">
+      <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Curved Hero Frame matching reference layout */}
+        <div className="relative rounded-[2rem] sm:rounded-[2.8rem] overflow-hidden shadow-2xl min-h-[600px] lg:min-h-[660px] flex items-center p-6 sm:p-10 lg:p-14 text-white">
+          {/* Background Team Photography */}
+          <Image
+            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop"
+            alt="Executive leadership team collaborating"
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
+          />
+          {/* Atmospheric Dark Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#071324]/95 via-[#0A192F]/85 to-[#071324]/90" />
 
-      {/* Subtle decorative architectural lines */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none -z-10 opacity-60" />
+          {/* Grid: Headline & Subtitle on Left, Floating Form on Right */}
+          <div className="relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* Left Headline Column */}
+            <div className="lg:col-span-7 space-y-6">
+              <div className="space-y-1">
+                <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] uppercase">
+                  STRESS-FREE <br />
+                  <span className="text-[#10B981] drop-shadow-sm">RECRUITMENT</span> <br />
+                  HERE
+                </h1>
+              </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl">
-          
-          {/* Overline Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-semibold tracking-wider uppercase mb-8 shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
-            Recruitment & Talent Solutions
-          </div>
+              <p className="text-sm sm:text-lg text-slate-200 leading-relaxed font-light max-w-xl">
+                Talent Bridge is Sri Lanka&#39;s premier executive recruitment and human capital advisory partner. We connect high-growth enterprises with verified C-suite, engineering, and board leaders with guaranteed 12-month retention.
+              </p>
 
-          {/* Display Headline */}
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-slate-950 leading-[1.08] mb-6">
-            The Right Talent. <br />
-            <span className="text-blue-600">The Right Direction.</span>
-          </h1>
+              {/* Bottom Quick-Info Pills (Matching reference screenshot bottom bar) */}
+              <div className="pt-4 flex flex-wrap items-center gap-3 sm:gap-4">
+                {/* Hotline Pill */}
+                <a
+                  href="tel:+94770000000"
+                  className="flex items-center gap-3 bg-white/10 hover:bg-white/15 backdrop-blur-md border border-white/20 px-4 py-2.5 rounded-2xl transition-colors group"
+                >
+                  <div className="w-8 h-8 rounded-xl bg-[#0D9488] text-white flex items-center justify-center">
+                    <Phone className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <span className="text-[10px] uppercase font-bold text-slate-300 block tracking-wider">
+                      Hotline Number
+                    </span>
+                    <span className="text-xs sm:text-sm font-bold text-white group-hover:text-[#2DD4BF] transition-colors">
+                      +94 77 000 0000
+                    </span>
+                  </div>
+                </a>
 
-          {/* Body Description */}
-          <p className="text-lg sm:text-xl text-slate-600 leading-relaxed mb-10 max-w-2xl font-normal">
-            Talent Bridge connects forward-thinking organizations with exceptional professionals. 
-            We make recruitment simple, reliable, and people-focused through calibrated matching 
-            and authentic relationships.
-          </p>
-
-          {/* Split Action Buttons */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-16">
-            <Link
-              href="/contact?type=employer"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-xl shadow-lg shadow-blue-600/25 transition-all hover:translate-y-[-2px] active:translate-y-[0px]"
-            >
-              Hire Talent
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Link>
-            <Link
-              href="/careers"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-slate-800 bg-white hover:bg-slate-50 border border-slate-300 rounded-xl transition-all shadow-sm hover:border-slate-400"
-            >
-              Find Opportunities
-            </Link>
-          </div>
-
-          {/* Value Badges Strip */}
-          <div className="flex flex-wrap items-center gap-y-2 gap-x-6 text-xs text-slate-500 font-medium">
-            <div className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-blue-600" />
-              <span>Strict Non-Disclosure Protected</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-blue-600" />
-              <span>90-Day Bilateral Retention Guarantee</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-blue-600" />
-              <span>Zero Applicant Fees</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Social Proof / Metrics Bar (Beneath Hero) */}
-        <div className="mt-16 pt-12 border-t border-slate-200/80">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-8">
-            {SITE_CONFIG.metrics.slice(0, 3).map((metric, idx) => (
-              <div 
-                key={idx}
-                className="bg-[#F8FAFC] rounded-2xl p-6 border border-slate-200/90 shadow-sm relative overflow-hidden group hover:border-blue-200 hover:bg-white transition-all"
-              >
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 tracking-tight group-hover:text-blue-600 transition-colors">
-                  {metric.value}
-                </div>
-                <div className="text-sm font-bold text-slate-900 mt-2">
-                  {metric.label}
-                </div>
-                <div className="text-xs text-slate-500 mt-1 leading-relaxed">
-                  {metric.description}
+                {/* Location Pill */}
+                <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2.5 rounded-2xl">
+                  <div className="w-8 h-8 rounded-xl bg-[#193A58] text-white flex items-center justify-center">
+                    <MapPin className="w-4 h-4 text-emerald-400" />
+                  </div>
+                  <div>
+                    <span className="text-[10px] uppercase font-bold text-slate-300 block tracking-wider">
+                      Headquarters
+                    </span>
+                    <span className="text-xs sm:text-sm font-bold text-white">
+                      Colombo 03, Sri Lanka
+                    </span>
+                  </div>
                 </div>
               </div>
-            ))}
+            </div>
+
+            {/* Right Form Column (Anchored floating booking/intake card) */}
+            <div className="lg:col-span-5 flex justify-center lg:justify-end">
+              <HeroInteractiveForm />
+            </div>
           </div>
         </div>
-
       </div>
     </section>
   );

@@ -14,6 +14,7 @@ import {
   Users2,
   Lock,
 } from "lucide-react";
+import { ExecutiveVaultModal } from "@/components/ExecutiveVaultModal";
 
 interface Vacancy {
   id: string;
@@ -98,6 +99,7 @@ const verifiedVacancies: Vacancy[] = [
 export default function CareersPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedFilter, setSelectedFilter] = useState<string>("All");
+  const [isVaultOpen, setIsVaultOpen] = useState(false);
 
   const filteredVacancies = verifiedVacancies.filter((job) => {
     const matchesFilter =
@@ -111,70 +113,83 @@ export default function CareersPage() {
   });
 
   return (
-    <div className="pt-28 pb-24 bg-[#FAFBFD]">
+    <div className="pt-32 pb-24 bg-[#FBFBF9] text-[#0A1118]">
       <div className="max-w-[1280px] mx-auto px-5 sm:px-8">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="badge-pill mb-3">Curated Executive Mandates</span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
-            Find the Right Direction for Your Career
+        <div className="max-w-3xl mb-16">
+          <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal text-[#0A1118] tracking-tight leading-tight">
+            Curated Executive Mandates
           </h1>
-          <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+          <p className="mt-4 text-base sm:text-lg text-[#4A5568] leading-relaxed font-normal">
             Direct access to unadvertised leadership mandates and strategic roles across technology,
             corporate finance, executive management, and enterprise operations.
           </p>
         </div>
 
         {/* 3 Candidate Guarantees */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16 max-w-5xl mx-auto">
-          <div className="glass-card p-6 rounded-2xl border border-slate-200/90 text-center">
-            <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mx-auto mb-3">
-              <Users2 className="w-5 h-5" />
-            </div>
-            <h3 className="text-sm font-bold text-slate-900 mb-1">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16 max-w-5xl">
+          <div className="editorial-card p-6 border border-[#E8E6DF] bg-white">
+            <h3 className="font-serif text-lg font-bold text-[#0A1118] mb-1">
               Direct Decision-Maker Access
             </h3>
-            <p className="text-xs text-slate-600 font-normal">
-              Direct interviews facilitated with CEOs, Founders, and Hiring Committees.
+            <p className="text-xs text-[#4A5568] font-normal leading-relaxed">
+              Direct interviews facilitated with CEOs, Founders, and Board Hiring Committees.
             </p>
           </div>
 
-          <div className="glass-card p-6 rounded-2xl border border-slate-200/90 text-center">
-            <div className="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center mx-auto mb-3">
-              <Lock className="w-5 h-5" />
-            </div>
-            <h3 className="text-sm font-bold text-slate-900 mb-1">
+          <div className="editorial-card p-6 border border-[#E8E6DF] bg-white">
+            <h3 className="font-serif text-lg font-bold text-[#0A1118] mb-1">
               100% Confidential Fiduciary Care
             </h3>
-            <p className="text-xs text-slate-600 font-normal">
-              Your identity and resume are never shared without explicit prior briefing.
+            <p className="text-xs text-[#4A5568] font-normal leading-relaxed">
+              Your identity and resume are never shared without explicit prior briefing and consent.
             </p>
           </div>
 
-          <div className="glass-card p-6 rounded-2xl border border-slate-200/90 text-center">
-            <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto mb-3">
-              <Shield className="w-5 h-5" />
-            </div>
-            <h3 className="text-sm font-bold text-slate-900 mb-1">
+          <div className="editorial-card p-6 border border-[#E8E6DF] bg-white">
+            <h3 className="font-serif text-lg font-bold text-[#0A1118] mb-1">
               Zero Applicant Fees, Always
             </h3>
-            <p className="text-xs text-slate-600 font-normal">
-              Our candidate advocacy, negotiation coaching, and placement are 100% free.
+            <p className="text-xs text-[#4A5568] font-normal leading-relaxed">
+              Our candidate advocacy, negotiation coaching, and placement are 100% free for applicants.
             </p>
           </div>
         </div>
 
+        {/* Executive CV Builder Spotlight Banner */}
+        <div className="mb-10 bg-gradient-to-r from-[#F0FDFA] via-white to-[#F0FDFA] border-2 border-[#99F6E4] rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-sm">
+          <div className="space-y-1.5 max-w-2xl">
+            <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#0D9488]">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Self-Service Candidate Advantage</span>
+            </div>
+            <h3 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
+              Create a Verified Executive CV &amp; Share It Anywhere
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Build an international-standard Harvard/McKinsey executive resume in under 3 minutes. Share your unique public link directly on WhatsApp, LinkedIn, or print clean PDFs.
+            </p>
+          </div>
+          <Link
+            href="/cv-builder"
+            className="btn-brand-green !py-3.5 !px-6 text-xs font-bold flex-shrink-0 flex items-center gap-2"
+          >
+            <span>Launch Free CV Builder</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+        </div>
+
         {/* Search & Filter Controls */}
-        <div className="glass-card p-5 sm:p-6 rounded-2xl border border-slate-200/90 mb-10 shadow-sm">
+        <div className="editorial-card p-4 sm:p-5 border border-[#E8E6DF] bg-white mb-10">
           <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
             <div className="relative flex-1">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#718096]" />
               <input
                 type="text"
                 placeholder="Search by executive role, skill, department, or level..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full bg-slate-50/80 border border-slate-200 rounded-xl pl-11 pr-4 py-3 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition-all"
+                className="w-full bg-[#FAF9F6] border border-[#E8E6DF] rounded-md pl-11 pr-4 py-2.5 text-xs sm:text-sm text-[#0A1118] placeholder:text-[#718096] focus:outline-none focus:border-[#0D7A70]"
               />
             </div>
             <div className="flex flex-wrap items-center gap-2">
@@ -183,10 +198,10 @@ export default function CareersPage() {
                   key={f}
                   type="button"
                   onClick={() => setSelectedFilter(f)}
-                  className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition-all ${
+                  className={`px-3.5 py-2 rounded text-xs font-semibold tracking-wide transition-all ${
                     selectedFilter === f
-                      ? "bg-blue-600 text-white shadow-md shadow-blue-600/30 font-bold"
-                      : "bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900"
+                      ? "bg-[#0A1118] text-white shadow-sm font-bold"
+                      : "bg-[#FAF9F6] text-[#4A5568] hover:bg-[#EAE8E0] hover:text-[#0A1118]"
                   }`}
                 >
                   {f}
@@ -197,52 +212,51 @@ export default function CareersPage() {
         </div>
 
         {/* Vacancies List */}
-        <div className="space-y-6 mb-16">
+        <div className="space-y-4 mb-16">
           {filteredVacancies.length === 0 ? (
-            <div className="py-20 text-center glass-card rounded-3xl p-12">
-              <p className="text-lg font-bold text-slate-900">
-                No vacancies found matching your criteria.
+            <div className="py-16 text-center editorial-card p-8 bg-white">
+              <p className="font-serif text-lg font-bold text-[#0A1118]">
+                No active public mandates matching your search criteria.
               </p>
-              <p className="text-sm text-slate-600 mt-2">
-                Try adjusting your search terms or register your profile with our Private Talent Network below.
+              <p className="text-xs sm:text-sm text-[#718096] mt-2">
+                Most senior executive mandates are kept strictly confidential. Register your credentials in our Private Vault.
               </p>
             </div>
           ) : (
             filteredVacancies.map((job) => (
               <div
                 key={job.id}
-                className="glass-card p-6 sm:p-8 rounded-3xl border border-slate-200/90 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 group"
+                className="editorial-card p-6 sm:p-8 border border-[#E8E6DF] bg-white flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
               >
-                <div className="space-y-3 flex-1">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200/60">
+                <div className="space-y-2.5 flex-1">
+                  <div className="flex flex-wrap items-center gap-2 text-[10px] font-bold uppercase tracking-wider">
+                    <span className="px-2 py-0.5 rounded bg-[#FAF9F6] text-[#0D7A70] border border-[#E8E6DF]">
                       {job.department}
                     </span>
-                    <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-slate-100 text-slate-700">
+                    <span className="px-2 py-0.5 rounded bg-[#FAF9F6] text-[#718096] border border-[#E8E6DF]">
                       {job.type}
                     </span>
-                    <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/60">
+                    <span className="px-2 py-0.5 rounded bg-[#FAF9F6] text-[#C59B27] border border-[#E8E6DF]">
                       {job.level}
                     </span>
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#0A1118]">
                     {job.title}
                   </h3>
 
-                  <p className="text-sm text-slate-600 font-normal leading-relaxed max-w-3xl">
+                  <p className="text-xs sm:text-sm text-[#4A5568] font-normal leading-relaxed max-w-3xl">
                     {job.description}
                   </p>
 
-                  <div className="flex flex-wrap items-center gap-5 text-xs text-slate-500 pt-1">
-                    <span className="flex items-center gap-1.5 font-medium">
-                      <MapPin className="w-3.5 h-3.5 text-blue-600" />
+                  <div className="flex flex-wrap items-center gap-4 text-xs text-[#718096] pt-1">
+                    <span className="flex items-center gap-1 font-medium text-[#0A1118]">
+                      <MapPin className="w-3.5 h-3.5 text-[#0D7A70]" />
                       {job.location}
                     </span>
                     {job.compensationBand && (
-                      <span className="flex items-center gap-1.5 font-medium text-slate-700">
-                        <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-                        {job.compensationBand}
+                      <span className="flex items-center gap-1 font-medium text-[#0A1118]">
+                        &bull; {job.compensationBand}
                       </span>
                     )}
                   </div>
@@ -251,10 +265,10 @@ export default function CareersPage() {
                 <div className="self-end md:self-center">
                   <Link
                     href={`/contact?type=candidate&role=${encodeURIComponent(job.title)}`}
-                    className="btn-executive-primary !py-3 !px-6 !text-xs flex items-center gap-2 group/btn"
+                    className="btn-human-primary !py-2.5 !px-5 !text-xs flex items-center gap-2"
                   >
                     <span>Apply Confidentially</span>
-                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1" />
+                    <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
               </div>
@@ -262,27 +276,34 @@ export default function CareersPage() {
           )}
         </div>
 
-        {/* Private Talent Network Registration Banner */}
-        <div className="rounded-3xl bg-gradient-to-br from-[#071324] via-[#0b1f3b] to-[#040914] text-white p-8 sm:p-12 border border-slate-800 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+        {/* Private Talent Vault Registration Banner */}
+        <div className="editorial-card-stone p-8 sm:p-12 border border-[#E8E6DF] rounded-xl flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="max-w-2xl">
-            <span className="text-xs font-bold uppercase tracking-widest text-emerald-400 block mb-2">
-              Private Talent Network
+            <span className="text-xs font-bold uppercase tracking-widest text-[#0D7A70] block mb-1">
+              Private Executive Vault
             </span>
-            <h4 className="text-2xl sm:text-3xl font-extrabold text-white">
+            <h4 className="font-serif text-2xl sm:text-3xl font-bold text-[#0A1118]">
               Don&#39;t See Your Exact Mandate Listed?
             </h4>
-            <p className="text-slate-300 text-sm mt-2 font-normal leading-relaxed">
-              Most of our C-suite and director-level appointments are conducted confidentially without public listings. Submit your profile directly to our Senior Partners for upcoming domestic and global mandates.
+            <p className="text-[#4A5568] text-xs sm:text-sm mt-2 font-normal leading-relaxed">
+              Over 70% of our C-suite and director-level appointments are unadvertised mandates conducted discreetly under non-disclosure. Submit your credentials directly to our Senior Partners.
             </p>
           </div>
-          <Link
-            href="/contact?type=candidate"
-            className="btn-executive-gold !py-3.5 !px-8 !text-xs flex-shrink-0"
+          <button
+            type="button"
+            onClick={() => setIsVaultOpen(true)}
+            className="btn-human-primary !py-3.5 !px-8 !text-xs flex-shrink-0"
           >
-            Join Private Talent Network
-          </Link>
+            Enter Confidential Vault
+          </button>
         </div>
       </div>
+
+      {/* Vault Modal */}
+      <ExecutiveVaultModal
+        isOpen={isVaultOpen}
+        onClose={() => setIsVaultOpen(false)}
+      />
     </div>
   );
 }

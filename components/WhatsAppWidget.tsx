@@ -11,7 +11,7 @@ export function WhatsAppWidget() {
   );
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end no-print">
       {/* Interactive Concierge Card */}
       {isOpen && (
         <div className="mb-3 w-80 sm:w-96 rounded-2xl bg-white/95 backdrop-blur-xl border border-slate-200/90 shadow-[0_20px_50px_rgba(0,0,0,0.15)] overflow-hidden transition-all duration-300 animate-in fade-in slide-in-from-bottom-4">

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { CheckCircle2, Send, Shield, Lock, Clock, Sparkles } from "lucide-react";
+import { CheckCircle2, Send, Shield, Lock } from "lucide-react";
 
 interface ContactFormProps {
   initialType?: "employer" | "candidate";
@@ -39,15 +39,14 @@ export function ContactForm({
 
   if (submitted) {
     return (
-      <div className="glass-card p-10 sm:p-14 rounded-3xl border border-slate-200/90 text-center shadow-lg animate-in fade-in zoom-in-95 duration-300">
-        <div className="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 flex items-center justify-center mx-auto mb-6">
-          <CheckCircle2 className="w-8 h-8" />
+      <div className="editorial-card p-10 sm:p-14 border border-[#E8E6DF] bg-white text-center">
+        <div className="w-14 h-14 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 flex items-center justify-center mx-auto mb-5">
+          <CheckCircle2 className="w-7 h-7" />
         </div>
-        <span className="badge-pill mb-3">Transmission Confirmed</span>
-        <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-3">
-          Thank You for Contacting Talent Bridge
+        <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#0A1118] mb-3">
+          Inquiry Successfully Transmitted
         </h3>
-        <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-md mx-auto mb-8 font-normal">
+        <p className="text-[#4A5568] text-sm sm:text-base leading-relaxed max-w-md mx-auto mb-8 font-normal">
           A dedicated Senior Managing Partner has received your brief under our fiduciary NDA standard.
           We guarantee a direct response within 24 business hours.
         </p>
@@ -64,7 +63,7 @@ export function ContactForm({
               message: "",
             });
           }}
-          className="btn-executive-outline !py-3 !px-8 !text-xs"
+          className="btn-human-outline !py-3 !px-8 !text-xs"
         >
           Submit Another Inquiry
         </button>
@@ -73,16 +72,16 @@ export function ContactForm({
   }
 
   return (
-    <div className="glass-card p-8 sm:p-12 rounded-3xl border border-slate-200/90 shadow-lg">
+    <div className="editorial-card p-8 sm:p-12 border border-[#E8E6DF] bg-white">
       {/* Tab Switcher */}
-      <div className="flex p-1.5 rounded-2xl bg-slate-100 border border-slate-200/80 mb-8">
+      <div className="flex border-b border-[#E8E6DF] mb-8">
         <button
           type="button"
           onClick={() => setInquiryType("employer")}
-          className={`flex-1 py-3 text-xs sm:text-sm font-bold tracking-wide rounded-xl transition-all duration-200 ${
+          className={`flex-1 pb-4 text-xs sm:text-sm font-bold tracking-wide transition-all border-b-2 -mb-[1px] ${
             inquiryType === "employer"
-              ? "bg-white text-blue-700 shadow-md font-extrabold"
-              : "text-slate-600 hover:text-slate-900"
+              ? "border-[#0A1118] text-[#0A1118]"
+              : "border-transparent text-[#718096] hover:text-[#0A1118]"
           }`}
         >
           Hire Talent (Organizations &amp; Boards)
@@ -90,10 +89,10 @@ export function ContactForm({
         <button
           type="button"
           onClick={() => setInquiryType("candidate")}
-          className={`flex-1 py-3 text-xs sm:text-sm font-bold tracking-wide rounded-xl transition-all duration-200 ${
+          className={`flex-1 pb-4 text-xs sm:text-sm font-bold tracking-wide transition-all border-b-2 -mb-[1px] ${
             inquiryType === "candidate"
-              ? "bg-white text-emerald-700 shadow-md font-extrabold"
-              : "text-slate-600 hover:text-slate-900"
+              ? "border-[#0A1118] text-[#0A1118]"
+              : "border-transparent text-[#718096] hover:text-[#0A1118]"
           }`}
         >
           Find Roles (Executive Candidates)
@@ -103,7 +102,7 @@ export function ContactForm({
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+            <label className="block text-xs font-bold uppercase tracking-wider text-[#0A1118] mb-2">
               Full Name *
             </label>
             <input
@@ -114,12 +113,12 @@ export function ContactForm({
               onChange={(e) =>
                 setFormData({ ...formData, fullName: e.target.value })
               }
-              className="w-full bg-slate-50/70 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition-all"
+              className="w-full bg-[#FAF9F6] border border-[#E8E6DF] rounded px-4 py-2.5 text-xs sm:text-sm text-[#0A1118] placeholder:text-[#718096] focus:outline-none focus:border-[#0D7A70]"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+            <label className="block text-xs font-bold uppercase tracking-wider text-[#0A1118] mb-2">
               Work / Personal Email *
             </label>
             <input
@@ -130,14 +129,14 @@ export function ContactForm({
               onChange={(e) =>
                 setFormData({ ...formData, email: e.target.value })
               }
-              className="w-full bg-slate-50/70 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition-all"
+              className="w-full bg-[#FAF9F6] border border-[#E8E6DF] rounded px-4 py-2.5 text-xs sm:text-sm text-[#0A1118] placeholder:text-[#718096] focus:outline-none focus:border-[#0D7A70]"
             />
           </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+            <label className="block text-xs font-bold uppercase tracking-wider text-[#0A1118] mb-2">
               Direct Phone Number *
             </label>
             <input
@@ -148,12 +147,12 @@ export function ContactForm({
               onChange={(e) =>
                 setFormData({ ...formData, phone: e.target.value })
               }
-              className="w-full bg-slate-50/70 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition-all"
+              className="w-full bg-[#FAF9F6] border border-[#E8E6DF] rounded px-4 py-2.5 text-xs sm:text-sm text-[#0A1118] placeholder:text-[#718096] focus:outline-none focus:border-[#0D7A70]"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+            <label className="block text-xs font-bold uppercase tracking-wider text-[#0A1118] mb-2">
               {inquiryType === "employer"
                 ? "Company / Organization *"
                 : "Current Role / Company *"}
@@ -170,13 +169,13 @@ export function ContactForm({
               onChange={(e) =>
                 setFormData({ ...formData, companyOrTitle: e.target.value })
               }
-              className="w-full bg-slate-50/70 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition-all"
+              className="w-full bg-[#FAF9F6] border border-[#E8E6DF] rounded px-4 py-2.5 text-xs sm:text-sm text-[#0A1118] placeholder:text-[#718096] focus:outline-none focus:border-[#0D7A70]"
             />
           </div>
         </div>
 
         <div>
-          <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+          <label className="block text-xs font-bold uppercase tracking-wider text-[#0A1118] mb-2">
             {inquiryType === "employer"
               ? "Positions / Practice Area Required"
               : "Target Executive Role / Industry Focus"}
@@ -192,12 +191,12 @@ export function ContactForm({
             onChange={(e) =>
               setFormData({ ...formData, serviceOrRole: e.target.value })
             }
-            className="w-full bg-slate-50/70 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition-all"
+            className="w-full bg-[#FAF9F6] border border-[#E8E6DF] rounded px-4 py-2.5 text-xs sm:text-sm text-[#0A1118] placeholder:text-[#718096] focus:outline-none focus:border-[#0D7A70]"
           />
         </div>
 
         <div>
-          <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+          <label className="block text-xs font-bold uppercase tracking-wider text-[#0A1118] mb-2">
             Detailed Mandate Brief / Career Aspiration *
           </label>
           <textarea
@@ -212,7 +211,7 @@ export function ContactForm({
             onChange={(e) =>
               setFormData({ ...formData, message: e.target.value })
             }
-            className="w-full bg-slate-50/70 border border-slate-200 rounded-2xl p-4 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition-all"
+            className="w-full bg-[#FAF9F6] border border-[#E8E6DF] rounded p-3 text-xs sm:text-sm text-[#0A1118] placeholder:text-[#718096] focus:outline-none focus:border-[#0D7A70]"
           />
         </div>
 
@@ -220,7 +219,7 @@ export function ContactForm({
           <button
             type="submit"
             disabled={isSubmitting}
-            className="btn-executive-primary w-full !py-4 !text-sm justify-center flex items-center gap-2 !rounded-2xl"
+            className="btn-human-primary w-full !py-3.5 !text-xs justify-center flex items-center gap-2"
           >
             <span>
               {isSubmitting
@@ -229,12 +228,12 @@ export function ContactForm({
                 ? "Transmit Confidential Hiring Brief"
                 : "Submit Executive Profile"}
             </span>
-            <Send className="w-4 h-4" />
+            <Send className="w-3.5 h-3.5" />
           </button>
         </div>
 
-        <div className="flex items-center justify-center gap-2 text-xs text-slate-500 font-medium pt-2">
-          <Lock className="w-3.5 h-3.5 text-blue-600" />
+        <div className="flex items-center justify-center gap-2 text-xs text-[#718096] pt-1">
+          <Lock className="w-3.5 h-3.5 text-[#0D7A70]" />
           <span>Guarded under institutional Non-Disclosure Agreement standards</span>
         </div>
       </form>

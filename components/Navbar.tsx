@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { ArrowRight, Phone, MessageSquare, ChevronRight } from "lucide-react";
+import { ArrowRight, ChevronRight, Phone } from "lucide-react";
 
 export function Navbar() {
   const pathname = usePathname();
@@ -21,11 +21,11 @@ export function Navbar() {
 
   const navLinks = [
     { label: "Home", href: "/" },
-    { label: "Solutions", href: "/services" },
+    { label: "Services", href: "/services" },
+    { label: "CV Builder", href: "/cv-builder", isNew: true },
     { label: "Methodology", href: "/how-it-works" },
     { label: "Why Us", href: "/why-us" },
     { label: "Opportunities", href: "/careers" },
-    { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
   ];
 
@@ -36,18 +36,18 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 no-print ${
         scrolled
-          ? "bg-white/95 backdrop-blur-md shadow-[0_10px_30px_-10px_rgba(7,19,36,0.08)] border-b border-slate-200/90 py-2.5"
-          : "bg-white/90 backdrop-blur-md border-b border-slate-200/70 py-3.5"
+          ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-[#E5E7EB] py-3"
+          : "bg-[#FAF9F5]/90 backdrop-blur-md border-b border-[#E5E7EB] py-4"
       }`}
     >
-      <div className="max-w-[1280px] mx-auto px-5 sm:px-8 flex items-center justify-between">
+      <div className="max-w-[1360px] mx-auto px-5 sm:px-8 flex items-center justify-between">
         {/* Brand Logo */}
         <div className="flex-shrink-0">
           <Link
             href="/"
-            className="inline-flex items-center gap-3 select-none group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-lg py-1"
+            className="inline-flex items-center gap-3 select-none group focus-visible:outline-none"
             aria-label="Talent Bridge — The Right Talent. The Right Direction."
           >
             <div className="relative h-11 sm:h-12 w-auto flex items-center">
@@ -56,7 +56,7 @@ export function Navbar() {
                 alt="Talent Bridge — The Right Talent. The Right Direction."
                 width={190}
                 height={50}
-                className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+                className="h-10 sm:h-12 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.01]"
                 priority
               />
             </div>
@@ -65,7 +65,7 @@ export function Navbar() {
 
         {/* Desktop Navigation Links */}
         <nav
-          className="hidden xl:flex items-center gap-1.5 p-1 rounded-full bg-slate-100/70 border border-slate-200/70 shadow-inner"
+          className="hidden xl:flex items-center gap-7"
           aria-label="Main Navigation"
         >
           {navLinks.map((link) => {
@@ -74,34 +74,39 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition-all duration-200 ${
+                className={`relative text-xs font-semibold uppercase tracking-[0.12em] transition-colors py-1 flex items-center gap-1.5 ${
                   active
-                    ? "bg-white text-blue-700 shadow-[0_2px_8px_rgba(0,0,0,0.06)] font-bold"
-                    : "text-slate-600 hover:text-slate-900 hover:bg-white/60"
+                    ? "text-[#0D9488] font-bold border-b-2 border-[#0D9488]"
+                    : "text-[#4A5568] hover:text-[#0D9488]"
                 }`}
               >
-                {link.label}
+                <span>{link.label}</span>
+                {link.isNew && (
+                  <span className="text-[9px] font-extrabold uppercase bg-[#0D9488] text-white px-1.5 py-0.2 rounded-full tracking-wider">
+                    NEW
+                  </span>
+                )}
               </Link>
             );
           })}
         </nav>
 
         {/* Desktop CTA Action Group */}
-        <div className="hidden lg:flex items-center gap-3">
-          <Link
-            href="/contact"
-            className="px-4 py-2 text-xs font-semibold tracking-wide text-slate-700 hover:text-blue-600 hover:bg-slate-100/80 rounded-full transition-colors flex items-center gap-1.5"
+        <div className="hidden lg:flex items-center gap-5">
+          <a
+            href="tel:+94770000000"
+            className="text-xs font-semibold text-[#4A5568] hover:text-[#0D9488] transition-colors flex items-center gap-1.5"
           >
-            <MessageSquare className="w-3.5 h-3.5 text-blue-600" />
-            <span>Confidential Inquiry</span>
-          </Link>
+            <Phone className="w-3.5 h-3.5 text-[#0D9488]" />
+            <span>+94 77 000 0000</span>
+          </a>
 
           <Link
             href="/contact?type=employer"
-            className="btn-executive-primary !py-2.5 !px-5 !text-xs !shadow-md flex items-center gap-2 group"
+            className="btn-brand-green !py-2.5 !px-5 !text-xs flex items-center gap-2 group"
           >
-            <span>Retain Talent</span>
-            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+            <span>Hire Talent</span>
+            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
           </Link>
         </div>
 
@@ -109,7 +114,7 @@ export function Navbar() {
         <div className="flex xl:hidden items-center gap-3">
           <Link
             href="/contact?type=employer"
-            className="hidden sm:inline-flex btn-executive-primary !py-2 !px-4 !text-xs"
+            className="hidden sm:inline-flex btn-human-primary !py-2 !px-4 !text-xs"
           >
             Retain Search
           </Link>
@@ -117,22 +122,22 @@ export function Navbar() {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="w-10 h-10 rounded-xl bg-slate-100 hover:bg-slate-200 flex flex-col items-center justify-center gap-1.5 focus:outline-none focus:ring-2 focus:ring-blue-600 transition-colors"
+            className="w-10 h-10 rounded border border-[#E8E6DF] bg-white flex flex-col items-center justify-center gap-1.5 focus:outline-none"
             aria-expanded={mobileMenuOpen}
             aria-label="Toggle navigation menu"
           >
             <span
-              className={`block w-5 h-0.5 bg-slate-800 transition-all duration-300 ${
+              className={`block w-5 h-0.5 bg-[#0A1118] transition-all duration-300 ${
                 mobileMenuOpen ? "rotate-45 translate-y-2" : ""
               }`}
             />
             <span
-              className={`block w-5 h-0.5 bg-slate-800 transition-all duration-300 ${
+              className={`block w-5 h-0.5 bg-[#0A1118] transition-all duration-300 ${
                 mobileMenuOpen ? "opacity-0" : "opacity-100"
               }`}
             />
             <span
-              className={`block w-5 h-0.5 bg-slate-800 transition-all duration-300 ${
+              className={`block w-5 h-0.5 bg-[#0A1118] transition-all duration-300 ${
                 mobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
               }`}
             />
@@ -142,17 +147,7 @@ export function Navbar() {
 
       {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
-        <div className="xl:hidden bg-white/95 backdrop-blur-xl border-b border-slate-200 shadow-2xl py-6 px-6 space-y-5 animate-in slide-in-from-top duration-200">
-          <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
-              Navigation Menu
-            </span>
-            <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              Advisory Online
-            </span>
-          </div>
-
+        <div className="xl:hidden bg-white border-b border-[#E8E6DF] shadow-xl py-6 px-6 space-y-4 animate-in slide-in-from-top duration-200">
           <nav className="flex flex-col space-y-2">
             {navLinks.map((link) => {
               const active = isActive(link.href);
@@ -161,35 +156,33 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold transition-all ${
+                  className={`flex items-center justify-between px-3 py-2.5 rounded text-xs font-semibold uppercase tracking-wider transition-colors ${
                     active
-                      ? "bg-blue-50 text-blue-700 font-bold"
-                      : "text-slate-700 hover:bg-slate-50 hover:text-slate-900"
+                      ? "bg-[#FAF9F6] text-[#0A1118] font-bold"
+                      : "text-[#4A5568] hover:text-[#0A1118]"
                   }`}
                 >
                   <span>{link.label}</span>
-                  <ChevronRight
-                    className={`w-4 h-4 ${active ? "text-blue-600" : "text-slate-400"}`}
-                  />
+                  <ChevronRight className="w-4 h-4 text-[#718096]" />
                 </Link>
               );
             })}
           </nav>
 
-          <div className="pt-4 border-t border-slate-100 flex flex-col gap-3">
+          <div className="pt-4 border-t border-[#E8E6DF] flex flex-col gap-2.5">
+            <Link
+              href="/cv-builder"
+              onClick={() => setMobileMenuOpen(false)}
+              className="btn-brand-green w-full text-center py-3 text-xs justify-center"
+            >
+              Build & Share Your CV Free
+            </Link>
             <Link
               href="/contact?type=employer"
               onClick={() => setMobileMenuOpen(false)}
-              className="btn-executive-primary w-full text-center py-3 text-xs justify-center"
+              className="btn-brand-navy w-full text-center py-3 text-xs justify-center"
             >
-              Hire Elite Talent
-            </Link>
-            <Link
-              href="/careers"
-              onClick={() => setMobileMenuOpen(false)}
-              className="btn-executive-outline w-full text-center py-3 text-xs justify-center"
-            >
-              Explore Opportunities
+              Hire Executive Talent
             </Link>
           </div>
         </div>

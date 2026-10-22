@@ -8,39 +8,39 @@ import { ArrowRight, ShieldCheck, Mail, Phone, MapPin, Clock, ExternalLink } fro
 export function Footer() {
   return (
     <footer className="relative bg-[#040914] text-slate-300 border-t border-slate-800/80 overflow-hidden">
-      {/* Background Decorative Glows */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+      {/* Background Subtle Ambience */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#0D9488]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#10B981]/10 rounded-full blur-3xl pointer-events-none" />
 
       {/* Top High-Conversion Executive Banner */}
-      <div className="relative z-10 border-b border-slate-800/80 bg-gradient-to-r from-[#071324] via-[#0b1f3b] to-[#071324]">
+      <div className="relative z-10 border-b border-slate-800/80 bg-gradient-to-r from-[#071324] via-[#0E2338] to-[#071324]">
         <div className="max-w-[1280px] mx-auto px-5 sm:px-8 py-12">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
             <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-400/20 text-sky-300 text-xs font-semibold uppercase tracking-wider mb-3">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0D9488]/15 border border-[#0D9488]/30 text-[#2DD4BF] text-xs font-semibold uppercase tracking-wider mb-3">
+                <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
                 Executive Mandates &amp; Talent Solutions
               </div>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight">
                 The Right Talent. The Right Direction.
               </h2>
-              <p className="mt-2 text-slate-400 text-sm sm:text-base leading-relaxed">
-                Connect with our senior recruitment partners today for confidential search mandates or calibrated career advisory.
+              <p className="mt-2 text-slate-300 text-sm sm:text-base leading-relaxed font-light">
+                Connect with our senior recruitment partners today for confidential search mandates or build your verified executive profile.
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-4">
               <Link
                 href="/contact?type=employer"
-                className="btn-executive-primary !py-3.5 !px-7 !text-xs sm:!text-sm flex items-center gap-2 group"
+                className="btn-brand-green !py-3.5 !px-7 !text-xs sm:!text-sm flex items-center gap-2 group"
               >
-                <span>Retain Search Mandate</span>
+                <span>Hire Talent Now</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
-                href="/careers"
-                className="btn-executive-glass !py-3.5 !px-7 !text-xs sm:!text-sm flex items-center gap-2"
+                href="/cv-builder"
+                className="btn-brand-navy !py-3.5 !px-7 !text-xs sm:!text-sm !border !border-slate-600 flex items-center gap-2"
               >
-                <span>Explore Opportunities</span>
+                <span>Create &amp; Share CV</span>
               </Link>
             </div>
           </div>
@@ -117,32 +117,33 @@ export function Footer() {
           {/* Company & Methodology */}
           <div className="lg:col-span-2 space-y-4">
             <span className="block text-xs font-bold uppercase tracking-wider text-white">
-              Architecture
+              Platform &amp; Tools
             </span>
             <ul className="space-y-3 text-sm text-slate-400">
               <li>
-                <Link href="/about" className="hover:text-sky-300 transition-colors">
+                <Link href="/cv-builder" className="hover:text-emerald-400 transition-colors flex items-center gap-1.5 font-semibold text-emerald-300">
+                  <span>CV Builder &amp; Sharer</span>
+                  <span className="text-[9px] bg-emerald-500/20 text-emerald-400 px-1.5 py-0.2 rounded">FREE</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="hover:text-emerald-400 transition-colors">
                   About Our Firm
                 </Link>
               </li>
               <li>
-                <Link href="/how-it-works" className="hover:text-sky-300 transition-colors">
+                <Link href="/how-it-works" className="hover:text-emerald-400 transition-colors">
                   4-Stage Search Protocol
                 </Link>
               </li>
               <li>
-                <Link href="/why-us" className="hover:text-sky-300 transition-colors">
+                <Link href="/why-us" className="hover:text-emerald-400 transition-colors">
                   The 4 Pillars of Excellence
                 </Link>
               </li>
               <li>
-                <Link href="/careers" className="hover:text-sky-300 transition-colors">
-                  Curated Mandates
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="hover:text-sky-300 transition-colors">
-                  Client Intake
+                <Link href="/careers" className="hover:text-emerald-400 transition-colors">
+                  Executive Opportunities
                 </Link>
               </li>
             </ul>
