@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { CheckCircle2, Send, Shield, Lock } from "lucide-react";
+import { CheckCircle2, Send, Lock } from "lucide-react";
 
 interface ContactFormProps {
   initialType?: "employer" | "candidate";

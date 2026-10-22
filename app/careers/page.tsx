@@ -5,14 +5,8 @@ import Link from "next/link";
 import {
   Search,
   MapPin,
-  Briefcase,
-  Clock,
   ArrowRight,
-  Shield,
   Sparkles,
-  Award,
-  Users2,
-  Lock,
 } from "lucide-react";
 import { ExecutiveVaultModal } from "@/components/ExecutiveVaultModal";
 

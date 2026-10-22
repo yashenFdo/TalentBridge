@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, Building2, UserCheck, ShieldCheck, Check } from "lucide-react";
+import { ArrowRight, Building2, UserCheck, Check } from "lucide-react";
 
 export function SplitPerspective() {
   return (

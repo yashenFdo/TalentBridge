@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Building2, Compass, ArrowRight, Check, Shield, Lock, Award, Users } from "lucide-react";
+import { Building2, Compass, ArrowRight, Check, Shield, Lock } from "lucide-react";
 
 interface DualPerspectiveToggleProps {
   onOpenVault: () => void;

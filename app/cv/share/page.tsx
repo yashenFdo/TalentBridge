@@ -1,17 +1,16 @@
 "use client";
 
-import React, { useEffect, useState, Suspense } from "react";
+import React, { useState, useMemo, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { CvData } from "@/types/cv";
-import { decodeCvFromUrl, SAMPLE_CV, loadSavedCv } from "@/lib/cv-storage";
+import { decodeCvFromUrl, loadSavedCv } from "@/lib/cv-storage";
 import { CvTemplateEmerald } from "@/components/cv-builder/CvTemplateEmerald";
-import { CvTemplateNavy } from "@/components/cv-builder/CvTemplateNavy";
-import { CvTemplateMinimal } from "@/components/cv-builder/CvTemplateMinimal";
 import { CvTemplateAtsClassic } from "@/components/cv-builder/CvTemplateAtsClassic";
 import { CvTemplateExecutive } from "@/components/cv-builder/CvTemplateExecutive";
 import { ShareModal } from "@/components/cv-builder/ShareModal";
+import { LoadingScreen } from "@/components/ui/LoadingScreen";
 import {
   Printer,
   Share2,
@@ -23,24 +22,15 @@ import {
 
 function CvViewerContent() {
   const searchParams = useSearchParams();
-  const [cv, setCv] = useState<CvData>(SAMPLE_CV);
   const [isShareModalOpen, setIsShareModalOpen] = useState(false);
-  const [isLoaded, setIsLoaded] = useState(false);
 
-  useEffect(() => {
+  const cv = useMemo<CvData>(() => {
     const dParam = searchParams.get("d");
     if (dParam) {
       const decoded = decodeCvFromUrl(dParam);
-      if (decoded) {
-        setCv(decoded);
-        setIsLoaded(true);
-        return;
-      }
+      if (decoded) return decoded;
     }
-    // Fallback to local storage or sample
-    const local = loadSavedCv();
-    if (local) setCv(local);
-    setIsLoaded(true);
+    return loadSavedCv();
   }, [searchParams]);
 
   const handlePrint = () => {
@@ -184,12 +174,11 @@ export default function CvSharePage() {
   return (
     <Suspense
       fallback={
-        <div className="min-h-screen flex items-center justify-center bg-[#FFFFFF]">
-          <div className="text-center space-y-2">
-            <div className="w-8 h-8 border-2 border-[#059669] border-t-transparent rounded-full animate-spin mx-auto" />
-            <p className="text-xs font-semibold text-slate-600">Loading Verified Executive Dossier...</p>
-          </div>
-        </div>
+        <LoadingScreen
+          message="Loading Verified Executive Dossier..."
+          subMessage="Authenticating executive credentials..."
+          fullScreen={true}
+        />
       }
     >
       <CvViewerContent />

@@ -17,7 +17,6 @@ interface Props {
 
 export function CvTemplateExecutive({
   cv,
-  accentColor = "#059669",
   fontFamily = "sans",
   spacingDensity = "normal",
 }: Props) {

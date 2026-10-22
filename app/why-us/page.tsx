@@ -1,15 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import type { Metadata } from "next";
-import {
-  ShieldCheck,
-  Award,
-  Lock,
-  HeartHandshake,
-  ArrowRight,
-  Building2,
-  Compass,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Why Us | The Talent Bridge Standard & Doctrine",

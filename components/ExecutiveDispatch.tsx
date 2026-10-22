@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Download, CheckCircle2, FileText, ArrowRight } from "lucide-react";
+import { Download, CheckCircle2, FileText } from "lucide-react";
 
 export function ExecutiveDispatch() {
   const [email, setEmail] = useState("");

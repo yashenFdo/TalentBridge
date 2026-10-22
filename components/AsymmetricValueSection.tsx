@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ShieldCheck, Award, Lock, ArrowRight, CheckCircle2 } from "lucide-react";
+import { ShieldCheck, Award, Lock, ArrowRight } from "lucide-react";
 
 export function AsymmetricValueSection() {
   return (

@@ -17,7 +17,6 @@ interface Props {
 
 export function CvTemplateAtsClassic({
   cv,
-  accentColor = "#0f172a",
   fontFamily = "sans",
   spacingDensity = "normal",
 }: Props) {

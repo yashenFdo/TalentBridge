@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { Phone, MapPin, ShieldCheck, CheckCircle2 } from "lucide-react";
+import { Phone, MapPin, ShieldCheck } from "lucide-react";
 import { HeroInteractiveForm } from "@/components/HeroInteractiveForm";
 
 export function HeroSection() {

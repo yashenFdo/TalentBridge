@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, ChevronRight, Layers } from "lucide-react";
+import { ArrowRight, Layers } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/site-config";
 
 export function ProcessTimeline() {

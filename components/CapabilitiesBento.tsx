@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Sparkles, Building2, Cpu, Landmark, Globe, FileText, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Sparkles, Building2, Cpu, Landmark, Globe, CheckCircle2 } from "lucide-react";
 
 export function CapabilitiesBento() {
   const cards = [

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Check, Clock, ShieldCheck, ArrowRight, FileCheck, Users, Target, Lock } from "lucide-react";
+import { Check, ArrowRight, FileCheck, Users, Target } from "lucide-react";
 
 interface PhaseData {
   number: string;

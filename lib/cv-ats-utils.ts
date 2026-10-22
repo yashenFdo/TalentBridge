@@ -64,7 +64,7 @@ export function calculateAtsScore(cv: CvData): AtsAnalysisResult {
   const hasLocation = Boolean(cv.personal.location?.trim());
   const hasLinkedin = Boolean(cv.personal.linkedin?.trim());
   const contactPassed = hasName && hasEmail && hasPhone && hasLocation;
-  const contactScore = contactPassed ? 15 : hasName && hasEmail ? 8 : 0;
+  const contactScore = contactPassed ? (hasLinkedin ? 15 : 13) : hasName && hasEmail ? 8 : 0;
   score += contactScore;
   checklist.push({
     id: "contact",

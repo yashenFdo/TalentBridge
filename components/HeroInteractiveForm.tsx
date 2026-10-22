@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Check, Sparkles, Shield, ArrowRight, UserCheck } from "lucide-react";
+import { Check, Sparkles, Shield, ArrowRight } from "lucide-react";
 
 export function HeroInteractiveForm() {
   const [activeTab, setActiveTab] = useState<"client" | "candidate">("client");

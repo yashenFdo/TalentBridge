@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --font-display: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
-  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-display: var(--font-outfit), 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-sans: var(--font-plus-jakarta), 'Plus Jakarta Sans', system-ui, sans-serif;
 
   --color-canvas: #FFFFFF;
   --color-canvas-subtle: #F8FAFC;
@@ -29,8 +29,8 @@
 }
 
 @theme {
-  --font-display: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
-  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-display: var(--font-outfit), 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-sans: var(--font-plus-jakarta), 'Plus Jakarta Sans', system-ui, sans-serif;
 
   --color-canvas: #FFFFFF;
   --color-slate-bg: #F8FAFC;
@@ -445,5 +445,55 @@ h1, h2, h3, h4 {
     break-before: page !important;
     page-break-before: always !important;
   }
+}
+
+/* Executive Loading Animation Keyframes */
+@keyframes tb-radar-ping {
+  0% {
+    transform: scale(0.92);
+    opacity: 0.8;
+  }
+  70% {
+    transform: scale(1.45);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.45);
+    opacity: 0;
+  }
+}
+
+@keyframes tb-shimmer-sweep {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes tb-glow-breathe {
+  0%, 100% {
+    opacity: 0.55;
+    transform: scale(1);
+    filter: drop-shadow(0 0 16px rgba(16, 185, 129, 0.35));
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 28px rgba(16, 185, 129, 0.65));
+  }
+}
+
+.animate-tb-radar {
+  animation: tb-radar-ping 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.animate-tb-shimmer {
+  animation: tb-shimmer-sweep 1.8s ease-in-out infinite;
+}
+
+.animate-tb-breathe {
+  animation: tb-glow-breathe 3s ease-in-out infinite;
 }
 

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { UploadCloud, CheckCircle2, Lock, Shield, X, FileText, ArrowRight } from "lucide-react";
+import { UploadCloud, CheckCircle2, Lock, Shield, X, FileText } from "lucide-react";
 
 interface ExecutiveVaultModalProps {
   isOpen: boolean;

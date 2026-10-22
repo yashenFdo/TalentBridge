@@ -1,6 +1,5 @@
 import React from "react";
-import Link from "next/link";
-import { CheckCircle2, ShieldCheck, Target, HeartHandshake, Award } from "lucide-react";
+import { ShieldCheck, Target, HeartHandshake, Award, CheckCircle2 } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/site-config";
 
 const pillarIcons = [Target, HeartHandshake, ShieldCheck, Award];

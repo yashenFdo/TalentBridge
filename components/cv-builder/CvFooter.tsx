@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import QRCode from "qrcode";
 import { CvData } from "@/types/cv";
 import { encodeCvToUrl } from "@/lib/cv-storage";
@@ -16,23 +15,18 @@ interface Props {
 
 export function CvFooter({ cv, shareUrlOverride, className = "" }: Props) {
   const [qrDataUrl, setQrDataUrl] = useState<string>("");
-  const [currentUrl, setCurrentUrl] = useState<string>("https://talentbridge.lk");
+
+  const origin = typeof window !== "undefined" ? window.location.origin : "https://talentbridge.lk";
+  let targetUrl = shareUrlOverride;
+  if (!targetUrl && cv) {
+    const encoded = encodeCvToUrl(cv);
+    targetUrl = `${origin}/cv/share?d=${encoded}`;
+  } else if (!targetUrl) {
+    targetUrl = "https://talentbridge.lk";
+  }
 
   useEffect(() => {
-    const origin = typeof window !== "undefined" ? window.location.origin : "https://talentbridge.lk";
-    let targetUrl = shareUrlOverride;
-
-    if (!targetUrl && cv) {
-      const encoded = encodeCvToUrl(cv);
-      targetUrl = `${origin}/cv/share?d=${encoded}`;
-    } else if (!targetUrl) {
-      targetUrl = "https://talentbridge.lk";
-    }
-
-    setCurrentUrl(targetUrl);
-
-    // QR Codes have strict byte limits (max ~1-2KB). When printed, short URLs scan 10x faster.
-    // Use short verification URL for QR code, while retaining full data URL on click.
+    let isMounted = true;
     const qrTarget =
       targetUrl && targetUrl.length < 250
         ? targetUrl
@@ -47,10 +41,11 @@ export function CvFooter({ cv, shareUrlOverride, className = "" }: Props) {
       },
       errorCorrectionLevel: "L",
     })
-      .then((url) => setQrDataUrl(url))
+      .then((url) => {
+        if (isMounted) setQrDataUrl(url);
+      })
       .catch((err) => {
         console.warn("Retrying QR with short origin fallback:", err);
-        // Fallback to standard short URL
         QRCode.toDataURL(`${origin}/cv/share`, {
           width: 140,
           margin: 1,
@@ -60,10 +55,16 @@ export function CvFooter({ cv, shareUrlOverride, className = "" }: Props) {
           },
           errorCorrectionLevel: "L",
         })
-          .then((fallbackUrl) => setQrDataUrl(fallbackUrl))
-          .catch((e) => console.error("Final QR fallback failed", e));
+          .then((fallbackUrl) => {
+            if (isMounted) setQrDataUrl(fallbackUrl);
+          })
+          .catch(() => {});
       });
-  }, [cv, shareUrlOverride]);
+
+    return () => {
+      isMounted = false;
+    };
+  }, [cv?.id, origin, targetUrl]);
 
   return (
     <footer
@@ -141,7 +142,7 @@ export function CvFooter({ cv, shareUrlOverride, className = "" }: Props) {
           {/* Small QR Code */}
           {qrDataUrl && (
             <a
-              href={currentUrl}
+              href={targetUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="flex flex-col items-center shrink-0 group/qr"

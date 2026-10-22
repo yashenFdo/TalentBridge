@@ -3,7 +3,8 @@
 import React, { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { ContactForm } from "@/components/ContactForm";
-import { Phone, Mail, MapPin, Clock, ArrowRight } from "lucide-react";
+import { LoadingScreen } from "@/components/ui/LoadingScreen";
+import { ArrowRight } from "lucide-react";
 
 function ContactFormWithParams() {
   const searchParams = useSearchParams();
@@ -134,8 +135,12 @@ export default function ContactPage() {
           <div className="lg:col-span-7">
             <Suspense
               fallback={
-                <div className="p-16 text-center text-xs font-semibold text-[#718096] editorial-card bg-white">
-                  Loading executive intake form...
+                <div className="p-8 editorial-card bg-white rounded-xl">
+                  <LoadingScreen
+                    compact={true}
+                    message="Initializing Executive Intake Terminal..."
+                    subMessage="Calibrating secure candidate and employer dispatch pipelines"
+                  />
                 </div>
               }
             >

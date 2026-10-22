@@ -12,7 +12,7 @@ interface Props {
 }
 
 export function CvTemplateNavy({ cv }: Props) {
-  const { personal, summary, skills, technicalSkills, softSkills, experience, education, certifications, languages, projects, awards } = cv;
+  const { personal, summary, skills, technicalSkills, experience, education, certifications, languages, projects, awards } = cv;
 
   return (
     <div className="cv-document-container cv-a4-sheet bg-white text-[#1E293B] p-8 sm:p-12 shadow-md rounded-none max-w-[850px] mx-auto border border-slate-200 flex flex-col justify-between print:border-none print:shadow-none print:p-0">

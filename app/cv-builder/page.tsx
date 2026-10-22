@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useMemo, useRef } from "react";
+import React, { useState, useMemo, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -20,13 +20,10 @@ import {
 import {
   calculateAtsScore,
   ATS_ACTION_VERBS,
-  ACTION_VERBS_BY_CATEGORY,
 } from "@/lib/cv-ats-utils";
 import { CvTemplateAtsClassic } from "@/components/cv-builder/CvTemplateAtsClassic";
 import { CvTemplateExecutive } from "@/components/cv-builder/CvTemplateExecutive";
 import { CvTemplateEmerald } from "@/components/cv-builder/CvTemplateEmerald";
-import { CvTemplateNavy } from "@/components/cv-builder/CvTemplateNavy";
-import { CvTemplateMinimal } from "@/components/cv-builder/CvTemplateMinimal";
 import { ShareModal } from "@/components/cv-builder/ShareModal";
 import {
   Share2,
@@ -50,17 +47,13 @@ import {
   ChevronDown,
   ChevronUp,
   Printer,
-  Copy,
   Sliders,
-  Check,
   FolderGit2,
-  ExternalLink,
-  HelpCircle,
   Zap,
 } from "lucide-react";
 
 export default function CvBuilderPage() {
-  const [cv, setCv] = useState<CvData>(SAMPLE_CV);
+  const [cv, setCv] = useState<CvData>(() => loadSavedCv());
   const [activeMobileTab, setActiveMobileTab] = useState<"edit" | "preview">("edit");
   const [isShareModalOpen, setIsShareModalOpen] = useState(false);
   const [saveStatus, setSaveStatus] = useState<string>("Draft Saved");
@@ -71,7 +64,6 @@ export default function CvBuilderPage() {
   // Inputs for new items
   const [newSkill, setNewSkill] = useState("");
   const [newTechSkill, setNewTechSkill] = useState("");
-  const [newSoftSkill, setNewSoftSkill] = useState("");
   const [newLanguage, setNewLanguage] = useState("");
   const [newAward, setNewAward] = useState("");
 
@@ -92,12 +84,6 @@ export default function CvBuilderPage() {
     setOpenSections((prev) => ({ ...prev, [section]: !prev[section] }));
   };
 
-  // Load from localStorage on mount
-  useEffect(() => {
-    const saved = loadSavedCv();
-    if (saved) setCv(saved);
-  }, []);
-
   // Auto-save on change
   const updateCv = (newCv: CvData) => {
     setCv(newCv);
@@ -114,7 +100,10 @@ export default function CvBuilderPage() {
   const [uploadError, setUploadError] = useState<string>("");
 
   // Handle personal info
-  const handlePersonalChange = (field: keyof typeof cv.personal, value: any) => {
+  const handlePersonalChange = <K extends keyof CvData["personal"]>(
+    field: K,
+    value: CvData["personal"][K]
+  ) => {
     updateCv({
       ...cv,
       personal: {
@@ -237,7 +226,11 @@ export default function CvBuilderPage() {
     });
   };
 
-  const handleUpdateExperience = (id: string, field: keyof CvExperience, value: any) => {
+  const handleUpdateExperience = <K extends keyof CvExperience>(
+    id: string,
+    field: K,
+    value: CvExperience[K]
+  ) => {
     updateCv({
       ...cv,
       experience: cv.experience.map((exp) => (exp.id === id ? { ...exp, [field]: value } : exp)),
@@ -311,7 +304,11 @@ export default function CvBuilderPage() {
     });
   };
 
-  const handleUpdateProject = (id: string, field: keyof CvProject, value: any) => {
+  const handleUpdateProject = <K extends keyof CvProject>(
+    id: string,
+    field: K,
+    value: CvProject[K]
+  ) => {
     updateCv({
       ...cv,
       projects: (cv.projects || []).map((p) => (p.id === id ? { ...p, [field]: value } : p)),
@@ -340,7 +337,11 @@ export default function CvBuilderPage() {
     });
   };
 
-  const handleUpdateEducation = (id: string, field: keyof CvEducation, value: any) => {
+  const handleUpdateEducation = <K extends keyof CvEducation>(
+    id: string,
+    field: K,
+    value: CvEducation[K]
+  ) => {
     updateCv({
       ...cv,
       education: cv.education.map((edu) => (edu.id === id ? { ...edu, [field]: value } : edu)),
@@ -369,7 +370,11 @@ export default function CvBuilderPage() {
     });
   };
 
-  const handleUpdateCertification = (id: string, field: keyof CvCertification, value: any) => {
+  const handleUpdateCertification = <K extends keyof CvCertification>(
+    id: string,
+    field: K,
+    value: CvCertification[K]
+  ) => {
     updateCv({
       ...cv,
       certifications: cv.certifications.map((cert) => (cert.id === id ? { ...cert, [field]: value } : cert)),
@@ -1199,7 +1204,7 @@ export default function CvBuilderPage() {
                 </div>
 
                 <div className="space-y-6">
-                  {cv.experience.map((exp, idx) => (
+                  {cv.experience.map((exp) => (
                     <div
                       key={exp.id}
                       className="p-4 rounded-xl border border-slate-200 bg-slate-50/40 space-y-3 relative group"

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { ArrowRight, Calculator, ShieldCheck, Clock, TrendingUp, DollarSign } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 interface SectorData {
   name: string;
@@ -143,7 +143,7 @@ export function MarketIntelligenceSimulator() {
               <button
                 key={s.id}
                 type="button"
-                onClick={() => setSector(s.id as any)}
+                onClick={() => setSector(s.id as "fintech" | "enterprise" | "tech_ai")}
                 className={`py-2.5 px-3 rounded-xl text-xs font-bold text-center transition-all cursor-pointer ${
                   sector === s.id
                     ? "bg-[#059669] text-white shadow-xs"
@@ -169,7 +169,7 @@ export function MarketIntelligenceSimulator() {
               <button
                 key={r.id}
                 type="button"
-                onClick={() => setRole(r.id as any)}
+                onClick={() => setRole(r.id as "ceo" | "cto" | "cfo")}
                 className={`py-2.5 px-3 rounded-xl text-xs font-bold text-center transition-all cursor-pointer ${
                   role === r.id
                     ? "bg-[#059669] text-white shadow-xs"

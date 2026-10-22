@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, ChevronRight, Award, ShieldCheck, Building2, Quote } from "lucide-react";
+import { ArrowRight, Quote } from "lucide-react";
 
 interface CaseStudy {
   id: string;

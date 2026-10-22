@@ -1,18 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import type { Metadata } from "next";
-import {
-  Award,
-  Sparkles,
-  ShieldCheck,
-  Users2,
-  Compass,
-  Building2,
-  Briefcase,
-  Check,
-  ArrowRight,
-  PhoneCall,
-} from "lucide-react";
+import { Check, ArrowRight, PhoneCall } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Practices & Solutions | Talent Bridge Executive Recruitment",

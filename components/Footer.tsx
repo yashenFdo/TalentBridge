@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ShieldCheck, Mail, Phone, MapPin, Clock, ExternalLink, Cpu, Sparkles, CheckCircle2 } from "lucide-react";
+import { ArrowRight, ShieldCheck, Mail, Phone, MapPin, Clock, ExternalLink, CheckCircle2 } from "lucide-react";
 
 export function Footer() {
   return (
