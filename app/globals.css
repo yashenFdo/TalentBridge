@@ -220,34 +220,6 @@ h1, h2, h3, h4 {
   box-shadow: 0 6px 20px rgba(13, 148, 136, 0.3);
 }
 
-/* Print Stylesheet for clean CV downloading and printing */
-@media print {
-  header, footer, nav, .no-print {
-    display: none !important;
-  }
-  body, main {
-    background: white !important;
-    color: black !important;
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-  .print-only {
-    display: block !important;
-  }
-  .cv-document-container {
-    box-shadow: none !important;
-    border: none !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-  @page {
-    margin: 12mm 15mm;
-    size: A4 portrait;
-  }
-}
-
 /* Editorial Kicker Badge */
 .editorial-kicker {
   display: inline-flex;
@@ -317,3 +289,161 @@ h1, h2, h3, h4 {
     linear-gradient(to bottom, rgba(232, 230, 223, 0.6) 1px, transparent 1px);
   background-size: 64px 64px;
 }
+
+/* ========================================================
+   A4 SHEET & PRINT SPECIFICATIONS
+   Standard A4: 210mm x 297mm (1:1.414 aspect ratio)
+   ======================================================== */
+@page {
+  size: A4 portrait;
+  margin: 12mm 10mm 14mm 10mm;
+}
+
+.cv-a4-sheet {
+  width: 210mm;
+  min-height: 297mm;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+@media print {
+  /* 1. Strictly hide all website UI, navigation, form editors, and modals */
+  .no-print,
+  .cv-builder-form-pane,
+  header.no-print,
+  footer.no-print,
+  nav.no-print,
+  aside.no-print {
+    display: none !important;
+  }
+
+  /* 2. Reset html, body, and all structural ancestor wrappers to static unconstrained blocks */
+  html,
+  body {
+    background: #FFFFFF !important;
+    color: #0F172A !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    min-height: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  main {
+    display: block !important;
+    position: static !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: none !important;
+    width: 100% !important;
+    min-height: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  /* 3. Studio workspace resets to full-width static block */
+  .cv-builder-root {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #FFFFFF !important;
+    overflow: visible !important;
+  }
+
+  .cv-builder-workspace {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+  }
+
+  /* 4. Document preview expands to 100% without sticky or scroll clipping */
+  .cv-builder-preview-pane {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    position: static !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    top: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+  }
+
+  .cv-preview-scroll-container {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .cv-preview-paper-wrapper {
+    display: block !important;
+    position: static !important;
+    box-shadow: none !important;
+    transform: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* 5. A4 Document Sheet Print Layout */
+  .cv-a4-sheet,
+  .cv-document-container {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: auto !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #FFFFFF !important;
+    color: #0F172A !important;
+  }
+
+  .cv-page-footer {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* 6. Multi-page pagination rules */
+  .break-inside-avoid {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .page-break-before {
+    break-before: page !important;
+    page-break-before: always !important;
+  }
+}
+

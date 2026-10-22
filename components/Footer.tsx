@@ -3,42 +3,42 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ShieldCheck, Mail, Phone, MapPin, Clock, ExternalLink } from "lucide-react";
+import { ArrowRight, ShieldCheck, Mail, Phone, MapPin, Clock, ExternalLink, Cpu, Sparkles, CheckCircle2 } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="relative bg-[#040914] text-slate-300 border-t border-slate-800/80 overflow-hidden">
+    <footer className="relative bg-[#040914] text-slate-300 border-t border-slate-800/80 overflow-hidden no-print">
       {/* Background Subtle Ambience */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#059669]/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#10B981]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
 
       {/* Top High-Conversion Executive Banner */}
       <div className="relative z-10 border-b border-slate-800/80 bg-gradient-to-r from-[#071324] via-[#0E2338] to-[#071324]">
-        <div className="max-w-[1280px] mx-auto px-5 sm:px-8 py-12">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+        <div className="max-w-[1360px] mx-auto px-5 sm:px-8 py-10">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
             <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#059669]/15 border border-[#059669]/30 text-[#2DD4BF] text-xs font-semibold uppercase tracking-wider mb-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#059669]/15 border border-[#059669]/30 text-[#2DD4BF] text-xs font-semibold uppercase tracking-wider mb-2.5">
                 <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
                 Executive Mandates &amp; Talent Solutions
               </div>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
                 The Right Talent. The Right Direction.
               </h2>
-              <p className="mt-2 text-slate-300 text-sm sm:text-base leading-relaxed font-light">
+              <p className="mt-1.5 text-slate-300 text-xs sm:text-sm leading-relaxed font-light">
                 Connect with our senior recruitment partners today for confidential search mandates or build your verified executive profile.
               </p>
             </div>
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="flex flex-wrap items-center gap-3">
               <Link
                 href="/contact?type=employer"
-                className="btn-brand-green !py-3.5 !px-7 !text-xs sm:!text-sm flex items-center gap-2 group"
+                className="btn-brand-green !py-3 !px-6 !text-xs sm:!text-sm flex items-center gap-2 group"
               >
                 <span>Hire Talent Now</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
                 href="/cv-builder"
-                className="btn-brand-navy !py-3.5 !px-7 !text-xs sm:!text-sm !border !border-slate-600 flex items-center gap-2"
+                className="btn-brand-navy !py-3 !px-6 !text-xs sm:!text-sm !border !border-slate-600 flex items-center gap-2"
               >
                 <span>Create &amp; Share CV</span>
               </Link>
@@ -47,164 +47,206 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Main Footer Links */}
-      <div className="relative z-10 max-w-[1280px] mx-auto px-5 sm:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12">
-          {/* Brand & Mission Column */}
-          <div className="lg:col-span-4 space-y-6">
+      {/* Main Footer Links & 1/3 Devcity Technology Partner Showcase */}
+      <div className="relative z-10 max-w-[1360px] mx-auto px-5 sm:px-8 py-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+          
+          {/* Column 1: Brand & Mission (3 Cols) */}
+          <div className="lg:col-span-3 space-y-4">
             <Link
               href="/"
-              className="inline-flex items-center select-none group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg"
+              className="inline-flex items-center select-none group focus-visible:outline-none"
               aria-label="Talent Bridge"
             >
-              <div className="relative h-12 w-auto flex items-center">
+              <div className="relative h-11 w-auto flex items-center">
                 <Image
                   src="/logo-white.png"
                   alt="Talent Bridge — The Right Talent. The Right Direction."
-                  width={200}
-                  height={52}
-                  className="h-11 sm:h-12 w-auto object-contain"
+                  width={180}
+                  height={46}
+                  className="h-10 sm:h-11 w-auto object-contain"
                 />
               </div>
             </Link>
 
-            <p className="text-slate-400 text-sm leading-relaxed max-w-sm">
-              Talent Bridge is an executive recruitment and human capital advisory firm bridging elite enterprises and high-impact leaders. We deliver calibrated search mandates with high-retention cultural alignment.
+            <p className="text-slate-400 text-xs leading-relaxed">
+              Talent Bridge is an executive recruitment and human capital advisory firm bridging elite enterprises with high-impact leaders across APAC and global markets.
             </p>
 
-            <div className="flex items-center gap-3 pt-2">
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/60 text-xs text-slate-300">
-                <ShieldCheck className="w-4 h-4 text-emerald-400" />
+            <div className="pt-1">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700/60 text-[11px] text-slate-300">
+                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
                 <span>Strict Non-Disclosure Fiduciary Standard</span>
               </div>
             </div>
           </div>
 
-          {/* Solutions / Practices */}
-          <div className="lg:col-span-3 space-y-4">
+          {/* Column 2: Solutions & Platform Navigation (2 Cols) */}
+          <div className="lg:col-span-2 space-y-3">
             <span className="block text-xs font-bold uppercase tracking-wider text-white">
-              Practices &amp; Solutions
+              Practices & Tools
             </span>
-            <ul className="space-y-3 text-sm text-slate-400">
+            <ul className="space-y-2 text-xs text-slate-400">
               <li>
-                <Link href="/services#executive-search" className="hover:text-sky-300 transition-colors flex items-center gap-1.5">
-                  <span>Executive &amp; Board Search</span>
+                <Link href="/services#executive-search" className="hover:text-sky-300 transition-colors">
+                  Executive Search
                 </Link>
               </li>
               <li>
-                <Link href="/services#technical-leadership" className="hover:text-sky-300 transition-colors flex items-center gap-1.5">
-                  <span>Tech &amp; AI Leadership Sourcing</span>
+                <Link href="/services#technical-leadership" className="hover:text-sky-300 transition-colors">
+                  Tech & AI Leadership
                 </Link>
               </li>
               <li>
-                <Link href="/services#screening" className="hover:text-sky-300 transition-colors flex items-center gap-1.5">
-                  <span>360° Candidate Screening &amp; Vetting</span>
+                <Link href="/services#screening" className="hover:text-sky-300 transition-colors">
+                  360° Candidate Vetting
                 </Link>
               </li>
               <li>
-                <Link href="/services#private-network" className="hover:text-sky-300 transition-colors flex items-center gap-1.5">
-                  <span>Private Executive Talent Network</span>
+                <Link href="/cv-builder" className="hover:text-emerald-400 transition-colors font-semibold text-emerald-300 flex items-center gap-1.5">
+                  <span>ATS CV Studio</span>
+                  <span className="text-[9px] bg-emerald-500/20 text-emerald-400 px-1 rounded">FREE</span>
                 </Link>
               </li>
               <li>
-                <Link href="/services#strategic-matching" className="hover:text-sky-300 transition-colors flex items-center gap-1.5">
-                  <span>Cultural Synergy &amp; Role Calibration</span>
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Company & Methodology */}
-          <div className="lg:col-span-2 space-y-4">
-            <span className="block text-xs font-bold uppercase tracking-wider text-white">
-              Platform &amp; Tools
-            </span>
-            <ul className="space-y-3 text-sm text-slate-400">
-              <li>
-                <Link href="/cv-builder" className="hover:text-emerald-400 transition-colors flex items-center gap-1.5 font-semibold text-emerald-300">
-                  <span>CV Builder &amp; Sharer</span>
-                  <span className="text-[9px] bg-emerald-500/20 text-emerald-400 px-1.5 py-0.2 rounded">FREE</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="hover:text-emerald-400 transition-colors">
-                  About Our Firm
-                </Link>
-              </li>
-              <li>
-                <Link href="/how-it-works" className="hover:text-emerald-400 transition-colors">
+                <Link href="/how-it-works" className="hover:text-sky-300 transition-colors">
                   4-Stage Search Protocol
                 </Link>
               </li>
               <li>
-                <Link href="/why-us" className="hover:text-emerald-400 transition-colors">
-                  The 4 Pillars of Excellence
-                </Link>
-              </li>
-              <li>
-                <Link href="/careers" className="hover:text-emerald-400 transition-colors">
+                <Link href="/careers" className="hover:text-sky-300 transition-colors">
                   Executive Opportunities
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Direct Inquiries & Colombo HQ */}
-          <div className="lg:col-span-3 space-y-4">
+          {/* Column 3: Direct Advisory Desk (3 Cols) */}
+          <div className="lg:col-span-3 space-y-3">
             <span className="block text-xs font-bold uppercase tracking-wider text-white">
-              Direct Advisory Desk
+              Colombo Advisory Desk
             </span>
-            <div className="space-y-3.5 text-sm text-slate-400">
-              <div className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-sky-400 flex-shrink-0 mt-0.5" />
-                <span className="text-xs leading-relaxed">
+            <div className="space-y-2.5 text-xs text-slate-400">
+              <div className="flex items-start gap-2">
+                <MapPin className="w-3.5 h-3.5 text-sky-400 flex-shrink-0 mt-0.5" />
+                <span className="text-slate-300 leading-snug">
                   Level 4, Business Tower, Galle Road, Colombo 03, Sri Lanka
                 </span>
               </div>
-              <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-sky-400 flex-shrink-0" />
-                <a href="tel:+94770000000" className="hover:text-white transition-colors text-xs">
+              <div className="flex items-center gap-2">
+                <Phone className="w-3.5 h-3.5 text-sky-400 flex-shrink-0" />
+                <a href="tel:+94770000000" className="hover:text-white transition-colors">
                   +94 77 000 0000
                 </a>
               </div>
-              <div className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-sky-400 flex-shrink-0" />
-                <a href="mailto:contact@talentbridge.lk" className="hover:text-white transition-colors text-xs">
+              <div className="flex items-center gap-2">
+                <Mail className="w-3.5 h-3.5 text-sky-400 flex-shrink-0" />
+                <a href="mailto:contact@talentbridge.lk" className="hover:text-white transition-colors">
                   contact@talentbridge.lk
                 </a>
               </div>
-              <div className="flex items-center gap-2.5">
-                <Clock className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                <span className="text-xs text-emerald-400 font-medium">
-                  Response SLA: Within 24 Business Hours
+              <div className="flex items-center gap-2 text-emerald-400">
+                <Clock className="w-3.5 h-3.5 flex-shrink-0" />
+                <span>Response SLA: Within 24 Hours</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Column 4: DEDICATED 1/3 PROMOTION CARD FOR DEVCITY (4 Cols out of 12 = Exact 1/3) */}
+          <div className="lg:col-span-4">
+            <div className="relative rounded-2xl bg-gradient-to-br from-[#0B1E36] via-[#09172B] to-[#040C18] border border-cyan-500/30 p-5 sm:p-6 shadow-2xl overflow-hidden group">
+              {/* Top ambient glow */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/15 rounded-full blur-2xl pointer-events-none group-hover:bg-cyan-500/25 transition-all duration-300" />
+              
+              {/* Header Badge */}
+              <div className="flex items-center justify-between gap-2 mb-3">
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 text-[10px] font-bold tracking-wider uppercase">
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                  Technology Partner
+                </div>
+                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                  USA • Global
                 </span>
               </div>
-              <div className="pt-2">
+
+              {/* Devcity Logo */}
+              <div className="mb-3">
                 <a
-                  href="https://wa.me/94770000000?text=Hello%20Talent%20Bridge%20Executive%20Desk"
+                  href="https://devcity.us"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-xs font-bold text-emerald-400 hover:text-emerald-300 transition-colors bg-emerald-950/60 border border-emerald-500/30 px-3.5 py-2 rounded-lg"
+                  className="inline-block transition-transform duration-200 group-hover:scale-[1.02]"
                 >
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                  <span>WhatsApp Priority Concierge &rarr;</span>
+                  <Image
+                    src="/devcity-logo-white.png"
+                    alt="Devcity.us — Technology Partner"
+                    width={130}
+                    height={34}
+                    className="h-7 w-auto object-contain"
+                  />
+                </a>
+              </div>
+
+              {/* Value Proposition Description */}
+              <p className="text-xs text-slate-300 leading-relaxed mb-3.5">
+                Devcity powers enterprise digital ecosystems, next-gen software architectures, and AI-driven platforms with world-class engineering squads.
+              </p>
+
+              {/* Service Capabilities Bullets */}
+              <div className="grid grid-cols-2 gap-2 text-[11px] text-slate-300 mb-4 pb-3 border-b border-slate-800">
+                <div className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                  <span>Custom Software &amp; SaaS</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                  <span>AI &amp; Data Engineering</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                  <span>Cloud &amp; DevOps Scale</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                  <span>Dedicated Tech Teams</span>
+                </div>
+              </div>
+
+              {/* Call to Action Button */}
+              <div className="flex items-center justify-between gap-3">
+                <a
+                  href="https://devcity.us"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white text-xs font-bold transition-all shadow-md hover:shadow-cyan-500/25 flex items-center justify-center gap-2 group/btn"
+                >
+                  <span>Explore Devcity.us</span>
+                  <ExternalLink className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 transition-transform" />
                 </a>
               </div>
             </div>
           </div>
+
         </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-14 pt-8 border-t border-slate-800/80 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 gap-4">
-          <p>&copy; 2026 Talent Bridge Advisory. All rights reserved.</p>
-          <div className="flex items-center gap-6">
-            <span className="text-slate-400 font-medium">
-              The Right Talent. The Right Direction.
-            </span>
+        {/* Bottom Bar with Copyright & Attribution */}
+        <div className="mt-12 pt-6 border-t border-slate-800/80 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-left">
+            <p>&copy; 2026 Talent Bridge Advisory. All rights reserved.</p>
             <span className="hidden sm:inline text-slate-700">•</span>
-            <span className="hidden sm:inline text-slate-500">
-              APAC • EMEA • Global Placements
-            </span>
+            <span className="text-slate-400 font-medium">The Right Talent. The Right Direction.</span>
+          </div>
+
+          <div className="flex items-center gap-2 text-[11px] text-slate-400">
+            <span>Official Technology Infrastructure provided by</span>
+            <a
+              href="https://devcity.us"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-cyan-400 hover:underline font-bold"
+            >
+              Devcity.us
+            </a>
           </div>
         </div>
       </div>

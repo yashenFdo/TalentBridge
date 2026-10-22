@@ -56,9 +56,9 @@ export default function RootLayout({
         />
         <meta name="theme-color" content="#064E3B" />
       </head>
-      <body className="min-h-screen flex flex-col bg-[#FFFFFF] text-[#0F172A] antialiased selection:bg-[#10B981]/20 selection:text-[#064E3B]">
+      <body className="min-h-screen flex flex-col bg-[#FFFFFF] text-[#0F172A] antialiased selection:bg-[#10B981]/20 selection:text-[#064E3B] print:!block print:!min-h-0 print:!h-auto print:!p-0 print:!m-0 print:!bg-white">
         <Navbar />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 print:!block print:!w-full print:!h-auto print:!p-0 print:!m-0">{children}</main>
         <Footer />
         <WhatsAppWidget />
       </body>

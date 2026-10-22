@@ -6,6 +6,7 @@ export interface CvExperience {
   startDate: string;
   endDate: string;
   current: boolean;
+  description?: string;
   highlights: string[];
 }
 
@@ -23,6 +24,16 @@ export interface CvCertification {
   name: string;
   issuer: string;
   year: string;
+  credentialId?: string;
+}
+
+export interface CvProject {
+  id: string;
+  name: string;
+  role: string;
+  year: string;
+  description: string;
+  url?: string;
 }
 
 export interface CvPersonal {
@@ -33,18 +44,27 @@ export interface CvPersonal {
   location: string;
   linkedin: string;
   website?: string;
+  github?: string;
   avatarUrl?: string;
+  showPhoto?: boolean;
 }
+
+export type CvTemplate = 'ats-classic' | 'executive' | 'emerald';
 
 export interface CvData {
   id: string;
   updatedAt: string;
-  template: 'emerald' | 'navy' | 'minimal';
+  template: CvTemplate;
   personal: CvPersonal;
   summary: string;
   skills: string[];
+  technicalSkills?: string[];
+  softSkills?: string[];
   experience: CvExperience[];
   education: CvEducation[];
   certifications: CvCertification[];
   languages: string[];
+  projects?: CvProject[];
+  awards?: string[];
 }
+
