@@ -101,7 +101,7 @@ export function ShareModal({ isOpen, onClose, cv }: Props) {
 
         {/* Modal Header */}
         <div className="space-y-1 pr-6">
-          <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#0D9488] bg-[#F0FDFA] px-2.5 py-1 rounded-full border border-[#99F6E4]">
+          <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#059669] bg-[#ECFDF5] px-2.5 py-1 rounded-full border border-[#A7F3D0]">
             <Share2 className="w-3.5 h-3.5" />
             <span>Instant Link & Share Engine</span>
           </div>
@@ -127,7 +127,7 @@ export function ShareModal({ isOpen, onClose, cv }: Props) {
             />
             <button
               onClick={handleCopy}
-              className="flex items-center gap-1.5 px-4 py-2 bg-[#0D9488] hover:bg-[#0F766E] text-white text-xs font-semibold rounded-lg transition-colors flex-shrink-0 shadow-sm"
+              className="flex items-center gap-1.5 px-4 py-2 bg-[#059669] hover:bg-[#047857] text-white text-xs font-semibold rounded-lg transition-colors flex-shrink-0 shadow-sm"
             >
               {copied ? (
                 <>
@@ -198,7 +198,7 @@ export function ShareModal({ isOpen, onClose, cv }: Props) {
             href={shareUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl border border-dashed border-[#0D9488] text-[#0D9488] hover:bg-[#F0FDFA] text-xs font-semibold transition-colors"
+            className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl border border-dashed border-[#059669] text-[#059669] hover:bg-[#ECFDF5] text-xs font-semibold transition-colors"
           >
             <span>Open Public Share View in New Tab</span>
             <ExternalLink className="w-3.5 h-3.5" />
@@ -207,9 +207,9 @@ export function ShareModal({ isOpen, onClose, cv }: Props) {
 
         {/* Talent Bridge Headhunter Vault Submission */}
         <div className="mt-6 pt-6 border-t border-slate-200">
-          <div className="p-4 rounded-xl bg-gradient-to-br from-[#F0FDFA] to-white border border-[#99F6E4] space-y-3">
+          <div className="p-4 rounded-xl bg-gradient-to-br from-[#ECFDF5] to-white border border-[#A7F3D0] space-y-3">
             <div className="flex items-start gap-3">
-              <ShieldCheck className="w-5 h-5 text-[#0D9488] flex-shrink-0 mt-0.5" />
+              <ShieldCheck className="w-5 h-5 text-[#059669] flex-shrink-0 mt-0.5" />
               <div className="space-y-1">
                 <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wide">
                   Submit to Talent Bridge Headhunter Vault
@@ -229,7 +229,7 @@ export function ShareModal({ isOpen, onClose, cv }: Props) {
               <button
                 onClick={handleVaultSubmit}
                 disabled={isSubmittingVault}
-                className="w-full py-2.5 px-4 bg-[#0D9488] hover:bg-[#0F766E] text-white text-xs font-bold rounded-lg transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
+                className="w-full py-2.5 px-4 bg-[#059669] hover:bg-[#047857] text-white text-xs font-bold rounded-lg transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
               >
                 <Send className="w-3.5 h-3.5" />
                 <span>{isSubmittingVault ? "Encrypting & Submitting..." : "Submit to Private Talent Vault"}</span>

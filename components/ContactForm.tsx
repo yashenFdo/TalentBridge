@@ -43,7 +43,7 @@ export function ContactForm({
         <div className="w-14 h-14 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 flex items-center justify-center mx-auto mb-5">
           <CheckCircle2 className="w-7 h-7" />
         </div>
-        <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#0A1118] mb-3">
+        <h3 className="font-display text-2xl sm:text-3xl font-bold text-[#0F172A] mb-3">
           Inquiry Successfully Transmitted
         </h3>
         <p className="text-[#4A5568] text-sm sm:text-base leading-relaxed max-w-md mx-auto mb-8 font-normal">
@@ -80,8 +80,8 @@ export function ContactForm({
           onClick={() => setInquiryType("employer")}
           className={`flex-1 pb-4 text-xs sm:text-sm font-bold tracking-wide transition-all border-b-2 -mb-[1px] ${
             inquiryType === "employer"
-              ? "border-[#0A1118] text-[#0A1118]"
-              : "border-transparent text-[#718096] hover:text-[#0A1118]"
+              ? "border-[#0F172A] text-[#0F172A]"
+              : "border-transparent text-[#718096] hover:text-[#0F172A]"
           }`}
         >
           Hire Talent (Organizations &amp; Boards)
@@ -91,8 +91,8 @@ export function ContactForm({
           onClick={() => setInquiryType("candidate")}
           className={`flex-1 pb-4 text-xs sm:text-sm font-bold tracking-wide transition-all border-b-2 -mb-[1px] ${
             inquiryType === "candidate"
-              ? "border-[#0A1118] text-[#0A1118]"
-              : "border-transparent text-[#718096] hover:text-[#0A1118]"
+              ? "border-[#0F172A] text-[#0F172A]"
+              : "border-transparent text-[#718096] hover:text-[#0F172A]"
           }`}
         >
           Find Roles (Executive Candidates)
@@ -102,7 +102,7 @@ export function ContactForm({
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-[#0A1118] mb-2">
+            <label className="block text-xs font-bold uppercase tracking-wider text-[#0F172A] mb-2">
               Full Name *
             </label>
             <input
@@ -113,12 +113,12 @@ export function ContactForm({
               onChange={(e) =>
                 setFormData({ ...formData, fullName: e.target.value })
               }
-              className="w-full bg-[#FAF9F6] border border-[#E8E6DF] rounded px-4 py-2.5 text-xs sm:text-sm text-[#0A1118] placeholder:text-[#718096] focus:outline-none focus:border-[#0D7A70]"
+              className="w-full bg-[#F8FAFC] border border-[#E8E6DF] rounded px-4 py-2.5 text-xs sm:text-sm text-[#0F172A] placeholder:text-[#718096] focus:outline-none focus:border-[#059669]"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-[#0A1118] mb-2">
+            <label className="block text-xs font-bold uppercase tracking-wider text-[#0F172A] mb-2">
               Work / Personal Email *
             </label>
             <input
@@ -129,14 +129,14 @@ export function ContactForm({
               onChange={(e) =>
                 setFormData({ ...formData, email: e.target.value })
               }
-              className="w-full bg-[#FAF9F6] border border-[#E8E6DF] rounded px-4 py-2.5 text-xs sm:text-sm text-[#0A1118] placeholder:text-[#718096] focus:outline-none focus:border-[#0D7A70]"
+              className="w-full bg-[#F8FAFC] border border-[#E8E6DF] rounded px-4 py-2.5 text-xs sm:text-sm text-[#0F172A] placeholder:text-[#718096] focus:outline-none focus:border-[#059669]"
             />
           </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-[#0A1118] mb-2">
+            <label className="block text-xs font-bold uppercase tracking-wider text-[#0F172A] mb-2">
               Direct Phone Number *
             </label>
             <input
@@ -147,12 +147,12 @@ export function ContactForm({
               onChange={(e) =>
                 setFormData({ ...formData, phone: e.target.value })
               }
-              className="w-full bg-[#FAF9F6] border border-[#E8E6DF] rounded px-4 py-2.5 text-xs sm:text-sm text-[#0A1118] placeholder:text-[#718096] focus:outline-none focus:border-[#0D7A70]"
+              className="w-full bg-[#F8FAFC] border border-[#E8E6DF] rounded px-4 py-2.5 text-xs sm:text-sm text-[#0F172A] placeholder:text-[#718096] focus:outline-none focus:border-[#059669]"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-[#0A1118] mb-2">
+            <label className="block text-xs font-bold uppercase tracking-wider text-[#0F172A] mb-2">
               {inquiryType === "employer"
                 ? "Company / Organization *"
                 : "Current Role / Company *"}
@@ -169,13 +169,13 @@ export function ContactForm({
               onChange={(e) =>
                 setFormData({ ...formData, companyOrTitle: e.target.value })
               }
-              className="w-full bg-[#FAF9F6] border border-[#E8E6DF] rounded px-4 py-2.5 text-xs sm:text-sm text-[#0A1118] placeholder:text-[#718096] focus:outline-none focus:border-[#0D7A70]"
+              className="w-full bg-[#F8FAFC] border border-[#E8E6DF] rounded px-4 py-2.5 text-xs sm:text-sm text-[#0F172A] placeholder:text-[#718096] focus:outline-none focus:border-[#059669]"
             />
           </div>
         </div>
 
         <div>
-          <label className="block text-xs font-bold uppercase tracking-wider text-[#0A1118] mb-2">
+          <label className="block text-xs font-bold uppercase tracking-wider text-[#0F172A] mb-2">
             {inquiryType === "employer"
               ? "Positions / Practice Area Required"
               : "Target Executive Role / Industry Focus"}
@@ -191,12 +191,12 @@ export function ContactForm({
             onChange={(e) =>
               setFormData({ ...formData, serviceOrRole: e.target.value })
             }
-            className="w-full bg-[#FAF9F6] border border-[#E8E6DF] rounded px-4 py-2.5 text-xs sm:text-sm text-[#0A1118] placeholder:text-[#718096] focus:outline-none focus:border-[#0D7A70]"
+            className="w-full bg-[#F8FAFC] border border-[#E8E6DF] rounded px-4 py-2.5 text-xs sm:text-sm text-[#0F172A] placeholder:text-[#718096] focus:outline-none focus:border-[#059669]"
           />
         </div>
 
         <div>
-          <label className="block text-xs font-bold uppercase tracking-wider text-[#0A1118] mb-2">
+          <label className="block text-xs font-bold uppercase tracking-wider text-[#0F172A] mb-2">
             Detailed Mandate Brief / Career Aspiration *
           </label>
           <textarea
@@ -211,7 +211,7 @@ export function ContactForm({
             onChange={(e) =>
               setFormData({ ...formData, message: e.target.value })
             }
-            className="w-full bg-[#FAF9F6] border border-[#E8E6DF] rounded p-3 text-xs sm:text-sm text-[#0A1118] placeholder:text-[#718096] focus:outline-none focus:border-[#0D7A70]"
+            className="w-full bg-[#F8FAFC] border border-[#E8E6DF] rounded p-3 text-xs sm:text-sm text-[#0F172A] placeholder:text-[#718096] focus:outline-none focus:border-[#059669]"
           />
         </div>
 
@@ -233,7 +233,7 @@ export function ContactForm({
         </div>
 
         <div className="flex items-center justify-center gap-2 text-xs text-[#718096] pt-1">
-          <Lock className="w-3.5 h-3.5 text-[#0D7A70]" />
+          <Lock className="w-3.5 h-3.5 text-[#059669]" />
           <span>Guarded under institutional Non-Disclosure Agreement standards</span>
         </div>
       </form>

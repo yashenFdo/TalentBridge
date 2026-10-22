@@ -112,11 +112,11 @@ export function SearchMethodologyInteractive() {
           <div className="editorial-kicker mb-2">
             <span>Methodology &bull; The 4-Stage Search Protocol</span>
           </div>
-          <h3 className="font-serif text-3xl sm:text-4xl text-[#0A1118]">
+          <h3 className="font-display text-3xl sm:text-4xl text-[#0F172A]">
             Surgical Precision From Intake to 365-Day Retention
           </h3>
         </div>
-        <div className="text-xs font-semibold text-[#0D7A70] bg-[#0D7A70]/10 px-3.5 py-1.5 rounded">
+        <div className="text-xs font-semibold text-[#059669] bg-[#059669]/10 px-3.5 py-1.5 rounded">
           Average Shortlist Delivery: 14 Business Days
         </div>
       </div>
@@ -130,14 +130,14 @@ export function SearchMethodologyInteractive() {
             onClick={() => setActivePhase(idx)}
             className={`p-4 rounded-lg text-left transition-all border ${
               activePhase === idx
-                ? "bg-[#0A1118] text-white border-[#0A1118] shadow-md"
-                : "bg-[#FAF9F6] text-[#4A5568] border-[#E8E6DF] hover:bg-[#F0EFEA] hover:text-[#0A1118]"
+                ? "bg-[#0F172A] text-white border-[#0F172A] shadow-md"
+                : "bg-[#F8FAFC] text-[#4A5568] border-[#E8E6DF] hover:bg-[#F0EFEA] hover:text-[#0F172A]"
             }`}
           >
             <div className="flex items-center justify-between mb-2">
               <span
-                className={`font-serif text-2xl font-bold ${
-                  activePhase === idx ? "text-[#C59B27]" : "text-[#718096]"
+                className={`font-display text-2xl font-bold ${
+                  activePhase === idx ? "text-[#D97706]" : "text-[#718096]"
                 }`}
               >
                 {p.number}
@@ -159,11 +159,11 @@ export function SearchMethodologyInteractive() {
       <div className="py-6 space-y-8">
         <div>
           <div className="flex items-center gap-3 mb-2">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#0D7A70]">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#059669]">
               Phase {phase.number} &bull; {phase.focus}
             </span>
           </div>
-          <h4 className="font-serif text-2xl sm:text-3xl text-[#0A1118] mb-3">
+          <h4 className="font-display text-2xl sm:text-3xl text-[#0F172A] mb-3">
             {phase.name} ({phase.timeframe})
           </h4>
           <p className="text-sm sm:text-base text-[#4A5568] leading-relaxed max-w-3xl">
@@ -173,30 +173,30 @@ export function SearchMethodologyInteractive() {
 
         {/* Deliverables Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-[#FAF9F6] p-6 rounded-lg border border-[#E8E6DF]">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#0A1118] block mb-4 flex items-center gap-2">
-              <Target className="w-4 h-4 text-[#0D7A70]" />
+          <div className="bg-[#F8FAFC] p-6 rounded-lg border border-[#E8E6DF]">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#0F172A] block mb-4 flex items-center gap-2">
+              <Target className="w-4 h-4 text-[#059669]" />
               <span>What the Organization Receives:</span>
             </span>
             <div className="space-y-3">
               {phase.employerDeliverables.map((d, i) => (
                 <div key={i} className="flex items-start gap-2.5 text-xs text-[#4A5568]">
-                  <Check className="w-3.5 h-3.5 text-[#0D7A70] flex-shrink-0 mt-0.5" />
+                  <Check className="w-3.5 h-3.5 text-[#059669] flex-shrink-0 mt-0.5" />
                   <span>{d}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="bg-[#FAF9F6] p-6 rounded-lg border border-[#E8E6DF]">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#0A1118] block mb-4 flex items-center gap-2">
-              <Users className="w-4 h-4 text-[#C59B27]" />
+          <div className="bg-[#F8FAFC] p-6 rounded-lg border border-[#E8E6DF]">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#0F172A] block mb-4 flex items-center gap-2">
+              <Users className="w-4 h-4 text-[#D97706]" />
               <span>How the Candidate is Advocated For:</span>
             </span>
             <div className="space-y-3">
               {phase.candidateAdvocacy.map((a, i) => (
                 <div key={i} className="flex items-start gap-2.5 text-xs text-[#4A5568]">
-                  <Check className="w-3.5 h-3.5 text-[#C59B27] flex-shrink-0 mt-0.5" />
+                  <Check className="w-3.5 h-3.5 text-[#D97706] flex-shrink-0 mt-0.5" />
                   <span>{a}</span>
                 </div>
               ))}
@@ -207,14 +207,14 @@ export function SearchMethodologyInteractive() {
         {/* Key Deliverable Artifact Box */}
         <div className="p-5 rounded-lg bg-[#F5F4EF] border border-[#E8E6DF] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div className="flex items-start gap-3">
-            <div className="w-10 h-10 rounded bg-white border border-[#E8E6DF] text-[#0A1118] flex items-center justify-center flex-shrink-0">
-              <FileCheck className="w-5 h-5 text-[#0D7A70]" />
+            <div className="w-10 h-10 rounded bg-white border border-[#E8E6DF] text-[#0F172A] flex items-center justify-center flex-shrink-0">
+              <FileCheck className="w-5 h-5 text-[#059669]" />
             </div>
             <div>
               <span className="text-[10px] font-bold uppercase tracking-wider text-[#718096] block">
                 Official Stage Deliverable
               </span>
-              <span className="text-sm font-bold text-[#0A1118] block">
+              <span className="text-sm font-bold text-[#0F172A] block">
                 {phase.artifactName}
               </span>
               <p className="text-xs text-[#4A5568] mt-0.5">{phase.artifactDesc}</p>
@@ -222,7 +222,7 @@ export function SearchMethodologyInteractive() {
           </div>
           <Link
             href="/contact?type=employer"
-            className="text-xs font-bold text-[#0D7A70] hover:text-[#095952] whitespace-nowrap self-start sm:self-auto flex items-center gap-1"
+            className="text-xs font-bold text-[#059669] hover:text-[#095952] whitespace-nowrap self-start sm:self-auto flex items-center gap-1"
           >
             <span>Retain Protocol</span>
             <ArrowRight className="w-3.5 h-3.5" />

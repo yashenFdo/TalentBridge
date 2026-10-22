@@ -21,15 +21,15 @@ export function ExecutiveDispatch() {
           <div className="editorial-kicker">
             <span>Executive Intelligence Report &bull; Q4 2026 Edition</span>
           </div>
-          <h3 className="font-serif text-2xl sm:text-3xl text-[#0A1118]">
+          <h3 className="font-display text-2xl sm:text-3xl text-[#0F172A]">
             The 2026 Sri Lanka Executive Compensation &amp; Diaspora Repatriation Study
           </h3>
           <p className="text-sm text-[#4A5568] leading-relaxed max-w-2xl font-normal">
             An audited 32-page analysis of C-suite salary benchmarks, equity structures, counter-offer dynamics, and executive retention trends across technology, financial institutions, and conglomerates.
           </p>
-          <div className="flex flex-wrap gap-4 text-xs font-semibold text-[#0A1118] pt-2">
+          <div className="flex flex-wrap gap-4 text-xs font-semibold text-[#0F172A] pt-2">
             <span className="flex items-center gap-1.5">
-              <FileText className="w-4 h-4 text-[#0D7A70]" /> 32-Page Audited PDF
+              <FileText className="w-4 h-4 text-[#059669]" /> 32-Page Audited PDF
             </span>
             <span>&bull;</span>
             <span>CBSL Compliance Benchmarks</span>
@@ -41,8 +41,8 @@ export function ExecutiveDispatch() {
         <div className="lg:col-span-4 bg-white p-6 rounded-lg border border-[#E8E6DF]">
           {downloaded ? (
             <div className="text-center py-4 space-y-2">
-              <CheckCircle2 className="w-8 h-8 text-[#0D7A70] mx-auto" />
-              <h5 className="font-serif text-lg font-bold text-[#0A1118]">
+              <CheckCircle2 className="w-8 h-8 text-[#059669] mx-auto" />
+              <h5 className="font-display text-lg font-bold text-[#0F172A]">
                 Report Dispatched
               </h5>
               <p className="text-xs text-[#718096]">
@@ -51,7 +51,7 @@ export function ExecutiveDispatch() {
             </div>
           ) : (
             <form onSubmit={handleDownload} className="space-y-3">
-              <label className="block text-xs font-bold uppercase tracking-wider text-[#0A1118]">
+              <label className="block text-xs font-bold uppercase tracking-wider text-[#0F172A]">
                 Request Executive Copy:
               </label>
               <input
@@ -60,7 +60,7 @@ export function ExecutiveDispatch() {
                 placeholder="work.email@enterprise.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full bg-[#FAF9F6] border border-[#E8E6DF] rounded px-3 py-2.5 text-xs text-[#0A1118] focus:outline-none focus:border-[#0D7A70]"
+                className="w-full bg-[#F8FAFC] border border-[#E8E6DF] rounded px-3 py-2.5 text-xs text-[#0F172A] focus:outline-none focus:border-[#059669]"
               />
               <button
                 type="submit"

@@ -113,11 +113,11 @@ export default function CareersPage() {
   });
 
   return (
-    <div className="pt-32 pb-24 bg-[#FBFBF9] text-[#0A1118]">
+    <div className="pt-32 pb-24 bg-[#FFFFFF] text-[#0F172A]">
       <div className="max-w-[1280px] mx-auto px-5 sm:px-8">
         {/* Header */}
         <div className="max-w-3xl mb-16">
-          <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal text-[#0A1118] tracking-tight leading-tight">
+          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-normal text-[#0F172A] tracking-tight leading-tight">
             Curated Executive Mandates
           </h1>
           <p className="mt-4 text-base sm:text-lg text-[#4A5568] leading-relaxed font-normal">
@@ -129,7 +129,7 @@ export default function CareersPage() {
         {/* 3 Candidate Guarantees */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16 max-w-5xl">
           <div className="editorial-card p-6 border border-[#E8E6DF] bg-white">
-            <h3 className="font-serif text-lg font-bold text-[#0A1118] mb-1">
+            <h3 className="font-display text-lg font-bold text-[#0F172A] mb-1">
               Direct Decision-Maker Access
             </h3>
             <p className="text-xs text-[#4A5568] font-normal leading-relaxed">
@@ -138,7 +138,7 @@ export default function CareersPage() {
           </div>
 
           <div className="editorial-card p-6 border border-[#E8E6DF] bg-white">
-            <h3 className="font-serif text-lg font-bold text-[#0A1118] mb-1">
+            <h3 className="font-display text-lg font-bold text-[#0F172A] mb-1">
               100% Confidential Fiduciary Care
             </h3>
             <p className="text-xs text-[#4A5568] font-normal leading-relaxed">
@@ -147,7 +147,7 @@ export default function CareersPage() {
           </div>
 
           <div className="editorial-card p-6 border border-[#E8E6DF] bg-white">
-            <h3 className="font-serif text-lg font-bold text-[#0A1118] mb-1">
+            <h3 className="font-display text-lg font-bold text-[#0F172A] mb-1">
               Zero Applicant Fees, Always
             </h3>
             <p className="text-xs text-[#4A5568] font-normal leading-relaxed">
@@ -159,7 +159,7 @@ export default function CareersPage() {
         {/* Executive CV Builder Spotlight Banner */}
         <div className="mb-10 bg-gradient-to-r from-[#F0FDFA] via-white to-[#F0FDFA] border-2 border-[#99F6E4] rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-sm">
           <div className="space-y-1.5 max-w-2xl">
-            <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#0D9488]">
+            <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#059669]">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Self-Service Candidate Advantage</span>
             </div>
@@ -189,7 +189,7 @@ export default function CareersPage() {
                 placeholder="Search by executive role, skill, department, or level..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full bg-[#FAF9F6] border border-[#E8E6DF] rounded-md pl-11 pr-4 py-2.5 text-xs sm:text-sm text-[#0A1118] placeholder:text-[#718096] focus:outline-none focus:border-[#0D7A70]"
+                className="w-full bg-[#F8FAFC] border border-[#E8E6DF] rounded-md pl-11 pr-4 py-2.5 text-xs sm:text-sm text-[#0F172A] placeholder:text-[#718096] focus:outline-none focus:border-[#059669]"
               />
             </div>
             <div className="flex flex-wrap items-center gap-2">
@@ -200,8 +200,8 @@ export default function CareersPage() {
                   onClick={() => setSelectedFilter(f)}
                   className={`px-3.5 py-2 rounded text-xs font-semibold tracking-wide transition-all ${
                     selectedFilter === f
-                      ? "bg-[#0A1118] text-white shadow-sm font-bold"
-                      : "bg-[#FAF9F6] text-[#4A5568] hover:bg-[#EAE8E0] hover:text-[#0A1118]"
+                      ? "bg-[#0F172A] text-white shadow-sm font-bold"
+                      : "bg-[#F8FAFC] text-[#4A5568] hover:bg-[#EAE8E0] hover:text-[#0F172A]"
                   }`}
                 >
                   {f}
@@ -215,7 +215,7 @@ export default function CareersPage() {
         <div className="space-y-4 mb-16">
           {filteredVacancies.length === 0 ? (
             <div className="py-16 text-center editorial-card p-8 bg-white">
-              <p className="font-serif text-lg font-bold text-[#0A1118]">
+              <p className="font-display text-lg font-bold text-[#0F172A]">
                 No active public mandates matching your search criteria.
               </p>
               <p className="text-xs sm:text-sm text-[#718096] mt-2">
@@ -230,18 +230,18 @@ export default function CareersPage() {
               >
                 <div className="space-y-2.5 flex-1">
                   <div className="flex flex-wrap items-center gap-2 text-[10px] font-bold uppercase tracking-wider">
-                    <span className="px-2 py-0.5 rounded bg-[#FAF9F6] text-[#0D7A70] border border-[#E8E6DF]">
+                    <span className="px-2 py-0.5 rounded bg-[#F8FAFC] text-[#059669] border border-[#E8E6DF]">
                       {job.department}
                     </span>
-                    <span className="px-2 py-0.5 rounded bg-[#FAF9F6] text-[#718096] border border-[#E8E6DF]">
+                    <span className="px-2 py-0.5 rounded bg-[#F8FAFC] text-[#718096] border border-[#E8E6DF]">
                       {job.type}
                     </span>
-                    <span className="px-2 py-0.5 rounded bg-[#FAF9F6] text-[#C59B27] border border-[#E8E6DF]">
+                    <span className="px-2 py-0.5 rounded bg-[#F8FAFC] text-[#D97706] border border-[#E8E6DF]">
                       {job.level}
                     </span>
                   </div>
 
-                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#0A1118]">
+                  <h3 className="font-display text-xl sm:text-2xl font-bold text-[#0F172A]">
                     {job.title}
                   </h3>
 
@@ -250,12 +250,12 @@ export default function CareersPage() {
                   </p>
 
                   <div className="flex flex-wrap items-center gap-4 text-xs text-[#718096] pt-1">
-                    <span className="flex items-center gap-1 font-medium text-[#0A1118]">
-                      <MapPin className="w-3.5 h-3.5 text-[#0D7A70]" />
+                    <span className="flex items-center gap-1 font-medium text-[#0F172A]">
+                      <MapPin className="w-3.5 h-3.5 text-[#059669]" />
                       {job.location}
                     </span>
                     {job.compensationBand && (
-                      <span className="flex items-center gap-1 font-medium text-[#0A1118]">
+                      <span className="flex items-center gap-1 font-medium text-[#0F172A]">
                         &bull; {job.compensationBand}
                       </span>
                     )}
@@ -279,10 +279,10 @@ export default function CareersPage() {
         {/* Private Talent Vault Registration Banner */}
         <div className="editorial-card-stone p-8 sm:p-12 border border-[#E8E6DF] rounded-xl flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="max-w-2xl">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#0D7A70] block mb-1">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#059669] block mb-1">
               Private Executive Vault
             </span>
-            <h4 className="font-serif text-2xl sm:text-3xl font-bold text-[#0A1118]">
+            <h4 className="font-display text-2xl sm:text-3xl font-bold text-[#0F172A]">
               Don&#39;t See Your Exact Mandate Listed?
             </h4>
             <p className="text-[#4A5568] text-xs sm:text-sm mt-2 font-normal leading-relaxed">

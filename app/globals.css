@@ -1,48 +1,50 @@
 @import "tailwindcss";
 
 :root {
-  --font-serif: 'Playfair Display', Georgia, Cambria, serif;
-  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
 
-  --color-canvas: #FAF9F5;
+  --color-canvas: #FFFFFF;
+  --color-canvas-subtle: #F8FAFC;
   --color-surface: #FFFFFF;
-  --color-warm-stone: #F5F4EF;
-  --color-warm-border: #E5E7EB;
+  --color-border: #E2E8F0;
+  --color-border-subtle: #F1F5F9;
 
-  --color-obsidian: #0A1118;
-  --color-oxford-navy: #0E1E2F;
-  --color-navy-light: #193A58;
+  /* Sovereign Emerald & Luxury Navy Palette */
+  --color-emerald-deep: #064E3B;
+  --color-emerald-primary: #059669;
+  --color-emerald-vivid: #10B981;
+  --color-emerald-light: #ECFDF5;
+  --color-emerald-border: #A7F3D0;
 
-  /* Official Brand Green & Gold Palette (Matching Logo) */
-  --color-brand-green: #0D9488;
-  --color-brand-green-hover: #0F766E;
-  --color-brand-green-light: #CCFBF1;
-  --color-brand-green-vivid: #10B981;
-  --color-brand-navy: #193A58;
-  --color-brand-gold: #DDAD39;
+  --color-navy-deep: #071324;
+  --color-navy-card: #0A192F;
+  --color-navy-border: #1E293B;
 
-  --color-text-title: #0A1118;
-  --color-text-body: #4A5568;
+  --color-brand-gold: #D97706;
+
+  --color-text-title: #0F172A;
+  --color-text-body: #334155;
   --color-text-muted: #64748B;
 }
 
 @theme {
-  --font-serif: 'Playfair Display', Georgia, Cambria, serif;
-  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
 
-  --color-canvas: #FAF9F5;
-  --color-stone: #F5F4EF;
-  --color-obsidian: #0A1118;
-  --color-gold: #DDAD39;
-  --color-teal: #0D9488;
-  --color-navy: #193A58;
+  --color-canvas: #FFFFFF;
+  --color-slate-bg: #F8FAFC;
+  --color-emerald-deep: #064E3B;
+  --color-emerald-primary: #059669;
   --color-emerald-vivid: #10B981;
+  --color-navy-deep: #071324;
+  --color-navy-card: #0A192F;
 }
 
 html {
   scroll-behavior: smooth;
   font-family: var(--font-sans);
-  background-color: var(--color-canvas);
+  background-color: #FFFFFF;
   color: var(--color-text-title);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -50,93 +52,67 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--color-canvas);
+  background-color: #FFFFFF;
   color: var(--color-text-body);
   overflow-x: hidden;
 }
 
-/* Editorial Typography */
-.font-serif {
-  font-family: var(--font-serif) !important;
+/* Typography Utilities */
+.font-display {
+  font-family: var(--font-display) !important;
+  letter-spacing: -0.025em;
 }
 
 .font-sans {
   font-family: var(--font-sans) !important;
 }
 
-h1, h2, h3, h4, .editorial-heading {
-  font-family: var(--font-serif);
-  color: var(--color-obsidian);
-  letter-spacing: -0.015em;
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--color-text-title);
+  letter-spacing: -0.025em;
+  font-weight: 800;
 }
 
-/* Hairline Editorial Rule Lines */
+/* Hairline Rule Lines */
 .editorial-rule {
   height: 1px;
-  background-color: var(--color-warm-border);
+  background-color: #E2E8F0;
   width: 100%;
 }
 
 .editorial-rule-gold {
   height: 1px;
-  background-color: rgba(197, 155, 39, 0.4);
+  background-color: rgba(217, 119, 6, 0.4);
   width: 100%;
 }
 
-/* Human-Crafted Tactile Buttons (Savile Row / Bespoke Swiss feel) */
-.btn-human-primary {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 14px 28px;
-  font-family: var(--font-sans);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: #FFFFFF;
-  background-color: #0D9488;
-  border: 1px solid #0D9488;
-  border-radius: 9999px;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  cursor: pointer;
-  text-decoration: none;
-  box-shadow: 0 4px 14px rgba(13, 148, 136, 0.25);
-}
-
-.btn-human-primary:hover {
-  background-color: #0F766E;
-  border-color: #0F766E;
-  color: #FFFFFF;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(13, 148, 136, 0.35);
-}
-
+/* Modern Tactile Buttons */
 .btn-brand-green {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 14px 26px;
-  font-family: var(--font-sans);
-  font-size: 14px;
+  padding: 13px 26px;
+  font-family: var(--font-display);
+  font-size: 13px;
   font-weight: 700;
+  letter-spacing: 0.02em;
   color: #FFFFFF;
-  background-color: #0D9488;
-  border: 1px solid #0D9488;
+  background-color: #059669;
+  border: 1px solid #059669;
   border-radius: 9999px;
-  transition: all 0.2s ease;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
   text-decoration: none;
-  box-shadow: 0 4px 14px rgba(13, 148, 136, 0.28);
+  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.28);
 }
 
 .btn-brand-green:hover {
-  background-color: #0F766E;
-  border-color: #0F766E;
+  background-color: #047857;
+  border-color: #047857;
   transform: translateY(-1px);
-  box-shadow: 0 6px 22px rgba(13, 148, 136, 0.38);
+  box-shadow: 0 8px 24px rgba(5, 150, 105, 0.38);
 }
 
 .btn-brand-navy {
@@ -144,23 +120,52 @@ h1, h2, h3, h4, .editorial-heading {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 14px 26px;
-  font-family: var(--font-sans);
-  font-size: 14px;
+  padding: 13px 26px;
+  font-family: var(--font-display);
+  font-size: 13px;
   font-weight: 700;
+  letter-spacing: 0.02em;
   color: #FFFFFF;
-  background-color: #193A58;
-  border: 1px solid #193A58;
+  background-color: #0A192F;
+  border: 1px solid #0A192F;
+  border-radius: 9999px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(10, 25, 47, 0.25);
+}
+
+.btn-brand-navy:hover {
+  background-color: #071324;
+  border-color: #071324;
+  transform: translateY(-1px);
+}
+
+.btn-human-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 26px;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #FFFFFF;
+  background-color: #059669;
+  border: 1px solid #059669;
   border-radius: 9999px;
   transition: all 0.2s ease;
   cursor: pointer;
   text-decoration: none;
+  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.28);
 }
 
-.btn-brand-navy:hover {
-  background-color: #0F2538;
-  border-color: #0F2538;
+.btn-human-primary:hover {
+  background-color: #047857;
+  border-color: #047857;
   transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(5, 150, 105, 0.38);
 }
 
 .btn-human-outline {

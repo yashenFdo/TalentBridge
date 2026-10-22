@@ -12,11 +12,11 @@ export const metadata: Metadata = {
 
 export default function HowItWorksPage() {
   return (
-    <div className="pt-32 pb-24 bg-[#FBFBF9] text-[#0A1118]">
+    <div className="pt-32 pb-24 bg-[#FFFFFF] text-[#0F172A]">
       <div className="max-w-[1280px] mx-auto px-5 sm:px-8">
         {/* Header */}
         <div className="max-w-3xl mb-16">
-          <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal text-[#0A1118] tracking-tight leading-tight">
+          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-normal text-[#0F172A] tracking-tight leading-tight">
             How Talent Bridge Works
           </h1>
           <p className="mt-4 text-base sm:text-lg text-[#4A5568] leading-relaxed font-normal">
@@ -32,7 +32,7 @@ export default function HowItWorksPage() {
 
         {/* Bottom CTA Banner */}
         <div className="editorial-card-dark p-8 sm:p-14 text-center max-w-4xl mx-auto rounded-xl">
-          <h3 className="font-serif text-2xl sm:text-3xl text-white mb-3">
+          <h3 className="font-display text-2xl sm:text-3xl text-white mb-3">
             Ready to Experience Precision Recruitment?
           </h3>
           <p className="text-slate-300 text-sm sm:text-base max-w-xl mx-auto mb-8 font-light">
@@ -49,7 +49,7 @@ export default function HowItWorksPage() {
             </Link>
             <Link
               href="/careers"
-              className="btn-human-outline !py-3.5 !px-8 !text-xs !bg-transparent !text-white !border-white/30 hover:!bg-white hover:!text-[#0A1118]"
+              className="btn-human-outline !py-3.5 !px-8 !text-xs !bg-transparent !text-white !border-white/30 hover:!bg-white hover:!text-[#0F172A]"
             >
               <span>Explore Active Opportunities</span>
             </Link>

@@ -18,7 +18,7 @@ export function CvTemplateNavy({ cv }: Props) {
       {/* Top Navy Banner Header */}
       <div className="border-b-4 border-[#193A58] pb-6 mb-8 flex flex-col sm:flex-row items-start justify-between gap-6">
         <div className="space-y-1.5 flex-1">
-          <h1 className="font-serif text-3xl sm:text-4xl font-bold text-[#193A58] tracking-tight">
+          <h1 className="font-display text-3xl sm:text-4xl font-bold text-[#193A58] tracking-tight">
             {personal.fullName || "Your Full Name"}
           </h1>
           <p className="text-base font-semibold text-slate-700 tracking-wide uppercase text-sm">
@@ -75,7 +75,7 @@ export function CvTemplateNavy({ cv }: Props) {
       {/* Summary */}
       {summary && (
         <div className="mb-6">
-          <h2 className="font-serif text-sm font-bold uppercase tracking-wider text-[#193A58] border-b border-slate-300 pb-1 mb-2">
+          <h2 className="font-display text-sm font-bold uppercase tracking-wider text-[#193A58] border-b border-slate-300 pb-1 mb-2">
             Executive Profile
           </h2>
           <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-light">
@@ -87,7 +87,7 @@ export function CvTemplateNavy({ cv }: Props) {
       {/* Experience */}
       {experience && experience.length > 0 && (
         <div className="mb-6">
-          <h2 className="font-serif text-sm font-bold uppercase tracking-wider text-[#193A58] border-b border-slate-300 pb-1 mb-4">
+          <h2 className="font-display text-sm font-bold uppercase tracking-wider text-[#193A58] border-b border-slate-300 pb-1 mb-4">
             Professional Experience
           </h2>
           <div className="space-y-5">
@@ -118,7 +118,7 @@ export function CvTemplateNavy({ cv }: Props) {
       {/* Skills */}
       {skills && skills.length > 0 && (
         <div className="mb-6">
-          <h2 className="font-serif text-sm font-bold uppercase tracking-wider text-[#193A58] border-b border-slate-300 pb-1 mb-2.5">
+          <h2 className="font-display text-sm font-bold uppercase tracking-wider text-[#193A58] border-b border-slate-300 pb-1 mb-2.5">
             Areas of Expertise
           </h2>
           <div className="flex flex-wrap gap-1.5">
@@ -134,7 +134,7 @@ export function CvTemplateNavy({ cv }: Props) {
       {/* Education & Credentials */}
       {education && education.length > 0 && (
         <div className="mb-6">
-          <h2 className="font-serif text-sm font-bold uppercase tracking-wider text-[#193A58] border-b border-slate-300 pb-1 mb-3">
+          <h2 className="font-display text-sm font-bold uppercase tracking-wider text-[#193A58] border-b border-slate-300 pb-1 mb-3">
             Education
           </h2>
           <div className="space-y-2">

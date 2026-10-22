@@ -58,48 +58,48 @@ const INTELLIGENCE_DATA: Record<string, Record<string, SectorData>> = {
       name: "Diversified Conglomerates",
       scarcity: "Very High (91% Passive)",
       timeToShortlist: "14 Days",
-      retentionRate: "98.0%",
-      compensationBand: "LKR 12M – 24M / High Performance Bonus",
-      keyCompetencies: ["Enterprise ERP (SAP S/4)", "Cybersecurity Governance", "Data Platforms"],
-      recentMandate: "Chief Information Officer for multinational conglomerate",
+      retentionRate: "98.6%",
+      compensationBand: "LKR 15M – 25M / Executive Package",
+      keyCompetencies: ["Enterprise ERP / Cloud Migration", "Cybersecurity Governance", "AI Implementation"],
+      recentMandate: "Group CIO for 14-subsidiary retail & logistics PLC",
     },
     cfo: {
       name: "Diversified Conglomerates",
       scarcity: "High (84% Passive)",
-      timeToShortlist: "14 Days",
-      retentionRate: "98.9%",
-      compensationBand: "LKR 15M – 28M / Executive Bonus",
-      keyCompetencies: ["Cross-Border Tax", "Syndicated Debt Financing", "M&A Integration"],
-      recentMandate: "Group Finance Director for retail & FMCG conglomerate",
+      timeToShortlist: "15 Days",
+      retentionRate: "99.1%",
+      compensationBand: "LKR 15M – 28M / Executive Package",
+      keyCompetencies: ["Debt Refinancing & Treasury", "Public Market Governance", "M&A Integration"],
+      recentMandate: "Group CFO for multinational tea & export conglomerate",
     },
   },
   tech_ai: {
     ceo: {
-      name: "Software & AI Scaleups",
-      scarcity: "Very High (88% Passive)",
+      name: "Software Products & AI Scaling",
+      scarcity: "Extreme (93% Passive)",
       timeToShortlist: "14 Days",
-      retentionRate: "98.5%",
-      compensationBand: "USD 90k – 160k + Significant Equity",
-      keyCompetencies: ["US/UK Go-To-Market", "Product-Led Growth", "Venture Board Management"],
-      recentMandate: "CEO for enterprise AI developer (UK Diaspora Repatriated)",
+      retentionRate: "98.9%",
+      compensationBand: "USD 70k – 150k + Stock Options",
+      keyCompetencies: ["International GTM Execution", "Product-Led Growth", "US/EU Enterprise Sales"],
+      recentMandate: "CEO for AI SaaS platform backed by Silicon Valley seed fund",
     },
     cto: {
-      name: "Software & AI Scaleups",
+      name: "Software Products & AI Scaling",
       scarcity: "Extreme (96% Passive)",
-      timeToShortlist: "10 Days",
-      retentionRate: "99.4%",
-      compensationBand: "USD 70k – 130k + High Equity",
-      keyCompetencies: ["LLM Inference Architecture", "Distributed Systems", "Principal Engineering"],
-      recentMandate: "Head of AI & Engineering for B2B SaaS platform",
+      timeToShortlist: "11 Days",
+      retentionRate: "98.4%",
+      compensationBand: "USD 55k – 120k + Equity",
+      keyCompetencies: ["Distributed Systems", "Large-Language Models (LLM)", "Staff Engineering Leadership"],
+      recentMandate: "VP of AI & Engineering for healthcare analytics scaleup",
     },
     cfo: {
-      name: "Software & AI Scaleups",
-      scarcity: "High (80% Passive)",
+      name: "Software Products & AI Scaling",
+      scarcity: "High (85% Passive)",
       timeToShortlist: "14 Days",
-      retentionRate: "98.1%",
-      compensationBand: "USD 50k – 90k + Stock Options",
-      keyCompetencies: ["SaaS Metrics (CAC/LTV/ARR)", "US Tax Compliance", "Cap-Table Architecture"],
-      recentMandate: "VP Finance for venture-funded analytics firm",
+      retentionRate: "98.7%",
+      compensationBand: "USD 45k – 90k + Equity",
+      keyCompetencies: ["SaaS Metric Governance (NDR, CAC)", "Delaware Flip & Cross-Border Tax", "Cap Table Management"],
+      recentMandate: "Finance VP for B2B API infrastructure firm",
     },
   },
 };
@@ -111,19 +111,19 @@ export function MarketIntelligenceSimulator() {
   const current = INTELLIGENCE_DATA[sector][role];
 
   return (
-    <div className="editorial-card p-6 sm:p-10 border border-[#E8E6DF] bg-white shadow-sm">
+    <div className="p-6 sm:p-10 rounded-3xl border border-slate-200/90 bg-white shadow-sm">
       {/* Top Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#E8E6DF]">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-200">
         <div>
-          <div className="editorial-kicker mb-1">
-            <span>Executive Telemetry &bull; 2026 Benchmarks</span>
-          </div>
-          <h3 className="font-serif text-2xl sm:text-3xl text-[#0A1118]">
+          <span className="text-[11px] font-bold uppercase tracking-wider text-[#059669] block mb-1">
+            Executive Telemetry &bull; 2026 Calibrated Benchmarks
+          </span>
+          <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-[#0F172A] tracking-tight">
             Market Intelligence &amp; Search Calibrator
           </h3>
         </div>
-        <div className="flex items-center gap-2 text-xs font-semibold text-[#0D7A70] bg-[#0D7A70]/10 px-3 py-1.5 rounded">
-          <span className="w-2 h-2 rounded-full bg-[#0D7A70]" />
+        <div className="flex items-center gap-2 text-xs font-bold text-[#065F46] bg-emerald-50 border border-emerald-200 px-3.5 py-1.5 rounded-full">
+          <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
           <span>Colombo &bull; Regional APAC Data</span>
         </div>
       </div>
@@ -131,7 +131,7 @@ export function MarketIntelligenceSimulator() {
       {/* Selectors Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
         <div>
-          <label className="block text-xs font-bold uppercase tracking-wider text-[#0A1118] mb-2.5">
+          <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2.5">
             Select Practice Sector
           </label>
           <div className="grid grid-cols-3 gap-2">
@@ -144,10 +144,10 @@ export function MarketIntelligenceSimulator() {
                 key={s.id}
                 type="button"
                 onClick={() => setSector(s.id as any)}
-                className={`py-2.5 px-3 rounded text-xs font-semibold text-center transition-all ${
+                className={`py-2.5 px-3 rounded-xl text-xs font-bold text-center transition-all cursor-pointer ${
                   sector === s.id
-                    ? "bg-[#0A1118] text-white shadow-sm"
-                    : "bg-[#F7F6F1] text-[#4A5568] hover:bg-[#EAE8E0] hover:text-[#0A1118]"
+                    ? "bg-[#059669] text-white shadow-xs"
+                    : "bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900"
                 }`}
               >
                 {s.label}
@@ -157,7 +157,7 @@ export function MarketIntelligenceSimulator() {
         </div>
 
         <div>
-          <label className="block text-xs font-bold uppercase tracking-wider text-[#0A1118] mb-2.5">
+          <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2.5">
             Executive Mandate Level
           </label>
           <div className="grid grid-cols-3 gap-2">
@@ -170,10 +170,10 @@ export function MarketIntelligenceSimulator() {
                 key={r.id}
                 type="button"
                 onClick={() => setRole(r.id as any)}
-                className={`py-2.5 px-3 rounded text-xs font-semibold text-center transition-all ${
+                className={`py-2.5 px-3 rounded-xl text-xs font-bold text-center transition-all cursor-pointer ${
                   role === r.id
-                    ? "bg-[#0A1118] text-white shadow-sm"
-                    : "bg-[#F7F6F1] text-[#4A5568] hover:bg-[#EAE8E0] hover:text-[#0A1118]"
+                    ? "bg-[#059669] text-white shadow-xs"
+                    : "bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900"
                 }`}
               >
                 {r.label}
@@ -184,55 +184,55 @@ export function MarketIntelligenceSimulator() {
       </div>
 
       {/* Calibrated Telemetry Data Grid */}
-      <div className="bg-[#FAF9F6] p-6 rounded-lg border border-[#E8E6DF] mb-8">
+      <div className="bg-[#F8FAFC] p-6 sm:p-7 rounded-2xl border border-slate-200 mb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <div>
-            <span className="block text-[11px] font-bold uppercase tracking-wider text-[#718096] mb-1">
+            <span className="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">
               Market Scarcity
             </span>
-            <span className="font-serif text-lg font-bold text-[#0A1118]">
+            <span className="font-display text-xl sm:text-2xl font-black text-[#0F172A] block">
               {current.scarcity}
             </span>
           </div>
 
           <div>
-            <span className="block text-[11px] font-bold uppercase tracking-wider text-[#718096] mb-1">
+            <span className="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">
               Shortlist Turnaround
             </span>
-            <span className="font-serif text-lg font-bold text-[#0D7A70]">
+            <span className="font-display text-xl sm:text-2xl font-black text-[#059669] block">
               {current.timeToShortlist}
             </span>
           </div>
 
           <div>
-            <span className="block text-[11px] font-bold uppercase tracking-wider text-[#718096] mb-1">
+            <span className="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">
               Verified 12-Mo. Retention
             </span>
-            <span className="font-serif text-lg font-bold text-[#C59B27]">
+            <span className="font-display text-xl sm:text-2xl font-black text-[#059669] block">
               {current.retentionRate}
             </span>
           </div>
 
           <div>
-            <span className="block text-[11px] font-bold uppercase tracking-wider text-[#718096] mb-1">
+            <span className="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">
               Replacement Shield
             </span>
-            <span className="font-serif text-lg font-bold text-[#0A1118]">
-              365 Days Guaranteed
+            <span className="font-display text-xl sm:text-2xl font-black text-[#0F172A] block">
+              90 Days Guaranteed
             </span>
           </div>
         </div>
 
-        <div className="mt-6 pt-5 border-t border-[#E8E6DF] flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div className="mt-6 pt-5 border-t border-slate-200 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
-            <span className="text-xs font-bold uppercase tracking-wider text-[#718096] block mb-1">
+            <span className="text-xs font-bold uppercase tracking-wider text-slate-500 block mb-1">
               Estimated Executive Compensation Band:
             </span>
-            <span className="text-sm sm:text-base font-semibold text-[#0A1118]">
+            <span className="font-display text-sm sm:text-base font-extrabold text-[#0F172A]">
               {current.compensationBand}
             </span>
           </div>
-          <div className="text-xs text-[#4A5568] italic bg-white px-3.5 py-2 rounded border border-[#E8E6DF]">
+          <div className="text-xs text-slate-600 bg-white px-3.5 py-2 rounded-xl border border-slate-200 font-medium">
             &bull; Verified Mandate: {current.recentMandate}
           </div>
         </div>
@@ -240,12 +240,12 @@ export function MarketIntelligenceSimulator() {
 
       {/* Action CTA */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <div className="text-xs text-[#718096]">
-          * All data derived from active Talent Bridge mandates and audited regional executive placements.
+        <div className="text-xs text-slate-400">
+          * Derived from active Talent Bridge search mandates and audited regional executive placements.
         </div>
         <Link
           href={`/contact?type=employer&sector=${sector}&role=${role}`}
-          className="btn-human-primary !py-3.5 !px-7 !text-xs self-start sm:self-auto"
+          className="btn-brand-green !py-3 !px-7 !text-xs self-start sm:self-auto flex items-center gap-2"
         >
           <span>Retain Search for this Profile</span>
           <ArrowRight className="w-3.5 h-3.5" />

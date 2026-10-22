@@ -27,11 +27,11 @@ function ContactFormWithParams() {
 
 export default function ContactPage() {
   return (
-    <div className="pt-32 pb-24 bg-[#FBFBF9] text-[#0A1118]">
+    <div className="pt-32 pb-24 bg-[#FFFFFF] text-[#0F172A]">
       <div className="max-w-[1280px] mx-auto px-5 sm:px-8">
         {/* Title */}
         <div className="max-w-3xl mb-16">
-          <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal text-[#0A1118] tracking-tight leading-tight">
+          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-normal text-[#0F172A] tracking-tight leading-tight">
             Connect with Talent Bridge
           </h1>
           <p className="mt-4 text-base sm:text-lg text-[#4A5568] leading-relaxed font-normal">
@@ -46,11 +46,11 @@ export default function ContactPage() {
           <div className="lg:col-span-5 space-y-6">
             {/* Immediate Response WhatsApp Card */}
             <div className="editorial-card-stone p-8 border border-[#E8E6DF] rounded-lg">
-              <span className="text-xs font-bold uppercase tracking-widest text-[#0D7A70] block mb-2">
+              <span className="text-xs font-bold uppercase tracking-widest text-[#059669] block mb-2">
                 Direct WhatsApp Channel
               </span>
 
-              <h3 className="font-serif text-2xl font-bold text-[#0A1118] mb-3">
+              <h3 className="font-display text-2xl font-bold text-[#0F172A] mb-3">
                 Immediate Partner Inquiries
               </h3>
 
@@ -72,7 +72,7 @@ export default function ContactPage() {
             {/* Office & Direct Lines Card */}
             <div className="editorial-card p-8 border border-[#E8E6DF] bg-white rounded-lg space-y-6">
               <div className="pb-4 border-b border-[#E8E6DF]">
-                <h3 className="font-serif text-lg font-bold text-[#0A1118]">
+                <h3 className="font-display text-lg font-bold text-[#0F172A]">
                   Colombo Headquarters
                 </h3>
                 <span className="text-xs text-[#718096]">
@@ -87,7 +87,7 @@ export default function ContactPage() {
                   </span>
                   <a
                     href="tel:+94770000000"
-                    className="font-bold text-[#0A1118] hover:text-[#0D7A70] transition-colors"
+                    className="font-bold text-[#0F172A] hover:text-[#059669] transition-colors"
                   >
                     +94 77 000 0000
                   </a>
@@ -99,7 +99,7 @@ export default function ContactPage() {
                   </span>
                   <a
                     href="mailto:contact@talentbridge.lk"
-                    className="font-bold text-[#0A1118] hover:text-[#0D7A70] transition-colors"
+                    className="font-bold text-[#0F172A] hover:text-[#059669] transition-colors"
                   >
                     contact@talentbridge.lk
                   </a>
@@ -109,7 +109,7 @@ export default function ContactPage() {
                   <span className="block text-[10px] font-bold uppercase tracking-wider text-[#718096] mb-0.5">
                     Executive Chambers
                   </span>
-                  <p className="font-bold text-[#0A1118]">Level 4, Business Tower</p>
+                  <p className="font-bold text-[#0F172A]">Level 4, Business Tower</p>
                   <p className="text-xs text-[#718096]">
                     Galle Road, Colombo 03, Sri Lanka
                   </p>
@@ -119,10 +119,10 @@ export default function ContactPage() {
                   <span className="block text-[10px] font-bold uppercase tracking-wider text-[#718096] mb-0.5">
                     Partner Operating Hours
                   </span>
-                  <p className="font-bold text-[#0A1118]">
+                  <p className="font-bold text-[#0F172A]">
                     Monday – Friday: 8:30 AM – 5:30 PM (IST)
                   </p>
-                  <p className="text-xs text-[#0D7A70] font-semibold mt-0.5">
+                  <p className="text-xs text-[#059669] font-semibold mt-0.5">
                     All inquiries answered within 24 business hours.
                   </p>
                 </div>

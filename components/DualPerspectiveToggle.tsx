@@ -15,17 +15,17 @@ export function DualPerspectiveToggle({ onOpenVault }: DualPerspectiveToggleProp
     <div className="editorial-card p-6 sm:p-12 border border-[#E8E6DF] bg-white">
       {/* Segmented Switcher */}
       <div className="flex justify-center mb-10">
-        <div className="inline-flex p-1.5 rounded-lg bg-[#FAF9F6] border border-[#E8E6DF] max-w-xl w-full">
+        <div className="inline-flex p-1.5 rounded-lg bg-[#F8FAFC] border border-[#E8E6DF] max-w-xl w-full">
           <button
             type="button"
             onClick={() => setActiveTab("employer")}
             className={`flex-1 py-3 px-4 rounded text-xs sm:text-sm font-bold tracking-wide transition-all flex items-center justify-center gap-2 ${
               activeTab === "employer"
-                ? "bg-[#0A1118] text-white shadow-sm"
-                : "text-[#718096] hover:text-[#0A1118]"
+                ? "bg-[#0F172A] text-white shadow-sm"
+                : "text-[#718096] hover:text-[#0F172A]"
             }`}
           >
-            <Building2 className="w-4 h-4 text-[#C59B27]" />
+            <Building2 className="w-4 h-4 text-[#D97706]" />
             <span>For Organizations &amp; Boards</span>
           </button>
 
@@ -34,11 +34,11 @@ export function DualPerspectiveToggle({ onOpenVault }: DualPerspectiveToggleProp
             onClick={() => setActiveTab("candidate")}
             className={`flex-1 py-3 px-4 rounded text-xs sm:text-sm font-bold tracking-wide transition-all flex items-center justify-center gap-2 ${
               activeTab === "candidate"
-                ? "bg-[#0A1118] text-white shadow-sm"
-                : "text-[#718096] hover:text-[#0A1118]"
+                ? "bg-[#0F172A] text-white shadow-sm"
+                : "text-[#718096] hover:text-[#0F172A]"
             }`}
           >
-            <Compass className="w-4 h-4 text-[#0D7A70]" />
+            <Compass className="w-4 h-4 text-[#059669]" />
             <span>For Executives &amp; Leaders</span>
           </button>
         </div>
@@ -51,7 +51,7 @@ export function DualPerspectiveToggle({ onOpenVault }: DualPerspectiveToggleProp
             <div className="editorial-kicker">
               <span>Enterprise Search Doctrine</span>
             </div>
-            <h3 className="font-serif text-3xl sm:text-4xl text-[#0A1118] leading-tight">
+            <h3 className="font-display text-3xl sm:text-4xl text-[#0F172A] leading-tight">
               Calibrated Executive Search Without the Resume Spam
             </h3>
             <p className="text-sm sm:text-base text-[#4A5568] leading-relaxed font-normal">
@@ -66,7 +66,7 @@ export function DualPerspectiveToggle({ onOpenVault }: DualPerspectiveToggleProp
                 "Unconditional 365-day candidate replacement guarantee",
               ].map((item, idx) => (
                 <div key={idx} className="flex items-start gap-2.5 text-xs text-[#4A5568]">
-                  <Check className="w-3.5 h-3.5 text-[#0D7A70] flex-shrink-0 mt-0.5" />
+                  <Check className="w-3.5 h-3.5 text-[#059669] flex-shrink-0 mt-0.5" />
                   <span>{item}</span>
                 </div>
               ))}
@@ -89,38 +89,38 @@ export function DualPerspectiveToggle({ onOpenVault }: DualPerspectiveToggleProp
             </div>
           </div>
 
-          <div className="lg:col-span-5 bg-[#FAF9F6] p-8 rounded-lg border border-[#E8E6DF] space-y-6">
-            <h4 className="font-serif text-xl font-bold text-[#0A1118]">
+          <div className="lg:col-span-5 bg-[#F8FAFC] p-8 rounded-lg border border-[#E8E6DF] space-y-6">
+            <h4 className="font-display text-xl font-bold text-[#0F172A]">
               Verified Institutional Metrics
             </h4>
             <div className="space-y-4">
               <div className="p-4 bg-white rounded border border-[#E8E6DF] flex items-center justify-between">
                 <div>
-                  <span className="block text-2xl font-bold text-[#0A1118]">14 Days</span>
+                  <span className="block text-2xl font-bold text-[#0F172A]">14 Days</span>
                   <span className="text-xs text-[#718096]">Average Delivery of Calibrated Shortlist</span>
                 </div>
-                <div className="w-10 h-10 rounded bg-[#0D7A70]/10 text-[#0D7A70] flex items-center justify-center font-bold">
+                <div className="w-10 h-10 rounded bg-[#059669]/10 text-[#059669] flex items-center justify-center font-bold">
                   14d
                 </div>
               </div>
 
               <div className="p-4 bg-white rounded border border-[#E8E6DF] flex items-center justify-between">
                 <div>
-                  <span className="block text-2xl font-bold text-[#0D7A70]">98%</span>
+                  <span className="block text-2xl font-bold text-[#059669]">98%</span>
                   <span className="text-xs text-[#718096]">12-Month Executive Retention Rate</span>
                 </div>
-                <div className="w-10 h-10 rounded bg-[#C59B27]/10 text-[#C59B27] flex items-center justify-center font-bold">
+                <div className="w-10 h-10 rounded bg-[#D97706]/10 text-[#D97706] flex items-center justify-center font-bold">
                   98%
                 </div>
               </div>
 
               <div className="p-4 bg-white rounded border border-[#E8E6DF] flex items-center justify-between">
                 <div>
-                  <span className="block text-2xl font-bold text-[#C59B27]">365 Days</span>
+                  <span className="block text-2xl font-bold text-[#D97706]">365 Days</span>
                   <span className="text-xs text-[#718096]">Full Replacement Guarantee Standard</span>
                 </div>
-                <div className="w-10 h-10 rounded bg-[#0A1118]/10 text-[#0A1118] flex items-center justify-center">
-                  <Shield className="w-5 h-5 text-[#C59B27]" />
+                <div className="w-10 h-10 rounded bg-[#0F172A]/10 text-[#0F172A] flex items-center justify-center">
+                  <Shield className="w-5 h-5 text-[#D97706]" />
                 </div>
               </div>
             </div>
@@ -132,7 +132,7 @@ export function DualPerspectiveToggle({ onOpenVault }: DualPerspectiveToggleProp
             <div className="editorial-kicker">
               <span>Executive Career Advocacy</span>
             </div>
-            <h3 className="font-serif text-3xl sm:text-4xl text-[#0A1118] leading-tight">
+            <h3 className="font-display text-3xl sm:text-4xl text-[#0F172A] leading-tight">
               Discreet Advocacy for Transformative Career Chapters
             </h3>
             <p className="text-sm sm:text-base text-[#4A5568] leading-relaxed font-normal">
@@ -147,7 +147,7 @@ export function DualPerspectiveToggle({ onOpenVault }: DualPerspectiveToggleProp
                 "Permanent indexing in the Private Executive Talent Vault",
               ].map((item, idx) => (
                 <div key={idx} className="flex items-start gap-2.5 text-xs text-[#4A5568]">
-                  <Check className="w-3.5 h-3.5 text-[#0D7A70] flex-shrink-0 mt-0.5" />
+                  <Check className="w-3.5 h-3.5 text-[#059669] flex-shrink-0 mt-0.5" />
                   <span>{item}</span>
                 </div>
               ))}
@@ -159,7 +159,7 @@ export function DualPerspectiveToggle({ onOpenVault }: DualPerspectiveToggleProp
                 onClick={onOpenVault}
                 className="btn-human-primary !py-3.5 !px-8 !text-xs flex items-center gap-2 group"
               >
-                <Lock className="w-4 h-4 text-[#C59B27]" />
+                <Lock className="w-4 h-4 text-[#D97706]" />
                 <span>Enter Private Executive Vault</span>
                 <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
               </button>
@@ -172,37 +172,37 @@ export function DualPerspectiveToggle({ onOpenVault }: DualPerspectiveToggleProp
             </div>
           </div>
 
-          <div className="lg:col-span-5 bg-[#FAF9F6] p-8 rounded-lg border border-[#E8E6DF] space-y-6">
-            <h4 className="font-serif text-xl font-bold text-[#0A1118]">
+          <div className="lg:col-span-5 bg-[#F8FAFC] p-8 rounded-lg border border-[#E8E6DF] space-y-6">
+            <h4 className="font-display text-xl font-bold text-[#0F172A]">
               The Candidate Fiduciary Pledge
             </h4>
             <div className="space-y-4">
               <div className="p-4 bg-white rounded border border-[#E8E6DF] flex items-center justify-between">
                 <div>
-                  <span className="block text-2xl font-bold text-[#0A1118]">Zero</span>
+                  <span className="block text-2xl font-bold text-[#0F172A]">Zero</span>
                   <span className="text-xs text-[#718096]">Representation or Placement Fees</span>
                 </div>
-                <div className="w-10 h-10 rounded bg-[#0D7A70]/10 text-[#0D7A70] flex items-center justify-center font-bold">
+                <div className="w-10 h-10 rounded bg-[#059669]/10 text-[#059669] flex items-center justify-center font-bold">
                   $0
                 </div>
               </div>
 
               <div className="p-4 bg-white rounded border border-[#E8E6DF] flex items-center justify-between">
                 <div>
-                  <span className="block text-2xl font-bold text-[#0D7A70]">100%</span>
+                  <span className="block text-2xl font-bold text-[#059669]">100%</span>
                   <span className="text-xs text-[#718096]">Pre-Consent Disclosure Guarantee</span>
                 </div>
-                <div className="w-10 h-10 rounded bg-[#0D7A70]/10 text-[#0D7A70] flex items-center justify-center">
-                  <Lock className="w-5 h-5 text-[#0D7A70]" />
+                <div className="w-10 h-10 rounded bg-[#059669]/10 text-[#059669] flex items-center justify-center">
+                  <Lock className="w-5 h-5 text-[#059669]" />
                 </div>
               </div>
 
               <div className="p-4 bg-white rounded border border-[#E8E6DF] flex items-center justify-between">
                 <div>
-                  <span className="block text-2xl font-bold text-[#C59B27]">500+</span>
+                  <span className="block text-2xl font-bold text-[#D97706]">500+</span>
                   <span className="text-xs text-[#718096]">Leaders Placed in High-Impact Roles</span>
                 </div>
-                <div className="w-10 h-10 rounded bg-[#C59B27]/10 text-[#C59B27] flex items-center justify-center font-bold">
+                <div className="w-10 h-10 rounded bg-[#D97706]/10 text-[#D97706] flex items-center justify-center font-bold">
                   500+
                 </div>
               </div>

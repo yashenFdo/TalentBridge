@@ -38,8 +38,8 @@ export function Navbar() {
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 no-print ${
         scrolled
-          ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-[#E5E7EB] py-3"
-          : "bg-[#FAF9F5]/90 backdrop-blur-md border-b border-[#E5E7EB] py-4"
+          ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200 py-3"
+          : "bg-white/90 backdrop-blur-md border-b border-slate-200/80 py-4"
       }`}
     >
       <div className="max-w-[1360px] mx-auto px-5 sm:px-8 flex items-center justify-between">
@@ -76,13 +76,13 @@ export function Navbar() {
                 href={link.href}
                 className={`relative text-xs font-semibold uppercase tracking-[0.12em] transition-colors py-1 flex items-center gap-1.5 ${
                   active
-                    ? "text-[#0D9488] font-bold border-b-2 border-[#0D9488]"
-                    : "text-[#4A5568] hover:text-[#0D9488]"
+                    ? "text-[#059669] font-bold border-b-2 border-[#059669]"
+                    : "text-slate-600 hover:text-[#059669]"
                 }`}
               >
                 <span>{link.label}</span>
                 {link.isNew && (
-                  <span className="text-[9px] font-extrabold uppercase bg-[#0D9488] text-white px-1.5 py-0.2 rounded-full tracking-wider">
+                  <span className="text-[9px] font-extrabold uppercase bg-[#059669] text-white px-2 py-0.5 rounded-full tracking-wider shadow-xs">
                     NEW
                   </span>
                 )}
@@ -95,9 +95,9 @@ export function Navbar() {
         <div className="hidden lg:flex items-center gap-5">
           <a
             href="tel:+94770000000"
-            className="text-xs font-semibold text-[#4A5568] hover:text-[#0D9488] transition-colors flex items-center gap-1.5"
+            className="text-xs font-semibold text-slate-600 hover:text-[#059669] transition-colors flex items-center gap-1.5"
           >
-            <Phone className="w-3.5 h-3.5 text-[#0D9488]" />
+            <Phone className="w-3.5 h-3.5 text-[#059669]" />
             <span>+94 77 000 0000</span>
           </a>
 
@@ -127,17 +127,17 @@ export function Navbar() {
             aria-label="Toggle navigation menu"
           >
             <span
-              className={`block w-5 h-0.5 bg-[#0A1118] transition-all duration-300 ${
+              className={`block w-5 h-0.5 bg-[#0F172A] transition-all duration-300 ${
                 mobileMenuOpen ? "rotate-45 translate-y-2" : ""
               }`}
             />
             <span
-              className={`block w-5 h-0.5 bg-[#0A1118] transition-all duration-300 ${
+              className={`block w-5 h-0.5 bg-[#0F172A] transition-all duration-300 ${
                 mobileMenuOpen ? "opacity-0" : "opacity-100"
               }`}
             />
             <span
-              className={`block w-5 h-0.5 bg-[#0A1118] transition-all duration-300 ${
+              className={`block w-5 h-0.5 bg-[#0F172A] transition-all duration-300 ${
                 mobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
               }`}
             />
@@ -158,8 +158,8 @@ export function Navbar() {
                   onClick={() => setMobileMenuOpen(false)}
                   className={`flex items-center justify-between px-3 py-2.5 rounded text-xs font-semibold uppercase tracking-wider transition-colors ${
                     active
-                      ? "bg-[#FAF9F6] text-[#0A1118] font-bold"
-                      : "text-[#4A5568] hover:text-[#0A1118]"
+                      ? "bg-[#F8FAFC] text-[#0F172A] font-bold"
+                      : "text-[#4A5568] hover:text-[#0F172A]"
                   }`}
                 >
                   <span>{link.label}</span>

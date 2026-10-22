@@ -46,11 +46,11 @@ export default function WhyUsPage() {
   ];
 
   return (
-    <div className="pt-32 pb-24 bg-[#FBFBF9] text-[#0A1118]">
+    <div className="pt-32 pb-24 bg-[#FFFFFF] text-[#0F172A]">
       <div className="max-w-[1280px] mx-auto px-5 sm:px-8">
         {/* Header */}
         <div className="max-w-3xl mb-16">
-          <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal text-[#0A1118] tracking-tight leading-tight">
+          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-normal text-[#0F172A] tracking-tight leading-tight">
             Why Partner with Talent Bridge?
           </h1>
           <p className="mt-4 text-base sm:text-lg text-[#4A5568] leading-relaxed font-normal">
@@ -62,10 +62,10 @@ export default function WhyUsPage() {
         {/* Fundamental Difference Bento */}
         <div className="editorial-card p-8 sm:p-14 border border-[#E8E6DF] bg-white mb-20">
           <div className="max-w-3xl mb-10">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#0D7A70] block mb-2">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#059669] block mb-2">
               The Fundamental Difference
             </span>
-            <h2 className="font-serif text-2xl sm:text-4xl text-[#0A1118] mb-4 leading-tight">
+            <h2 className="font-display text-2xl sm:text-4xl text-[#0F172A] mb-4 leading-tight">
               Recruitment is Not a Transaction. It is a Fiduciary Bridge.
             </h2>
             <p className="text-[#4A5568] text-sm sm:text-base leading-relaxed font-normal mb-4">
@@ -78,11 +78,11 @@ export default function WhyUsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-[#E8E6DF]">
             {/* For Employers */}
-            <div className="bg-[#FAF9F6] p-8 rounded-lg border border-[#E8E6DF]">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#0A1118] block mb-2">
+            <div className="bg-[#F8FAFC] p-8 rounded-lg border border-[#E8E6DF]">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#0F172A] block mb-2">
                 For Organizations &amp; Boards
               </span>
-              <h3 className="font-serif text-xl font-bold text-[#0A1118] mb-2">
+              <h3 className="font-display text-xl font-bold text-[#0F172A] mb-2">
                 Strategic Talent Acquisition
               </h3>
               <p className="text-[#4A5568] text-xs sm:text-sm leading-relaxed font-normal">
@@ -91,11 +91,11 @@ export default function WhyUsPage() {
             </div>
 
             {/* For Candidates */}
-            <div className="bg-[#FAF9F6] p-8 rounded-lg border border-[#E8E6DF]">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#0D7A70] block mb-2">
+            <div className="bg-[#F8FAFC] p-8 rounded-lg border border-[#E8E6DF]">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#059669] block mb-2">
                 For Professionals &amp; Leaders
               </span>
-              <h3 className="font-serif text-xl font-bold text-[#0A1118] mb-2">
+              <h3 className="font-display text-xl font-bold text-[#0F172A] mb-2">
                 Confidential Career Direction
               </h3>
               <p className="text-[#4A5568] text-xs sm:text-sm leading-relaxed font-normal">
@@ -108,7 +108,7 @@ export default function WhyUsPage() {
         {/* The 4 Standards */}
         <div className="mb-20">
           <div className="max-w-3xl mb-12">
-            <h2 className="font-serif text-3xl sm:text-4xl text-[#0A1118]">
+            <h2 className="font-display text-3xl sm:text-4xl text-[#0F172A]">
               Four Standards That Set Us Apart
             </h2>
             <p className="mt-3 text-sm sm:text-base text-[#4A5568]">
@@ -124,15 +124,15 @@ export default function WhyUsPage() {
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="font-serif text-2xl font-bold text-[#C59B27]">
+                    <span className="font-display text-2xl font-bold text-[#D97706]">
                       {std.number}
                     </span>
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#718096] bg-[#FAF9F6] px-2.5 py-1 rounded border border-[#E8E6DF]">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#718096] bg-[#F8FAFC] px-2.5 py-1 rounded border border-[#E8E6DF]">
                       {std.highlight}
                     </span>
                   </div>
 
-                  <h3 className="font-serif text-lg font-bold text-[#0A1118] mb-2">
+                  <h3 className="font-display text-lg font-bold text-[#0F172A] mb-2">
                     {std.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-[#4A5568] leading-relaxed font-normal">
@@ -146,7 +146,7 @@ export default function WhyUsPage() {
 
         {/* Bottom CTA */}
         <div className="editorial-card-dark p-8 sm:p-14 text-center max-w-4xl mx-auto rounded-xl">
-          <h3 className="font-serif text-2xl sm:text-3xl text-white mb-3">
+          <h3 className="font-display text-2xl sm:text-3xl text-white mb-3">
             Experience the Talent Bridge Standard
           </h3>
           <p className="text-slate-300 text-sm sm:text-base max-w-xl mx-auto mb-8 font-light">
@@ -163,7 +163,7 @@ export default function WhyUsPage() {
             </Link>
             <Link
               href="/careers"
-              className="btn-human-outline !py-3.5 !px-8 !text-xs !bg-transparent !text-white !border-white/30 hover:!bg-white hover:!text-[#0A1118]"
+              className="btn-human-outline !py-3.5 !px-8 !text-xs !bg-transparent !text-white !border-white/30 hover:!bg-white hover:!text-[#0F172A]"
             >
               <span>Explore Opportunities</span>
             </Link>

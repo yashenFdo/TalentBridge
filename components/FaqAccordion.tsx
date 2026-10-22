@@ -35,7 +35,7 @@ export function FaqAccordion() {
       number: "05",
       question: "How can candidates and leaders create and share their CV on Talent Bridge?",
       answer:
-        "Any professional or executive can use our integrated Executive CV Builder (located at /cv-builder) 100% free. You can input your leadership milestones, pick from three executive-grade templates (Emerald, Oxford Navy, or Minimalist), and generate a unique public link to share anywhere—including direct 1-click WhatsApp sharing, LinkedIn posting, or print-ready PDF export.",
+        "Any professional or executive can use our integrated Executive CV Studio (located at /cv-builder) 100% free. You can input your leadership milestones, pick from three executive-grade templates (Emerald, Oxford Navy, or Minimalist), and generate a unique public link to share anywhere—including direct 1-click WhatsApp sharing, LinkedIn posting, or print-ready PDF export.",
     },
   ];
 
@@ -44,15 +44,18 @@ export function FaqAccordion() {
   };
 
   return (
-    <section className="py-20 bg-[#FAF9F5] border-y border-slate-200">
+    <section className="py-20 lg:py-24 bg-[#F8FAFC] border-y border-slate-200">
       <div className="max-w-[1000px] mx-auto px-5 sm:px-8">
-        {/* Section Heading matching reference typography */}
+        {/* Section Heading */}
         <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0A1118] tracking-tight">
-            FREQUENTLY ASKED <span className="text-[#0D9488]">QUESTIONS</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-[#065F46] text-xs font-bold uppercase tracking-wider">
+            <span>Transparency &amp; Governance</span>
+          </div>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight">
+            FREQUENTLY ASKED <span className="text-[#059669]">QUESTIONS</span>
           </h2>
           <p className="text-sm sm:text-base text-slate-600">
-            Clear, transparent answers about our executive search standards, guarantees, and tools.
+            Clear, transparent answers regarding our executive search standards, guarantees, and tools.
           </p>
         </div>
 
@@ -63,7 +66,7 @@ export function FaqAccordion() {
             return (
               <div
                 key={index}
-                className="bg-white rounded-2xl border border-slate-200 overflow-hidden transition-all duration-200 shadow-xs hover:border-[#0D9488]"
+                className="bg-white rounded-2xl border border-slate-200/90 overflow-hidden transition-all duration-200 shadow-xs hover:border-[#10B981]"
               >
                 <button
                   type="button"
@@ -71,17 +74,17 @@ export function FaqAccordion() {
                   className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 cursor-pointer focus:outline-none"
                 >
                   <div className="flex items-center gap-4">
-                    <span className="text-xs sm:text-sm font-extrabold text-[#0D9488] font-mono">
+                    <span className="text-xs sm:text-sm font-black text-[#059669] font-mono">
                       {faq.number}.
                     </span>
-                    <h3 className="text-sm sm:text-base font-bold text-slate-900">
+                    <h3 className="font-display text-sm sm:text-base font-bold text-slate-900">
                       {faq.question}
                     </h3>
                   </div>
 
                   <div
-                    className={`w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center flex-shrink-0 transition-transform duration-200 ${
-                      isOpen ? "rotate-180 bg-[#0D9488] text-white" : "text-slate-600"
+                    className={`w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 transition-transform duration-200 ${
+                      isOpen ? "rotate-180 bg-[#059669] text-white" : "bg-slate-100 text-slate-600"
                     }`}
                   >
                     <ChevronDown className="w-4 h-4" />

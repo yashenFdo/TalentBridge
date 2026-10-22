@@ -61,20 +61,23 @@ export function ExecutiveTestimonialsCarousel() {
   const current = testimonials[currentIndex];
 
   return (
-    <section className="py-20 lg:py-24 bg-white">
+    <section className="py-20 lg:py-24 bg-[#FFFFFF]">
       <div className="max-w-[1360px] mx-auto px-5 sm:px-8">
         {/* Section Heading */}
         <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0A1118] tracking-tight">
-            WHAT OUR <span className="text-[#0D9488]">CLIENTS</span> SAY
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-[#059669] border border-emerald-200 text-xs font-bold uppercase tracking-wider">
+            <span>Verified Boardroom Endorsements</span>
+          </div>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight">
+            WHAT OUR <span className="text-[#059669]">CLIENTS</span> SAY
           </h2>
           <p className="text-sm sm:text-base text-slate-600">
-            Real feedback from enterprise boardrooms, founders, and leaders placed by Talent Bridge.
+            Real feedback from enterprise boardrooms, founders, and leaders appointed by Talent Bridge.
           </p>
         </div>
 
         {/* Testimonial Card */}
-        <div className="max-w-4xl mx-auto bg-[#FAF9F5] rounded-3xl border border-slate-200 p-8 sm:p-12 shadow-sm relative">
+        <div className="max-w-4xl mx-auto bg-[#F8FAFC] rounded-3xl border border-slate-200/90 p-8 sm:p-12 shadow-sm relative">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
             {/* Client Image Column */}
             <div className="md:col-span-4 flex flex-col items-center text-center">
@@ -87,8 +90,8 @@ export function ExecutiveTestimonialsCarousel() {
                   sizes="150px"
                 />
               </div>
-              <h3 className="text-base font-bold text-slate-900">{current.name}</h3>
-              <p className="text-xs text-[#0D9488] font-semibold">{current.title}</p>
+              <h3 className="font-display text-base font-bold text-slate-900">{current.name}</h3>
+              <p className="text-xs text-[#059669] font-bold">{current.title}</p>
               <p className="text-xs text-slate-500 mt-0.5">{current.company}</p>
             </div>
 
@@ -101,25 +104,25 @@ export function ExecutiveTestimonialsCarousel() {
               </div>
 
               <div className="relative">
-                <Quote className="w-8 h-8 text-[#0D9488]/20 absolute -top-4 -left-2 -z-0" />
+                <Quote className="w-8 h-8 text-[#059669]/15 absolute -top-4 -left-2 -z-0" />
                 <p className="text-sm sm:text-base text-slate-700 leading-relaxed italic relative z-10 font-normal">
                   &ldquo;{current.quote}&rdquo;
                 </p>
               </div>
 
               <div className="pt-2">
-                <span className="text-xs font-bold text-[#0D9488] bg-[#CCFBF1] px-3 py-1 rounded-full uppercase tracking-wider">
+                <span className="text-xs font-bold text-[#059669] bg-emerald-100/70 border border-emerald-200 px-3.5 py-1 rounded-full uppercase tracking-wider">
                   {current.highlight}
                 </span>
               </div>
             </div>
           </div>
 
-          {/* Carousel Pagination Controls (Matching reference < 01/04 >) */}
-          <div className="mt-8 pt-6 border-t border-slate-200/80 flex items-center justify-center gap-4">
+          {/* Carousel Pagination Controls */}
+          <div className="mt-8 pt-6 border-t border-slate-200 flex items-center justify-center gap-4">
             <button
               onClick={prev}
-              className="w-10 h-10 rounded-full bg-white hover:bg-[#0D9488] hover:text-white border border-slate-300 text-slate-700 flex items-center justify-center transition-all shadow-xs cursor-pointer"
+              className="w-10 h-10 rounded-full bg-white hover:bg-[#059669] hover:text-white border border-slate-300 text-slate-700 flex items-center justify-center transition-all shadow-xs cursor-pointer"
               aria-label="Previous Testimonial"
             >
               <ChevronLeft className="w-4 h-4" />
@@ -131,7 +134,7 @@ export function ExecutiveTestimonialsCarousel() {
 
             <button
               onClick={next}
-              className="w-10 h-10 rounded-full bg-white hover:bg-[#0D9488] hover:text-white border border-slate-300 text-slate-700 flex items-center justify-center transition-all shadow-xs cursor-pointer"
+              className="w-10 h-10 rounded-full bg-white hover:bg-[#059669] hover:text-white border border-slate-300 text-slate-700 flex items-center justify-center transition-all shadow-xs cursor-pointer"
               aria-label="Next Testimonial"
             >
               <ChevronRight className="w-4 h-4" />

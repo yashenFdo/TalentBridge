@@ -9,7 +9,7 @@ export function Footer() {
   return (
     <footer className="relative bg-[#040914] text-slate-300 border-t border-slate-800/80 overflow-hidden">
       {/* Background Subtle Ambience */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#0D9488]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#059669]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#10B981]/10 rounded-full blur-3xl pointer-events-none" />
 
       {/* Top High-Conversion Executive Banner */}
@@ -17,7 +17,7 @@ export function Footer() {
         <div className="max-w-[1280px] mx-auto px-5 sm:px-8 py-12">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
             <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0D9488]/15 border border-[#0D9488]/30 text-[#2DD4BF] text-xs font-semibold uppercase tracking-wider mb-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#059669]/15 border border-[#059669]/30 text-[#2DD4BF] text-xs font-semibold uppercase tracking-wider mb-3">
                 <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
                 Executive Mandates &amp; Talent Solutions
               </div>

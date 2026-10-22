@@ -48,7 +48,7 @@ function CvViewerContent() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F6F8FA] text-[#0A1118]">
+    <div className="min-h-screen bg-[#FFFFFF] text-[#0F172A]">
       {/* Top Banner (Hidden in print) */}
       <header className="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-slate-200 px-4 sm:px-8 py-3 no-print">
         <div className="max-w-[1280px] mx-auto flex flex-wrap items-center justify-between gap-4">
@@ -64,7 +64,7 @@ function CvViewerContent() {
               />
             </Link>
             <div className="h-4 w-px bg-slate-200 hidden sm:block" />
-            <div className="hidden sm:flex items-center gap-1.5 text-xs text-[#0D9488] font-bold bg-[#F0FDFA] border border-[#99F6E4] px-2.5 py-1 rounded-full">
+            <div className="hidden sm:flex items-center gap-1.5 text-xs text-[#059669] font-bold bg-[#ECFDF5] border border-[#A7F3D0] px-2.5 py-1 rounded-full">
               <ShieldCheck className="w-3.5 h-3.5" />
               <span>Verified Talent Bridge Profile</span>
             </div>
@@ -76,7 +76,7 @@ function CvViewerContent() {
                 href={`mailto:${cv.personal.email}?subject=Executive Opportunity via Talent Bridge`}
                 className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-semibold text-slate-700 hover:bg-slate-50 transition-colors"
               >
-                <Mail className="w-3.5 h-3.5 text-[#0D9488]" />
+                <Mail className="w-3.5 h-3.5 text-[#059669]" />
                 <span>Contact Candidate</span>
               </a>
             )}
@@ -91,7 +91,7 @@ function CvViewerContent() {
 
             <button
               onClick={() => setIsShareModalOpen(true)}
-              className="flex items-center gap-1.5 px-3.5 py-1.5 bg-[#0D9488] hover:bg-[#0F766E] text-white text-xs font-bold rounded-lg transition-colors shadow-xs"
+              className="flex items-center gap-1.5 px-3.5 py-1.5 bg-[#059669] hover:bg-[#047857] text-white text-xs font-bold rounded-lg transition-colors shadow-xs"
             >
               <Share2 className="w-3.5 h-3.5" />
               <span>Share</span>
@@ -109,7 +109,7 @@ function CvViewerContent() {
       </header>
 
       {/* Verification Notice Bar */}
-      <div className="bg-[#0D9488]/10 border-b border-[#0D9488]/20 px-4 py-2 text-center text-xs text-[#0F766E] font-medium no-print">
+      <div className="bg-[#059669]/10 border-b border-[#059669]/20 px-4 py-2 text-center text-xs text-[#047857] font-medium no-print">
         <span>
           Viewing verified executive dossier for <strong>{cv.personal.fullName || "Candidate"}</strong>.
           Share this link or download a clean print copy anytime.
@@ -126,7 +126,7 @@ function CvViewerContent() {
 
         {/* Viral Call to Action Card at bottom of public viewer */}
         <div className="mt-12 bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm text-center space-y-4 no-print">
-          <div className="w-12 h-12 rounded-full bg-[#F0FDFA] border border-[#99F6E4] text-[#0D9488] mx-auto flex items-center justify-center">
+          <div className="w-12 h-12 rounded-full bg-[#ECFDF5] border border-[#A7F3D0] text-[#059669] mx-auto flex items-center justify-center">
             <FileText className="w-6 h-6" />
           </div>
           <div className="space-y-1">
@@ -163,9 +163,9 @@ export default function CvSharePage() {
   return (
     <Suspense
       fallback={
-        <div className="min-h-screen flex items-center justify-center bg-[#F8FAFB]">
+        <div className="min-h-screen flex items-center justify-center bg-[#FFFFFF]">
           <div className="text-center space-y-2">
-            <div className="w-8 h-8 border-2 border-[#0D9488] border-t-transparent rounded-full animate-spin mx-auto" />
+            <div className="w-8 h-8 border-2 border-[#059669] border-t-transparent rounded-full animate-spin mx-auto" />
             <p className="text-xs font-semibold text-slate-600">Loading Verified Executive Dossier...</p>
           </div>
         </div>
