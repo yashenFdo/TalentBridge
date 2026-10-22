@@ -82,11 +82,12 @@ export const SITE_CONFIG = {
     },
   ],
   navLinks: [
-    { label: "About Us", href: "/about" },
-    { label: "Services", href: "/services" },
-    { label: "Methodology", href: "/#methodology" },
-    { label: "Why Us", href: "/#why-us" },
-    { label: "Careers", href: "/careers" },
+    { label: "Solutions", href: "/services" },
+    { label: "Methodology", href: "/how-it-works" },
+    { label: "Why Us", href: "/why-us" },
+    { label: "Careers & Talent", href: "/careers" },
+    { label: "About", href: "/about" },
+    { label: "Contact", href: "/contact" },
   ] as NavItem[],
   services: [
     {

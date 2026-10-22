@@ -1,158 +1,202 @@
 import React from "react";
 import Link from "next/link";
 import type { Metadata } from "next";
+import {
+  ShieldCheck,
+  Award,
+  Lock,
+  HeartHandshake,
+  ArrowRight,
+  Sparkles,
+  Building2,
+  Compass,
+  Check,
+} from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Why Us | The Talent Bridge Standard & Philosophy",
+  title: "Why Us | The Talent Bridge Standard & Doctrine",
   description:
-    "Learn why leading enterprises partner with Talent Bridge. We focus on deeply understanding both employer and candidate, prioritizing calibrated suitability over volume.",
+    "Discover why leading organizations partner with Talent Bridge. We reject transactional volume metrics, focusing on deep calibration, bilateral advocacy, and 12-month retention.",
 };
 
 export default function WhyUsPage() {
+  const standards = [
+    {
+      number: "01",
+      title: "Precision Calibration Over Volume",
+      desc: "Multi-stage screening covering technical competency, leadership attributes, past achievements, and verified employment references before client presentation.",
+      highlight: "Zero Resume Spam",
+      icon: Award,
+      color: "text-blue-600 bg-blue-50 border-blue-200",
+    },
+    {
+      number: "02",
+      title: "Bilateral Alignment Doctrine",
+      desc: "A placement only succeeds if both sides flourish. We evaluate candidates for long-term cultural and trajectory resonance, not just keyword checklists.",
+      highlight: "Dual-Sided Success",
+      icon: HeartHandshake,
+      color: "text-emerald-600 bg-emerald-50 border-emerald-200",
+    },
+    {
+      number: "03",
+      title: "Institutional Fiduciary Discretion",
+      desc: "Strict confidentiality protocols and non-disclosure agreements protecting both sensitive executive searches and confidential candidate transitions.",
+      highlight: "Strict NDAs",
+      icon: Lock,
+      color: "text-amber-600 bg-amber-50 border-amber-200",
+    },
+    {
+      number: "04",
+      title: "12-Month Retention Stewardship",
+      desc: "Scheduled follow-through during the crucial 30, 60, and 90-day onboarding periods backed by our comprehensive candidate replacement guarantee.",
+      highlight: "365-Day Shield",
+      icon: ShieldCheck,
+      color: "text-indigo-600 bg-indigo-50 border-indigo-200",
+    },
+  ];
+
   return (
-    <div className="pt-10 pb-20">
-      <div className="max-w-[1200px] mx-auto px-5 pt-12">
-        {/* Title */}
-        <div className="mb-16 text-center mx-auto max-w-3xl">
-          <span className="block text-[11px] font-semibold uppercase tracking-[4px] mb-3 text-[#2E6F95]">
-            Our Philosophy
-          </span>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-[38px] font-normal leading-[1.2] tracking-normal text-[#1A1A1A]">
-            Why Choose Talent Bridge?
-          </h2>
-          <div className="w-[60px] h-[1px] my-5 bg-[#2E6F95] mx-auto" aria-hidden="true" />
-          <p className="text-base font-light leading-relaxed max-w-[700px] mx-auto text-[#4A4A4A]">
-            We focus on deeply understanding both employer and candidate, prioritizing calibrated
-            long-term suitability rather than simply forwarding resumes.
+    <div className="pt-28 pb-24 bg-[#FAFBFD]">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-8">
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <span className="badge-pill mb-3">Our Strategic Philosophy</span>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
+            Why Partner with Talent Bridge?
+          </h1>
+          <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+            We operate on a simple, uncompromising doctrine: recruitment is not a volume-based transaction.
+            It is a high-stakes advisory discipline requiring bilateral accountability and calibrated vetting.
           </p>
         </div>
 
-        {/* Fundamental Difference Box */}
-        <div className="bg-[#FAF9F6] p-8 sm:p-14 lg:p-16 border border-[#E2ECF2] shadow-soft mb-20">
-          <div className="max-w-3xl">
-            <span className="block text-[11px] font-semibold uppercase tracking-[3px] text-[#2E6F95] mb-3">
+        {/* Fundamental Difference Bento */}
+        <div className="rounded-3xl glass-card p-8 sm:p-14 border border-slate-200/90 mb-20 relative overflow-hidden">
+          <div className="max-w-3xl mb-12">
+            <span className="text-xs font-bold uppercase tracking-widest text-blue-600 block mb-2">
               The Fundamental Difference
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-normal text-[#1A1A1A] mb-6 leading-tight">
-              Recruitment is Not a Transaction. It is a Bridge.
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 mb-4 leading-tight">
+              Recruitment is Not a Transaction. It is a Fiduciary Bridge.
             </h2>
-            <div className="w-[60px] h-[1px] bg-[#2E6F95] mb-6" />
-            <p className="text-[#4A4A4A] font-light text-base leading-relaxed mb-6">
-              When an organization hires hastily, the cost of a mismatch ripples across team productivity,
-              culture, and revenue. Conversely, when an executive accepts a role without cultural or
-              developmental alignment, their career trajectory stalls.
+            <p className="text-slate-600 text-base leading-relaxed font-normal mb-4">
+              When an organization hires in haste or relies on resume spam services, the cost of a mis-hire ripples across leadership morale, team velocity, and enterprise valuation. Conversely, when an executive accepts a role without cultural or strategic calibration, their career trajectory stalls.
             </p>
-            <p className="text-[#4A4A4A] font-light text-base leading-relaxed">
-              At Talent Bridge, we operate at the exact intersection where organizational objectives meet human
-              potential. We don&#39;t just forward CVs; we calibrate character, competence, and culture.
+            <p className="text-slate-600 text-base leading-relaxed font-normal">
+              At Talent Bridge, we operate at the precise intersection where corporate vision meets human ambition. We calibrate character, competence, and culture before any introduction takes place.
             </p>
           </div>
 
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 pt-10 border-t border-[#E2ECF2]">
-            <div className="bg-white p-8 border border-[#E2ECF2] shadow-soft">
-              <span className="block text-[11px] font-semibold uppercase tracking-[2px] text-[#1A1A1A] mb-2">
-                For the Employer
-              </span>
-              <h3 className="font-serif text-xl font-normal text-[#1A1A1A] mb-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-10 border-t border-slate-100">
+            {/* For Employers */}
+            <div className="bg-slate-50/70 p-8 rounded-2xl border border-slate-200/80">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-8 h-8 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold">
+                  <Building2 className="w-4 h-4" />
+                </div>
+                <span className="text-xs font-bold uppercase tracking-wider text-blue-700">
+                  For Organizations &amp; Boards
+                </span>
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-2">
                 Strategic Talent Acquisition
               </h3>
-              <p className="text-[#4A4A4A] font-light text-sm leading-relaxed">
-                We protect your employer brand, optimize hiring manager hours, and introduce leaders who
-                accelerate your corporate roadmap.
+              <p className="text-slate-600 text-sm leading-relaxed font-normal">
+                We protect your employer brand, optimize executive interview hours, and introduce top-tier leaders who accelerate your corporate roadmap with a 12-month retention shield.
               </p>
             </div>
-            <div className="bg-white p-8 border border-[#E2ECF2] shadow-soft">
-              <span className="block text-[11px] font-semibold uppercase tracking-[2px] text-[#2E6F95] mb-2">
-                For the Candidate
-              </span>
-              <h3 className="font-serif text-xl font-normal text-[#1A1A1A] mb-3">
-                Career Direction &amp; Advocacy
+
+            {/* For Candidates */}
+            <div className="bg-emerald-50/40 p-8 rounded-2xl border border-emerald-200/60">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold">
+                  <Compass className="w-4 h-4" />
+                </div>
+                <span className="text-xs font-bold uppercase tracking-wider text-emerald-800">
+                  For Professionals &amp; Leaders
+                </span>
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-2">
+                Confidential Career Direction
               </h3>
-              <p className="text-[#4A4A4A] font-light text-sm leading-relaxed">
-                We believe professionals deserve respect, transparent timelines, and honest advocacy to
-                join organizations where their value is celebrated.
+              <p className="text-slate-600 text-sm leading-relaxed font-normal">
+                We believe executives deserve respect, transparent timelines, and honest advocacy to join organizations where their value is recognized and rewarded.
               </p>
             </div>
           </div>
         </div>
 
-        {/* Four Standards */}
+        {/* The 4 Standards */}
         <div className="mb-20">
-          <div className="mb-16 text-center mx-auto max-w-3xl">
-            <span className="block text-[11px] font-semibold uppercase tracking-[4px] mb-3 text-[#2E6F95]">
-              Our Commitments
-            </span>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-[38px] font-normal leading-[1.2] tracking-normal text-[#1A1A1A]">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="badge-pill mb-3">The Quality Shield</span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
               Four Standards That Set Us Apart
             </h2>
-            <div className="w-[60px] h-[1px] my-5 bg-[#2E6F95] mx-auto" aria-hidden="true" />
-            <p className="text-base font-light leading-relaxed max-w-[700px] mx-auto text-[#4A4A4A]">
-              Our placement methodology is anchored in four operational principles that protect both client
-              and candidate.
+            <p className="mt-3 text-slate-600 text-base leading-relaxed">
+              Our placement framework is anchored in four operational principles that protect both client and candidate.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-white p-8 border border-[#E2ECF2] shadow-soft hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition-all duration-400 ease-in-out">
-              <span className="font-serif text-3xl font-normal text-[#2E6F95] block mb-3">01</span>
-              <h4 className="font-serif text-lg font-normal text-[#1A1A1A] mb-3">
-                Thorough Vetting &amp; Calibration
-              </h4>
-              <p className="text-[#4A4A4A] font-light text-sm leading-relaxed">
-                Multi-stage screening covering technical competency, leadership attributes, past achievements,
-                and verified employment references.
-              </p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {standards.map((std) => {
+              const Icon = std.icon;
+              return (
+                <div
+                  key={std.number}
+                  className="glass-card p-8 rounded-3xl border border-slate-200/90 flex flex-col justify-between group"
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-6">
+                      <div
+                        className={`w-12 h-12 rounded-2xl flex items-center justify-center border ${std.color}`}
+                      >
+                        <Icon className="w-6 h-6" />
+                      </div>
+                      <span className="text-xs font-extrabold tracking-widest text-slate-400">
+                        {std.number}
+                      </span>
+                    </div>
 
-            <div className="bg-white p-8 border border-[#E2ECF2] shadow-soft hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition-all duration-400 ease-in-out">
-              <span className="font-serif text-3xl font-normal text-[#2E6F95] block mb-3">02</span>
-              <h4 className="font-serif text-lg font-normal text-[#1A1A1A] mb-3">
-                High-Precision Shortlists
-              </h4>
-              <p className="text-[#4A4A4A] font-light text-sm leading-relaxed">
-                We submit only tightly curated candidates who meet or exceed the agreed benchmark, saving
-                valuable executive interview hours.
-              </p>
-            </div>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200/60 mb-3 inline-block">
+                      {std.highlight}
+                    </span>
 
-            <div className="bg-white p-8 border border-[#E2ECF2] shadow-soft hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition-all duration-400 ease-in-out">
-              <span className="font-serif text-3xl font-normal text-[#2E6F95] block mb-3">03</span>
-              <h4 className="font-serif text-lg font-normal text-[#1A1A1A] mb-3">
-                Absolute Discretion &amp; Trust
-              </h4>
-              <p className="text-[#4A4A4A] font-light text-sm leading-relaxed">
-                Strict confidentiality protocols protecting both sensitive executive searches and candidate
-                career transitions.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 border border-[#E2ECF2] shadow-soft hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition-all duration-400 ease-in-out">
-              <span className="font-serif text-3xl font-normal text-[#2E6F95] block mb-3">04</span>
-              <h4 className="font-serif text-lg font-normal text-[#1A1A1A] mb-3">
-                Post-Placement Stewardship
-              </h4>
-              <p className="text-[#4A4A4A] font-light text-sm leading-relaxed">
-                Scheduled follow-through during the crucial first 90 days to ensure smooth candidate onboarding
-                and mutual satisfaction.
-              </p>
-            </div>
+                    <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
+                      {std.title}
+                    </h3>
+                    <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-normal">
+                      {std.desc}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center pt-8 border-t border-[#E2ECF2]">
+        <div className="rounded-3xl bg-gradient-to-br from-[#071324] via-[#0b1f3b] to-[#040914] text-white p-8 sm:p-14 text-center max-w-4xl mx-auto shadow-2xl border border-slate-800">
+          <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-3">
+            Experience the Talent Bridge Standard
+          </h3>
+          <p className="text-slate-300 text-sm sm:text-base max-w-xl mx-auto mb-8 font-normal">
+            Brief our managing partners today to initiate your calibrated search protocol.
+          </p>
+
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               href="/contact?type=employer"
-              className="btn-primary !py-4 !px-10 !text-[13px] !tracking-[3px]"
+              className="btn-executive-primary !py-3.5 !px-8 !text-xs flex items-center gap-2 group"
             >
-              <span className="relative z-10 flex items-center gap-2">Hire with Talent Bridge</span>
+              <span>Retain Talent Bridge</span>
+              <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link
               href="/careers"
-              className="btn-outline !py-4 !px-10 !text-[13px] !tracking-[3px]"
+              className="btn-executive-glass !py-3.5 !px-8 !text-xs flex items-center gap-2"
             >
-              <span className="relative z-10 flex items-center gap-2">Explore Opportunities</span>
+              <span>Explore Opportunities</span>
             </Link>
           </div>
         </div>

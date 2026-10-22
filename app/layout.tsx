@@ -1,23 +1,8 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Montserrat } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { WhatsAppWidget } from "@/components/WhatsAppWidget";
-
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-  weight: ["400", "600", "700"],
-  display: "swap",
-});
-
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Talent Bridge — The Right Talent. The Right Direction.",
@@ -61,11 +46,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${playfair.variable} ${montserrat.variable} h-full antialiased`}
-    >
-      <body className="min-h-screen flex flex-col bg-white text-[#4A4A4A] font-sans antialiased">
+    <html lang="en" className="h-full scroll-smooth antialiased">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet"
+        />
+        <meta name="theme-color" content="#071324" />
+      </head>
+      <body className="min-h-screen flex flex-col bg-[#FAFBFD] text-[#1E293B] antialiased selection:bg-[#38BDF8]/20 selection:text-[#0C4A6E]">
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

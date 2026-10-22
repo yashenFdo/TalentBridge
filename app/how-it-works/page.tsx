@@ -1,237 +1,210 @@
 import React from "react";
 import Link from "next/link";
 import type { Metadata } from "next";
+import {
+  Search,
+  ShieldCheck,
+  CheckCircle2,
+  Users2,
+  ArrowRight,
+  Clock,
+  Sparkles,
+  Award,
+  Check,
+} from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "How It Works | Talent Bridge Recruitment Methodology",
+  title: "Methodology | The 4-Stage Search Engine | Talent Bridge",
   description:
-    "Explore Talent Bridge's disciplined, 4-phase placement methodology engineered for precision, cultural calibration, and high-retention executive placements.",
+    "Explore Talent Bridge's disciplined 4-stage placement protocol engineered for high velocity, cultural resonance, and 12-month executive retention.",
 };
 
 export default function HowItWorksPage() {
+  const stages = [
+    {
+      step: "01",
+      name: "Discovery & Calibration",
+      subtitle: "Avatar Synthesis & Role Calibration",
+      summary:
+        "We dissect role criteria, organizational dynamics, compensation benchmarks, and executive aspirations to create a high-fidelity candidate avatar.",
+      employerPoints: [
+        "In-depth briefing with hiring committee & executive leadership",
+        "Comprehensive competency matrix & behavioral trait mapping",
+        "Compensation benchmarking against current APAC/Global market data",
+        "Timeline definition with SLA commitment for shortlist delivery",
+      ],
+      candidatePoints: [
+        "Confidential career discovery and trajectory analysis",
+        "Evaluation of leadership style and workplace cultural preferences",
+        "Clarification of compensation requirements and equity expectations",
+      ],
+      sla: "Completed in Days 1–3",
+    },
+    {
+      step: "02",
+      name: "Deep Sourcing & 360° Auditing",
+      subtitle: "Passive Market Headhunting",
+      summary:
+        "Proactive candidate outreach combined with multi-stage competency interviews, reference audits, and confidential opportunity briefings.",
+      employerPoints: [
+        "Target candidate mapping across non-advertised passive talent pools",
+        "Multi-stage behavioral and competency evaluations",
+        "Confidential 360° reference checks and credential certification",
+        "Cultural resonance scoring against team dynamics",
+      ],
+      candidatePoints: [
+        "Confidential opportunity review with complete transparency",
+        "Executive expectations briefing prior to client introduction",
+        "Explicit candidate consent confirmation before dossier release",
+      ],
+      sla: "Shortlist Delivered in 10–14 Days",
+    },
+    {
+      step: "03",
+      name: "Direct Facilitation & Evaluation",
+      subtitle: "Calibrated Dossier Presentation",
+      summary:
+        "Delivery of detailed candidate dossiers with evaluative notes, interview facilitation with senior decision-makers, and prompt debriefs.",
+      employerPoints: [
+        "Presentation of calibrated candidate dossiers with interview notes",
+        "Seamless interview coordination and scheduling logistics",
+        "Structured interview scorecards and post-round stakeholder debriefs",
+      ],
+      candidatePoints: [
+        "Direct interview facilitation with key C-Suite decision-makers",
+        "Comprehensive preparation debriefs before each interview stage",
+        "Timely, transparent feedback after every stakeholder conversation",
+      ],
+      sla: "Iterative Feedback within 24 Hours",
+    },
+    {
+      step: "04",
+      name: "Offer Structuring & Retention",
+      subtitle: "Bilateral Closing & 12-Month Shield",
+      summary:
+        "Facilitating fair compensation structuring, transition guidance, and milestone-based 30, 60, and 90-day retention reviews with a replacement guarantee.",
+      employerPoints: [
+        "Offer package negotiation and counter-offer risk mitigation",
+        "Formal reference and background documentation finalization",
+        "Scheduled 30, 60, and 90-day onboarding reviews with our 12-month guarantee",
+      ],
+      candidatePoints: [
+        "Executive compensation and equity package negotiation advocacy",
+        "Resignation guidance and counter-offer mitigation advisory",
+        "Ongoing milestone support during executive onboarding",
+      ],
+      sla: "12-Month Replacement Retention Shield",
+    },
+  ];
+
   return (
-    <div className="pt-10 pb-20">
-      <div className="max-w-[1200px] mx-auto px-5 pt-12 pb-16">
-        <div className="mb-16 text-center mx-auto max-w-3xl">
-          <span className="block text-[11px] font-semibold uppercase tracking-[4px] mb-3 text-[#2E6F95]">
-            Our Methodology
-          </span>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-[38px] font-normal leading-[1.2] tracking-normal text-[#1A1A1A]">
+    <div className="pt-28 pb-24 bg-[#FAFBFD]">
+      <div className="max-w-[1280px] mx-auto px-5 sm:px-8">
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <span className="badge-pill mb-3">Proprietary Search Engine</span>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
             How Talent Bridge Works
-          </h2>
-          <div className="w-[60px] h-[1px] my-5 bg-[#2E6F95] mx-auto" aria-hidden="true" />
-          <p className="text-base font-light leading-relaxed max-w-[700px] mx-auto text-[#4A4A4A]">
-            We eliminate guesswork and recruitment friction through a disciplined, four-phase placement
-            framework engineered for precision and long-term organizational success.
+          </h1>
+          <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+            We eliminate hiring friction and guesswork through a disciplined, four-stage methodology
+            engineered for high velocity and sustained 12-month retention.
           </p>
         </div>
 
-        <div className="mb-20">
-          <div className="space-y-10 max-w-[1000px] mx-auto">
-            {/* Stage 01 */}
-            <div className="bg-white p-8 sm:p-12 border border-[#E2ECF2] shadow-soft hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition-all duration-400 ease-in-out">
-              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-4 pb-6 border-b border-[#E2ECF2]/70">
-                <div className="flex items-baseline gap-6">
-                  <span className="font-serif text-3xl sm:text-4xl font-normal text-[#2E6F95] select-none">
-                    01
+        {/* 4 Stages Detailed Stack */}
+        <div className="space-y-12 max-w-5xl mx-auto mb-24">
+          {stages.map((stage, idx) => (
+            <div
+              key={stage.step}
+              className="glass-card p-8 sm:p-12 rounded-3xl border border-slate-200/90 relative overflow-hidden group"
+            >
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-100">
+                <div className="flex items-center gap-4">
+                  <span className="text-4xl sm:text-5xl font-extrabold text-blue-600">
+                    {stage.step}
                   </span>
                   <div>
-                    <span className="block text-[10px] font-semibold uppercase tracking-[3px] text-[#2E6F95] mb-1">
-                      Discovery &amp; Calibration
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-blue-600 block">
+                      Phase {idx + 1} • {stage.subtitle}
                     </span>
-                    <h3 className="font-serif text-2xl font-normal text-[#1A1A1A]">
-                      Understand the Requirement
-                    </h3>
+                    <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
+                      {stage.name}
+                    </h2>
                   </div>
                 </div>
-              </div>
-              <p className="mt-6 text-[#4A4A4A] font-light text-[15px] leading-relaxed max-w-[850px]">
-                We dive deep into the specific role criteria, team dynamics, business goals, culture,
-                and candidate expectations to establish a clear search profile.
-              </p>
-              <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-[#E2ECF2]/50">
-                <div className="bg-[#FAF9F6] p-6 border border-[#E2ECF2]/70">
-                  <span className="block text-[11px] font-semibold uppercase tracking-[2px] text-[#1A1A1A] mb-2">
-                    For Employers
-                  </span>
-                  <p className="text-xs sm:text-[13px] text-[#4A4A4A] font-light leading-relaxed">
-                    In-depth role briefing, skill matrix mapping, and hiring timeline planning.
-                  </p>
-                </div>
-                <div className="bg-[#EEF4F8]/40 p-6 border border-[#DCEAF2]/50">
-                  <span className="block text-[11px] font-semibold uppercase tracking-[2px] text-[#1F4E6B] mb-2">
-                    For Candidates
-                  </span>
-                  <p className="text-xs sm:text-[13px] text-[#4A4A4A] font-light leading-relaxed">
-                    Understanding your career history, strengths, aspirations, and workplace preferences.
-                  </p>
-                </div>
-              </div>
-            </div>
 
-            {/* Stage 02 */}
-            <div className="bg-white p-8 sm:p-12 border border-[#E2ECF2] shadow-soft hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition-all duration-400 ease-in-out">
-              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-4 pb-6 border-b border-[#E2ECF2]/70">
-                <div className="flex items-baseline gap-6">
-                  <span className="font-serif text-3xl sm:text-4xl font-normal text-[#2E6F95] select-none">
-                    02
-                  </span>
-                  <div>
-                    <span className="block text-[10px] font-semibold uppercase tracking-[3px] text-[#2E6F95] mb-1">
-                      Talent Discovery &amp; Rigorous Vetting
-                    </span>
-                    <h3 className="font-serif text-2xl font-normal text-[#1A1A1A]">
-                      Source &amp; Screen Suitable Candidates
-                    </h3>
-                  </div>
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-xs font-bold text-slate-700 self-start sm:self-auto">
+                  <Clock className="w-3.5 h-3.5 text-blue-600" />
+                  <span>{stage.sla}</span>
                 </div>
               </div>
-              <p className="mt-6 text-[#4A4A4A] font-light text-[15px] leading-relaxed max-w-[850px]">
-                Leveraging proprietary talent networks and multi-stage screening, we evaluate competence,
-                cultural alignment, and career track records.
-              </p>
-              <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-[#E2ECF2]/50">
-                <div className="bg-[#FAF9F6] p-6 border border-[#E2ECF2]/70">
-                  <span className="block text-[11px] font-semibold uppercase tracking-[2px] text-[#1A1A1A] mb-2">
-                    For Employers
-                  </span>
-                  <p className="text-xs sm:text-[13px] text-[#4A4A4A] font-light leading-relaxed">
-                    Targeted sourcing, structured interviews, and verified candidate profiles.
-                  </p>
-                </div>
-                <div className="bg-[#EEF4F8]/40 p-6 border border-[#DCEAF2]/50">
-                  <span className="block text-[11px] font-semibold uppercase tracking-[2px] text-[#1F4E6B] mb-2">
-                    For Candidates
-                  </span>
-                  <p className="text-xs sm:text-[13px] text-[#4A4A4A] font-light leading-relaxed">
-                    Thorough profile assessment, role match check, and confidential preparation.
-                  </p>
-                </div>
-              </div>
-            </div>
 
-            {/* Stage 03 */}
-            <div className="bg-white p-8 sm:p-12 border border-[#E2ECF2] shadow-soft hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition-all duration-400 ease-in-out">
-              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-4 pb-6 border-b border-[#E2ECF2]/70">
-                <div className="flex items-baseline gap-6">
-                  <span className="font-serif text-3xl sm:text-4xl font-normal text-[#2E6F95] select-none">
-                    03
-                  </span>
-                  <div>
-                    <span className="block text-[10px] font-semibold uppercase tracking-[3px] text-[#2E6F95] mb-1">
-                      Strategic Presentation &amp; Interviews
-                    </span>
-                    <h3 className="font-serif text-2xl font-normal text-[#1A1A1A]">
-                      Connect the Right Candidates with Employers
-                    </h3>
-                  </div>
-                </div>
-              </div>
-              <p className="mt-6 text-[#4A4A4A] font-light text-[15px] leading-relaxed max-w-[850px]">
-                We facilitate seamless introductions, coordinated interview rounds, constructive feedback
-                loops, and aligned expectations.
+              <p className="mt-6 text-slate-600 text-base leading-relaxed font-normal max-w-3xl">
+                {stage.summary}
               </p>
-              <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-[#E2ECF2]/50">
-                <div className="bg-[#FAF9F6] p-6 border border-[#E2ECF2]/70">
-                  <span className="block text-[11px] font-semibold uppercase tracking-[2px] text-[#1A1A1A] mb-2">
-                    For Employers
-                  </span>
-                  <p className="text-xs sm:text-[13px] text-[#4A4A4A] font-light leading-relaxed">
-                    Shortlist presentation with comprehensive candidate insights and interview coordination.
-                  </p>
-                </div>
-                <div className="bg-[#EEF4F8]/40 p-6 border border-[#DCEAF2]/50">
-                  <span className="block text-[11px] font-semibold uppercase tracking-[2px] text-[#1F4E6B] mb-2">
-                    For Candidates
-                  </span>
-                  <p className="text-xs sm:text-[13px] text-[#4A4A4A] font-light leading-relaxed">
-                    Direct introductions to hiring decision-makers with comprehensive interview briefing.
-                  </p>
-                </div>
-              </div>
-            </div>
 
-            {/* Stage 04 */}
-            <div className="bg-white p-8 sm:p-12 border border-[#E2ECF2] shadow-soft hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition-all duration-400 ease-in-out">
-              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-4 pb-6 border-b border-[#E2ECF2]/70">
-                <div className="flex items-baseline gap-6">
-                  <span className="font-serif text-3xl sm:text-4xl font-normal text-[#2E6F95] select-none">
-                    04
+              {/* Bilateral Deliverables Grid */}
+              <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-slate-100">
+                {/* For Employers */}
+                <div className="bg-slate-50/70 p-6 rounded-2xl border border-slate-200/80">
+                  <span className="text-xs font-bold uppercase tracking-wider text-blue-700 block mb-3">
+                    What Organizations Receive
                   </span>
-                  <div>
-                    <span className="block text-[10px] font-semibold uppercase tracking-[3px] text-[#2E6F95] mb-1">
-                      Offer Negotiation &amp; Onboarding
-                    </span>
-                    <h3 className="font-serif text-2xl font-normal text-[#1A1A1A]">
-                      Support the Hiring Process
-                    </h3>
+                  <div className="space-y-2.5">
+                    {stage.employerPoints.map((pt, i) => (
+                      <div key={i} className="flex items-start gap-2.5 text-xs text-slate-700">
+                        <Check className="w-3.5 h-3.5 text-blue-600 mt-0.5 flex-shrink-0" />
+                        <span>{pt}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* For Candidates */}
+                <div className="bg-emerald-50/40 p-6 rounded-2xl border border-emerald-200/60">
+                  <span className="text-xs font-bold uppercase tracking-wider text-emerald-800 block mb-3">
+                    How Candidates Are Advocated For
+                  </span>
+                  <div className="space-y-2.5">
+                    {stage.candidatePoints.map((pt, i) => (
+                      <div key={i} className="flex items-start gap-2.5 text-xs text-slate-700">
+                        <Check className="w-3.5 h-3.5 text-emerald-600 mt-0.5 flex-shrink-0" />
+                        <span>{pt}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
-              <p className="mt-6 text-[#4A4A4A] font-light text-[15px] leading-relaxed max-w-[850px]">
-                From offer alignment and contract guidance to post-placement check-ins, we ensure a smooth
-                transition and lasting relationship.
-              </p>
-              <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-[#E2ECF2]/50">
-                <div className="bg-[#FAF9F6] p-6 border border-[#E2ECF2]/70">
-                  <span className="block text-[11px] font-semibold uppercase tracking-[2px] text-[#1A1A1A] mb-2">
-                    For Employers
-                  </span>
-                  <p className="text-xs sm:text-[13px] text-[#4A4A4A] font-light leading-relaxed">
-                    Offer facilitation, reference confirmations, and post-joining retention check-ins.
-                  </p>
-                </div>
-                <div className="bg-[#EEF4F8]/40 p-6 border border-[#DCEAF2]/50">
-                  <span className="block text-[11px] font-semibold uppercase tracking-[2px] text-[#1F4E6B] mb-2">
-                    For Candidates
-                  </span>
-                  <p className="text-xs sm:text-[13px] text-[#4A4A4A] font-light leading-relaxed">
-                    Offer negotiation guidance, transition advisory, and onboarding support.
-                  </p>
-                </div>
-              </div>
             </div>
-          </div>
+          ))}
         </div>
 
-        {/* Direct Inquiries Section */}
-        <section className="py-[100px] bg-[#FAF9F6] border-b border-[#E2ECF2]">
-          <div className="max-w-[1200px] mx-auto px-5">
-            <div className="bg-[#1A1A1A] text-white p-10 sm:p-16 lg:p-20 shadow-soft relative overflow-hidden">
-              <div className="max-w-3xl">
-                <span className="block text-[11px] font-semibold uppercase tracking-[4px] text-[#DCEAF2] mb-4">
-                  Direct Inquiries
-                </span>
-                <h2 className="font-serif text-3xl sm:text-4xl lg:text-[44px] font-normal leading-[1.2] text-white mb-6">
-                  Let&#39;s Build the Right Bridge for Your Future.
-                </h2>
-                <div className="w-[60px] h-[1px] bg-[#2E6F95] mb-6" aria-hidden="true" />
-                <p className="text-slate-300 font-light text-base sm:text-lg leading-relaxed max-w-2xl mb-10">
-                  Whether you need to brief an executive search or discuss your professional career trajectory,
-                  our senior team is here to guide you.
-                </p>
-                <div className="flex flex-wrap items-center gap-4">
-                  <Link
-                    href="/contact"
-                    className="btn-accent !py-4 !px-10 !text-[13px] !tracking-[3px]"
-                  >
-                    <span className="relative z-10 flex items-center gap-2">Submit an Inquiry</span>
-                  </Link>
-                  <a
-                    href="https://wa.me/94770000000?text=Hello%20Talent%20Bridge!%20I%20would%20like%20to%20make%20an%20inquiry."
-                    className="btn-outline !py-4 !px-10 !text-[13px] !tracking-[3px] !border-white/40 !text-white hover:!bg-white hover:!text-[#1A1A1A] hover:!border-white"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <span className="relative z-10 flex items-center gap-2">
-                      Chat on WhatsApp (+94 77 000 0000)
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
+        {/* Bottom CTA Banner */}
+        <div className="rounded-3xl bg-gradient-to-br from-[#071324] via-[#0b1f3b] to-[#040914] text-white p-8 sm:p-14 text-center max-w-4xl mx-auto shadow-2xl border border-slate-800">
+          <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-3">
+            Ready to Experience Precision Recruitment?
+          </h3>
+          <p className="text-slate-300 text-sm sm:text-base max-w-xl mx-auto mb-8 font-normal">
+            Brief our managing partners today to initiate your calibrated search protocol.
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link
+              href="/contact?type=employer"
+              className="btn-executive-primary !py-3.5 !px-8 !text-xs flex items-center gap-2 group"
+            >
+              <span>Retain Search Mandate</span>
+              <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+            </Link>
+            <Link
+              href="/careers"
+              className="btn-executive-glass !py-3.5 !px-8 !text-xs flex items-center gap-2"
+            >
+              <span>Explore Active Roles</span>
+            </Link>
           </div>
-        </section>
+        </div>
       </div>
     </div>
   );
