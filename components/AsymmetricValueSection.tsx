@@ -28,7 +28,7 @@ export function AsymmetricValueSection() {
               <div className="space-y-4 sm:space-y-6">
                 <div className="relative h-44 sm:h-56 rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border border-slate-200">
                   <Image
-                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop"
+                    src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800&auto=format&fit=crop"
                     alt="Corporate board meeting in Colombo"
                     fill
                     className="object-cover"

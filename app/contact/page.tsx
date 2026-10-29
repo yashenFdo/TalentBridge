@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { 
   Mail, 
   Phone, 
@@ -122,19 +123,30 @@ export default function ContactPage() {
   return (
     <div className="bg-[#FFFFFF] text-[#0F172A]">
       {/* 1. CINEMATIC HERO HEADER WITH STATUS BAR */}
-      <section className="relative pt-32 pb-16 sm:pt-36 sm:pb-20 bg-gradient-to-b from-[#F8FAFC] via-white to-white border-b border-slate-200">
-        <div className="max-w-[1360px] mx-auto px-5 sm:px-8">
+      <section className="relative pt-36 pb-20 sm:pt-40 sm:pb-24 overflow-hidden bg-[#071324] text-white border-b border-slate-800">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1920&auto=format&fit=crop"
+            alt="Talent Bridge World Trade Center Colombo Headquarters"
+            fill
+            className="object-cover opacity-25"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#040914] via-[#071324]/96 to-[#0A192F]/88" />
+        </div>
+
+        <div className="relative z-10 max-w-[1360px] mx-auto px-5 sm:px-8">
           <div className="max-w-3xl space-y-4">
-            <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#059669]">
+            <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#34D399]">
               Headquarters Communication Terminal
             </p>
 
             {/* Bold Heading */}
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0F172A] tracking-tight leading-tight">
-              CONNECT WITH <span className="text-[#059669]">TALENT BRIDGE</span>
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
+              CONNECT WITH <span className="text-[#34D399]">TALENT BRIDGE</span>
             </h1>
 
-            <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal">
+            <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal">
               Whether you are an organization seeking mission-critical talent, an ambitious professional exploring new horizons, or a prospective partner, our advisory teams are accessible through direct phone lines, WhatsApp channels, email, or our formal inquiry intake below.
             </p>
           </div>
@@ -220,7 +232,16 @@ export default function ContactPage() {
             </div>
 
             {/* Card 3: Business Address & Operating Hours */}
-            <div className="p-8 rounded-[2rem] bg-[#F8FAFC] border border-slate-200 hover:border-emerald-300 transition-all shadow-xs space-y-4">
+            <div className="p-8 rounded-[2rem] bg-[#F8FAFC] border border-slate-200 hover:border-emerald-300 transition-all shadow-xs space-y-4 overflow-hidden">
+              <div className="relative h-32 -mx-8 -mt-8 mb-2 overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop"
+                  alt="World Trade Center Colombo Headquarters"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#F8FAFC] via-transparent to-transparent" />
+              </div>
               <div className="w-12 h-12 rounded-2xl bg-emerald-100 text-[#059669] flex items-center justify-center">
                 <MapPin className="w-6 h-6" />
               </div>

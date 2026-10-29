@@ -10,7 +10,7 @@ export function CapabilitiesBento() {
     {
       title: "BOARD & C-SUITE ADVISORY",
       description: "Managing Directors, Chief Executives, and Independent Non-Executive Directors appointed for public PLCs and sovereign boards.",
-      image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=800&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=800&auto=format&fit=crop",
       href: "/services#executive-search",
       icon: Building2,
     },
@@ -31,7 +31,7 @@ export function CapabilitiesBento() {
     {
       title: "GLOBAL CAPABILITY CENTERS",
       description: "Managing Directors, Global Shared Services architects, and offshore operational heads for Fortune 500 GCCs.",
-      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=800&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=800&auto=format&fit=crop",
       href: "/services#shared-services",
       icon: Globe,
     },

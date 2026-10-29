@@ -133,19 +133,30 @@ export default function ServicesPage() {
   return (
     <div className="bg-[#FFFFFF] text-[#0F172A]">
       {/* 1. HERO HEADER WITH AMBIENT LIGHTING */}
-      <section className="relative pt-32 pb-16 sm:pt-36 sm:pb-20 bg-gradient-to-b from-[#F8FAFC] via-white to-white border-b border-slate-200">
-        <div className="max-w-[1360px] mx-auto px-5 sm:px-8">
+      <section className="relative pt-36 pb-20 sm:pt-40 sm:pb-24 overflow-hidden bg-[#071324] text-white border-b border-slate-800">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1920&auto=format&fit=crop"
+            alt="Talent Bridge Modern Corporate Headquarters in Colombo"
+            fill
+            className="object-cover opacity-25"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#040914] via-[#071324]/96 to-[#0A192F]/88" />
+        </div>
+
+        <div className="relative z-10 max-w-[1360px] mx-auto px-5 sm:px-8">
           <div className="max-w-3xl space-y-4">
-            <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#059669]">
+            <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#34D399]">
               Comprehensive Recruitment Practices
             </p>
 
             {/* Bold Title */}
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0F172A] tracking-tight leading-tight">
-              SERVICES &amp; <span className="text-[#059669]">SOLUTIONS</span>
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
+              SERVICES &amp; <span className="text-[#34D399]">SOLUTIONS</span>
             </h1>
 
-            <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal">
+            <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal">
               Talent Bridge operates two distinct, specialized service pillars designed to solve the human capital equation. Whether you are an organization looking to build high-impact teams, or an experienced professional seeking defining career opportunities, select your pathway below.
             </p>
           </div>
@@ -167,6 +178,20 @@ export default function ServicesPage() {
                   </div>
                   <span className="text-xs font-extrabold uppercase tracking-widest text-[#059669]">
                     For Businesses &amp; Organizations
+                  </span>
+                </div>
+
+                {/* Industry Photo Banner */}
+                <div className="relative h-44 sm:h-48 rounded-2xl overflow-hidden shadow-sm border border-emerald-500/20">
+                  <Image
+                    src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800&auto=format&fit=crop"
+                    alt="Corporate boardroom executive recruitment"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#064E3B]/80 via-transparent to-transparent" />
+                  <span className="absolute bottom-3 left-4 text-xs font-bold text-white tracking-wide uppercase">
+                    Enterprise Boardrooms &amp; PLCs
                   </span>
                 </div>
 
@@ -253,6 +278,20 @@ export default function ServicesPage() {
                   </div>
                   <span className="text-xs font-extrabold uppercase tracking-widest text-slate-700">
                     For Professionals &amp; Candidates
+                  </span>
+                </div>
+
+                {/* Industry Photo Banner */}
+                <div className="relative h-44 sm:h-48 rounded-2xl overflow-hidden shadow-sm border border-slate-300">
+                  <Image
+                    src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=800&auto=format&fit=crop"
+                    alt="Executive career leadership opportunities"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#071324]/80 via-transparent to-transparent" />
+                  <span className="absolute bottom-3 left-4 text-xs font-bold text-white tracking-wide uppercase">
+                    Senior Executives &amp; Specialists
                   </span>
                 </div>
 

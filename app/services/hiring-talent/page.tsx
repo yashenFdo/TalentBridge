@@ -56,6 +56,7 @@ export default function HiringTalentPage() {
       id: "executive-search",
       title: "Executive & Board Search",
       badge: "Flagship Practice",
+      image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800&auto=format&fit=crop",
       icon: Building2,
       metrics: {
         speed: "14-21 Days",
@@ -86,6 +87,7 @@ export default function HiringTalentPage() {
       id: "tech-leadership",
       title: "Tech, Engineering & AI Leadership Sourcing",
       badge: "High Growth",
+      image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=800&auto=format&fit=crop",
       icon: Cpu,
       metrics: {
         speed: "14-18 Days",
@@ -116,6 +118,7 @@ export default function HiringTalentPage() {
       id: "candidate-audits",
       title: "360° Candidate Audits & Vetting",
       badge: "Risk Mitigation",
+      image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?q=80&w=800&auto=format&fit=crop",
       icon: FileCheck,
       metrics: {
         speed: "5-7 Days",
@@ -146,6 +149,7 @@ export default function HiringTalentPage() {
       id: "cohort-staffing",
       title: "Enterprise Project & Cohort Staffing",
       badge: "Scale & Expansion",
+      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop",
       icon: Users,
       metrics: {
         speed: "10-14 Days",
@@ -176,6 +180,7 @@ export default function HiringTalentPage() {
       id: "diaspora-search",
       title: "Cross-Border & Diaspora Headhunting",
       badge: "Global Reach",
+      image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=800&auto=format&fit=crop",
       icon: Globe2,
       metrics: {
         speed: "21-30 Days",
@@ -206,6 +211,7 @@ export default function HiringTalentPage() {
       id: "benchmarking",
       title: "Compensation Benchmarking & Org Advisory",
       badge: "Strategic Advisory",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
       icon: BarChart3,
       metrics: {
         speed: "7-10 Days",
@@ -242,35 +248,46 @@ export default function HiringTalentPage() {
   return (
     <div className="bg-[#FFFFFF] text-[#0F172A]">
       {/* 1. CINEMATIC HERO HEADER */}
-      <section className="relative pt-32 pb-16 sm:pt-36 sm:pb-20 bg-gradient-to-b from-[#F0FDF4] via-white to-white border-b border-slate-200">
-        <div className="max-w-[1360px] mx-auto px-5 sm:px-8">
+      <section className="relative pt-36 pb-20 sm:pt-40 sm:pb-24 overflow-hidden bg-[#071324] text-white border-b border-slate-800">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1920&auto=format&fit=crop"
+            alt="Corporate Executive Recruitment Consultation in Colombo"
+            fill
+            className="object-cover opacity-25"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#040914] via-[#071324]/96 to-[#0A192F]/88" />
+        </div>
+
+        <div className="relative z-10 max-w-[1360px] mx-auto px-5 sm:px-8">
           <div className="max-w-3xl space-y-4">
-            <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#059669]">
+            <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#34D399]">
               For Businesses, Boards &amp; HR Leaders
             </p>
 
             {/* Bold Heading */}
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0F172A] tracking-tight leading-tight">
-              HIRING TALENT — <span className="text-[#059669]">RECRUITMENT SOLUTIONS</span>
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
+              HIRING TALENT — <span className="text-[#34D399]">RECRUITMENT SOLUTIONS</span>
             </h1>
 
             {/* Introductory Paragraph */}
-            <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal">
+            <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal">
               Talent Bridge delivers calibrated recruitment and executive search services engineered for organizations that cannot afford a mis-hire. We advise boardrooms, multinational corporations, and high-growth enterprises on appointing top-tier leadership and mission-critical specialists across Sri Lanka and international markets. Every mandate is governed by total discretion, empirical qualification standards, and our signature 12-month candidate retention guarantee.
             </p>
 
             {/* Telemetry Stats Bar */}
-            <div className="pt-4 flex flex-wrap items-center gap-6 text-xs font-bold text-slate-800">
+            <div className="pt-4 flex flex-wrap items-center gap-6 text-xs font-bold text-slate-300">
               <div className="flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-[#059669]" />
+                <ShieldCheck className="w-4 h-4 text-[#34D399]" />
                 <span>98% 12-Month Retention Rate</span>
               </div>
               <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-[#059669]" />
+                <Clock className="w-4 h-4 text-[#34D399]" />
                 <span>14-Day Average Shortlist Delivery</span>
               </div>
               <div className="flex items-center gap-2">
-                <Award className="w-4 h-4 text-[#059669]" />
+                <Award className="w-4 h-4 text-[#34D399]" />
                 <span>100% Fiduciary Non-Disclosure Standard</span>
               </div>
             </div>
@@ -372,6 +389,16 @@ export default function HiringTalentPage() {
                       <p className="text-slate-700 text-sm sm:text-base leading-relaxed font-normal">
                         {srv.description}
                       </p>
+
+                      {/* Contextual Industry Photography */}
+                      <div className="relative h-48 sm:h-56 w-full rounded-2xl overflow-hidden shadow-xs border border-slate-200">
+                        <Image
+                          src={srv.image}
+                          alt={srv.title}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
 
                       {/* Purpose Block */}
                       <div className="p-5 rounded-2xl bg-[#F8FAFC] border-l-4 border-[#059669] space-y-1.5">

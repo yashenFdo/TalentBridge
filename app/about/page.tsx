@@ -114,8 +114,8 @@ export default function AboutPage() {
         {/* Suitable Background Image Reflecting Professional Identity */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1600&auto=format&fit=crop"
-            alt="Talent Bridge Modern Corporate Headquarters"
+            src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1920&auto=format&fit=crop"
+            alt="Talent Bridge Modern Corporate Headquarters in Colombo"
             fill
             className="object-cover scale-105"
             priority
@@ -203,7 +203,13 @@ export default function AboutPage() {
             </div>
 
             <div className="lg:col-span-6">
-              <div className="p-8 sm:p-12 rounded-[2.5rem] bg-gradient-to-br from-[#071324] to-[#0A192F] text-white border border-slate-800 shadow-2xl relative overflow-hidden">
+              <div className="p-8 sm:p-12 rounded-[2.5rem] bg-[#071324] text-white border border-slate-800 shadow-2xl relative overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop"
+                  alt="Modern business center architecture"
+                  fill
+                  className="object-cover opacity-15"
+                />
                 <div className="space-y-6 relative z-10">
                   <span className="text-xs font-bold uppercase tracking-widest text-amber-400 block">
                     Our North Star
@@ -326,7 +332,15 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="lg:col-span-5 bg-[#F8FAFC] p-8 rounded-3xl border border-slate-200 space-y-4">
+              <div className="lg:col-span-5 bg-[#F8FAFC] p-7 sm:p-8 rounded-3xl border border-slate-200 space-y-4">
+                <div className="relative h-44 rounded-2xl overflow-hidden shadow-sm border border-slate-200">
+                  <Image
+                    src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800&auto=format&fit=crop"
+                    alt="Corporate board executive search consultation"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
                 <span className="text-[11px] font-extrabold uppercase tracking-wider text-slate-500 block">
                   Enterprise Client Guarantees
                 </span>
@@ -391,7 +405,15 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="lg:col-span-5 bg-[#F8FAFC] p-8 rounded-3xl border border-slate-200 space-y-4">
+              <div className="lg:col-span-5 bg-[#F8FAFC] p-7 sm:p-8 rounded-3xl border border-slate-200 space-y-4">
+                <div className="relative h-44 rounded-2xl overflow-hidden shadow-sm border border-slate-200">
+                  <Image
+                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop"
+                    alt="Candidate career trajectory advisory and executive interview"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
                 <span className="text-[11px] font-extrabold uppercase tracking-wider text-slate-500 block">
                   Candidate Advocacy Promises
                 </span>

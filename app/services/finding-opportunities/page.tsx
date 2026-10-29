@@ -165,7 +165,7 @@ export default function FindingOpportunitiesPage() {
       email: "tharindu.ds@talentbridge.lk",
       phone: "+94 77 234 5611",
       whatsapp: "94772345611",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=300&auto=format&fit=crop",
+      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=300&auto=format&fit=crop",
       bio: "Specializes in interview preparation, executive package negotiation, career pivot guidance, and leadership transitions for executives.",
     },
   ];
@@ -173,35 +173,46 @@ export default function FindingOpportunitiesPage() {
   return (
     <div className="bg-[#FFFFFF] text-[#0F172A]">
       {/* 1. CINEMATIC HERO SECTION */}
-      <section className="relative pt-32 pb-16 sm:pt-36 sm:pb-20 bg-gradient-to-b from-[#F8FAFC] via-white to-white border-b border-slate-200">
-        <div className="max-w-[1360px] mx-auto px-5 sm:px-8">
+      <section className="relative pt-36 pb-20 sm:pt-40 sm:pb-24 overflow-hidden bg-[#071324] text-white border-b border-slate-800">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1920&auto=format&fit=crop"
+            alt="Executive Career Advocacy and Leadership Search"
+            fill
+            className="object-cover opacity-25"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#040914] via-[#071324]/96 to-[#0A192F]/88" />
+        </div>
+
+        <div className="relative z-10 max-w-[1360px] mx-auto px-5 sm:px-8">
           <div className="max-w-3xl space-y-4">
-            <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#059669]">
+            <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#34D399]">
               For Professionals, Specialists &amp; Executives
             </p>
 
             {/* Bold Heading */}
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0F172A] tracking-tight leading-tight">
-              FINDING OPPORTUNITIES — <span className="text-[#059669]">CAREER ADVANCEMENT</span>
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
+              FINDING OPPORTUNITIES — <span className="text-[#34D399]">CAREER ADVANCEMENT</span>
             </h1>
 
             {/* Short Introduction */}
-            <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal">
+            <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal">
               At Talent Bridge, we understand that finding the right opportunity is not about browsing generic job boards—it is about strategic alignment with organizations that value your expertise. We connect qualified candidates with exclusive, unadvertised leadership mandates and high-impact specialist roles across Sri Lanka and regional hubs, maintaining 100% discretion and zero applicant fees.
             </p>
 
             {/* Key Pillars */}
-            <div className="pt-2 flex flex-wrap items-center gap-4 text-xs font-bold text-slate-800">
+            <div className="pt-2 flex flex-wrap items-center gap-4 text-xs font-bold text-slate-300">
               <div className="flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-[#059669]" />
+                <ShieldCheck className="w-4 h-4 text-[#34D399]" />
                 <span>100% Confidential Profile Protection</span>
               </div>
               <div className="flex items-center gap-2">
-                <Lock className="w-4 h-4 text-[#059669]" />
+                <Lock className="w-4 h-4 text-[#34D399]" />
                 <span>No Current Employer Alerts</span>
               </div>
               <div className="flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-[#059669]" />
+                <Sparkles className="w-4 h-4 text-[#34D399]" />
                 <span>Zero Fees for Candidates Always</span>
               </div>
             </div>

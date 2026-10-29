@@ -33,12 +33,12 @@ export function HeroSection() {
         {/* Curated Luxury Frame */}
         <div className="relative rounded-[2.2rem] sm:rounded-[3rem] overflow-hidden shadow-[0_25px_70px_rgba(7,19,36,0.22)] min-h-[640px] lg:min-h-[700px] flex items-center p-6 sm:p-10 lg:p-16 text-white border border-slate-800/60">
           
-          {/* Authentic Executive Team Photography Background */}
+          {/* Authentic Executive Boardroom Photography Background */}
           <Image
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop"
-            alt="Talent Bridge recruitment and leadership advisory in Colombo"
+            src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1920&auto=format&fit=crop"
+            alt="Talent Bridge executive boardroom recruitment and leadership advisory in Colombo"
             fill
-            className="object-cover scale-[1.02] transition-transform duration-1000"
+            className="object-cover scale-[1.02] transition-transform duration-1000 opacity-60"
             priority
             sizes="100vw"
           />

@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Quote } from "lucide-react";
 
 interface CaseStudy {
@@ -16,6 +17,8 @@ interface CaseStudy {
   solution: string;
   quote: string;
   author: string;
+  image: string;
+  imageAlt: string;
 }
 
 const CASE_STUDIES: CaseStudy[] = [
@@ -26,6 +29,8 @@ const CASE_STUDIES: CaseStudy[] = [
     client: "Tier-1 Regional Digital Financial Services Conglomerate",
     daysToOffer: "18 Days",
     retentionOutcome: "100% (24 Months Active)",
+    image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=800&auto=format&fit=crop",
+    imageAlt: "Digital fintech banking architecture and technology leadership",
     context:
       "A fast-scaling regional financial technology group required an experienced CTO to direct core banking cloud migration and oversee a 140+ person distributed engineering department.",
     challenge:
@@ -43,6 +48,8 @@ const CASE_STUDIES: CaseStudy[] = [
     client: "Publicly Listed Export & Industrial Manufacturing Enterprise",
     daysToOffer: "26 Days",
     retentionOutcome: "100% (36 Months Active)",
+    image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=800&auto=format&fit=crop",
+    imageAlt: "Executive leadership succession in commercial conglomerate",
     context:
       "A venerable listed industrial group with $80M annual turnover required an executive successor to take over corporate leadership from the retiring founder.",
     challenge:
@@ -60,6 +67,8 @@ const CASE_STUDIES: CaseStudy[] = [
     client: "Licensed Commercial Banking Institution",
     daysToOffer: "22 Days",
     retentionOutcome: "100% (18 Months Active)",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop",
+    imageAlt: "Commercial banking financial tower and corporate governance",
     context:
       "A commercial bank undergoing balance-sheet restructuring required a seasoned Chief Risk Officer approved under Central Bank fit-and-proper guidelines.",
     challenge:
@@ -77,6 +86,8 @@ const CASE_STUDIES: CaseStudy[] = [
     client: "US-Backed Enterprise Analytics Scaleup",
     daysToOffer: "15 Days",
     retentionOutcome: "100% (12 Months Active)",
+    image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=800&auto=format&fit=crop",
+    imageAlt: "Enterprise AI and machine learning engineering laboratory",
     context:
       "A Silicon Valley scaleup launching a 200-engineer Colombo engineering center needed a high-caliber technical leader to direct distributed LLM development.",
     challenge:
@@ -172,15 +183,37 @@ export function MandateCaseStudies() {
           </div>
         </div>
 
-        {/* Right Quote Card (Luxury Midnight Navy Box) */}
-        <div className="lg:col-span-4 flex flex-col justify-between p-7 rounded-2xl bg-[#0A192F] text-white shadow-lg border border-slate-800">
+        {/* Right Quote Card (Luxury Midnight Navy Box with Sector Photo) */}
+        <div className="lg:col-span-4 flex flex-col justify-between p-6 sm:p-7 rounded-2xl bg-[#0A192F] text-white shadow-lg border border-slate-800">
           <div className="space-y-4">
-            <Quote className="w-8 h-8 text-[#10B981]" />
-            <blockquote className="text-sm sm:text-base text-slate-200 leading-relaxed italic font-light">
-              &ldquo;{current.quote}&rdquo;
-            </blockquote>
+            {/* Sector Industry Image */}
+            <div className="relative h-36 w-full rounded-xl overflow-hidden border border-white/10 shadow-sm">
+              <Image
+                src={current.image}
+                alt={current.imageAlt}
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 350px"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F] via-[#0A192F]/30 to-transparent" />
+              <div className="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between">
+                <span className="text-[10px] font-bold text-white bg-black/70 backdrop-blur-xs px-2.5 py-1 rounded-md border border-white/10">
+                  {current.tag}
+                </span>
+                <span className="text-[10px] font-bold text-emerald-400 bg-emerald-950/80 backdrop-blur-xs px-2 py-0.5 rounded border border-emerald-500/30">
+                  Closed Mandate
+                </span>
+              </div>
+            </div>
+
+            <div className="pt-2">
+              <Quote className="w-7 h-7 text-[#10B981] mb-2" />
+              <blockquote className="text-xs sm:text-sm text-slate-200 leading-relaxed italic font-light">
+                &ldquo;{current.quote}&rdquo;
+              </blockquote>
+            </div>
           </div>
-          <div className="pt-5 mt-6 border-t border-slate-800">
+          <div className="pt-4 mt-5 border-t border-slate-800">
             <span className="block text-xs font-bold text-white uppercase tracking-wider">
               {current.author}
             </span>
