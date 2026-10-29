@@ -4,11 +4,12 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { ArrowRight, ChevronRight, Phone } from "lucide-react";
+import { ArrowRight, ChevronDown, ChevronRight, Phone, MessageCircle, Briefcase, Users, FileText } from "lucide-react";
 
 export function Navbar() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -19,27 +20,22 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    { label: "Home", href: "/" },
-    { label: "Services", href: "/services" },
-    { label: "CV Builder", href: "/cv-builder", isNew: true },
-    { label: "Methodology", href: "/how-it-works" },
-    { label: "Why Us", href: "/why-us" },
-    { label: "Opportunities", href: "/careers" },
-    { label: "Contact", href: "/contact" },
-  ];
-
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
     return pathname.startsWith(href);
   };
+
+  const isServicesActive =
+    pathname.startsWith("/services") ||
+    pathname.startsWith("/hiring-talent") ||
+    pathname.startsWith("/finding-opportunities");
 
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 no-print ${
         scrolled
           ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200 py-3"
-          : "bg-white/90 backdrop-blur-md border-b border-slate-200/80 py-4"
+          : "bg-white/95 backdrop-blur-md border-b border-slate-200/90 py-3.5"
       }`}
     >
       <div className="max-w-[1360px] mx-auto px-5 sm:px-8 flex items-center justify-between">
@@ -63,66 +59,181 @@ export function Navbar() {
           </Link>
         </div>
 
-        {/* Desktop Navigation Links */}
+        {/* Desktop Navigation Links: Home, About, Services, Contact */}
         <nav
-          className="hidden xl:flex items-center gap-7"
+          className="hidden lg:flex items-center gap-8"
           aria-label="Main Navigation"
         >
-          {navLinks.map((link) => {
-            const active = isActive(link.href);
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`relative text-xs font-semibold uppercase tracking-[0.12em] transition-colors py-1 flex items-center gap-1.5 ${
-                  active
-                    ? "text-[#059669] font-bold border-b-2 border-[#059669]"
-                    : "text-slate-600 hover:text-[#059669]"
+          {/* Home Link */}
+          <Link
+            href="/"
+            className={`relative text-xs font-bold uppercase tracking-[0.14em] transition-colors py-1 flex items-center ${
+              isActive("/") && pathname === "/"
+                ? "text-[#059669] border-b-2 border-[#059669]"
+                : "text-slate-800 hover:text-[#059669]"
+            }`}
+          >
+            Home
+          </Link>
+
+          {/* About Link */}
+          <Link
+            href="/about"
+            className={`relative text-xs font-bold uppercase tracking-[0.14em] transition-colors py-1 flex items-center ${
+              isActive("/about")
+                ? "text-[#059669] border-b-2 border-[#059669]"
+                : "text-slate-800 hover:text-[#059669]"
+            }`}
+          >
+            About
+          </Link>
+
+          {/* Services Link with Interactive Dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => setServicesDropdownOpen(true)}
+            onMouseLeave={() => setServicesDropdownOpen(false)}
+          >
+            <Link
+              href="/services"
+              className={`relative text-xs font-bold uppercase tracking-[0.14em] transition-colors py-1 flex items-center gap-1.5 ${
+                isServicesActive
+                  ? "text-[#059669] border-b-2 border-[#059669]"
+                  : "text-slate-800 hover:text-[#059669]"
+              }`}
+            >
+              <span>Services</span>
+              <ChevronDown
+                className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                  servicesDropdownOpen ? "rotate-180 text-[#059669]" : "text-slate-500"
                 }`}
-              >
-                <span>{link.label}</span>
-                {link.isNew && (
-                  <span className="text-[9px] font-extrabold uppercase bg-[#059669] text-white px-2 py-0.5 rounded-full tracking-wider shadow-xs">
-                    NEW
-                  </span>
-                )}
-              </Link>
-            );
-          })}
+              />
+            </Link>
+
+            {/* Dropdown Menu */}
+            {servicesDropdownOpen && (
+              <div className="absolute top-full left-0 w-72 pt-3 animate-in fade-in slide-in-from-top-1 duration-150">
+                <div className="bg-white rounded-xl shadow-xl border border-slate-200 p-2 space-y-1">
+                  <Link
+                    href="/services"
+                    className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-slate-50 transition-colors group"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-emerald-50 text-[#059669] flex items-center justify-center shrink-0 group-hover:bg-[#059669] group-hover:text-white transition-colors">
+                      <Briefcase className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <div className="text-xs font-bold text-[#0F172A] group-hover:text-[#059669] transition-colors">
+                        All Services Overview
+                      </div>
+                      <div className="text-[11px] text-slate-500 font-normal leading-tight mt-0.5">
+                        Explore our comprehensive recruitment categories
+                      </div>
+                    </div>
+                  </Link>
+
+                  <Link
+                    href="/services/hiring-talent"
+                    className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-slate-50 transition-colors group"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-emerald-50 text-[#059669] flex items-center justify-center shrink-0 group-hover:bg-[#059669] group-hover:text-white transition-colors">
+                      <Users className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <div className="text-xs font-bold text-[#0F172A] group-hover:text-[#059669] transition-colors">
+                        Hiring Talent
+                      </div>
+                      <div className="text-[11px] text-slate-500 font-normal leading-tight mt-0.5">
+                        Recruitment solutions for businesses &amp; boards
+                      </div>
+                    </div>
+                  </Link>
+
+                  <Link
+                    href="/services/finding-opportunities"
+                    className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-slate-50 transition-colors group"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-emerald-50 text-[#059669] flex items-center justify-center shrink-0 group-hover:bg-[#059669] group-hover:text-white transition-colors">
+                      <Briefcase className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <div className="text-xs font-bold text-[#0F172A] group-hover:text-[#059669] transition-colors">
+                        Finding Opportunities
+                      </div>
+                      <div className="text-[11px] text-slate-500 font-normal leading-tight mt-0.5">
+                        Career pathways &amp; registration for candidates
+                      </div>
+                    </div>
+                  </Link>
+
+                  <div className="pt-1 border-t border-slate-100">
+                    <Link
+                      href="/cv-builder"
+                      className="flex items-center justify-between p-2 rounded-lg text-slate-600 hover:text-[#059669] hover:bg-slate-50 text-[11px] font-semibold transition-colors"
+                    >
+                      <span className="flex items-center gap-2">
+                        <FileText className="w-3.5 h-3.5 text-[#059669]" />
+                        <span>Free Interactive CV Builder</span>
+                      </span>
+                      <span className="text-[9px] font-extrabold uppercase bg-emerald-100 text-[#065F46] px-1.5 py-0.5 rounded">
+                        NEW
+                      </span>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Contact Link */}
+          <Link
+            href="/contact"
+            className={`relative text-xs font-bold uppercase tracking-[0.14em] transition-colors py-1 flex items-center ${
+              isActive("/contact")
+                ? "text-[#059669] border-b-2 border-[#059669]"
+                : "text-slate-800 hover:text-[#059669]"
+            }`}
+          >
+            Contact
+          </Link>
         </nav>
 
         {/* Desktop CTA Action Group */}
-        <div className="hidden lg:flex items-center gap-5">
+        <div className="hidden lg:flex items-center gap-4">
           <a
-            href="tel:+94770000000"
-            className="text-xs font-semibold text-slate-600 hover:text-[#059669] transition-colors flex items-center gap-1.5"
+            href="https://wa.me/94772345678?text=Hello%20Talent%20Bridge%20Team!%20I%20would%20like%20to%20inquire%20about%20your%20services."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs font-bold text-slate-700 hover:text-[#059669] transition-colors flex items-center gap-1.5 bg-slate-50 border border-slate-200 hover:border-emerald-300 px-3 py-2 rounded-lg"
           >
-            <Phone className="w-3.5 h-3.5 text-[#059669]" />
-            <span>+94 77 000 0000</span>
+            <MessageCircle className="w-3.5 h-3.5 text-[#059669]" />
+            <span>+94 77 234 5678</span>
           </a>
 
           <Link
-            href="/contact?type=employer"
-            className="btn-brand-green !py-2.5 !px-5 !text-xs flex items-center gap-2 group"
+            href="/services/hiring-talent"
+            className="btn-brand-green !py-2.5 !px-5 !text-xs flex items-center gap-2 group shadow-sm hover:shadow"
           >
-            <span>Hire Talent</span>
+            <span>Hiring Talent</span>
             <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
           </Link>
         </div>
 
         {/* Mobile Hamburger Button */}
-        <div className="flex xl:hidden items-center gap-3">
-          <Link
-            href="/contact?type=employer"
-            className="hidden sm:inline-flex btn-human-primary !py-2 !px-4 !text-xs"
+        <div className="flex lg:hidden items-center gap-3">
+          <a
+            href="https://wa.me/94772345678?text=Hello%20Talent%20Bridge!"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 rounded-lg bg-emerald-50 text-[#059669] border border-emerald-200"
+            aria-label="WhatsApp"
           >
-            Retain Search
-          </Link>
+            <MessageCircle className="w-4 h-4" />
+          </a>
 
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="w-10 h-10 rounded border border-[#E8E6DF] bg-white flex flex-col items-center justify-center gap-1.5 focus:outline-none"
+            className="w-10 h-10 rounded-lg border border-slate-200 bg-white flex flex-col items-center justify-center gap-1.5 focus:outline-none"
             aria-expanded={mobileMenuOpen}
             aria-label="Toggle navigation menu"
           >
@@ -147,43 +258,112 @@ export function Navbar() {
 
       {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
-        <div className="xl:hidden bg-white border-b border-[#E8E6DF] shadow-xl py-6 px-6 space-y-4 animate-in slide-in-from-top duration-200">
-          <nav className="flex flex-col space-y-2">
-            {navLinks.map((link) => {
-              const active = isActive(link.href);
-              return (
+        <div className="lg:hidden bg-white border-b border-slate-200 shadow-xl py-6 px-6 space-y-4 animate-in slide-in-from-top duration-200">
+          <nav className="flex flex-col space-y-1.5">
+            <Link
+              href="/"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`flex items-center justify-between px-3 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-colors ${
+                pathname === "/"
+                  ? "bg-emerald-50 text-[#059669]"
+                  : "text-slate-800 hover:text-[#059669]"
+              }`}
+            >
+              <span>Home</span>
+              <ChevronRight className="w-4 h-4 text-slate-400" />
+            </Link>
+
+            <Link
+              href="/about"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`flex items-center justify-between px-3 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-colors ${
+                pathname.startsWith("/about")
+                  ? "bg-emerald-50 text-[#059669]"
+                  : "text-slate-800 hover:text-[#059669]"
+              }`}
+            >
+              <span>About</span>
+              <ChevronRight className="w-4 h-4 text-slate-400" />
+            </Link>
+
+            <div className="py-1">
+              <Link
+                href="/services"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`flex items-center justify-between px-3 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-colors ${
+                  pathname === "/services"
+                    ? "bg-emerald-50 text-[#059669]"
+                    : "text-slate-800 hover:text-[#059669]"
+                }`}
+              >
+                <span>Services (Overview)</span>
+                <ChevronRight className="w-4 h-4 text-slate-400" />
+              </Link>
+
+              <div className="pl-4 mt-1 space-y-1 border-l-2 border-emerald-100 ml-3">
                 <Link
-                  key={link.href}
-                  href={link.href}
+                  href="/services/hiring-talent"
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`flex items-center justify-between px-3 py-2.5 rounded text-xs font-semibold uppercase tracking-wider transition-colors ${
-                    active
-                      ? "bg-[#F8FAFC] text-[#0F172A] font-bold"
-                      : "text-[#4A5568] hover:text-[#0F172A]"
+                  className={`flex items-center justify-between px-3 py-2 rounded-lg text-xs font-semibold transition-colors ${
+                    pathname.startsWith("/services/hiring-talent")
+                      ? "text-[#059669] font-bold"
+                      : "text-slate-600 hover:text-[#059669]"
                   }`}
                 >
-                  <span>{link.label}</span>
-                  <ChevronRight className="w-4 h-4 text-[#718096]" />
+                  <span>• Hiring Talent (For Employers)</span>
                 </Link>
-              );
-            })}
+                <Link
+                  href="/services/finding-opportunities"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`flex items-center justify-between px-3 py-2 rounded-lg text-xs font-semibold transition-colors ${
+                    pathname.startsWith("/services/finding-opportunities")
+                      ? "text-[#059669] font-bold"
+                      : "text-slate-600 hover:text-[#059669]"
+                  }`}
+                >
+                  <span>• Finding Opportunities (For Candidates)</span>
+                </Link>
+              </div>
+            </div>
+
+            <Link
+              href="/contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`flex items-center justify-between px-3 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-colors ${
+                pathname.startsWith("/contact")
+                  ? "bg-emerald-50 text-[#059669]"
+                  : "text-slate-800 hover:text-[#059669]"
+              }`}
+            >
+              <span>Contact</span>
+              <ChevronRight className="w-4 h-4 text-slate-400" />
+            </Link>
           </nav>
 
-          <div className="pt-4 border-t border-[#E8E6DF] flex flex-col gap-2.5">
+          <div className="pt-4 border-t border-slate-200 flex flex-col gap-2.5">
             <Link
-              href="/cv-builder"
+              href="/services/hiring-talent"
               onClick={() => setMobileMenuOpen(false)}
-              className="btn-brand-green w-full text-center py-3 text-xs justify-center"
+              className="btn-brand-green w-full text-center py-3 text-xs justify-center font-bold"
             >
-              Build & Share Your CV Free
+              Hiring Talent — For Employers
             </Link>
             <Link
-              href="/contact?type=employer"
+              href="/services/finding-opportunities"
               onClick={() => setMobileMenuOpen(false)}
-              className="btn-brand-navy w-full text-center py-3 text-xs justify-center"
+              className="btn-brand-navy w-full text-center py-3 text-xs justify-center font-bold"
             >
-              Hire Executive Talent
+              Finding Opportunities — For Candidates
             </Link>
+            <a
+              href="https://wa.me/94772345678?text=Hello%20Talent%20Bridge%20Team!"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 p-3 rounded-lg border border-emerald-300 text-[#065F46] bg-emerald-50 font-bold text-xs"
+            >
+              <MessageCircle className="w-4 h-4 text-[#059669]" />
+              <span>WhatsApp: +94 77 234 5678</span>
+            </a>
           </div>
         </div>
       )}

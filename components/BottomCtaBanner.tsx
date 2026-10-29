@@ -72,7 +72,9 @@ export function BottomCtaBanner() {
             <div className="flex flex-wrap items-center gap-6 pt-2 text-xs text-slate-400">
               <div className="flex items-center gap-2">
                 <Phone className="w-3.5 h-3.5 text-[#10B981]" />
-                <span>Partner Hotline: +94 77 000 0000</span>
+                <a href="tel:+94772345678" className="hover:text-white transition-colors">
+                  Partner Hotline: +94 77 234 5678
+                </a>
               </div>
               <span className="hidden sm:inline">&bull;</span>
               <span>100% Strict Non-Disclosure Standard</span>

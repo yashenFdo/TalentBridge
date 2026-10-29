@@ -5,7 +5,7 @@ import { MessageCircle, X, Shield, ArrowUpRight } from "lucide-react";
 
 export function WhatsAppWidget() {
   const [isOpen, setIsOpen] = useState(false);
-  const phoneNumber = "94770000000";
+  const phoneNumber = "94772345678";
   const defaultMessage = encodeURIComponent(
     "Hello Talent Bridge Executive Advisory! I would like to make a confidential recruitment inquiry."
   );

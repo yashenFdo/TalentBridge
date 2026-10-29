@@ -84,38 +84,43 @@ export function Footer() {
           {/* Column 2: Solutions & Platform Navigation (2 Cols) */}
           <div className="lg:col-span-2 space-y-3">
             <span className="block text-xs font-bold uppercase tracking-wider text-white">
-              Practices & Tools
+              Pages &amp; Services
             </span>
             <ul className="space-y-2 text-xs text-slate-400">
               <li>
-                <Link href="/services#executive-search" className="hover:text-sky-300 transition-colors">
-                  Executive Search
+                <Link href="/" className="hover:text-emerald-400 transition-colors">
+                  Home
                 </Link>
               </li>
               <li>
-                <Link href="/services#technical-leadership" className="hover:text-sky-300 transition-colors">
-                  Tech & AI Leadership
+                <Link href="/about" className="hover:text-emerald-400 transition-colors">
+                  About Us
                 </Link>
               </li>
               <li>
-                <Link href="/services#screening" className="hover:text-sky-300 transition-colors">
-                  360° Candidate Vetting
+                <Link href="/services" className="hover:text-emerald-400 transition-colors">
+                  Services Overview
                 </Link>
               </li>
               <li>
-                <Link href="/cv-builder" className="hover:text-emerald-400 transition-colors font-semibold text-emerald-300 flex items-center gap-1.5">
-                  <span>ATS CV Studio</span>
+                <Link href="/services/hiring-talent" className="hover:text-emerald-400 transition-colors font-semibold text-white">
+                  Hiring Talent
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/finding-opportunities" className="hover:text-emerald-400 transition-colors font-semibold text-white">
+                  Finding Opportunities
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-emerald-400 transition-colors">
+                  Contact Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/cv-builder" className="hover:text-emerald-400 transition-colors text-emerald-300 font-semibold flex items-center gap-1.5 pt-1">
+                  <span>ATS CV Builder</span>
                   <span className="text-[9px] bg-emerald-500/20 text-emerald-400 px-1 rounded">FREE</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/how-it-works" className="hover:text-sky-300 transition-colors">
-                  4-Stage Search Protocol
-                </Link>
-              </li>
-              <li>
-                <Link href="/careers" className="hover:text-sky-300 transition-colors">
-                  Executive Opportunities
                 </Link>
               </li>
             </ul>
@@ -128,21 +133,21 @@ export function Footer() {
             </span>
             <div className="space-y-2.5 text-xs text-slate-400">
               <div className="flex items-start gap-2">
-                <MapPin className="w-3.5 h-3.5 text-sky-400 flex-shrink-0 mt-0.5" />
+                <MapPin className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0 mt-0.5" />
                 <span className="text-slate-300 leading-snug">
-                  Level 4, Business Tower, Galle Road, Colombo 03, Sri Lanka
+                  Level 12, West Tower, World Trade Center, Echelon Square, Colombo 01, Sri Lanka
                 </span>
               </div>
               <div className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-sky-400 flex-shrink-0" />
-                <a href="tel:+94770000000" className="hover:text-white transition-colors">
-                  +94 77 000 0000
+                <Phone className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
+                <a href="tel:+94772345678" className="hover:text-white transition-colors">
+                  +94 77 234 5678 / +94 11 234 5678
                 </a>
               </div>
               <div className="flex items-center gap-2">
-                <Mail className="w-3.5 h-3.5 text-sky-400 flex-shrink-0" />
-                <a href="mailto:contact@talentbridge.lk" className="hover:text-white transition-colors">
-                  contact@talentbridge.lk
+                <Mail className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
+                <a href="mailto:info@talentbridge.lk" className="hover:text-white transition-colors">
+                  info@talentbridge.lk
                 </a>
               </div>
               <div className="flex items-center gap-2 text-emerald-400">
