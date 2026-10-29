@@ -29,9 +29,9 @@ export default function HomePage() {
       <section className="py-20 lg:py-24 bg-[#FFFFFF] border-y border-slate-200">
         <div className="max-w-[1360px] mx-auto px-5 sm:px-8">
           <div className="max-w-3xl mb-12 space-y-2">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-100 text-[#065F46] text-xs font-bold uppercase tracking-wider">
-              <span>Real-Time Market Telemetry</span>
-            </div>
+            <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#059669]">
+              Real-Time Market Telemetry
+            </p>
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight">
               EXECUTIVE MARKET <span className="text-[#059669]">INTELLIGENCE</span>
             </h2>
@@ -51,9 +51,9 @@ export default function HomePage() {
       <section className="py-20 lg:py-24 bg-[#F8FAFC] border-y border-slate-200">
         <div className="max-w-[1360px] mx-auto px-5 sm:px-8">
           <div className="max-w-3xl mb-12 space-y-2">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-100 text-[#065F46] text-xs font-bold uppercase tracking-wider">
-              <span>Historical Mandate Performance</span>
-            </div>
+            <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#059669]">
+              Historical Mandate Performance
+            </p>
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight">
               VERIFIED TRACK <span className="text-[#059669]">RECORD</span>
             </h2>

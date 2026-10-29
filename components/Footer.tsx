@@ -17,10 +17,9 @@ export function Footer() {
         <div className="max-w-[1360px] mx-auto px-5 sm:px-8 py-10">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
             <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#059669]/15 border border-[#059669]/30 text-[#2DD4BF] text-xs font-semibold uppercase tracking-wider mb-2.5">
-                <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
+              <p className="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-2">
                 Executive Mandates &amp; Talent Solutions
-              </div>
+              </p>
               <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
                 The Right Talent. The Right Direction.
               </h2>
@@ -165,10 +164,9 @@ export function Footer() {
               
               {/* Header Badge */}
               <div className="flex items-center justify-between gap-2 mb-3">
-                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 text-[10px] font-bold tracking-wider uppercase">
-                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                <span className="text-[10px] font-bold tracking-wider uppercase text-cyan-400">
                   Technology Partner
-                </div>
+                </span>
                 <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
                   USA • Global
                 </span>

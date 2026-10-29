@@ -127,7 +127,7 @@ export default function AboutPage() {
         <div className="relative z-10 max-w-[1360px] mx-auto px-5 sm:px-8">
           <div className="max-w-3xl space-y-6 text-white">
             
-            {/* Company Logo & Tagline Badge */}
+            {/* Company Logo & Tagline */}
             <div className="flex flex-wrap items-center gap-3">
               <div className="bg-white/95 px-4 py-2 rounded-2xl backdrop-blur-md shadow-md inline-flex items-center">
                 <Image
@@ -138,10 +138,9 @@ export default function AboutPage() {
                   className="h-8 w-auto object-contain"
                 />
               </div>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-xs font-bold tracking-wider uppercase">
-                <Sparkles className="w-3.5 h-3.5 text-[#10B981]" />
-                <span>The Right Talent. The Right Direction.</span>
-              </div>
+              <p className="text-emerald-400 font-semibold tracking-wide text-xs sm:text-sm">
+                The Right Talent. The Right Direction.
+              </p>
             </div>
 
             {/* Bold Title */}
@@ -170,7 +169,7 @@ export default function AboutPage() {
               </Link>
               <Link
                 href="/services/finding-opportunities"
-                className="bg-white/10 hover:bg-white/20 text-white border border-white/30 px-5 py-3 rounded-full text-xs sm:text-sm font-bold transition-all flex items-center gap-2"
+                className="bg-white/10 hover:bg-white/20 text-white border border-white/30 px-5 py-3 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-2"
               >
                 <Briefcase className="w-4 h-4 text-emerald-400" />
                 <span>Finding Career Opportunities</span>
@@ -186,10 +185,9 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             <div className="lg:col-span-6 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-[#065F46] text-xs font-bold uppercase tracking-wider">
-                <Target className="w-3.5 h-3.5" />
-                <span>Our Founding Conviction</span>
-              </div>
+              <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#059669]">
+                Our Founding Conviction
+              </p>
               
               <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight leading-tight">
                 Recruitment Redefined Around <span className="text-[#059669]">People, Purpose, &amp; Precision</span>.
@@ -242,9 +240,9 @@ export default function AboutPage() {
         <div className="max-w-[1360px] mx-auto px-5 sm:px-8 space-y-12">
           
           <div className="text-center max-w-3xl mx-auto space-y-3">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-100 text-[#065F46] text-xs font-bold uppercase tracking-wider">
-              <span>Bilateral Mandate</span>
-            </div>
+            <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#059669]">
+              Bilateral Mandate
+            </p>
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight">
               OUR MISSION &amp; <span className="text-[#059669]">APPROACH</span>
             </h2>
@@ -422,9 +420,9 @@ export default function AboutPage() {
       <section className="py-20 bg-[#071324] text-white">
         <div className="max-w-[1360px] mx-auto px-5 sm:px-8">
           <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold uppercase tracking-wider">
-              <span>Accountability &amp; Standards</span>
-            </div>
+            <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-emerald-400">
+              Accountability &amp; Standards
+            </p>
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
               OUR STRATEGIC <span className="text-[#34D399]">OBJECTIVES</span>
             </h2>
@@ -454,9 +452,9 @@ export default function AboutPage() {
       <section className="py-20 lg:py-24 bg-[#FFFFFF]">
         <div className="max-w-[1360px] mx-auto px-5 sm:px-8">
           <div className="max-w-3xl mb-14 space-y-3">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-100 text-[#065F46] text-xs font-bold uppercase tracking-wider">
-              <span>Foundational Values</span>
-            </div>
+            <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#059669]">
+              Foundational Values
+            </p>
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight">
               INSTITUTIONAL <span className="text-[#059669]">PRINCIPLES</span>
             </h2>
@@ -488,9 +486,9 @@ export default function AboutPage() {
       <section className="py-20 bg-[#F8FAFC] border-t border-slate-200">
         <div className="max-w-[1360px] mx-auto px-5 sm:px-8">
           <div className="max-w-3xl mb-14 space-y-3">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-100 text-[#065F46] text-xs font-bold uppercase tracking-wider">
-              <span>Our Trajectory</span>
-            </div>
+            <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#059669]">
+              Our Trajectory
+            </p>
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight">
               MILESTONES OF <span className="text-[#059669]">GROWTH</span>
             </h2>
@@ -543,7 +541,7 @@ export default function AboutPage() {
               href="https://wa.me/94772345678?text=Hello%20Talent%20Bridge%20Team!%20I%20would%20like%20to%20learn%20more%20about%20your%20company."
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white/10 hover:bg-white/15 text-white border border-white/20 px-6 py-3.5 rounded-full text-sm font-bold transition-all"
+              className="bg-white/10 hover:bg-white/15 text-white border border-white/20 px-6 py-3.5 rounded-xl text-sm font-bold transition-all"
             >
               WhatsApp Partner Desk
             </a>

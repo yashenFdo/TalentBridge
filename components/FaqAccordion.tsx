@@ -48,9 +48,9 @@ export function FaqAccordion() {
       <div className="max-w-[1000px] mx-auto px-5 sm:px-8">
         {/* Section Heading */}
         <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-[#065F46] text-xs font-bold uppercase tracking-wider">
-            <span>Transparency &amp; Governance</span>
-          </div>
+          <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#059669]">
+            Transparency &amp; Governance
+          </p>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight">
             FREQUENTLY ASKED <span className="text-[#059669]">QUESTIONS</span>
           </h2>

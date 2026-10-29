@@ -31,10 +31,9 @@ export function BottomCtaBanner() {
 
           {/* Content */}
           <div className="relative z-10 max-w-2xl space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-xs font-bold uppercase tracking-wider">
-              <ShieldCheck className="w-3.5 h-3.5" />
-              <span>Direct Managing Partner Advisory</span>
-            </div>
+            <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-emerald-400">
+              Direct Managing Partner Advisory
+            </p>
 
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-white">
               Appoint Your Next Defining Leader.
@@ -57,11 +56,11 @@ export function BottomCtaBanner() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your corporate email address..."
-                  className="w-full sm:w-80 px-4 py-3.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white placeholder-slate-400 text-xs focus:outline-none focus:ring-2 focus:ring-[#059669]"
+                  className="w-full sm:w-80 px-4 py-3.5 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 text-white placeholder-slate-400 text-xs focus:outline-none focus:ring-2 focus:ring-[#059669]"
                 />
                 <button
                   type="submit"
-                  className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-[#059669] hover:bg-[#047857] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 cursor-pointer flex-shrink-0"
+                  className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-[#059669] hover:bg-[#047857] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 cursor-pointer flex-shrink-0"
                 >
                   <span>Request Talent Consultation</span>
                   <ArrowRight className="w-4 h-4" />

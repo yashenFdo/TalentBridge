@@ -122,10 +122,9 @@ export function MarketIntelligenceSimulator() {
             Market Intelligence &amp; Search Calibrator
           </h3>
         </div>
-        <div className="flex items-center gap-2 text-xs font-bold text-[#065F46] bg-emerald-50 border border-emerald-200 px-3.5 py-1.5 rounded-full">
-          <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
-          <span>Colombo &bull; Regional APAC Data</span>
-        </div>
+        <span className="text-xs font-bold uppercase tracking-wider text-[#059669]">
+          Colombo &bull; Regional APAC Data
+        </span>
       </div>
 
       {/* Selectors Grid */}

@@ -125,10 +125,9 @@ export default function ContactPage() {
       <section className="relative pt-32 pb-16 sm:pt-36 sm:pb-20 bg-gradient-to-b from-[#F8FAFC] via-white to-white border-b border-slate-200">
         <div className="max-w-[1360px] mx-auto px-5 sm:px-8">
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100 text-[#065F46] text-xs font-bold uppercase tracking-wider">
-              <span className="w-2 h-2 rounded-full bg-[#059669] animate-pulse" />
-              <span>Headquarters Communication Terminal</span>
-            </div>
+            <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#059669]">
+              Headquarters Communication Terminal
+            </p>
 
             {/* Bold Heading */}
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0F172A] tracking-tight leading-tight">
@@ -249,10 +248,9 @@ export default function ContactPage() {
           {/* Dedicated WhatsApp Direct Contact Banner */}
           <div className="rounded-[2.5rem] bg-gradient-to-r from-[#064E3B] via-[#059669] to-[#047857] p-8 sm:p-12 text-white shadow-xl flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div className="space-y-2 max-w-xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-white text-xs font-bold tracking-wider uppercase">
-                <MessageCircle className="w-3.5 h-3.5" />
-                <span>Immediate WhatsApp Channel</span>
-              </div>
+              <p className="text-xs font-bold uppercase tracking-widest text-emerald-200">
+                Immediate WhatsApp Channel
+              </p>
               <h2 className="font-display text-2xl sm:text-3xl font-extrabold tracking-tight">
                 Connect Directly on WhatsApp With Our Advisory Team
               </h2>
@@ -340,8 +338,8 @@ export default function ContactPage() {
           <div className="rounded-[2.5rem] bg-white border border-slate-200 p-8 sm:p-12 shadow-md animate-in fade-in duration-200 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             <div className="lg:col-span-8 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-semibold">
-                <DeskIcon className="w-4 h-4 text-[#059669]" />
+              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#059669]">
+                <DeskIcon className="w-4 h-4" />
                 <span>{currentDesk.target}</span>
               </div>
 

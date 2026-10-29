@@ -42,9 +42,9 @@ export function CapabilitiesBento() {
       <div className="max-w-[1360px] mx-auto px-5 sm:px-8">
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-100 text-[#065F46] text-xs font-bold uppercase tracking-wider">
-            <span>Specialized Search Practices</span>
-          </div>
+          <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#059669]">
+            Specialized Search Practices
+          </p>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight leading-tight">
             DISCIPLINED PRACTICES.{" "}
             <span className="text-[#059669]">GUARANTEED OUTCOMES.</span>
@@ -95,10 +95,9 @@ export function CapabilitiesBento() {
           {/* Highlight Card 5: SOLID BRAND GREEN CARD */}
           <div className="bg-gradient-to-br from-[#064E3B] via-[#065F46] to-[#047857] text-white p-7 sm:p-8 rounded-2xl sm:rounded-3xl shadow-xl shadow-emerald-950/20 flex flex-col justify-between space-y-6 md:col-span-2 lg:col-span-2 border border-emerald-400/20">
             <div className="space-y-3">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 text-emerald-200 text-xs font-bold uppercase tracking-wider backdrop-blur-xs">
-                <Sparkles className="w-3.5 h-3.5 text-amber-300" />
-                <span>Executive Self-Service Suite</span>
-              </div>
+              <p className="text-xs font-bold uppercase tracking-widest text-emerald-300">
+                Executive Self-Service Suite
+              </p>
               <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white leading-snug">
                 BUILD &amp; SHARE YOUR VERIFIED EXECUTIVE CV ANYWHERE
               </h3>
@@ -110,7 +109,7 @@ export function CapabilitiesBento() {
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <Link
                 href="/cv-builder"
-                className="px-6 py-3.5 bg-white text-[#064E3B] hover:bg-emerald-50 rounded-full font-bold text-xs uppercase tracking-wider transition-all shadow-md hover:shadow-lg inline-flex items-center gap-2"
+                className="px-6 py-3.5 bg-white text-[#064E3B] hover:bg-emerald-50 rounded-xl font-bold text-xs uppercase tracking-wider transition-all shadow-md hover:shadow-lg inline-flex items-center gap-2"
               >
                 <span>Launch Free CV Studio</span>
                 <ArrowRight className="w-4 h-4 text-[#064E3B]" />

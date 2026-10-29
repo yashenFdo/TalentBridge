@@ -76,17 +76,10 @@ export function LoadingScreen({
           </div>
         </div>
 
-        {/* Verification Status Pill */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#064E3B]/40 border border-emerald-400/30 backdrop-blur-md shadow-inner">
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#10B981]" />
-          </span>
-          <span className="text-[10px] font-bold tracking-[0.2em] text-emerald-300 uppercase">
-            Talent Bridge Verified
-          </span>
-          <Sparkles className="w-3 h-3 text-amber-300 ml-0.5" />
-        </div>
+        {/* Verification Status */}
+        <span className="text-[11px] font-bold tracking-[0.2em] text-emerald-400 uppercase">
+          Talent Bridge Verified
+        </span>
 
         {/* Dynamic Titles */}
         <div className="space-y-1.5">
@@ -112,7 +105,7 @@ export function LoadingScreen({
             href="https://devcity.us"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 font-bold text-white hover:text-emerald-300 transition-colors bg-white/5 border border-white/10 px-2.5 py-1 rounded-full"
+            className="inline-flex items-center gap-1.5 font-bold text-white hover:text-emerald-300 transition-colors bg-white/5 border border-white/10 px-2.5 py-1 rounded-lg"
           >
             <Image
               src="/devcity-icon.png"

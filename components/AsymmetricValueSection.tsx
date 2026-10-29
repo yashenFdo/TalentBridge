@@ -60,9 +60,9 @@ export function AsymmetricValueSection() {
           {/* RIGHT: High-Impact Editorial Copy & Two Feature Cards */}
           <div className="lg:col-span-6 space-y-6">
             <div className="space-y-3">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-[#059669] border border-emerald-200 text-xs font-bold uppercase tracking-wider">
-                <span>Proven Advisory Track Record</span>
-              </div>
+              <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#059669]">
+                Proven Advisory Track Record
+              </p>
               <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight leading-[1.12]">
                 A TRUSTED ADVISORY FOR{" "}
                 <span className="text-[#059669]">EXECUTIVE APPOINTMENTS</span>

@@ -245,10 +245,9 @@ export default function HiringTalentPage() {
       <section className="relative pt-32 pb-16 sm:pt-36 sm:pb-20 bg-gradient-to-b from-[#F0FDF4] via-white to-white border-b border-slate-200">
         <div className="max-w-[1360px] mx-auto px-5 sm:px-8">
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100 text-[#065F46] text-xs font-bold uppercase tracking-wider">
-              <span className="w-2 h-2 rounded-full bg-[#059669] animate-pulse" />
-              <span>For Businesses, Boards &amp; HR Leaders</span>
-            </div>
+            <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#059669]">
+              For Businesses, Boards &amp; HR Leaders
+            </p>
 
             {/* Bold Heading */}
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0F172A] tracking-tight leading-tight">
@@ -422,7 +421,7 @@ export default function HiringTalentPage() {
                     <div className="lg:col-span-4 rounded-3xl bg-gradient-to-b from-[#F8FAFC] via-[#F8FAFC] to-[#F1F5F9] border border-slate-200 p-6 sm:p-7 space-y-6 shadow-sm">
                       
                       <div className="text-center space-y-3">
-                        <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#059669] bg-emerald-100 px-3 py-1 rounded-full">
+                        <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#059669] block">
                           Responsible Practice Lead
                         </span>
                         

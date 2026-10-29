@@ -28,9 +28,9 @@ export function ServicesGrid() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl">
-            <span className="text-xs font-bold uppercase tracking-widest text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
+            <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#059669]">
               Areas of Expertise
-            </span>
+            </p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-950 mt-4 tracking-tight">
               Comprehensive Talent Solutions
             </h2>

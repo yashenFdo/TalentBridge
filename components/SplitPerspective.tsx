@@ -9,9 +9,9 @@ export function SplitPerspective() {
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-xs font-bold uppercase tracking-widest text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
+          <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#059669]">
             Two Distinct Perspectives
-          </span>
+          </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-950 mt-4 tracking-tight">
             Connecting Ambition with Opportunity
           </h2>

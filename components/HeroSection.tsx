@@ -55,27 +55,11 @@ export function HeroSection() {
             {/* Left Headline Column (7 Cols) */}
             <div className="lg:col-span-7 space-y-6">
               
-              {/* Telemetry Ticker & Tagline Badge */}
-              <div className="space-y-3">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-emerald-300 text-[11px] sm:text-xs font-bold tracking-wider uppercase backdrop-blur-md">
-                  <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
-                  <span>The Right Talent. The Right Direction.</span>
-                </div>
-
-                <div className="flex flex-wrap items-center gap-2 text-[11px] text-slate-300 font-medium">
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-white/10 border border-white/10 text-slate-200">
-                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                    <span>Fiduciary Discretion</span>
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-white/10 border border-white/10 text-slate-200">
-                    <Award className="w-3.5 h-3.5 text-amber-400" />
-                    <span>98% 12-Mo. Retention</span>
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-white/10 border border-white/10 text-slate-200">
-                    <Clock className="w-3.5 h-3.5 text-cyan-400" />
-                    <span>14-Day Delivery SLA</span>
-                  </span>
-                </div>
+              {/* Clean Readable Tagline (No Tag Badge) */}
+              <div>
+                <p className="text-emerald-400 font-semibold tracking-wide text-sm sm:text-base">
+                  The Right Talent. The Right Direction.
+                </p>
               </div>
 
               {/* Main Heading (Bold, Handcrafted Typography) */}
@@ -108,7 +92,7 @@ export function HeroSection() {
                 {/* 2. Finding Opportunities CTA Button */}
                 <Link
                   href="/services/finding-opportunities"
-                  className="bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-md px-6 py-3.5 rounded-full text-xs sm:text-sm font-bold transition-all flex items-center gap-2.5 hover:border-white/50 shadow-lg"
+                  className="bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-md px-6 py-3.5 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-2.5 hover:border-white/50 shadow-lg"
                 >
                   <Briefcase className="w-4 h-4 text-emerald-400" />
                   <span>Finding Opportunities</span>
@@ -119,16 +103,16 @@ export function HeroSection() {
                   href="https://wa.me/94772345678?text=Hello%20Talent%20Bridge%20Advisory!%20I%20would%20like%20to%20learn%20more%20about%20your%20services."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-emerald-600/30 hover:bg-emerald-600/40 text-emerald-300 border border-emerald-500/40 backdrop-blur-md px-4 py-3.5 rounded-full text-xs sm:text-sm font-bold transition-all flex items-center gap-2"
+                  className="bg-emerald-600/30 hover:bg-emerald-600/40 text-emerald-300 border border-emerald-500/40 backdrop-blur-md px-4 py-3.5 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-2"
                 >
                   <MessageCircle className="w-4 h-4 text-[#10B981]" />
                   <span>WhatsApp Us</span>
                 </a>
               </div>
 
-              {/* Bottom Quick-Info Pills */}
+              {/* Bottom Quick-Info Bar */}
               <div className="pt-5 flex flex-wrap items-center gap-3 sm:gap-4 border-t border-slate-700/60">
-                {/* Hotline Pill */}
+                {/* Hotline Contact */}
                 <a
                   href="tel:+94772345678"
                   className="flex items-center gap-2.5 bg-white/10 hover:bg-white/15 backdrop-blur-md border border-white/20 px-3.5 py-2 rounded-xl transition-all group"
@@ -146,7 +130,7 @@ export function HeroSection() {
                   </div>
                 </a>
 
-                {/* Location Pill */}
+                {/* Headquarters Location */}
                 <div className="flex items-center gap-2.5 bg-white/10 backdrop-blur-md border border-white/20 px-3.5 py-2 rounded-xl">
                   <div className="w-7 h-7 rounded-lg bg-[#0A192F] text-emerald-400 border border-emerald-500/30 flex items-center justify-center">
                     <MapPin className="w-3.5 h-3.5" />
@@ -159,12 +143,6 @@ export function HeroSection() {
                       Colombo 01, WTC Tower
                     </span>
                   </div>
-                </div>
-
-                {/* Retention Metric Pill */}
-                <div className="hidden sm:flex items-center gap-2 bg-emerald-950/80 border border-emerald-500/40 px-3 py-2 rounded-xl text-xs font-bold text-emerald-300">
-                  <ShieldCheck className="w-4 h-4 text-[#10B981]" />
-                  <span>98% 12-Month Retention Shield</span>
                 </div>
               </div>
             </div>
@@ -247,7 +225,7 @@ export function HeroSection() {
                         href="https://wa.me/94772345678?text=Hello%20Dinesh,%20I%20would%20like%20to%20discuss%20an%20Executive%20Search%20mandate."
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full bg-white/10 hover:bg-white/15 text-white border border-white/20 py-2.5 px-3 rounded-full text-xs font-bold transition-all flex items-center justify-center gap-2"
+                        className="w-full bg-white/10 hover:bg-white/15 text-white border border-white/20 py-2.5 px-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2"
                       >
                         <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
                         <span>WhatsApp Managing Partner Directly</span>
@@ -299,7 +277,7 @@ export function HeroSection() {
                         href="https://wa.me/94772345678?text=Hello%20Sachini,%20I%20am%20a%20candidate%20and%20would%20like%20career%20guidance."
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full bg-white/10 hover:bg-white/15 text-white border border-white/20 py-2.5 px-3 rounded-full text-xs font-bold transition-all flex items-center justify-center gap-2"
+                        className="w-full bg-white/10 hover:bg-white/15 text-white border border-white/20 py-2.5 px-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2"
                       >
                         <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
                         <span>Chat on WhatsApp With Career Lead</span>

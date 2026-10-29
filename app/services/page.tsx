@@ -136,10 +136,9 @@ export default function ServicesPage() {
       <section className="relative pt-32 pb-16 sm:pt-36 sm:pb-20 bg-gradient-to-b from-[#F8FAFC] via-white to-white border-b border-slate-200">
         <div className="max-w-[1360px] mx-auto px-5 sm:px-8">
           <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100 text-[#065F46] text-xs font-bold uppercase tracking-wider">
-              <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
-              <span>Comprehensive Recruitment Practices</span>
-            </div>
+            <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#059669]">
+              Comprehensive Recruitment Practices
+            </p>
 
             {/* Bold Title */}
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0F172A] tracking-tight leading-tight">
@@ -166,7 +165,7 @@ export default function ServicesPage() {
                   <div className="w-14 h-14 rounded-2xl bg-[#059669] text-white flex items-center justify-center shadow-lg shadow-emerald-700/25">
                     <Users className="w-7 h-7" />
                   </div>
-                  <span className="text-xs font-extrabold uppercase tracking-widest text-[#059669] bg-emerald-100 px-3 py-1 rounded-full border border-emerald-200">
+                  <span className="text-xs font-extrabold uppercase tracking-widest text-[#059669]">
                     For Businesses &amp; Organizations
                   </span>
                 </div>
@@ -252,7 +251,7 @@ export default function ServicesPage() {
                   <div className="w-14 h-14 rounded-2xl bg-[#071324] text-white flex items-center justify-center shadow-lg shadow-slate-900/25">
                     <Briefcase className="w-7 h-7 text-emerald-400" />
                   </div>
-                  <span className="text-xs font-extrabold uppercase tracking-widest text-[#071324] bg-slate-200 px-3 py-1 rounded-full border border-slate-300">
+                  <span className="text-xs font-extrabold uppercase tracking-widest text-slate-700">
                     For Professionals &amp; Candidates
                   </span>
                 </div>

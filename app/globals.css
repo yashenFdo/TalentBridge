@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --font-display: var(--font-outfit), 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
-  --font-sans: var(--font-plus-jakarta), 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: var(--font-plus-jakarta), var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
   --color-canvas: #FFFFFF;
   --color-canvas-subtle: #F8FAFC;
@@ -29,8 +29,8 @@
 }
 
 @theme {
-  --font-display: var(--font-outfit), 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
-  --font-sans: var(--font-plus-jakarta), 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-display: var(--font-plus-jakarta), var(--font-inter), system-ui, sans-serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
 
   --color-canvas: #FFFFFF;
   --color-slate-bg: #F8FAFC;

@@ -65,9 +65,9 @@ export function ExecutiveTestimonialsCarousel() {
       <div className="max-w-[1360px] mx-auto px-5 sm:px-8">
         {/* Section Heading */}
         <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-[#059669] border border-emerald-200 text-xs font-bold uppercase tracking-wider">
-            <span>Verified Boardroom Endorsements</span>
-          </div>
+          <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#059669]">
+            Verified Boardroom Endorsements
+          </p>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight">
             WHAT OUR <span className="text-[#059669]">CLIENTS</span> SAY
           </h2>
@@ -111,7 +111,7 @@ export function ExecutiveTestimonialsCarousel() {
               </div>
 
               <div className="pt-2">
-                <span className="text-xs font-bold text-[#059669] bg-emerald-100/70 border border-emerald-200 px-3.5 py-1 rounded-full uppercase tracking-wider">
+                <span className="text-xs font-bold text-[#059669] uppercase tracking-wider">
                   {current.highlight}
                 </span>
               </div>
