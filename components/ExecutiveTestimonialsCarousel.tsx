@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
-import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { Star, ChevronLeft, ChevronRight, Quote, Pause, Play } from "lucide-react";
 
 export function ExecutiveTestimonialsCarousel() {
   const testimonials = [
@@ -49,14 +49,26 @@ export function ExecutiveTestimonialsCarousel() {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
-  const prev = () => {
+  const prev = useCallback(() => {
     setCurrentIndex((prevIdx) => (prevIdx === 0 ? testimonials.length - 1 : prevIdx - 1));
-  };
+  }, [testimonials.length]);
 
-  const next = () => {
+  const next = useCallback(() => {
     setCurrentIndex((prevIdx) => (prevIdx === testimonials.length - 1 ? 0 : prevIdx + 1));
-  };
+  }, [testimonials.length]);
+
+  // Auto-advance slides every 5 seconds
+  useEffect(() => {
+    if (isPaused) return;
+
+    const interval = setInterval(() => {
+      next();
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [isPaused, next]);
 
   const current = testimonials[currentIndex];
 
@@ -76,9 +88,16 @@ export function ExecutiveTestimonialsCarousel() {
           </p>
         </div>
 
-        {/* Testimonial Card */}
-        <div className="max-w-4xl mx-auto bg-[#F8FAFC] rounded-3xl border border-slate-200/90 p-8 sm:p-12 shadow-sm relative">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+        {/* Testimonial Card with Hover Pause and Auto-Advance */}
+        <div 
+          className="max-w-4xl mx-auto bg-[#F8FAFC] rounded-3xl border border-slate-200/90 p-8 sm:p-12 shadow-sm relative transition-all duration-300"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          onTouchStart={() => setIsPaused(true)}
+          onTouchEnd={() => setIsPaused(false)}
+        >
+          {/* Animated Slide Content */}
+          <div key={current.id} className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center animate-in fade-in duration-300">
             {/* Client Image Column */}
             <div className="md:col-span-4 flex flex-col items-center text-center">
               <div className="relative w-28 h-28 sm:w-36 sm:h-36 rounded-2xl overflow-hidden shadow-md border-2 border-white mb-3">
@@ -110,35 +129,73 @@ export function ExecutiveTestimonialsCarousel() {
                 </p>
               </div>
 
-              <div className="pt-2">
+              <div className="pt-2 flex items-center justify-between">
                 <span className="text-xs font-bold text-[#059669] uppercase tracking-wider">
                   {current.highlight}
+                </span>
+
+                {/* Subtle Autoplay Status Indicator */}
+                <span className="text-[10px] text-slate-600 font-semibold flex items-center gap-1.5 bg-slate-200/60 px-2.5 py-0.5 rounded-full">
+                  <span className={`w-1.5 h-1.5 rounded-full ${isPaused ? "bg-amber-400" : "bg-emerald-500 animate-pulse"}`} />
+                  <span>{isPaused ? "Paused" : "Auto-playing"}</span>
                 </span>
               </div>
             </div>
           </div>
 
-          {/* Carousel Pagination Controls */}
-          <div className="mt-8 pt-6 border-t border-slate-200 flex items-center justify-center gap-4">
-            <button
-              onClick={prev}
-              className="w-10 h-10 rounded-full bg-white hover:bg-[#059669] hover:text-white border border-slate-300 text-slate-700 flex items-center justify-center transition-all shadow-xs cursor-pointer"
-              aria-label="Previous Testimonial"
-            >
-              <ChevronLeft className="w-4 h-4" />
-            </button>
+          {/* Carousel Pagination & Indicator Controls */}
+          <div className="mt-8 pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+            {/* Direct Slide Jump Dots */}
+            <div className="flex items-center gap-2">
+              {testimonials.map((_, idx) => (
+                <button
+                  key={idx}
+                  type="button"
+                  onClick={() => setCurrentIndex(idx)}
+                  className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                    currentIndex === idx
+                      ? "w-7 bg-[#059669]"
+                      : "w-2 bg-slate-300 hover:bg-slate-400"
+                  }`}
+                  aria-label={`Jump to feedback slide ${idx + 1}`}
+                />
+              ))}
+            </div>
 
-            <span className="text-xs font-bold tracking-widest text-slate-600 font-mono">
-              (0{currentIndex + 1} / 0{testimonials.length})
-            </span>
+            {/* Previous / Next & Counter Buttons */}
+            <div className="flex items-center gap-3">
+              <button
+                type="button"
+                onClick={prev}
+                className="w-9 h-9 rounded-full bg-white hover:bg-[#059669] hover:text-white border border-slate-300 text-slate-700 flex items-center justify-center transition-all shadow-xs cursor-pointer"
+                aria-label="Previous Testimonial"
+              >
+                <ChevronLeft className="w-4 h-4" />
+              </button>
 
-            <button
-              onClick={next}
-              className="w-10 h-10 rounded-full bg-white hover:bg-[#059669] hover:text-white border border-slate-300 text-slate-700 flex items-center justify-center transition-all shadow-xs cursor-pointer"
-              aria-label="Next Testimonial"
-            >
-              <ChevronRight className="w-4 h-4" />
-            </button>
+              <span className="text-xs font-bold tracking-widest text-slate-600 font-mono px-2">
+                0{currentIndex + 1} / 0{testimonials.length}
+              </span>
+
+              <button
+                type="button"
+                onClick={next}
+                className="w-9 h-9 rounded-full bg-white hover:bg-[#059669] hover:text-white border border-slate-300 text-slate-700 flex items-center justify-center transition-all shadow-xs cursor-pointer"
+                aria-label="Next Testimonial"
+              >
+                <ChevronRight className="w-4 h-4" />
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setIsPaused(!isPaused)}
+                className="ml-1 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition-all cursor-pointer"
+                aria-label={isPaused ? "Resume auto-slides" : "Pause auto-slides"}
+                title={isPaused ? "Resume auto-slides" : "Pause auto-slides"}
+              >
+                {isPaused ? <Play className="w-3.5 h-3.5 fill-current" /> : <Pause className="w-3.5 h-3.5 fill-current" />}
+              </button>
+            </div>
           </div>
         </div>
       </div>
