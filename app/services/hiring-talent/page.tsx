@@ -19,17 +19,23 @@ import {
   Send,
   Sparkles,
   Clock,
-  Award
+  Award,
+  ChevronRight,
+  Filter,
+  Check
 } from "lucide-react";
 
 export default function HiringTalentPage() {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [selectedPracticeFilter, setSelectedPracticeFilter] = useState<string>("all");
+
   const [formData, setFormData] = useState({
     companyName: "",
     contactPerson: "",
     email: "",
     phone: "",
+    seniorityLevel: "C-Suite (CEO, CTO, CFO, COO)",
     serviceNeeded: "Executive & Board Search",
     roleToHire: "",
     timeline: "Immediate (1-3 weeks)",
@@ -51,6 +57,11 @@ export default function HiringTalentPage() {
       title: "Executive & Board Search",
       badge: "Flagship Practice",
       icon: Building2,
+      metrics: {
+        speed: "14-21 Days",
+        warranty: "365 Days",
+        discretion: "100% Strict NDA",
+      },
       description:
         "Discreet, retained executive search and board advisory tailored for publicly listed PLCs, conglomerates, private equity firms, and high-growth organizations.",
       purpose:
@@ -64,6 +75,7 @@ export default function HiringTalentPage() {
       leadMember: {
         name: "Dinesh Perera",
         role: "Senior Managing Partner – Executive & Board Practice",
+        division: "Board & C-Suite Headhunting",
         email: "dinesh.perera@talentbridge.lk",
         phone: "+94 77 234 5601",
         whatsapp: "94772345601",
@@ -75,6 +87,11 @@ export default function HiringTalentPage() {
       title: "Tech, Engineering & AI Leadership Sourcing",
       badge: "High Growth",
       icon: Cpu,
+      metrics: {
+        speed: "14-18 Days",
+        warranty: "365 Days",
+        discretion: "100% Technical Vetting",
+      },
       description:
         "Specialized headhunting for visionary engineering leaders, AI researchers, Chief Technology Officers, and Principal Software Architects.",
       purpose:
@@ -88,6 +105,7 @@ export default function HiringTalentPage() {
       leadMember: {
         name: "Kavinda Wickramasinghe",
         role: "Practice Lead – Technology & AI Engineering",
+        division: "Engineering & Digital Sourcing",
         email: "kavinda.w@talentbridge.lk",
         phone: "+94 77 234 5602",
         whatsapp: "94772345602",
@@ -99,6 +117,11 @@ export default function HiringTalentPage() {
       title: "360° Candidate Audits & Vetting",
       badge: "Risk Mitigation",
       icon: FileCheck,
+      metrics: {
+        speed: "5-7 Days",
+        warranty: "Independent Fiduciary",
+        discretion: "Full Reference Audit",
+      },
       description:
         "Rigorous, independent competency validation, supervisory reference verification, credential audits, and cultural compatibility assessments.",
       purpose:
@@ -112,6 +135,7 @@ export default function HiringTalentPage() {
       leadMember: {
         name: "Nadeesha Fernando",
         role: "Head of Talent Assessment & Fiduciary Audits",
+        division: "Assessment & Governance",
         email: "nadeesha.f@talentbridge.lk",
         phone: "+94 77 234 5603",
         whatsapp: "94772345603",
@@ -123,6 +147,11 @@ export default function HiringTalentPage() {
       title: "Enterprise Project & Cohort Staffing",
       badge: "Scale & Expansion",
       icon: Users,
+      metrics: {
+        speed: "10-14 Days",
+        warranty: "Tiered Volume Economics",
+        discretion: "Cohort Calibration",
+      },
       description:
         "Coordinated talent acquisition campaigns for corporate scale-ups, market expansions, Global Capability Centers (GCCs), and division builds.",
       purpose:
@@ -136,6 +165,7 @@ export default function HiringTalentPage() {
       leadMember: {
         name: "Rohan Samarasinghe",
         role: "Director of Enterprise Solutions & Scale-Up Hiring",
+        division: "Scale-Up & GCC Practice",
         email: "rohan.s@talentbridge.lk",
         phone: "+94 77 234 5604",
         whatsapp: "94772345604",
@@ -147,6 +177,11 @@ export default function HiringTalentPage() {
       title: "Cross-Border & Diaspora Headhunting",
       badge: "Global Reach",
       icon: Globe2,
+      metrics: {
+        speed: "21-30 Days",
+        warranty: "5,000+ Diaspora Network",
+        discretion: "Cross-Border Structuring",
+      },
       description:
         "Strategic sourcing connecting Sri Lankan and regional enterprises with high-achieving diaspora talent across Singapore, Dubai, London, Australia, and the US.",
       purpose:
@@ -160,6 +195,7 @@ export default function HiringTalentPage() {
       leadMember: {
         name: "Ananya Jayawardena",
         role: "Lead Partner – Global Diaspora & Cross-Border Mandates",
+        division: "Global Diaspora Practice",
         email: "ananya.j@talentbridge.lk",
         phone: "+94 77 234 5605",
         whatsapp: "94772345605",
@@ -171,6 +207,11 @@ export default function HiringTalentPage() {
       title: "Compensation Benchmarking & Org Advisory",
       badge: "Strategic Advisory",
       icon: BarChart3,
+      metrics: {
+        speed: "7-10 Days",
+        warranty: "Real-Time Telemetry",
+        discretion: "Strict Fiduciary",
+      },
       description:
         "Real-time intelligence on executive compensation bands, competitor organizational charts, incentive schemes, and retention diagnostics.",
       purpose:
@@ -184,6 +225,7 @@ export default function HiringTalentPage() {
       leadMember: {
         name: "Malik Senanayake",
         role: "Principal Consultant – Human Capital Analytics",
+        division: "Market Telemetry Practice",
         email: "malik.s@talentbridge.lk",
         phone: "+94 77 234 5606",
         whatsapp: "94772345606",
@@ -192,9 +234,14 @@ export default function HiringTalentPage() {
     },
   ];
 
+  const filteredServices =
+    selectedPracticeFilter === "all"
+      ? services
+      : services.filter((s) => s.id === selectedPracticeFilter);
+
   return (
     <div className="bg-[#FFFFFF] text-[#0F172A]">
-      {/* 1. HERO HEADER */}
+      {/* 1. CINEMATIC HERO HEADER */}
       <section className="relative pt-32 pb-16 sm:pt-36 sm:pb-20 bg-gradient-to-b from-[#F0FDF4] via-white to-white border-b border-slate-200">
         <div className="max-w-[1360px] mx-auto px-5 sm:px-8">
           <div className="max-w-3xl space-y-4">
@@ -213,7 +260,7 @@ export default function HiringTalentPage() {
               Talent Bridge delivers calibrated recruitment and executive search services engineered for organizations that cannot afford a mis-hire. We advise boardrooms, multinational corporations, and high-growth enterprises on appointing top-tier leadership and mission-critical specialists across Sri Lanka and international markets. Every mandate is governed by total discretion, empirical qualification standards, and our signature 12-month candidate retention guarantee.
             </p>
 
-            {/* Fast Stats */}
+            {/* Telemetry Stats Bar */}
             <div className="pt-4 flex flex-wrap items-center gap-6 text-xs font-bold text-slate-800">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-[#059669]" />
@@ -232,41 +279,88 @@ export default function HiringTalentPage() {
         </div>
       </section>
 
-      {/* 2. SERVICES LISTING WITH PURPOSE, BENEFITS & TEAM MEMBERS */}
+      {/* 2. INTERACTIVE PRACTICE JUMP NAV */}
+      <section className="sticky top-[69px] z-30 bg-white/95 backdrop-blur-md border-b border-slate-200 py-3 shadow-xs no-print">
+        <div className="max-w-[1360px] mx-auto px-5 sm:px-8 flex items-center justify-between gap-4 overflow-x-auto no-scrollbar">
+          <div className="flex items-center gap-2 text-xs font-bold text-slate-500 shrink-0">
+            <Filter className="w-3.5 h-3.5 text-[#059669]" />
+            <span>Practice Filter:</span>
+          </div>
+
+          <div className="flex items-center gap-2 shrink-0">
+            <button
+              type="button"
+              onClick={() => setSelectedPracticeFilter("all")}
+              className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all ${
+                selectedPracticeFilter === "all"
+                  ? "bg-[#059669] text-white shadow-xs"
+                  : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+              }`}
+            >
+              All 6 Practices
+            </button>
+            {services.map((srv) => (
+              <button
+                key={srv.id}
+                type="button"
+                onClick={() => setSelectedPracticeFilter(srv.id)}
+                className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all ${
+                  selectedPracticeFilter === srv.id
+                    ? "bg-[#059669] text-white shadow-xs"
+                    : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+                }`}
+              >
+                {srv.title.split("&")[0].trim()}
+              </button>
+            ))}
+          </div>
+
+          <a
+            href="#mandate-builder"
+            className="btn-brand-green !py-1.5 !px-4 !text-xs font-bold shrink-0 hidden md:inline-flex"
+          >
+            Submit Brief &rarr;
+          </a>
+        </div>
+      </section>
+
+      {/* 3. DETAILED SERVICES DOSSIER CARDS WITH PRACTICE LEADS & DIRECT WHATSAPP */}
       <section className="py-20 bg-white">
-        <div className="max-w-[1360px] mx-auto px-5 sm:px-8 space-y-16">
+        <div className="max-w-[1360px] mx-auto px-5 sm:px-8 space-y-14">
+          
           <div className="max-w-3xl space-y-2">
             <span className="text-xs font-bold uppercase tracking-widest text-[#059669] block">
-              Specialized Solutions
+              Direct Practice Command
             </span>
             <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-[#0F172A] tracking-tight">
-              Our Recruitment Services &amp; Dedicated Practice Leads
+              Recruitment Practices &amp; Responsible Practice Leads
             </h2>
             <p className="text-sm sm:text-base text-slate-700 font-normal">
-              Each practice is directed by an experienced domain partner. Browse the detailed services below, along with direct contact channels for each responsible team member.
+              Every mandate is personally led by an experienced domain partner. Connect directly via WhatsApp or email to calibrate your search.
             </p>
           </div>
 
-          {/* Service Cards */}
+          {/* Master Service Dossiers */}
           <div className="space-y-12">
-            {services.map((srv, idx) => {
+            {filteredServices.map((srv, idx) => {
               const IconComp = srv.icon;
               return (
                 <div
                   key={srv.id}
                   id={srv.id}
-                  className="rounded-3xl border border-slate-200 bg-[#FFFFFF] shadow-sm hover:shadow-md transition-all overflow-hidden scroll-mt-28"
+                  className="rounded-[2.5rem] border border-slate-200 bg-white shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden scroll-mt-36"
                 >
-                  <div className="p-8 sm:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+                  <div className="p-8 sm:p-12 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
                     
-                    {/* Left & Middle: Service Description, Purpose & Benefits (8 cols) */}
+                    {/* Left & Middle: Service Description, Purpose & Client Benefits (8 cols) */}
                     <div className="lg:col-span-8 space-y-6">
+                      
                       <div className="flex flex-wrap items-center gap-3">
                         <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-[#059669] border border-emerald-100 flex items-center justify-center shrink-0">
                           <IconComp className="w-6 h-6" />
                         </div>
                         <div>
-                          <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#059669] bg-emerald-50 px-2.5 py-0.5 rounded border border-emerald-200">
+                          <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#059669] bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
                             {srv.badge}
                           </span>
                           <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-[#0F172A] tracking-tight mt-1">
@@ -281,13 +375,29 @@ export default function HiringTalentPage() {
                       </p>
 
                       {/* Purpose Block */}
-                      <div className="p-5 rounded-2xl bg-[#F8FAFC] border-l-4 border-[#059669] space-y-1">
+                      <div className="p-5 rounded-2xl bg-[#F8FAFC] border-l-4 border-[#059669] space-y-1.5">
                         <span className="text-[11px] font-extrabold uppercase tracking-wider text-slate-900 block">
                           Purpose of this Service:
                         </span>
                         <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
                           {srv.purpose}
                         </p>
+                      </div>
+
+                      {/* Telemetry Micro-Pills */}
+                      <div className="grid grid-cols-3 gap-2.5 py-2">
+                        <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-center">
+                          <span className="text-[10px] text-slate-500 font-bold uppercase block">Delivery SLA</span>
+                          <span className="font-display text-xs sm:text-sm font-bold text-slate-900">{srv.metrics.speed}</span>
+                        </div>
+                        <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-center">
+                          <span className="text-[10px] text-slate-500 font-bold uppercase block">Warranty</span>
+                          <span className="font-display text-xs sm:text-sm font-bold text-[#059669]">{srv.metrics.warranty}</span>
+                        </div>
+                        <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-center">
+                          <span className="text-[10px] text-slate-500 font-bold uppercase block">Protocol</span>
+                          <span className="font-display text-xs sm:text-sm font-bold text-slate-900">{srv.metrics.discretion}</span>
+                        </div>
                       </div>
 
                       {/* Benefits to Clients */}
@@ -308,51 +418,63 @@ export default function HiringTalentPage() {
                       </div>
                     </div>
 
-                    {/* Right: Responsible Team Member Card with WhatsApp & Email Buttons (4 cols) */}
-                    <div className="lg:col-span-4 rounded-2xl bg-gradient-to-b from-[#F8FAFC] to-[#F1F5F9] border border-slate-200 p-6 space-y-5">
+                    {/* Right: Lead Partner Executive Dossier (4 cols) */}
+                    <div className="lg:col-span-4 rounded-3xl bg-gradient-to-b from-[#F8FAFC] via-[#F8FAFC] to-[#F1F5F9] border border-slate-200 p-6 sm:p-7 space-y-6 shadow-sm">
+                      
                       <div className="text-center space-y-3">
-                        <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#059669] bg-emerald-100 px-2.5 py-1 rounded-full">
+                        <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#059669] bg-emerald-100 px-3 py-1 rounded-full">
                           Responsible Practice Lead
                         </span>
-                        <div className="relative w-20 h-20 mx-auto rounded-full overflow-hidden border-2 border-white shadow-md">
+                        
+                        <div className="relative w-24 h-24 mx-auto rounded-full overflow-hidden border-4 border-white shadow-lg">
                           <Image
                             src={srv.leadMember.avatar}
                             alt={srv.leadMember.name}
                             fill
                             className="object-cover"
                           />
+                          <span className="absolute bottom-1 right-1 w-4 h-4 rounded-full bg-emerald-500 border-2 border-white" />
                         </div>
+
                         <div>
                           <h4 className="font-display text-lg font-extrabold text-[#0F172A]">
                             {srv.leadMember.name}
                           </h4>
-                          <p className="text-xs text-slate-600 font-medium mt-0.5">
+                          <p className="text-xs text-slate-600 font-semibold mt-0.5">
                             {srv.leadMember.role}
                           </p>
+                          <span className="text-[11px] text-emerald-700 font-medium block mt-0.5">
+                            {srv.leadMember.division}
+                          </span>
                         </div>
                       </div>
 
-                      <div className="space-y-2 text-xs text-slate-700 pt-2 border-t border-slate-200">
-                        <div className="flex items-center gap-2">
-                          <Phone className="w-3.5 h-3.5 text-slate-500 shrink-0" />
-                          <span className="font-semibold">{srv.leadMember.phone}</span>
+                      {/* Direct Contact Channels */}
+                      <div className="space-y-2 text-xs text-slate-700 pt-3 border-t border-slate-200">
+                        <div className="flex items-center gap-2.5">
+                          <Phone className="w-4 h-4 text-[#059669] shrink-0" />
+                          <a href={`tel:${srv.leadMember.phone}`} className="font-bold text-slate-900 hover:text-[#059669]">
+                            {srv.leadMember.phone}
+                          </a>
                         </div>
-                        <div className="flex items-center gap-2 truncate">
-                          <Mail className="w-3.5 h-3.5 text-slate-500 shrink-0" />
-                          <span className="font-semibold truncate">{srv.leadMember.email}</span>
+                        <div className="flex items-center gap-2.5 truncate">
+                          <Mail className="w-4 h-4 text-[#059669] shrink-0" />
+                          <a href={`mailto:${srv.leadMember.email}`} className="font-bold text-slate-900 hover:text-[#059669] truncate">
+                            {srv.leadMember.email}
+                          </a>
                         </div>
                       </div>
 
-                      {/* Direct WhatsApp & Email Buttons */}
-                      <div className="space-y-2 pt-2">
+                      {/* Action Buttons: WhatsApp & Email */}
+                      <div className="space-y-2.5 pt-1">
                         {/* WhatsApp Button */}
                         <a
                           href={`https://wa.me/${srv.leadMember.whatsapp}?text=${encodeURIComponent(
-                            `Hello ${srv.leadMember.name}, I am contacting you regarding Talent Bridge's ${srv.title} service for our organization.`
+                            `Hello ${srv.leadMember.name}, I am contacting you regarding Talent Bridge's ${srv.title} practice for our organization.`
                           )}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-full btn-brand-green !py-2.5 !text-xs font-bold flex items-center justify-center gap-2 shadow-sm hover:shadow"
+                          className="w-full btn-brand-green !py-3 !text-xs font-bold flex items-center justify-center gap-2 shadow-md shadow-emerald-700/20"
                         >
                           <MessageCircle className="w-4 h-4" />
                           <span>WhatsApp {srv.leadMember.name.split(" ")[0]}</span>
@@ -365,12 +487,13 @@ export default function HiringTalentPage() {
                           )}&body=${encodeURIComponent(
                             `Dear ${srv.leadMember.name},\n\nWe would like to discuss our organization's hiring requirements regarding ${srv.title}.\n\nBest regards,\n`
                           )}`}
-                          className="w-full bg-white hover:bg-slate-100 text-slate-800 border border-slate-300 py-2.5 px-3 rounded-xl text-xs font-bold transition-colors flex items-center justify-center gap-2 shadow-xs"
+                          className="w-full bg-white hover:bg-slate-100 text-slate-800 border border-slate-300 py-3 px-3 rounded-full text-xs font-bold transition-colors flex items-center justify-center gap-2 shadow-xs"
                         >
                           <Mail className="w-4 h-4 text-[#059669]" />
                           <span>Send Email Brief</span>
                         </a>
                       </div>
+
                     </div>
 
                   </div>
@@ -378,32 +501,34 @@ export default function HiringTalentPage() {
               );
             })}
           </div>
+
         </div>
       </section>
 
-      {/* 3. FAST HIRING MANDATE INTAKE FORM */}
-      <section id="mandate-form" className="py-20 bg-[#F8FAFC] border-t border-slate-200">
+      {/* 4. INTERACTIVE SEARCH MANDATE ESTIMATOR & BRIEF BUILDER */}
+      <section id="mandate-builder" className="py-20 bg-[#F8FAFC] border-t border-slate-200">
         <div className="max-w-[1000px] mx-auto px-5 sm:px-8">
+          
           <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
             <span className="text-xs font-bold uppercase tracking-widest text-[#059669] block">
               Initiate Search Mandate
             </span>
             <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-[#0F172A] tracking-tight">
-              Submit Your Organization&apos;s Hiring Requirements
+              Submit Your Organization&apos;s Hiring Brief
             </h2>
             <p className="text-sm text-slate-700 font-normal">
-              Transmit your hiring specifications confidentially. A Senior Practice Partner will review your requirement and connect within 24 business hours.
+              Select your required seniority level, practice domain, and timeline. Our Practice Leads will review your brief under strict bilateral non-disclosure.
             </p>
           </div>
 
-          <div className="bg-white rounded-3xl border border-slate-200 p-8 sm:p-12 shadow-md">
+          <div className="bg-white rounded-[2.5rem] border border-slate-200 p-8 sm:p-12 shadow-xl shadow-slate-900/5">
             {formSubmitted ? (
               <div className="text-center py-12 space-y-4 animate-in fade-in">
                 <div className="w-16 h-16 rounded-full bg-emerald-50 text-[#059669] border border-emerald-200 flex items-center justify-center mx-auto shadow-sm">
                   <CheckCircle2 className="w-8 h-8 stroke-[2.5]" />
                 </div>
                 <h3 className="font-display text-2xl font-extrabold text-[#0F172A]">
-                  Hiring Requirement Successfully Transmitted
+                  Hiring Mandate Brief Transmitted
                 </h3>
                 <p className="text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
                   Thank you, <span className="font-bold text-slate-900">{formData.contactPerson}</span>. The responsible Practice Lead for <span className="font-bold text-slate-900">{formData.serviceNeeded}</span> has received your mandate brief. We guarantee a personal response within 24 business hours under strict non-disclosure.
@@ -418,6 +543,7 @@ export default function HiringTalentPage() {
                         contactPerson: "",
                         email: "",
                         phone: "",
+                        seniorityLevel: "C-Suite (CEO, CTO, CFO, COO)",
                         serviceNeeded: "Executive & Board Search",
                         roleToHire: "",
                         timeline: "Immediate (1-3 weeks)",
@@ -432,6 +558,36 @@ export default function HiringTalentPage() {
               </div>
             ) : (
               <form onSubmit={handleFormSubmit} className="space-y-6">
+                
+                {/* Seniority Selector Chips */}
+                <div className="space-y-2">
+                  <label className="text-xs font-bold text-slate-800 uppercase tracking-wider block">
+                    Target Seniority Level *
+                  </label>
+                  <div className="flex flex-wrap gap-2">
+                    {[
+                      "C-Suite (CEO, CTO, CFO, COO)",
+                      "Board Member / Advisor",
+                      "VP / Director Level",
+                      "Head of Department / GM",
+                      "Principal / Lead Specialist",
+                    ].map((lvl) => (
+                      <button
+                        key={lvl}
+                        type="button"
+                        onClick={() => setFormData({ ...formData, seniorityLevel: lvl })}
+                        className={`py-2 px-3.5 rounded-xl text-xs font-bold transition-all ${
+                          formData.seniorityLevel === lvl
+                            ? "bg-[#059669] text-white shadow-xs"
+                            : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+                        }`}
+                      >
+                        {lvl}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div className="space-y-1.5">
                     <label className="text-xs font-bold text-slate-800 uppercase tracking-wider">
@@ -465,7 +621,7 @@ export default function HiringTalentPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div className="space-y-1.5">
                     <label className="text-xs font-bold text-slate-800 uppercase tracking-wider">
-                      Official Email Address *
+                      Official Work Email Address *
                     </label>
                     <input
                       type="email"
@@ -512,7 +668,7 @@ export default function HiringTalentPage() {
 
                   <div className="space-y-1.5">
                     <label className="text-xs font-bold text-slate-800 uppercase tracking-wider">
-                      Role / Position(s) to Fill *
+                      Target Role / Position Title *
                     </label>
                     <input
                       type="text"
@@ -527,29 +683,31 @@ export default function HiringTalentPage() {
 
                 <div className="space-y-1.5">
                   <label className="text-xs font-bold text-slate-800 uppercase tracking-wider">
-                    Brief Role Overview &amp; Key Requirements
+                    Role Overview &amp; Mandate Context
                   </label>
                   <textarea
                     rows={4}
                     value={formData.briefDetails}
                     onChange={(e) => setFormData({ ...formData, briefDetails: e.target.value })}
-                    placeholder="Provide context regarding required experience, reporting structure, salary expectations, or target start date..."
+                    placeholder="Provide details regarding required competencies, reporting lines, target remuneration band, or search timeline..."
                     className="w-full text-xs p-3.5 rounded-xl border border-slate-300 focus:border-[#059669] focus:ring-1 focus:ring-[#059669] outline-none"
                   />
                 </div>
 
-                <div className="flex items-center gap-2 text-xs text-slate-500 font-medium">
-                  <ShieldCheck className="w-4 h-4 text-[#059669]" />
-                  <span>Your submission is held under strict fiduciary non-disclosure. No public posting without authorization.</span>
+                <div className="flex items-center gap-2 text-xs text-slate-500 font-medium bg-slate-50 p-4 rounded-xl border border-slate-200">
+                  <ShieldCheck className="w-4 h-4 text-[#059669] shrink-0" />
+                  <span>
+                    Fiduciary Protocol: Your mandate details are governed by our bilateral non-disclosure agreement. No public listings are made without express written consent.
+                  </span>
                 </div>
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="btn-brand-green w-full !py-4 !text-sm font-bold flex items-center justify-center gap-2 shadow-md shadow-emerald-700/20 disabled:opacity-60 cursor-pointer"
+                  className="btn-brand-green w-full !py-4 !text-sm font-bold flex items-center justify-center gap-2 shadow-lg shadow-emerald-700/20 disabled:opacity-60 cursor-pointer"
                 >
                   <Send className="w-4 h-4" />
-                  <span>{isSubmitting ? "Transmitting Mandate..." : "Submit Hiring Mandate Brief"}</span>
+                  <span>{isSubmitting ? "Transmitting Mandate..." : "Transmit Executive Mandate Brief"}</span>
                 </button>
               </form>
             )}

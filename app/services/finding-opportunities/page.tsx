@@ -21,42 +21,48 @@ import {
   GraduationCap,
   Award,
   Calendar,
-  Compass
+  Compass,
+  TrendingUp,
+  MapPin,
+  Clock,
+  ChevronRight,
+  EyeOff
 } from "lucide-react";
 
 export default function FindingOpportunitiesPage() {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [activeStep, setActiveStep] = useState<number>(1);
 
   // Candidate Registration Form State
   const [formData, setFormData] = useState({
-    // Personal & Contact
+    // Step 1: Personal & Contact
     fullName: "",
     email: "",
     phone: "",
     whatsapp: "",
     location: "",
 
-    // Qualifications
+    // Step 2: Qualifications
     highestQualification: "Bachelor's Degree",
     fieldOfStudy: "",
     institution: "",
     graduationYear: "",
 
-    // Skills
+    // Step 3: Skills & Domain
     primaryIndustry: "Information Technology & Software",
-    coreSkills: "",
     seniorityLevel: "Senior / Lead (5-9 years)",
+    coreSkills: "",
     languages: "English, Sinhala",
 
-    // Experience
+    // Step 4: Experience & Preferences
     currentJobTitle: "",
     currentEmployer: "",
     totalExperienceYears: "",
     noticePeriod: "1 Month",
     expectedSalary: "",
     linkedinOrCvUrl: "",
-    additionalNotes: "",
+    targetRoles: "",
   });
 
   const handleCandidateSubmit = (e: React.FormEvent) => {
@@ -68,35 +74,75 @@ export default function FindingOpportunitiesPage() {
     }, 700);
   };
 
+  const confidentialMandates = [
+    {
+      id: "MANDATE-01",
+      role: "Chief Technology Officer (CTO)",
+      domain: "FinTech & Cloud Engineering",
+      location: "Colombo / Hybrid",
+      compensation: "Top-Quartile Executive Band + Equity",
+      status: "Actively Reviewing Candidates",
+    },
+    {
+      id: "MANDATE-02",
+      role: "Head of People & Human Capital",
+      domain: "Diversified Conglomerate",
+      location: "Colombo 03",
+      compensation: "Senior Executive Package",
+      status: "Shortlisting Underway",
+    },
+    {
+      id: "MANDATE-03",
+      role: "Principal Solutions Architect",
+      domain: "Digital Banking Transformation",
+      location: "Colombo / Remote",
+      compensation: "High-Caliber Technical Band",
+      status: "Active Mandate",
+    },
+    {
+      id: "MANDATE-04",
+      role: "Vice President of Commercial Growth",
+      domain: "Enterprise SaaS & APAC Expansion",
+      location: "Colombo / Travel APAC",
+      compensation: "Base + High-Performance LTIP",
+      status: "Confidential Search",
+    },
+  ];
+
   const steps = [
     {
       step: "01",
       title: "Submit Candidate Profile",
-      desc: "Complete the candidate registration form below with your qualifications, technical skill set, and career history. All data is encrypted and strictly confidential.",
+      sla: "Immediate / 5 Mins",
+      desc: "Complete our encrypted candidate registration form. Your data is stored strictly in our Confidential Talent Vault under fiduciary non-disclosure.",
       icon: FileText,
     },
     {
       step: "02",
       title: "Profile Review & Mandate Mapping",
-      desc: "Within 48 business hours, our Candidate Relations specialists evaluate your background against current unadvertised mandates and upcoming corporate requirements.",
+      sla: "Within 48 Hours",
+      desc: "Our Candidate Relations Practice evaluates your track record, credentials, and skills against active unadvertised mandates and forthcoming client searches.",
       icon: Search,
     },
     {
       step: "03",
       title: "Discreet Career Consultation",
-      desc: "When a strong alignment is identified, a dedicated Career Advisor arranges a confidential 1-on-1 dialogue to discuss role parameters, culture, and trajectory.",
+      sla: "Confidential 1-on-1",
+      desc: "When a potential alignment is identified, a Senior Career Advisor schedules a confidential consultation to explore role dynamics, package, and trajectory.",
       icon: Phone,
     },
     {
       step: "04",
       title: "Presentation to Decision-Makers",
-      desc: "Only with your explicit consent, your verified profile and candidate brief are formally presented to enterprise CEOs, Board committees, or hiring executives.",
+      sla: "With Your Explicit Consent",
+      desc: "Only after your formal approval, your verified profile is submitted directly to the CEO, Board Committee, or hiring executives.",
       icon: Award,
     },
     {
       step: "05",
-      title: "Interview Coaching, Offer & Onboarding",
-      desc: "We stand beside you through the complete interview cycle: providing briefing notes, negotiating competitive remuneration & equity, and ensuring seamless onboarding.",
+      title: "Interview Prep, Offer & Onboarding",
+      sla: "End-to-End Advocacy",
+      desc: "We support you through interview briefing debriefs, offer and equity negotiations, non-compete reviews, and 90-day onboarding checkpoints.",
       icon: CheckCircle2,
     },
   ];
@@ -110,7 +156,7 @@ export default function FindingOpportunitiesPage() {
       phone: "+94 77 234 5610",
       whatsapp: "94772345610",
       avatar: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=300&auto=format&fit=crop",
-      bio: "Oversees candidate screening, profile calibration, and confidential introductions for mid-to-senior professionals.",
+      bio: "Oversees candidate screening, profile calibration, and confidential introductions for mid-to-senior professionals across Sri Lanka & regional markets.",
     },
     {
       name: "Tharindu De Silva",
@@ -120,13 +166,13 @@ export default function FindingOpportunitiesPage() {
       phone: "+94 77 234 5611",
       whatsapp: "94772345611",
       avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=300&auto=format&fit=crop",
-      bio: "Specializes in interview preparation, executive package negotiation, career pivot guidance, and leadership transitions.",
+      bio: "Specializes in interview preparation, executive package negotiation, career pivot guidance, and leadership transitions for executives.",
     },
   ];
 
   return (
     <div className="bg-[#FFFFFF] text-[#0F172A]">
-      {/* 1. HERO SECTION */}
+      {/* 1. CINEMATIC HERO SECTION */}
       <section className="relative pt-32 pb-16 sm:pt-36 sm:pb-20 bg-gradient-to-b from-[#F8FAFC] via-white to-white border-b border-slate-200">
         <div className="max-w-[1360px] mx-auto px-5 sm:px-8">
           <div className="max-w-3xl space-y-4">
@@ -164,7 +210,59 @@ export default function FindingOpportunitiesPage() {
         </div>
       </section>
 
-      {/* 2. HOW WE HELP CANDIDATES: THE PROCESS & METHODOLOGY */}
+      {/* 2. LIVE CONFIDENTIAL MANDATES TICKER BOARD */}
+      <section className="py-12 bg-[#071324] text-white border-b border-slate-800">
+        <div className="max-w-[1360px] mx-auto px-5 sm:px-8 space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div>
+              <div className="inline-flex items-center gap-2 text-xs font-bold text-emerald-400 uppercase tracking-widest mb-1">
+                <EyeOff className="w-3.5 h-3.5" />
+                <span>Active Fiduciary Mandate Vault</span>
+              </div>
+              <h2 className="font-display text-2xl font-extrabold text-white">
+                Sample Redacted Executive Mandates In-Flight
+              </h2>
+            </div>
+            <a
+              href="#registration-wizard"
+              className="btn-brand-green !py-2.5 !px-5 !text-xs font-bold shrink-0 inline-flex items-center gap-2"
+            >
+              <span>Register to Match</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </a>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {confidentialMandates.map((m) => (
+              <div
+                key={m.id}
+                className="p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-emerald-500/40 transition-all flex flex-col justify-between space-y-3"
+              >
+                <div className="space-y-1.5">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[10px] font-mono text-emerald-400 font-bold">{m.id}</span>
+                    <span className="text-[9px] font-bold uppercase bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded-full">
+                      {m.status}
+                    </span>
+                  </div>
+                  <h3 className="font-display text-sm font-bold text-white">{m.role}</h3>
+                  <p className="text-xs text-slate-300 font-medium">{m.domain}</p>
+                </div>
+
+                <div className="pt-2 border-t border-white/10 text-[11px] text-slate-400 space-y-1">
+                  <div className="flex items-center gap-1.5">
+                    <MapPin className="w-3 h-3 text-slate-500" />
+                    <span>{m.location}</span>
+                  </div>
+                  <div className="text-emerald-300 font-semibold">{m.compensation}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 3. HOW WE HELP CANDIDATES: METHODOLOGY */}
       <section className="py-20 bg-white">
         <div className="max-w-[1360px] mx-auto px-5 sm:px-8 space-y-14">
           <div className="max-w-3xl space-y-2">
@@ -180,7 +278,7 @@ export default function FindingOpportunitiesPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-8 rounded-3xl bg-[#F8FAFC] border border-slate-200 space-y-4">
+            <div className="p-8 rounded-3xl bg-[#F8FAFC] border border-slate-200 space-y-4 hover:shadow-md transition-all">
               <div className="w-12 h-12 rounded-2xl bg-emerald-100 text-[#059669] flex items-center justify-center">
                 <Search className="w-6 h-6" />
               </div>
@@ -192,7 +290,7 @@ export default function FindingOpportunitiesPage() {
               </p>
             </div>
 
-            <div className="p-8 rounded-3xl bg-[#F8FAFC] border border-slate-200 space-y-4">
+            <div className="p-8 rounded-3xl bg-[#F8FAFC] border border-slate-200 space-y-4 hover:shadow-md transition-all">
               <div className="w-12 h-12 rounded-2xl bg-emerald-100 text-[#059669] flex items-center justify-center">
                 <Compass className="w-6 h-6" />
               </div>
@@ -204,7 +302,7 @@ export default function FindingOpportunitiesPage() {
               </p>
             </div>
 
-            <div className="p-8 rounded-3xl bg-[#F8FAFC] border border-slate-200 space-y-4">
+            <div className="p-8 rounded-3xl bg-[#F8FAFC] border border-slate-200 space-y-4 hover:shadow-md transition-all">
               <div className="w-12 h-12 rounded-2xl bg-emerald-100 text-[#059669] flex items-center justify-center">
                 <Award className="w-6 h-6" />
               </div>
@@ -219,7 +317,7 @@ export default function FindingOpportunitiesPage() {
         </div>
       </section>
 
-      {/* 3. STEP-BY-STEP CANDIDATE JOURNEY */}
+      {/* 4. STEP-BY-STEP CANDIDATE JOURNEY */}
       <section className="py-20 bg-[#F8FAFC] border-y border-slate-200">
         <div className="max-w-[1360px] mx-auto px-5 sm:px-8 space-y-14">
           <div className="max-w-3xl space-y-2">
@@ -240,7 +338,7 @@ export default function FindingOpportunitiesPage() {
               return (
                 <div
                   key={idx}
-                  className="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs flex flex-col justify-between"
+                  className="p-6 rounded-3xl bg-white border border-slate-200 shadow-xs flex flex-col justify-between hover:shadow-md transition-all"
                 >
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
@@ -251,9 +349,14 @@ export default function FindingOpportunitiesPage() {
                         <IconComp className="w-4 h-4" />
                       </div>
                     </div>
-                    <h3 className="text-sm font-bold text-[#0F172A] leading-snug">
-                      {st.title}
-                    </h3>
+                    <div>
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 bg-slate-100 px-2 py-0.5 rounded">
+                        {st.sla}
+                      </span>
+                      <h3 className="text-sm font-bold text-[#0F172A] leading-snug mt-1.5">
+                        {st.title}
+                      </h3>
+                    </div>
                     <p className="text-xs text-slate-700 leading-relaxed font-normal">
                       {st.desc}
                     </p>
@@ -265,7 +368,7 @@ export default function FindingOpportunitiesPage() {
         </div>
       </section>
 
-      {/* 4. RESPONSIBLE TEAM MEMBERS WITH DIRECT WHATSAPP BUTTONS */}
+      {/* 5. RESPONSIBLE TEAM MEMBERS WITH DIRECT WHATSAPP BUTTONS */}
       <section className="py-20 bg-white">
         <div className="max-w-[1360px] mx-auto px-5 sm:px-8 space-y-12">
           <div className="max-w-3xl space-y-2">
@@ -284,20 +387,21 @@ export default function FindingOpportunitiesPage() {
             {candidateTeam.map((member, idx) => (
               <div
                 key={idx}
-                className="p-8 rounded-3xl border border-slate-200 bg-[#F8FAFC] shadow-sm flex flex-col justify-between space-y-6"
+                className="p-8 rounded-[2.5rem] border border-slate-200 bg-[#F8FAFC] shadow-sm flex flex-col justify-between space-y-6 hover:shadow-lg transition-all"
               >
                 <div className="space-y-4">
                   <div className="flex items-center gap-4">
-                    <div className="relative w-16 h-16 rounded-2xl overflow-hidden border-2 border-white shadow-md shrink-0">
+                    <div className="relative w-20 h-20 rounded-full overflow-hidden border-4 border-white shadow-md shrink-0">
                       <Image
                         src={member.avatar}
                         alt={member.name}
                         fill
                         className="object-cover"
                       />
+                      <span className="absolute bottom-1 right-1 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-white" />
                     </div>
                     <div>
-                      <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#059669] bg-emerald-100 px-2.5 py-0.5 rounded">
+                      <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#059669] bg-emerald-100 px-2.5 py-0.5 rounded-full">
                         {member.division}
                       </span>
                       <h3 className="font-display text-xl font-extrabold text-[#0F172A] mt-1">
@@ -314,11 +418,15 @@ export default function FindingOpportunitiesPage() {
                   <div className="space-y-2 text-xs text-slate-800 pt-3 border-t border-slate-200">
                     <div className="flex items-center gap-2">
                       <Phone className="w-3.5 h-3.5 text-[#059669]" />
-                      <span className="font-semibold">{member.phone}</span>
+                      <a href={`tel:${member.phone}`} className="font-bold text-slate-900 hover:text-[#059669]">
+                        {member.phone}
+                      </a>
                     </div>
                     <div className="flex items-center gap-2">
                       <Mail className="w-3.5 h-3.5 text-[#059669]" />
-                      <span className="font-semibold">{member.email}</span>
+                      <a href={`mailto:${member.email}`} className="font-bold text-slate-900 hover:text-[#059669]">
+                        {member.email}
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -331,7 +439,7 @@ export default function FindingOpportunitiesPage() {
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-brand-green !py-2.5 !text-xs font-bold flex items-center justify-center gap-2 shadow-xs"
+                    className="btn-brand-green !py-3 !text-xs font-bold flex items-center justify-center gap-2 shadow-sm"
                   >
                     <MessageCircle className="w-4 h-4" />
                     <span>WhatsApp {member.name.split(" ")[0]}</span>
@@ -341,7 +449,7 @@ export default function FindingOpportunitiesPage() {
                     href={`mailto:${member.email}?subject=${encodeURIComponent(
                       "Candidate Career Inquiry — Talent Bridge"
                     )}`}
-                    className="bg-white hover:bg-slate-100 text-slate-800 border border-slate-300 py-2.5 px-3 rounded-xl text-xs font-bold transition-colors flex items-center justify-center gap-2 shadow-xs"
+                    className="bg-white hover:bg-slate-100 text-slate-800 border border-slate-300 py-3 px-3 rounded-full text-xs font-bold transition-colors flex items-center justify-center gap-2 shadow-xs"
                   >
                     <Mail className="w-4 h-4 text-[#059669]" />
                     <span>Email Direct</span>
@@ -353,22 +461,23 @@ export default function FindingOpportunitiesPage() {
         </div>
       </section>
 
-      {/* 5. CANDIDATE REGISTRATION FORM */}
-      <section id="registration-form" className="py-20 bg-[#F8FAFC] border-t border-slate-200">
+      {/* 6. INTERACTIVE CANDIDATE REGISTRATION WIZARD */}
+      <section id="registration-wizard" className="py-20 bg-[#F8FAFC] border-t border-slate-200">
         <div className="max-w-[1000px] mx-auto px-5 sm:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
+          
+          <div className="text-center max-w-2xl mx-auto mb-10 space-y-2">
             <span className="text-xs font-bold uppercase tracking-widest text-[#059669] block">
               Confidential Intake
             </span>
             <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-[#0F172A] tracking-tight">
-              Candidate Registration Form
+              Candidate Registration Portal
             </h2>
             <p className="text-sm text-slate-700 font-normal">
               Register your credentials confidentially with our Executive Search &amp; Placement Practice. Please provide comprehensive details regarding your qualifications, skills, and experience.
             </p>
           </div>
 
-          <div className="bg-white rounded-3xl border border-slate-200 p-8 sm:p-12 shadow-md">
+          <div className="bg-white rounded-[2.5rem] border border-slate-200 p-8 sm:p-12 shadow-xl shadow-slate-900/5">
             {formSubmitted ? (
               <div className="text-center py-12 space-y-4 animate-in fade-in">
                 <div className="w-16 h-16 rounded-full bg-emerald-50 text-[#059669] border border-emerald-200 flex items-center justify-center mx-auto shadow-sm">
@@ -383,7 +492,10 @@ export default function FindingOpportunitiesPage() {
                 <div className="pt-4 flex flex-wrap justify-center gap-3">
                   <button
                     type="button"
-                    onClick={() => setFormSubmitted(false)}
+                    onClick={() => {
+                      setFormSubmitted(false);
+                      setActiveStep(1);
+                    }}
                     className="btn-brand-green !py-2.5 !px-6 !text-xs font-bold"
                   >
                     Edit / Register Another Profile
@@ -399,346 +511,474 @@ export default function FindingOpportunitiesPage() {
             ) : (
               <form onSubmit={handleCandidateSubmit} className="space-y-8">
                 
-                {/* Section A: Name & Contact Details */}
-                <div className="space-y-4">
-                  <h3 className="text-sm font-extrabold uppercase tracking-wider text-[#059669] flex items-center gap-2 pb-2 border-b border-slate-200">
-                    <UserCheck className="w-4 h-4" />
-                    <span>1. Personal &amp; Contact Details</span>
-                  </h3>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    <div className="space-y-1.5">
-                      <label className="text-xs font-bold text-slate-800 uppercase tracking-wider">
-                        Full Name *
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        value={formData.fullName}
-                        onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                        placeholder="e.g. Kasun Bandara"
-                        className="w-full text-xs p-3.5 rounded-xl border border-slate-300 focus:border-[#059669] focus:ring-1 focus:ring-[#059669] outline-none"
-                      />
-                    </div>
-
-                    <div className="space-y-1.5">
-                      <label className="text-xs font-bold text-slate-800 uppercase tracking-wider">
-                        Email Address *
-                      </label>
-                      <input
-                        type="email"
-                        required
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        placeholder="kasun.bandara@example.com"
-                        className="w-full text-xs p-3.5 rounded-xl border border-slate-300 focus:border-[#059669] focus:ring-1 focus:ring-[#059669] outline-none"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-                    <div className="space-y-1.5">
-                      <label className="text-xs font-bold text-slate-800 uppercase tracking-wider">
-                        Telephone Number *
-                      </label>
-                      <input
-                        type="tel"
-                        required
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        placeholder="+94 77 000 0000"
-                        className="w-full text-xs p-3.5 rounded-xl border border-slate-300 focus:border-[#059669] focus:ring-1 focus:ring-[#059669] outline-none"
-                      />
-                    </div>
-
-                    <div className="space-y-1.5">
-                      <label className="text-xs font-bold text-slate-800 uppercase tracking-wider">
-                        WhatsApp Number *
-                      </label>
-                      <input
-                        type="tel"
-                        required
-                        value={formData.whatsapp}
-                        onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
-                        placeholder="+94 77 000 0000"
-                        className="w-full text-xs p-3.5 rounded-xl border border-slate-300 focus:border-[#059669] focus:ring-1 focus:ring-[#059669] outline-none"
-                      />
-                    </div>
-
-                    <div className="space-y-1.5">
-                      <label className="text-xs font-bold text-slate-800 uppercase tracking-wider">
-                        Current City / Location *
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        value={formData.location}
-                        onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                        placeholder="Colombo / Kandy / Overseas"
-                        className="w-full text-xs p-3.5 rounded-xl border border-slate-300 focus:border-[#059669] focus:ring-1 focus:ring-[#059669] outline-none"
-                      />
-                    </div>
-                  </div>
+                {/* Step Indicators */}
+                <div className="flex items-center justify-between border-b border-slate-200 pb-5 overflow-x-auto no-scrollbar gap-4">
+                  {[
+                    { num: 1, label: "Personal & Contact" },
+                    { num: 2, label: "Qualifications" },
+                    { num: 3, label: "Skills & Domain" },
+                    { num: 4, label: "Career & Salary" },
+                  ].map((s) => (
+                    <button
+                      key={s.num}
+                      type="button"
+                      onClick={() => setActiveStep(s.num)}
+                      className={`flex items-center gap-2 pb-2 text-xs font-bold border-b-2 -mb-[21px] transition-all whitespace-nowrap ${
+                        activeStep === s.num
+                          ? "border-[#059669] text-[#059669]"
+                          : "border-transparent text-slate-400 hover:text-slate-700"
+                      }`}
+                    >
+                      <span className={`w-6 h-6 rounded-full flex items-center justify-center text-[11px] font-extrabold ${
+                        activeStep === s.num
+                          ? "bg-[#059669] text-white"
+                          : "bg-slate-100 text-slate-500"
+                      }`}>
+                        {s.num}
+                      </span>
+                      <span>{s.label}</span>
+                    </button>
+                  ))}
                 </div>
 
-                {/* Section B: Qualifications */}
-                <div className="space-y-4">
-                  <h3 className="text-sm font-extrabold uppercase tracking-wider text-[#059669] flex items-center gap-2 pb-2 border-b border-slate-200">
-                    <GraduationCap className="w-4 h-4" />
-                    <span>2. Academic &amp; Professional Qualifications</span>
-                  </h3>
+                {/* Step 1: Personal & Contact Details */}
+                {activeStep === 1 && (
+                  <div className="space-y-5 animate-in fade-in duration-200">
+                    <h3 className="text-sm font-extrabold uppercase tracking-wider text-[#059669] flex items-center gap-2">
+                      <UserCheck className="w-4 h-4" />
+                      <span>Step 1 of 4: Personal &amp; Contact Details</span>
+                    </h3>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    <div className="space-y-1.5">
-                      <label className="text-xs font-bold text-slate-800 uppercase tracking-wider">
-                        Highest Qualification *
-                      </label>
-                      <select
-                        value={formData.highestQualification}
-                        onChange={(e) => setFormData({ ...formData, highestQualification: e.target.value })}
-                        className="w-full text-xs p-3.5 rounded-xl border border-slate-300 focus:border-[#059669] outline-none bg-white font-medium"
-                      >
-                        <option value="Doctorate / PhD">Doctorate / PhD</option>
-                        <option value="Master's / MBA">Master&apos;s / MBA</option>
-                        <option value="Bachelor's Degree">Bachelor&apos;s Degree</option>
-                        <option value="Chartered / Professional (CIMA/ACCA/CFA/SLIIT)">Chartered / Professional (CIMA/ACCA/CFA)</option>
-                        <option value="Higher National Diploma / Diploma">Higher National Diploma / Diploma</option>
-                        <option value="Other Certification">Other Certification</option>
-                      </select>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-bold text-slate-800 uppercase tracking-wider">
+                          Full Name *
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          value={formData.fullName}
+                          onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                          placeholder="e.g. Kasun Bandara"
+                          className="w-full text-xs p-3.5 rounded-xl border border-slate-300 focus:border-[#059669] focus:ring-1 focus:ring-[#059669] outline-none"
+                        />
+                      </div>
+
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-bold text-slate-800 uppercase tracking-wider">
+                          Email Address *
+                        </label>
+                        <input
+                          type="email"
+                          required
+                          value={formData.email}
+                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                          placeholder="kasun.bandara@example.com"
+                          className="w-full text-xs p-3.5 rounded-xl border border-slate-300 focus:border-[#059669] focus:ring-1 focus:ring-[#059669] outline-none"
+                        />
+                      </div>
                     </div>
 
-                    <div className="space-y-1.5">
-                      <label className="text-xs font-bold text-slate-800 uppercase tracking-wider">
-                        Field of Study / Specialization *
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        value={formData.fieldOfStudy}
-                        onChange={(e) => setFormData({ ...formData, fieldOfStudy: e.target.value })}
-                        placeholder="e.g. Computer Science, Finance, Marketing, Law"
-                        className="w-full text-xs p-3.5 rounded-xl border border-slate-300 focus:border-[#059669] focus:ring-1 focus:ring-[#059669] outline-none"
-                      />
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-bold text-slate-800 uppercase tracking-wider">
+                          Telephone Number *
+                        </label>
+                        <input
+                          type="tel"
+                          required
+                          value={formData.phone}
+                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                          placeholder="+94 77 000 0000"
+                          className="w-full text-xs p-3.5 rounded-xl border border-slate-300 focus:border-[#059669] focus:ring-1 focus:ring-[#059669] outline-none"
+                        />
+                      </div>
+
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-bold text-slate-800 uppercase tracking-wider">
+                          WhatsApp Number *
+                        </label>
+                        <input
+                          type="tel"
+                          required
+                          value={formData.whatsapp}
+                          onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
+                          placeholder="+94 77 000 0000"
+                          className="w-full text-xs p-3.5 rounded-xl border border-slate-300 focus:border-[#059669] focus:ring-1 focus:ring-[#059669] outline-none"
+                        />
+                      </div>
+
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-bold text-slate-800 uppercase tracking-wider">
+                          Current City / Location *
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          value={formData.location}
+                          onChange={(e) => setFormData({ ...formData, location: e.target.value })}
+                          placeholder="Colombo / Kandy / Overseas"
+                          className="w-full text-xs p-3.5 rounded-xl border border-slate-300 focus:border-[#059669] focus:ring-1 focus:ring-[#059669] outline-none"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="pt-4 flex justify-end">
+                      <button
+                        type="button"
+                        onClick={() => setActiveStep(2)}
+                        className="btn-brand-green !py-3 !px-6 !text-xs font-bold flex items-center gap-2"
+                      >
+                        <span>Next: Qualifications</span>
+                        <ChevronRight className="w-4 h-4" />
+                      </button>
                     </div>
                   </div>
+                )}
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    <div className="space-y-1.5">
-                      <label className="text-xs font-bold text-slate-800 uppercase tracking-wider">
-                        University / Educational Institute *
+                {/* Step 2: Qualifications */}
+                {activeStep === 2 && (
+                  <div className="space-y-5 animate-in fade-in duration-200">
+                    <h3 className="text-sm font-extrabold uppercase tracking-wider text-[#059669] flex items-center gap-2">
+                      <GraduationCap className="w-4 h-4" />
+                      <span>Step 2 of 4: Academic &amp; Professional Qualifications</span>
+                    </h3>
+
+                    <div className="space-y-2">
+                      <label className="text-xs font-bold text-slate-800 uppercase tracking-wider block">
+                        Highest Qualification Level *
                       </label>
-                      <input
-                        type="text"
-                        required
-                        value={formData.institution}
-                        onChange={(e) => setFormData({ ...formData, institution: e.target.value })}
-                        placeholder="e.g. University of Moratuwa / Colombo / UK University"
-                        className="w-full text-xs p-3.5 rounded-xl border border-slate-300 focus:border-[#059669] focus:ring-1 focus:ring-[#059669] outline-none"
-                      />
+                      <div className="flex flex-wrap gap-2">
+                        {[
+                          "Doctorate / PhD",
+                          "Master's / MBA",
+                          "Bachelor's Degree",
+                          "Chartered Professional (CIMA/ACCA/CFA)",
+                          "Higher National Diploma",
+                        ].map((q) => (
+                          <button
+                            key={q}
+                            type="button"
+                            onClick={() => setFormData({ ...formData, highestQualification: q })}
+                            className={`py-2 px-3.5 rounded-xl text-xs font-bold transition-all ${
+                              formData.highestQualification === q
+                                ? "bg-[#059669] text-white shadow-xs"
+                                : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+                            }`}
+                          >
+                            {q}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-bold text-slate-800 uppercase tracking-wider">
+                          Field of Study / Degree Title *
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          value={formData.fieldOfStudy}
+                          onChange={(e) => setFormData({ ...formData, fieldOfStudy: e.target.value })}
+                          placeholder="e.g. Computer Science, Finance, Law, Marketing"
+                          className="w-full text-xs p-3.5 rounded-xl border border-slate-300 focus:border-[#059669] focus:ring-1 focus:ring-[#059669] outline-none"
+                        />
+                      </div>
+
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-bold text-slate-800 uppercase tracking-wider">
+                          University / Institution *
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          value={formData.institution}
+                          onChange={(e) => setFormData({ ...formData, institution: e.target.value })}
+                          placeholder="e.g. University of Moratuwa / Colombo / UK Degree"
+                          className="w-full text-xs p-3.5 rounded-xl border border-slate-300 focus:border-[#059669] focus:ring-1 focus:ring-[#059669] outline-none"
+                        />
+                      </div>
                     </div>
 
                     <div className="space-y-1.5">
                       <label className="text-xs font-bold text-slate-800 uppercase tracking-wider">
-                        Year of Graduation / Completion
+                        Graduation / Completion Year
                       </label>
                       <input
                         type="text"
                         value={formData.graduationYear}
                         onChange={(e) => setFormData({ ...formData, graduationYear: e.target.value })}
                         placeholder="e.g. 2018"
-                        className="w-full text-xs p-3.5 rounded-xl border border-slate-300 focus:border-[#059669] focus:ring-1 focus:ring-[#059669] outline-none"
+                        className="w-full sm:w-1/2 text-xs p-3.5 rounded-xl border border-slate-300 focus:border-[#059669] focus:ring-1 focus:ring-[#059669] outline-none"
                       />
                     </div>
-                  </div>
-                </div>
 
-                {/* Section C: Skills & Competencies */}
-                <div className="space-y-4">
-                  <h3 className="text-sm font-extrabold uppercase tracking-wider text-[#059669] flex items-center gap-2 pb-2 border-b border-slate-200">
-                    <Sparkles className="w-4 h-4" />
-                    <span>3. Core Skills &amp; Domain Expertise</span>
-                  </h3>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    <div className="space-y-1.5">
-                      <label className="text-xs font-bold text-slate-800 uppercase tracking-wider">
-                        Primary Industry / Sector *
-                      </label>
-                      <select
-                        value={formData.primaryIndustry}
-                        onChange={(e) => setFormData({ ...formData, primaryIndustry: e.target.value })}
-                        className="w-full text-xs p-3.5 rounded-xl border border-slate-300 focus:border-[#059669] outline-none bg-white font-medium"
+                    <div className="pt-4 flex justify-between">
+                      <button
+                        type="button"
+                        onClick={() => setActiveStep(1)}
+                        className="py-3 px-6 rounded-full border border-slate-300 text-xs font-bold text-slate-700 hover:bg-slate-100"
                       >
-                        <option value="Information Technology & Software">Information Technology &amp; Software</option>
-                        <option value="Banking, FinTech & Capital Markets">Banking, FinTech &amp; Capital Markets</option>
-                        <option value="Conglomerates & Diversified Holdings">Conglomerates &amp; Diversified Holdings</option>
-                        <option value="Manufacturing, Supply Chain & Logistics">Manufacturing, Supply Chain &amp; Logistics</option>
-                        <option value="Healthcare & Pharmaceuticals">Healthcare &amp; Pharmaceuticals</option>
-                        <option value="Hospitality, Leisure & Aviation">Hospitality, Leisure &amp; Aviation</option>
-                        <option value="Telecommunications & Media">Telecommunications &amp; Media</option>
-                      </select>
+                        &larr; Back
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setActiveStep(3)}
+                        className="btn-brand-green !py-3 !px-6 !text-xs font-bold flex items-center gap-2"
+                      >
+                        <span>Next: Skills &amp; Domain</span>
+                        <ChevronRight className="w-4 h-4" />
+                      </button>
                     </div>
+                  </div>
+                )}
 
-                    <div className="space-y-1.5">
-                      <label className="text-xs font-bold text-slate-800 uppercase tracking-wider">
+                {/* Step 3: Skills & Domain */}
+                {activeStep === 3 && (
+                  <div className="space-y-5 animate-in fade-in duration-200">
+                    <h3 className="text-sm font-extrabold uppercase tracking-wider text-[#059669] flex items-center gap-2">
+                      <Sparkles className="w-4 h-4" />
+                      <span>Step 3 of 4: Core Skills &amp; Seniority</span>
+                    </h3>
+
+                    <div className="space-y-2">
+                      <label className="text-xs font-bold text-slate-800 uppercase tracking-wider block">
                         Professional Seniority Level *
                       </label>
-                      <select
-                        value={formData.seniorityLevel}
-                        onChange={(e) => setFormData({ ...formData, seniorityLevel: e.target.value })}
-                        className="w-full text-xs p-3.5 rounded-xl border border-slate-300 focus:border-[#059669] outline-none bg-white font-medium"
+                      <div className="flex flex-wrap gap-2">
+                        {[
+                          "C-Suite (CEO, CTO, CFO, COO)",
+                          "VP / Director Level",
+                          "Head of Department / GM",
+                          "Senior / Lead (5-9 years)",
+                          "Mid-Level (2-5 years)",
+                        ].map((lvl) => (
+                          <button
+                            key={lvl}
+                            type="button"
+                            onClick={() => setFormData({ ...formData, seniorityLevel: lvl })}
+                            className={`py-2 px-3.5 rounded-xl text-xs font-bold transition-all ${
+                              formData.seniorityLevel === lvl
+                                ? "bg-[#059669] text-white shadow-xs"
+                                : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+                            }`}
+                          >
+                            {lvl}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-bold text-slate-800 uppercase tracking-wider">
+                          Primary Industry Domain *
+                        </label>
+                        <select
+                          value={formData.primaryIndustry}
+                          onChange={(e) => setFormData({ ...formData, primaryIndustry: e.target.value })}
+                          className="w-full text-xs p-3.5 rounded-xl border border-slate-300 focus:border-[#059669] outline-none bg-white font-medium"
+                        >
+                          <option value="Information Technology & Software">Information Technology &amp; Software</option>
+                          <option value="Banking, FinTech & Capital Markets">Banking, FinTech &amp; Capital Markets</option>
+                          <option value="Conglomerates & Diversified Holdings">Conglomerates &amp; Diversified Holdings</option>
+                          <option value="Manufacturing & Supply Chain">Manufacturing &amp; Supply Chain</option>
+                          <option value="Healthcare & Pharmaceuticals">Healthcare &amp; Pharmaceuticals</option>
+                          <option value="Hospitality, Leisure & Aviation">Hospitality, Leisure &amp; Aviation</option>
+                        </select>
+                      </div>
+
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-bold text-slate-800 uppercase tracking-wider">
+                          Languages Spoken *
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          value={formData.languages}
+                          onChange={(e) => setFormData({ ...formData, languages: e.target.value })}
+                          placeholder="e.g. English, Sinhala, Tamil"
+                          className="w-full text-xs p-3.5 rounded-xl border border-slate-300 focus:border-[#059669] focus:ring-1 focus:ring-[#059669] outline-none"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="space-y-1.5">
+                      <label className="text-xs font-bold text-slate-800 uppercase tracking-wider">
+                        Core Technical &amp; Leadership Skills (Comma-separated) *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={formData.coreSkills}
+                        onChange={(e) => setFormData({ ...formData, coreSkills: e.target.value })}
+                        placeholder="e.g. Cloud Architecture, React, Python, Financial Modeling, Agile Transformation, P&L Ownership"
+                        className="w-full text-xs p-3.5 rounded-xl border border-slate-300 focus:border-[#059669] focus:ring-1 focus:ring-[#059669] outline-none"
+                      />
+                    </div>
+
+                    <div className="pt-4 flex justify-between">
+                      <button
+                        type="button"
+                        onClick={() => setActiveStep(2)}
+                        className="py-3 px-6 rounded-full border border-slate-300 text-xs font-bold text-slate-700 hover:bg-slate-100"
                       >
-                        <option value="C-Suite (CEO, CTO, CFO, COO)">C-Suite (CEO, CTO, CFO, COO)</option>
-                        <option value="Vice President / Director Level">Vice President / Director Level</option>
-                        <option value="Head of Department / General Manager">Head of Department / General Manager</option>
-                        <option value="Senior / Lead (5-9 years)">Senior / Lead (5-9 years)</option>
-                        <option value="Mid-Level Professional (2-5 years)">Mid-Level Professional (2-5 years)</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div className="space-y-1.5">
-                    <label className="text-xs font-bold text-slate-800 uppercase tracking-wider">
-                      Core Technical &amp; Professional Skills (Comma separated) *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formData.coreSkills}
-                      onChange={(e) => setFormData({ ...formData, coreSkills: e.target.value })}
-                      placeholder="e.g. Cloud Architecture, React, Python, Financial Modeling, Agile Transformation, P&L Ownership"
-                      className="w-full text-xs p-3.5 rounded-xl border border-slate-300 focus:border-[#059669] focus:ring-1 focus:ring-[#059669] outline-none"
-                    />
-                  </div>
-                </div>
-
-                {/* Section D: Experience & Compensation */}
-                <div className="space-y-4">
-                  <h3 className="text-sm font-extrabold uppercase tracking-wider text-[#059669] flex items-center gap-2 pb-2 border-b border-slate-200">
-                    <Briefcase className="w-4 h-4" />
-                    <span>4. Current Experience &amp; Career Preferences</span>
-                  </h3>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    <div className="space-y-1.5">
-                      <label className="text-xs font-bold text-slate-800 uppercase tracking-wider">
-                        Current Job Title *
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        value={formData.currentJobTitle}
-                        onChange={(e) => setFormData({ ...formData, currentJobTitle: e.target.value })}
-                        placeholder="e.g. Senior Software Architect or Finance Manager"
-                        className="w-full text-xs p-3.5 rounded-xl border border-slate-300 focus:border-[#059669] focus:ring-1 focus:ring-[#059669] outline-none"
-                      />
-                    </div>
-
-                    <div className="space-y-1.5">
-                      <label className="text-xs font-bold text-slate-800 uppercase tracking-wider">
-                        Current Employer (Held in Strict Discretion) *
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        value={formData.currentEmployer}
-                        onChange={(e) => setFormData({ ...formData, currentEmployer: e.target.value })}
-                        placeholder="e.g. Current Enterprise (Never contacted)"
-                        className="w-full text-xs p-3.5 rounded-xl border border-slate-300 focus:border-[#059669] focus:ring-1 focus:ring-[#059669] outline-none"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-                    <div className="space-y-1.5">
-                      <label className="text-xs font-bold text-slate-800 uppercase tracking-wider">
-                        Total Experience (Years) *
-                      </label>
-                      <input
-                        type="number"
-                        required
-                        min="0"
-                        max="50"
-                        value={formData.totalExperienceYears}
-                        onChange={(e) => setFormData({ ...formData, totalExperienceYears: e.target.value })}
-                        placeholder="e.g. 8"
-                        className="w-full text-xs p-3.5 rounded-xl border border-slate-300 focus:border-[#059669] focus:ring-1 focus:ring-[#059669] outline-none"
-                      />
-                    </div>
-
-                    <div className="space-y-1.5">
-                      <label className="text-xs font-bold text-slate-800 uppercase tracking-wider">
-                        Notice Period *
-                      </label>
-                      <select
-                        value={formData.noticePeriod}
-                        onChange={(e) => setFormData({ ...formData, noticePeriod: e.target.value })}
-                        className="w-full text-xs p-3.5 rounded-xl border border-slate-300 focus:border-[#059669] outline-none bg-white font-medium"
+                        &larr; Back
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setActiveStep(4)}
+                        className="btn-brand-green !py-3 !px-6 !text-xs font-bold flex items-center gap-2"
                       >
-                        <option value="Immediate Available">Immediate Available</option>
-                        <option value="2 Weeks">2 Weeks</option>
-                        <option value="1 Month">1 Month</option>
-                        <option value="2 Months">2 Months</option>
-                        <option value="3 Months">3 Months</option>
-                      </select>
+                        <span>Next: Career &amp; Preferences</span>
+                        <ChevronRight className="w-4 h-4" />
+                      </button>
+                    </div>
+                  </div>
+                )}
+
+                {/* Step 4: Experience & Preferences */}
+                {activeStep === 4 && (
+                  <div className="space-y-5 animate-in fade-in duration-200">
+                    <h3 className="text-sm font-extrabold uppercase tracking-wider text-[#059669] flex items-center gap-2">
+                      <Briefcase className="w-4 h-4" />
+                      <span>Step 4 of 4: Current Experience &amp; Preferences</span>
+                    </h3>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-bold text-slate-800 uppercase tracking-wider">
+                          Current Job Title *
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          value={formData.currentJobTitle}
+                          onChange={(e) => setFormData({ ...formData, currentJobTitle: e.target.value })}
+                          placeholder="e.g. Senior Software Architect"
+                          className="w-full text-xs p-3.5 rounded-xl border border-slate-300 focus:border-[#059669] focus:ring-1 focus:ring-[#059669] outline-none"
+                        />
+                      </div>
+
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-bold text-slate-800 uppercase tracking-wider">
+                          Current Employer (Held in Strict Discretion) *
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          value={formData.currentEmployer}
+                          onChange={(e) => setFormData({ ...formData, currentEmployer: e.target.value })}
+                          placeholder="e.g. Current Company (Never contacted)"
+                          className="w-full text-xs p-3.5 rounded-xl border border-slate-300 focus:border-[#059669] focus:ring-1 focus:ring-[#059669] outline-none"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-bold text-slate-800 uppercase tracking-wider">
+                          Total Experience (Years) *
+                        </label>
+                        <input
+                          type="number"
+                          required
+                          min="0"
+                          max="50"
+                          value={formData.totalExperienceYears}
+                          onChange={(e) => setFormData({ ...formData, totalExperienceYears: e.target.value })}
+                          placeholder="e.g. 8"
+                          className="w-full text-xs p-3.5 rounded-xl border border-slate-300 focus:border-[#059669] focus:ring-1 focus:ring-[#059669] outline-none"
+                        />
+                      </div>
+
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-bold text-slate-800 uppercase tracking-wider">
+                          Notice Period *
+                        </label>
+                        <select
+                          value={formData.noticePeriod}
+                          onChange={(e) => setFormData({ ...formData, noticePeriod: e.target.value })}
+                          className="w-full text-xs p-3.5 rounded-xl border border-slate-300 focus:border-[#059669] outline-none bg-white font-medium"
+                        >
+                          <option value="Immediate Available">Immediate Available</option>
+                          <option value="2 Weeks">2 Weeks</option>
+                          <option value="1 Month">1 Month</option>
+                          <option value="2 Months">2 Months</option>
+                          <option value="3 Months">3 Months</option>
+                        </select>
+                      </div>
+
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-bold text-slate-800 uppercase tracking-wider">
+                          Expected Salary Band
+                        </label>
+                        <input
+                          type="text"
+                          value={formData.expectedSalary}
+                          onChange={(e) => setFormData({ ...formData, expectedSalary: e.target.value })}
+                          placeholder="e.g. LKR 450,000+ or USD"
+                          className="w-full text-xs p-3.5 rounded-xl border border-slate-300 focus:border-[#059669] focus:ring-1 focus:ring-[#059669] outline-none"
+                        />
+                      </div>
                     </div>
 
                     <div className="space-y-1.5">
                       <label className="text-xs font-bold text-slate-800 uppercase tracking-wider">
-                        Expected Monthly Salary / Band
+                        LinkedIn Profile URL or Resume Link
                       </label>
                       <input
-                        type="text"
-                        value={formData.expectedSalary}
-                        onChange={(e) => setFormData({ ...formData, expectedSalary: e.target.value })}
-                        placeholder="e.g. LKR 450,000+ or USD"
+                        type="url"
+                        value={formData.linkedinOrCvUrl}
+                        onChange={(e) => setFormData({ ...formData, linkedinOrCvUrl: e.target.value })}
+                        placeholder="https://linkedin.com/in/yourprofile or Google Drive / Talent Bridge link"
                         className="w-full text-xs p-3.5 rounded-xl border border-slate-300 focus:border-[#059669] focus:ring-1 focus:ring-[#059669] outline-none"
                       />
                     </div>
+
+                    <div className="space-y-1.5">
+                      <label className="text-xs font-bold text-slate-800 uppercase tracking-wider">
+                        Target Role Ambitions or Notes
+                      </label>
+                      <textarea
+                        rows={3}
+                        value={formData.targetRoles}
+                        onChange={(e) => setFormData({ ...formData, targetRoles: e.target.value })}
+                        placeholder="Describe preferred roles, remote/hybrid flexibility, or leadership aspirations..."
+                        className="w-full text-xs p-3.5 rounded-xl border border-slate-300 focus:border-[#059669] focus:ring-1 focus:ring-[#059669] outline-none"
+                      />
+                    </div>
+
+                    <div className="flex items-center gap-2 text-xs text-slate-600 bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                      <ShieldCheck className="w-5 h-5 text-[#059669] shrink-0" />
+                      <span>
+                        Fiduciary Promise: Your credentials are held under strict non-disclosure. No presentation without prior approval. 100% free candidate service.
+                      </span>
+                    </div>
+
+                    <div className="pt-4 flex justify-between items-center">
+                      <button
+                        type="button"
+                        onClick={() => setActiveStep(3)}
+                        className="py-3 px-6 rounded-full border border-slate-300 text-xs font-bold text-slate-700 hover:bg-slate-100"
+                      >
+                        &larr; Back
+                      </button>
+
+                      <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="btn-brand-green !py-4 !px-8 !text-sm font-bold flex items-center justify-center gap-2 shadow-lg shadow-emerald-700/20 disabled:opacity-60 cursor-pointer"
+                      >
+                        <Send className="w-4 h-4" />
+                        <span>{isSubmitting ? "Encrypting & Transmitting..." : "Submit Candidate Registration"}</span>
+                      </button>
+                    </div>
                   </div>
+                )}
 
-                  <div className="space-y-1.5">
-                    <label className="text-xs font-bold text-slate-800 uppercase tracking-wider">
-                      LinkedIn Profile URL or Online CV Link
-                    </label>
-                    <input
-                      type="url"
-                      value={formData.linkedinOrCvUrl}
-                      onChange={(e) => setFormData({ ...formData, linkedinOrCvUrl: e.target.value })}
-                      placeholder="https://linkedin.com/in/yourprofile or Google Drive / Talent Bridge link"
-                      className="w-full text-xs p-3.5 rounded-xl border border-slate-300 focus:border-[#059669] focus:ring-1 focus:ring-[#059669] outline-none"
-                    />
-                  </div>
-
-                  <div className="space-y-1.5">
-                    <label className="text-xs font-bold text-slate-800 uppercase tracking-wider">
-                      Target Role Preferences or Key Career Goals
-                    </label>
-                    <textarea
-                      rows={3}
-                      value={formData.additionalNotes}
-                      onChange={(e) => setFormData({ ...formData, additionalNotes: e.target.value })}
-                      placeholder="Describe target industries, preferred working models (remote/hybrid), or leadership responsibilities you are pursuing..."
-                      className="w-full text-xs p-3.5 rounded-xl border border-slate-300 focus:border-[#059669] focus:ring-1 focus:ring-[#059669] outline-none"
-                    />
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-2 text-xs text-slate-600 bg-slate-50 p-4 rounded-xl border border-slate-200">
-                  <ShieldCheck className="w-5 h-5 text-[#059669] shrink-0" />
-                  <span>
-                    Fiduciary Promise: Your submission is never forwarded to any third party without your prior explicit agreement. Zero recruitment fees for candidates.
-                  </span>
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="btn-brand-green w-full !py-4 !text-sm font-bold flex items-center justify-center gap-2 shadow-md shadow-emerald-700/20 disabled:opacity-60 cursor-pointer"
-                >
-                  <Send className="w-4 h-4" />
-                  <span>{isSubmitting ? "Encrypting & Registering..." : "Submit Candidate Registration"}</span>
-                </button>
               </form>
             )}
           </div>

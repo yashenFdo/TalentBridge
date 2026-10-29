@@ -1,26 +1,39 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import type { Metadata } from "next";
-import { ArrowRight, CheckCircle2, ShieldCheck, Target, Users, Briefcase, Award, Sparkles, Building, Compass } from "lucide-react";
-
-export const metadata: Metadata = {
-  title: "About Us | Talent Bridge — The Right Talent. The Right Direction.",
-  description:
-    "Learn about Talent Bridge: our identity, background, mission, objectives, and dedicated approach to connecting businesses with elite talent and empowering candidates to find career opportunities.",
-};
+import { 
+  ArrowRight, 
+  CheckCircle2, 
+  ShieldCheck, 
+  Users, 
+  Briefcase, 
+  Award, 
+  Sparkles, 
+  Building, 
+  Compass, 
+  Phone, 
+  MessageCircle, 
+  Lock, 
+  ChevronRight,
+  TrendingUp,
+  Target
+} from "lucide-react";
 
 export default function AboutPage() {
+  const [activeApproachTab, setActiveApproachTab] = useState<"organizations" | "candidates">("organizations");
+
   const objectives = [
     {
       metric: "98%",
-      label: "12-Month Retention Guarantee",
-      desc: "Placing leaders who remain, thrive, and drive long-term institutional value.",
+      label: "12-Month Retention Shield",
+      desc: "Appointing leaders who remain, integrate, and drive long-term enterprise value.",
     },
     {
       metric: "14 Days",
-      label: "Calibrated Shortlist Speed",
-      desc: "Delivering thoroughly screened, high-match candidates in record time.",
+      label: "Calibrated Shortlist SLA",
+      desc: "Delivering thoroughly screened, high-match executive slates in record time.",
     },
     {
       metric: "100%",
@@ -30,32 +43,38 @@ export default function AboutPage() {
     {
       metric: "0 Rs.",
       label: "Zero Candidate Fees",
-      desc: "Free career advocacy, profile registration, and guidance for all candidates.",
+      desc: "Completely free career advocacy, profile registration, and guidance for candidates.",
     },
   ];
 
   const coreValues = [
     {
+      num: "01",
       title: "Fiduciary Integrity",
       text: "Unwavering transparency and strict ethical conduct in every candidate recommendation and executive search mandate.",
     },
     {
+      num: "02",
       title: "Executive Precision",
       text: "Setting industry-leading standards in candidate qualification, competency audits, and cultural fit verification.",
     },
     {
+      num: "03",
       title: "People-First Advocacy",
       text: "Treating organizational trajectories and individual candidate careers with equal weight, dignity, and care.",
     },
     {
+      num: "04",
       title: "Absolute Discretion",
       text: "Safeguarding company strategies and candidate identities behind rigorous bilateral non-disclosure agreements.",
     },
     {
+      num: "05",
       title: "Retention Accountability",
       text: "Staying engaged beyond placement with dedicated 30, 60, and 90-day onboarding checkpoints and replacement shields.",
     },
     {
+      num: "06",
       title: "Bilateral Growth",
       text: "Empowering businesses to achieve strategic dominance while propelling talented professionals to new career horizons.",
     },
@@ -90,7 +109,7 @@ export default function AboutPage() {
 
   return (
     <div className="bg-[#FFFFFF] text-[#0F172A]">
-      {/* 1. HERO SECTION WITH PROFESSIONAL BACKGROUND IMAGE */}
+      {/* 1. CINEMATIC HERO SECTION WITH PROFESSIONAL BACKGROUND IMAGE */}
       <section className="relative pt-32 pb-20 sm:pt-36 sm:pb-24 overflow-hidden border-b border-slate-200">
         {/* Suitable Background Image Reflecting Professional Identity */}
         <div className="absolute inset-0 z-0">
@@ -98,18 +117,19 @@ export default function AboutPage() {
             src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1600&auto=format&fit=crop"
             alt="Talent Bridge Modern Corporate Headquarters"
             fill
-            className="object-cover"
+            className="object-cover scale-105"
             priority
           />
           {/* Midnight Obsidian & Emerald Gradient Overlay for Text Readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#071324]/96 via-[#071324]/90 to-[#0A192F]/88" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#040914] via-[#071324]/96 to-[#0A192F]/88" />
         </div>
 
         <div className="relative z-10 max-w-[1360px] mx-auto px-5 sm:px-8">
           <div className="max-w-3xl space-y-6 text-white">
+            
             {/* Company Logo & Tagline Badge */}
             <div className="flex flex-wrap items-center gap-3">
-              <div className="bg-white/95 px-4 py-2 rounded-xl backdrop-blur-md shadow-md inline-flex items-center">
+              <div className="bg-white/95 px-4 py-2 rounded-2xl backdrop-blur-md shadow-md inline-flex items-center">
                 <Image
                   src="/logo-transparent.png"
                   alt="Talent Bridge Logo"
@@ -124,7 +144,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Main Heading (Bold Text) */}
+            {/* Bold Title */}
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.08] text-white">
               Building Trusted Bridges Between{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34D399] via-[#10B981] to-[#059669]">
@@ -150,7 +170,7 @@ export default function AboutPage() {
               </Link>
               <Link
                 href="/services/finding-opportunities"
-                className="bg-white/10 hover:bg-white/20 text-white border border-white/30 px-5 py-3 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-2"
+                className="bg-white/10 hover:bg-white/20 text-white border border-white/30 px-5 py-3 rounded-full text-xs sm:text-sm font-bold transition-all flex items-center gap-2"
               >
                 <Briefcase className="w-4 h-4 text-emerald-400" />
                 <span>Finding Career Opportunities</span>
@@ -160,39 +180,122 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 2. DEDICATED MISSION & BILATERAL APPROACH SECTION */}
+      {/* 2. EDITORIAL MANIFESTO SECTION */}
       <section className="py-20 lg:py-24 bg-[#FFFFFF]">
         <div className="max-w-[1360px] mx-auto px-5 sm:px-8">
-          <div className="max-w-3xl mb-14 space-y-3">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div className="lg:col-span-6 space-y-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-[#065F46] text-xs font-bold uppercase tracking-wider">
+                <Target className="w-3.5 h-3.5" />
+                <span>Our Founding Conviction</span>
+              </div>
+              
+              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight leading-tight">
+                Recruitment Redefined Around <span className="text-[#059669]">People, Purpose, &amp; Precision</span>.
+              </h2>
+
+              <p className="text-slate-700 text-sm sm:text-base leading-relaxed font-normal">
+                Traditional recruitment too often treats human potential as a high-volume resume game: forwarding unvetted profiles, matching basic keywords, and ignoring the nuanced dynamics of leadership and culture. When placements fail, organizations lose critical momentum, and executives suffer career disruption.
+              </p>
+
+              <p className="text-slate-700 text-sm sm:text-base leading-relaxed font-normal">
+                Talent Bridge was engineered as an antidote. We operate with the discretion of an executive search firm, the agility of a modern talent partner, and the accountability of a fiduciary advisor. We do not rest until every mandate results in durable mutual growth.
+              </p>
+            </div>
+
+            <div className="lg:col-span-6">
+              <div className="p-8 sm:p-12 rounded-[2.5rem] bg-gradient-to-br from-[#071324] to-[#0A192F] text-white border border-slate-800 shadow-2xl relative overflow-hidden">
+                <div className="space-y-6 relative z-10">
+                  <span className="text-xs font-bold uppercase tracking-widest text-amber-400 block">
+                    Our North Star
+                  </span>
+
+                  <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-white leading-snug">
+                    &ldquo;The Right Talent. The Right Direction.&rdquo;
+                  </h3>
+
+                  <p className="text-slate-300 text-xs sm:text-sm leading-relaxed font-normal">
+                    Every executive search mandate we undertake is guided by a singular conviction: placement is only successful when the candidate thrives, adds measurable enterprise value, and achieves enduring career fulfillment.
+                  </p>
+
+                  <div className="pt-6 border-t border-slate-700/80 grid grid-cols-2 gap-4">
+                    <div>
+                      <span className="font-display text-3xl font-extrabold text-[#34D399] block">98%</span>
+                      <span className="text-xs text-slate-300 font-medium">12-Month Retention</span>
+                    </div>
+                    <div>
+                      <span className="font-display text-3xl font-extrabold text-amber-400 block">365 Days</span>
+                      <span className="text-xs text-slate-300 font-medium">Replacement Shield</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* 3. DEDICATED MISSION & BILATERAL APPROACH (INTERACTIVE TABS) */}
+      <section className="py-20 lg:py-24 bg-[#F8FAFC] border-y border-slate-200">
+        <div className="max-w-[1360px] mx-auto px-5 sm:px-8 space-y-12">
+          
+          <div className="text-center max-w-3xl mx-auto space-y-3">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-100 text-[#065F46] text-xs font-bold uppercase tracking-wider">
-              <span>Dual-Perspective Mandate</span>
+              <span>Bilateral Mandate</span>
             </div>
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight">
-              OUR MISSION &amp; <span className="text-[#059669]">BILATERAL APPROACH</span>
+              OUR MISSION &amp; <span className="text-[#059669]">APPROACH</span>
             </h2>
             <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
-              True recruitment success only occurs when both sides of the bridge flourish: organizations secure leadership that generates exponential value, and candidates take steps that elevate their professional trajectories.
+              Explore how our methodology simultaneously serves business growth and candidate advancement.
             </p>
+
+            {/* Interactive Switcher */}
+            <div className="pt-4 inline-flex items-center p-1.5 bg-white rounded-2xl border border-slate-200 shadow-sm">
+              <button
+                type="button"
+                onClick={() => setActiveApproachTab("organizations")}
+                className={`py-2.5 px-6 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-2 ${
+                  activeApproachTab === "organizations"
+                    ? "bg-[#059669] text-white shadow-sm"
+                    : "text-slate-600 hover:text-slate-900"
+                }`}
+              >
+                <Building className="w-4 h-4" />
+                <span>Connecting Businesses with Talent</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setActiveApproachTab("candidates")}
+                className={`py-2.5 px-6 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-2 ${
+                  activeApproachTab === "candidates"
+                    ? "bg-[#059669] text-white shadow-sm"
+                    : "text-slate-600 hover:text-slate-900"
+                }`}
+              >
+                <Compass className="w-4 h-4" />
+                <span>Helping Candidates Find Opportunities</span>
+              </button>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-            {/* Column A: Connecting Businesses with Talent */}
-            <div className="p-8 sm:p-12 rounded-3xl bg-[#F8FAFC] border border-slate-200/90 flex flex-col justify-between shadow-xs">
-              <div className="space-y-6">
-                <div className="w-12 h-12 rounded-2xl bg-emerald-100 text-[#059669] flex items-center justify-center">
-                  <Building className="w-6 h-6" />
-                </div>
-                <div>
-                  <span className="text-xs font-bold uppercase tracking-widest text-[#059669] block mb-1">
-                    For Businesses &amp; Organizations
-                  </span>
-                  <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-[#0F172A] tracking-tight">
-                    Connecting Ambitious Businesses With Qualified Talent
-                  </h3>
-                </div>
+          {/* Dynamic Tab Card */}
+          {activeApproachTab === "organizations" ? (
+            <div className="rounded-[2.5rem] bg-white border border-slate-200 p-8 sm:p-14 shadow-lg shadow-slate-900/5 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center animate-in fade-in duration-300">
+              <div className="lg:col-span-7 space-y-6">
+                <span className="text-xs font-extrabold uppercase tracking-widest text-[#059669] block">
+                  For Organizations &amp; Boards
+                </span>
+                <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0F172A] tracking-tight">
+                  Connecting Ambitious Businesses With Qualified Leadership
+                </h3>
                 <p className="text-slate-700 text-sm sm:text-base leading-relaxed font-normal">
                   We partner with enterprise boards, multinational conglomerates, and fast-scaling innovators to fill mission-critical vacancies. Rather than circulating unsolicited resumes, we conduct exhaustive market intelligence, calibrated headhunting, and multi-stage 360° competency evaluations.
                 </p>
+
                 <div className="space-y-3 pt-2">
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-[#059669] shrink-0 mt-0.5" />
@@ -213,36 +316,51 @@ export default function AboutPage() {
                     </span>
                   </div>
                 </div>
+
+                <div className="pt-4">
+                  <Link
+                    href="/services/hiring-talent"
+                    className="btn-brand-green !py-3.5 !px-8 !text-xs font-bold inline-flex items-center gap-2 group"
+                  >
+                    <span>Explore Hiring Talent Practices</span>
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </div>
               </div>
 
-              <div className="pt-8 mt-6 border-t border-slate-200">
-                <Link
-                  href="/services/hiring-talent"
-                  className="btn-brand-green !py-3 !px-6 !text-xs font-bold inline-flex items-center gap-2 group"
-                >
-                  <span>Explore Hiring Services</span>
-                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-                </Link>
+              <div className="lg:col-span-5 bg-[#F8FAFC] p-8 rounded-3xl border border-slate-200 space-y-4">
+                <span className="text-[11px] font-extrabold uppercase tracking-wider text-slate-500 block">
+                  Enterprise Client Guarantees
+                </span>
+                <div className="space-y-3">
+                  <div className="p-4 rounded-2xl bg-white border border-slate-200">
+                    <span className="text-xs font-bold text-slate-900 block">14-Day Delivery SLA</span>
+                    <span className="text-[11px] text-slate-600">Calibrated first shortlist delivered within 14 business days.</span>
+                  </div>
+                  <div className="p-4 rounded-2xl bg-white border border-slate-200">
+                    <span className="text-xs font-bold text-slate-900 block">365-Day Replacement Shield</span>
+                    <span className="text-[11px] text-slate-600">Complimentary replacement search if candidate leaves within 12 months.</span>
+                  </div>
+                  <div className="p-4 rounded-2xl bg-white border border-slate-200">
+                    <span className="text-xs font-bold text-slate-900 block">100% Strict NDA Protection</span>
+                    <span className="text-[11px] text-slate-600">Total institutional discretion for confidential C-suite mandates.</span>
+                  </div>
+                </div>
               </div>
             </div>
-
-            {/* Column B: Helping Candidates Find Opportunities */}
-            <div className="p-8 sm:p-12 rounded-3xl bg-[#F8FAFC] border border-slate-200/90 flex flex-col justify-between shadow-xs">
-              <div className="space-y-6">
-                <div className="w-12 h-12 rounded-2xl bg-amber-100 text-[#D97706] flex items-center justify-center">
-                  <Compass className="w-6 h-6" />
-                </div>
-                <div>
-                  <span className="text-xs font-bold uppercase tracking-widest text-[#D97706] block mb-1">
-                    For Professionals &amp; Candidates
-                  </span>
-                  <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-[#0F172A] tracking-tight">
-                    Empowering Candidates To Find Defining Opportunities
-                  </h3>
-                </div>
+          ) : (
+            <div className="rounded-[2.5rem] bg-white border border-slate-200 p-8 sm:p-14 shadow-lg shadow-slate-900/5 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center animate-in fade-in duration-300">
+              <div className="lg:col-span-7 space-y-6">
+                <span className="text-xs font-extrabold uppercase tracking-widest text-[#D97706] block">
+                  For Professionals &amp; Candidates
+                </span>
+                <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0F172A] tracking-tight">
+                  Empowering Candidates To Find Defining Opportunities
+                </h3>
                 <p className="text-slate-700 text-sm sm:text-base leading-relaxed font-normal">
                   We empower candidates to take deliberate, rewarding steps in their professional careers. Through our confidential candidate registry, jobseekers and senior executives receive direct visibility to exclusive, unadvertised mandates across top regional and international employers.
                 </p>
+
                 <div className="space-y-3 pt-2">
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-[#D97706] shrink-0 mt-0.5" />
@@ -263,23 +381,44 @@ export default function AboutPage() {
                     </span>
                   </div>
                 </div>
+
+                <div className="pt-4">
+                  <Link
+                    href="/services/finding-opportunities"
+                    className="btn-brand-navy !py-3.5 !px-8 !text-xs font-bold inline-flex items-center gap-2 group"
+                  >
+                    <span>Explore Candidate Opportunities</span>
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </div>
               </div>
 
-              <div className="pt-8 mt-6 border-t border-slate-200">
-                <Link
-                  href="/services/finding-opportunities"
-                  className="btn-brand-navy !py-3 !px-6 !text-xs font-bold inline-flex items-center gap-2 group"
-                >
-                  <span>Explore Candidate Opportunities</span>
-                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-                </Link>
+              <div className="lg:col-span-5 bg-[#F8FAFC] p-8 rounded-3xl border border-slate-200 space-y-4">
+                <span className="text-[11px] font-extrabold uppercase tracking-wider text-slate-500 block">
+                  Candidate Advocacy Promises
+                </span>
+                <div className="space-y-3">
+                  <div className="p-4 rounded-2xl bg-white border border-slate-200">
+                    <span className="text-xs font-bold text-slate-900 block">Zero Candidate Fees</span>
+                    <span className="text-[11px] text-slate-600">All advisory, screening, and placement services are 100% free.</span>
+                  </div>
+                  <div className="p-4 rounded-2xl bg-white border border-slate-200">
+                    <span className="text-xs font-bold text-slate-900 block">Zero Employer Alerts</span>
+                    <span className="text-[11px] text-slate-600">Your current organization is never alerted or contacted.</span>
+                  </div>
+                  <div className="p-4 rounded-2xl bg-white border border-slate-200">
+                    <span className="text-xs font-bold text-slate-900 block">Direct Decision-Maker Advocacy</span>
+                    <span className="text-[11px] text-slate-600">Introductions presented directly to CEOs and Board Committees.</span>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
+          )}
+
         </div>
       </section>
 
-      {/* 3. MEASURABLE STRATEGIC OBJECTIVES */}
+      {/* 4. MEASURABLE STRATEGIC OBJECTIVES */}
       <section className="py-20 bg-[#071324] text-white">
         <div className="max-w-[1360px] mx-auto px-5 sm:px-8">
           <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
@@ -298,7 +437,7 @@ export default function AboutPage() {
             {objectives.map((obj, idx) => (
               <div
                 key={idx}
-                className="p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-emerald-500/50 transition-all"
+                className="p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-emerald-500/50 transition-all shadow-lg"
               >
                 <div className="font-display text-4xl sm:text-5xl font-extrabold text-[#10B981] mb-2 tracking-tight">
                   {obj.metric}
@@ -311,8 +450,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 4. CORE VALUES SECTION */}
-      <section className="py-20 lg:py-24 bg-[#F8FAFC]">
+      {/* 5. CORE VALUES SECTION */}
+      <section className="py-20 lg:py-24 bg-[#FFFFFF]">
         <div className="max-w-[1360px] mx-auto px-5 sm:px-8">
           <div className="max-w-3xl mb-14 space-y-3">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-100 text-[#065F46] text-xs font-bold uppercase tracking-wider">
@@ -330,10 +469,10 @@ export default function AboutPage() {
             {coreValues.map((val, idx) => (
               <div
                 key={idx}
-                className="p-8 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:border-emerald-300 transition-colors"
+                className="p-8 rounded-3xl bg-[#F8FAFC] border border-slate-200 shadow-xs hover:border-emerald-300 transition-colors"
               >
-                <span className="font-display text-lg font-extrabold text-[#059669] block mb-2">
-                  0{idx + 1}
+                <span className="font-display text-xl font-extrabold text-[#059669] block mb-2">
+                  {val.num}
                 </span>
                 <h3 className="font-display text-xl font-bold text-[#0F172A] mb-2">{val.title}</h3>
                 <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
@@ -345,8 +484,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 5. MILESTONES OF EVOLUTION */}
-      <section className="py-20 bg-[#FFFFFF] border-t border-slate-200">
+      {/* 6. MILESTONES OF EVOLUTION */}
+      <section className="py-20 bg-[#F8FAFC] border-t border-slate-200">
         <div className="max-w-[1360px] mx-auto px-5 sm:px-8">
           <div className="max-w-3xl mb-14 space-y-3">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-100 text-[#065F46] text-xs font-bold uppercase tracking-wider">
@@ -364,7 +503,7 @@ export default function AboutPage() {
             {milestones.map((m) => (
               <div
                 key={m.phase}
-                className="p-7 rounded-2xl bg-white border border-slate-200 shadow-xs"
+                className="p-7 rounded-3xl bg-white border border-slate-200 shadow-xs"
               >
                 <div className="flex items-center justify-between mb-4">
                   <span className="font-display text-2xl font-extrabold text-[#059669]">{m.phase}</span>
@@ -380,16 +519,19 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 6. BOTTOM CALL TO ACTION */}
-      <section className="py-16 bg-[#F8FAFC] border-t border-slate-200 text-center">
-        <div className="max-w-2xl mx-auto px-5">
-          <h2 className="font-display text-3xl font-extrabold text-[#0F172A] tracking-tight mb-3">
+      {/* 7. BOTTOM CALL TO ACTION */}
+      <section className="py-16 bg-[#071324] text-white text-center">
+        <div className="max-w-2xl mx-auto px-5 space-y-4">
+          <span className="text-xs font-bold uppercase tracking-widest text-emerald-400 block">
+            Direct Access
+          </span>
+          <h2 className="font-display text-3xl font-extrabold text-white tracking-tight">
             Ready to Partner With Talent Bridge?
           </h2>
-          <p className="text-sm text-slate-700 mb-8 font-normal">
+          <p className="text-sm text-slate-300 font-normal">
             Whether you are looking to hire transformative leadership or navigate your next career breakthrough, our partners are here to assist.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="pt-2 flex flex-wrap justify-center gap-4">
             <Link
               href="/contact"
               className="btn-brand-green !py-3.5 !px-8 !text-sm font-bold inline-flex items-center gap-2"
@@ -401,7 +543,7 @@ export default function AboutPage() {
               href="https://wa.me/94772345678?text=Hello%20Talent%20Bridge%20Team!%20I%20would%20like%20to%20learn%20more%20about%20your%20company."
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white hover:bg-slate-50 text-slate-800 border border-slate-300 px-6 py-3.5 rounded-xl text-sm font-bold transition-all shadow-xs"
+              className="bg-white/10 hover:bg-white/15 text-white border border-white/20 px-6 py-3.5 rounded-full text-sm font-bold transition-all"
             >
               WhatsApp Partner Desk
             </a>
