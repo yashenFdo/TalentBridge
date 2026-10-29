@@ -7,7 +7,6 @@ import { CapabilitiesBento } from "@/components/CapabilitiesBento";
 import { ExecutiveTestimonialsCarousel } from "@/components/ExecutiveTestimonialsCarousel";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { BottomCtaBanner } from "@/components/BottomCtaBanner";
-import { MarketIntelligenceSimulator } from "@/components/MarketIntelligenceSimulator";
 import { MandateCaseStudies } from "@/components/MandateCaseStudies";
 import { ExecutiveVaultModal } from "@/components/ExecutiveVaultModal";
 
@@ -24,25 +23,6 @@ export default function HomePage() {
 
       {/* 3. CAPABILITIES BENTO GRID */}
       <CapabilitiesBento />
-
-      {/* 4. EXECUTIVE MARKET INTELLIGENCE SIMULATOR */}
-      <section className="py-20 lg:py-24 bg-[#FFFFFF] border-y border-slate-200">
-        <div className="max-w-[1360px] mx-auto px-5 sm:px-8">
-          <div className="max-w-3xl mb-12 space-y-2">
-            <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#059669]">
-              Real-Time Market Telemetry
-            </p>
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight">
-              EXECUTIVE MARKET <span className="text-[#059669]">INTELLIGENCE</span>
-            </h2>
-            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
-              Real-time telemetry on candidate scarcity, typical compensation bands, and turnaround speeds across key industries in Sri Lanka and regional hubs.
-            </p>
-          </div>
-
-          <MarketIntelligenceSimulator />
-        </div>
-      </section>
 
       {/* 5. VERIFIED CLIENT TESTIMONIALS */}
       <ExecutiveTestimonialsCarousel />

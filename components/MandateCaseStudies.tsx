@@ -162,23 +162,26 @@ export function MandateCaseStudies() {
           </div>
 
           <div className="space-y-4 text-sm text-slate-600 leading-relaxed font-normal">
-            <div>
-              <strong className="text-slate-900 block text-xs font-bold uppercase tracking-wider mb-1">
-                The Mandate Context:
-              </strong>
-              <p>{current.context}</p>
-            </div>
-            <div>
-              <strong className="text-slate-900 block text-xs font-bold uppercase tracking-wider mb-1">
-                The Strategic Challenge:
-              </strong>
-              <p>{current.challenge}</p>
-            </div>
-            <div>
-              <strong className="text-slate-900 block text-xs font-bold uppercase tracking-wider mb-1">
-                The Talent Bridge Execution:
-              </strong>
-              <p>{current.solution}</p>
+            <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
+              {current.context}
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+              <div className="p-4 rounded-xl bg-[#F8FAFC] border border-slate-200">
+                <span className="text-xs font-bold text-slate-900 uppercase tracking-wider block mb-1">
+                  The Strategic Challenge
+                </span>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  {current.challenge}
+                </p>
+              </div>
+              <div className="p-4 rounded-xl bg-emerald-50/50 border border-emerald-200/80">
+                <span className="text-xs font-bold text-[#065F46] uppercase tracking-wider block mb-1">
+                  The Calibrated Outcome
+                </span>
+                <p className="text-xs text-slate-700 leading-relaxed">
+                  {current.solution}
+                </p>
+              </div>
             </div>
           </div>
         </div>
