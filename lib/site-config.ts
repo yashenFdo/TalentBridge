@@ -47,13 +47,13 @@ export const SITE_CONFIG = {
       "High-touch, calibrated vetting over automated volume spam. Deep bilateral advocacy that treats organizational culture and individual career trajectories with equal gravity.",
   },
   contact: {
-    email: "contact@talentbridge.lk",
-    phone: "+94 77 000 0000",
-    phoneRaw: "94770000000",
-    whatsappLink: "https://wa.me/94770000000",
+    email: "info@talentbridge.com",
+    phone: "+94 11 123 4567",
+    phoneRaw: "94111234567",
+    whatsappLink: "https://wa.me/94771234567",
     address: {
-      line1: "Level 4, Business Tower",
-      line2: "Galle Road, Colombo 03",
+      line1: "Colombo",
+      line2: "Sri Lanka",
       country: "Sri Lanka",
     },
     hours: "Monday – Friday, 8:30 AM – 5:30 PM (IST)",
@@ -82,12 +82,11 @@ export const SITE_CONFIG = {
     },
   ],
   navLinks: [
-    { label: "Solutions", href: "/services" },
-    { label: "Methodology", href: "/how-it-works" },
-    { label: "Why Us", href: "/why-us" },
-    { label: "Careers & Talent", href: "/careers" },
-    { label: "About", href: "/about" },
-    { label: "Contact", href: "/contact" },
+    { label: "Home", href: "/" },
+    { label: "About Us", href: "/about" },
+    { label: "Our Services", href: "/services" },
+    { label: "Opportunities", href: "/opportunities" },
+    { label: "Contact Us", href: "/contact" },
   ] as NavItem[],
   services: [
     {

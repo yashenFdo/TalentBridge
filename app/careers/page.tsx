@@ -150,25 +150,25 @@ export default function CareersPage() {
           </div>
         </div>
 
-        {/* Executive CV Builder Spotlight Banner */}
+        {/* Career Opportunities Spotlight Banner */}
         <div className="mb-10 bg-gradient-to-r from-[#F0FDFA] via-white to-[#F0FDFA] border-2 border-[#99F6E4] rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-sm">
           <div className="space-y-1.5 max-w-2xl">
             <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#059669]">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Self-Service Candidate Advantage</span>
+              <span>Confidential Career Representation</span>
             </div>
             <h3 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
-              Create a Verified Executive CV &amp; Share It Anywhere
+              Looking for Your Next Career Opportunity?
             </h3>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Build an international-standard Harvard/McKinsey executive resume in under 3 minutes. Share your unique public link directly on WhatsApp, LinkedIn, or print clean PDFs.
+              Connect directly with our dedicated headhunting team led by Aman Siddik. We connect talented professionals with rewarding career pathways across Sri Lanka and regional markets.
             </p>
           </div>
           <Link
-            href="/cv-builder"
+            href="/opportunities"
             className="btn-brand-green !py-3.5 !px-6 text-xs font-bold flex-shrink-0 flex items-center gap-2"
           >
-            <span>Launch Free CV Builder</span>
+            <span>Explore Opportunities</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>

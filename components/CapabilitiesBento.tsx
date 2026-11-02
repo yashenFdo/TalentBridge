@@ -96,27 +96,27 @@ export function CapabilitiesBento() {
           <div className="bg-gradient-to-br from-[#064E3B] via-[#065F46] to-[#047857] text-white p-7 sm:p-8 rounded-2xl sm:rounded-3xl shadow-xl shadow-emerald-950/20 flex flex-col justify-between space-y-6 md:col-span-2 lg:col-span-2 border border-emerald-400/20">
             <div className="space-y-3">
               <p className="text-xs font-bold uppercase tracking-widest text-emerald-300">
-                Executive Self-Service Suite
+                Finding Opportunities
               </p>
               <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white leading-snug">
-                BUILD &amp; SHARE YOUR VERIFIED EXECUTIVE CV ANYWHERE
+                DISCOVER YOUR NEXT CAREER DEFINING OPPORTUNITY
               </h3>
               <p className="text-xs sm:text-sm text-emerald-100 max-w-xl leading-relaxed font-normal">
-                Create a high-impact, international-standard executive dossier in under 3 minutes. Share instantly via custom link, 1-click WhatsApp, LinkedIn, or print-ready PDF export.
+                Connecting talented individuals with the right career opportunities, creating pathways to a brighter professional future. Speak with our specialized headhunting team today.
               </p>
             </div>
 
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <Link
-                href="/cv-builder"
+                href="/opportunities"
                 className="px-6 py-3.5 bg-white text-[#064E3B] hover:bg-emerald-50 rounded-xl font-bold text-xs uppercase tracking-wider transition-all shadow-md hover:shadow-lg inline-flex items-center gap-2"
               >
-                <span>Launch Free CV Studio</span>
+                <span>Find Opportunities</span>
                 <ArrowRight className="w-4 h-4 text-[#064E3B]" />
               </Link>
               <div className="flex items-center gap-2 text-xs text-emerald-200 font-medium">
                 <CheckCircle2 className="w-4 h-4 text-[#34D399]" />
-                <span>100% Free • No Sign-up Required • Instant Sharing</span>
+                <span>Confidential Registration • Career Opportunity Guidance</span>
               </div>
             </div>
           </div>

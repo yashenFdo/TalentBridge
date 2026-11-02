@@ -33,9 +33,9 @@ export function FaqAccordion() {
     },
     {
       number: "05",
-      question: "How can candidates and leaders create and share their CV on Talent Bridge?",
+      question: "How can candidates register and connect with Talent Bridge for career opportunities?",
       answer:
-        "Any professional or executive can use our integrated Executive CV Studio (located at /cv-builder) 100% free. You can input your leadership milestones, pick from three executive-grade templates (Emerald, Oxford Navy, or Minimalist), and generate a unique public link to share anywhere—including direct 1-click WhatsApp sharing, LinkedIn posting, or print-ready PDF export.",
+        "Talented individuals can submit their career details and goals directly through our Finding Opportunities gateway. Our dedicated headhunting team reviews every profile confidentially, providing career opportunity guidance, opportunity matching, and direct introductions to top employers.",
     },
   ];
 

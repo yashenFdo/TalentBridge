@@ -248,23 +248,6 @@ export function HeroInteractiveForm() {
             </div>
           </div>
 
-          {/* CV Builder Callout Banner */}
-          <div className="p-3.5 bg-emerald-50/80 rounded-xl border border-emerald-200/80 flex items-center justify-between gap-3">
-            <div className="space-y-0.5">
-              <span className="text-xs font-bold text-emerald-900 flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5 text-[#059669]" />
-                Build &amp; Share Your Verified CV
-              </span>
-              <span className="text-[11px] text-emerald-700">Free, instant, shareable anywhere via link or WhatsApp.</span>
-            </div>
-            <Link
-              href="/cv-builder"
-              className="text-xs font-bold text-white bg-[#059669] hover:bg-[#047857] px-3 py-1.5 rounded-lg flex-shrink-0 transition-colors shadow-xs"
-            >
-              Open &rarr;
-            </Link>
-          </div>
-
           <button
             type="submit"
             disabled={isSubmitting}
