@@ -85,7 +85,6 @@ export const SITE_CONFIG = {
     { label: "Home", href: "/" },
     { label: "About Us", href: "/about" },
     { label: "Our Services", href: "/services" },
-    { label: "Opportunities", href: "/opportunities" },
     { label: "Contact Us", href: "/contact" },
   ] as NavItem[],
   services: [

@@ -21,10 +21,10 @@ export function Footer() {
             >
               <div className="relative flex items-center">
                 <Image
-                  src="/images/official-logo-white.png"
+                  src="/images/talent-bridge-logo-white.png"
                   alt="Talent Bridge — The Right Talent. The Right Direction."
-                  width={320}
-                  height={120}
+                  width={1324}
+                  height={698}
                   className="h-12 sm:h-14 lg:h-16 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
                 />
               </div>

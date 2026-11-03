@@ -36,11 +36,8 @@ export function SolutionsSection() {
         <div className="space-y-3">
           <div className="w-12 h-1 bg-[#E5A83B] rounded-full" />
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0B1E36] tracking-tight">
-            SOLUTIONS WE PROVIDE
+            Our Services
           </h2>
-          <p className="text-slate-600 text-sm sm:text-base max-w-2xl font-normal leading-relaxed">
-            Tailored recruitment solutions designed to solve critical organizational talent needs and empower career progression.
-          </p>
         </div>
 
         {/* Two Service Cards Grid */}
@@ -60,17 +57,13 @@ export function SolutionsSection() {
                   <h3 className="text-xl sm:text-2xl font-bold text-[#0B1E36]">
                     Hiring Talent
                   </h3>
-                  <span className="text-xs text-[#008080] font-semibold">For Organizations &amp; Businesses</span>
                 </div>
               </div>
 
-              {/* Descriptions */}
-              <div className="space-y-2 text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
-                <p className="font-medium text-slate-900">
+              {/* Description */}
+              <div className="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
+                <p>
                   Looking for the right candidate for your organisation? We help businesses identify, source and connect with suitable professionals.
-                </p>
-                <p className="text-slate-600">
-                  Connecting businesses with the right people and opportunities together to build stronger teams and drive success.
                 </p>
               </div>
 
@@ -122,17 +115,13 @@ export function SolutionsSection() {
                   <h3 className="text-xl sm:text-2xl font-bold text-[#0B1E36]">
                     Finding Opportunities
                   </h3>
-                  <span className="text-xs text-[#008080] font-semibold">For Candidates &amp; Professionals</span>
                 </div>
               </div>
 
-              {/* Descriptions */}
-              <div className="space-y-2 text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
-                <p className="font-medium text-slate-900">
+              {/* Description */}
+              <div className="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
+                <p>
                   Looking for your next career opportunity? We help individuals connect with suitable employment opportunities.
-                </p>
-                <p className="text-slate-600">
-                  Connecting talented individuals with the right career opportunities, creating pathways to a brighter professional future.
                 </p>
               </div>
 

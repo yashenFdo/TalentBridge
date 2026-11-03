@@ -23,7 +23,7 @@ export function AboutSection() {
 
             {/* Description Paragraph */}
             <p className="text-slate-700 text-base sm:text-lg leading-relaxed font-normal max-w-2xl">
-              Talent Bridge is a recruitment and talent sourcing company focused on connecting businesses with suitable talent and individuals with meaningful career opportunities.
+              Talent Bridge is where talent meets opportunity. We connect businesses with the right people and individuals with opportunities to grow, creating meaningful connections that move careers and businesses forward.
             </p>
 
             {/* Vision & Mission Grid */}

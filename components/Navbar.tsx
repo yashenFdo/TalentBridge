@@ -23,24 +23,17 @@ export function Navbar() {
     { label: "Home", href: "/" },
     { label: "About Us", href: "/about" },
     { label: "Our Services", href: "/services" },
-    { label: "Opportunities", href: "/opportunities" },
     { label: "Contact Us", href: "/contact" },
   ];
 
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
-    if (href === "/opportunities") {
-      return (
-        pathname === "/opportunities" ||
-        pathname.startsWith("/finding-opportunities") ||
-        pathname.startsWith("/services/finding-opportunities")
-      );
-    }
     if (href === "/services") {
       return (
-        pathname === "/services" ||
+        pathname.startsWith("/services") ||
         pathname.startsWith("/hiring-talent") ||
-        pathname.startsWith("/services/hiring-talent")
+        pathname === "/opportunities" ||
+        pathname.startsWith("/finding-opportunities")
       );
     }
     return pathname.startsWith(href);
@@ -64,17 +57,17 @@ export function Navbar() {
         >
           <div className="relative flex items-center">
             <Image
-              src="/images/official-logo.png"
+              src="/images/talent-bridge-logo.png"
               alt="Talent Bridge — The Right Talent. The Right Direction."
-              width={320}
-              height={120}
+              width={1324}
+              height={698}
               className="h-14 sm:h-16 lg:h-[76px] w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
               priority
             />
           </div>
         </Link>
 
-        {/* Desktop Navigation Links: Home | About Us | Our Services | Opportunities | Contact Us */}
+        {/* Desktop Navigation Links: Home | About Us | Our Services | Contact Us */}
         <nav
           className="hidden md:flex items-center gap-7 lg:gap-9"
           aria-label="Main Navigation"
