@@ -58,8 +58,8 @@ export function HeroSection() {
           <div className="lg:col-span-5 relative flex justify-center lg:justify-end">
             <div className="relative w-full max-w-[500px] h-[340px] sm:h-[400px] lg:h-[440px] rounded-3xl overflow-hidden shadow-xl border border-slate-100">
               <Image
-                src="/images/hero-handshake.jpg"
-                alt="Talent Bridge handshake connecting businesses with the right talent"
+                src="/images/hero-meeting.jpg"
+                alt="Recruiter and candidate shaking hands across a meeting table"
                 fill
                 className="object-cover"
                 priority
