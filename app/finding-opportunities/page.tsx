@@ -80,9 +80,9 @@ export default function FindingOpportunitiesPage() {
               <div className="relative w-full max-w-[280px] aspect-[4/4.5] rounded-2xl overflow-hidden shadow-sm border border-slate-100 mb-5">
                 <Image
                   src="/images/aman-siddik.jpg"
-                  alt="Aman Siddik - Headhunter at Talent Bridge"
+                  alt="Aman Siddik - Founder / Head of Recruitment at Talent Bridge"
                   fill
-                  className="object-cover"
+                  className="object-cover object-top"
                   priority
                   sizes="(max-width: 1024px) 280px, 320px"
                 />
@@ -93,7 +93,7 @@ export default function FindingOpportunitiesPage() {
                 Aman Siddik
               </h2>
               <p className="text-sm font-semibold text-[#008080] mt-0.5">
-                Headhunter
+                Founder / Head of Recruitment
               </p>
 
               {/* Teal Accent Divider */}
@@ -103,24 +103,24 @@ export default function FindingOpportunitiesPage() {
               <div className="w-full space-y-3 pt-1">
                 {/* Phone */}
                 <a
-                  href="tel:+94771234567"
+                  href="tel:+94765657125"
                   className="flex items-center justify-center gap-3 text-sm font-semibold text-slate-700 hover:text-[#008080] transition-colors py-1 group"
                 >
                   <div className="w-8 h-8 rounded-full bg-[#008080] text-white flex items-center justify-center shrink-0 shadow-xs group-hover:scale-105 transition-transform">
                     <Phone className="w-4 h-4" />
                   </div>
-                  <span>+94 77 123 4567</span>
+                  <span>+94 76 565 7125</span>
                 </a>
 
                 {/* Email */}
                 <a
-                  href="mailto:aman.siddik@talentbridge.lk"
+                  href="mailto:aman@talentbridge.lk"
                   className="flex items-center justify-center gap-3 text-sm font-semibold text-slate-700 hover:text-[#008080] transition-colors py-1 group"
                 >
                   <div className="w-8 h-8 rounded-full bg-[#008080] text-white flex items-center justify-center shrink-0 shadow-xs group-hover:scale-105 transition-transform">
                     <Mail className="w-4 h-4" />
                   </div>
-                  <span>aman.siddik@talentbridge.lk</span>
+                  <span>aman@talentbridge.lk</span>
                 </a>
               </div>
 

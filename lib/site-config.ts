@@ -47,9 +47,9 @@ export const SITE_CONFIG = {
       "High-touch, calibrated vetting over automated volume spam. Deep bilateral advocacy that treats organizational culture and individual career trajectories with equal gravity.",
   },
   contact: {
-    email: "info@talentbridge.com",
-    phone: "+94 11 123 4567",
-    phoneRaw: "94111234567",
+    email: "hello@talentbridge.lk",
+    phone: "+94 76 122 9757",
+    phoneRaw: "94761229757",
     whatsappLink: "https://wa.me/94771234567",
     address: {
       line1: "Colombo",

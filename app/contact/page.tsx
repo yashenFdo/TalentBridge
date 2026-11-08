@@ -20,7 +20,7 @@ export default function ContactPage() {
                 <Mail className="w-4 h-4" />
                 <span>Email Inquiries</span>
               </div>
-              <p className="text-base font-bold text-[#0B1E36]">info@talentbridge.com</p>
+              <p className="text-base font-bold text-[#0B1E36]">hello@talentbridge.lk</p>
               <p className="text-xs text-slate-500">Inquiries answered within 24 business hours.</p>
             </div>
 
@@ -29,7 +29,7 @@ export default function ContactPage() {
                 <Phone className="w-4 h-4" />
                 <span>Direct Hotline</span>
               </div>
-              <p className="text-base font-bold text-[#0B1E36]">+94 11 123 4567</p>
+              <p className="text-base font-bold text-[#0B1E36]">+94 76 122 9757</p>
               <p className="text-xs text-slate-500">Monday &ndash; Friday, 8:30 AM &ndash; 5:30 PM (IST).</p>
             </div>
 

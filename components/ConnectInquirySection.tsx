@@ -52,23 +52,23 @@ export function ConnectInquirySection() {
               {/* Direct Info List */}
               <div className="space-y-3.5 pt-4">
                 <a
-                  href="mailto:info@talentbridge.com"
+                  href="mailto:hello@talentbridge.lk"
                   className="flex items-center gap-3 text-slate-700 hover:text-[#008080] transition-colors text-sm font-medium"
                 >
                   <div className="w-8 h-8 rounded-full bg-teal-100/60 flex items-center justify-center text-[#008080] shrink-0">
                     <Mail className="w-4 h-4" />
                   </div>
-                  <span>info@talentbridge.com</span>
+                  <span>hello@talentbridge.lk</span>
                 </a>
 
                 <a
-                  href="tel:+94111234567"
+                  href="tel:+94761229757"
                   className="flex items-center gap-3 text-slate-700 hover:text-[#008080] transition-colors text-sm font-medium"
                 >
                   <div className="w-8 h-8 rounded-full bg-teal-100/60 flex items-center justify-center text-[#008080] shrink-0">
                     <Phone className="w-4 h-4" />
                   </div>
-                  <span>+94 11 123 4567</span>
+                  <span>+94 76 122 9757</span>
                 </a>
 
                 <div className="flex items-center gap-3 text-slate-700 text-sm font-medium">

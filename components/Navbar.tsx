@@ -93,11 +93,11 @@ export function Navbar() {
         {/* Desktop Direct Contact / CTA */}
         <div className="hidden lg:flex items-center gap-3.5">
           <a
-            href="tel:+94111234567"
+            href="tel:+94761229757"
             className="text-xs sm:text-[13px] font-semibold text-slate-700 hover:text-[#008080] transition-colors flex items-center gap-2 px-3.5 py-2 rounded-full border border-slate-200 hover:border-[#008080]/40 bg-slate-50"
           >
             <Phone className="w-3.5 h-3.5 text-[#008080]" />
-            <span>+94 11 123 4567</span>
+            <span>+94 76 122 9757</span>
           </a>
 
           <Link
@@ -112,7 +112,7 @@ export function Navbar() {
         {/* Mobile Hamburger Button */}
         <div className="flex md:hidden items-center gap-2">
           <a
-            href="tel:+94111234567"
+            href="tel:+94761229757"
             className="p-2 rounded-full bg-slate-100 text-[#008080]"
             aria-label="Call Talent Bridge"
           >

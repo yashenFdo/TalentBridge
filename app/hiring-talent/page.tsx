@@ -71,17 +71,17 @@ export default function HiringTalentPage() {
         {/* 2. Main Content Grid: Left Contact Card & Right Inquiry Form */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch max-w-[1100px] mx-auto">
           
-          {/* Left Card: Contact Person Section (Yazid Khadir) */}
+          {/* Left Card: Contact Person Section (Yazid Kathir) */}
           <div className="lg:col-span-5 bg-white rounded-3xl p-6 sm:p-8 shadow-[0_10px_35px_rgba(0,0,0,0.06)] border border-slate-100 flex flex-col items-center text-center justify-between">
             <div className="w-full flex flex-col items-center">
               
-              {/* Professional Photograph of Yazid Khadir */}
+              {/* Professional Photograph of Yazid Kathir */}
               <div className="relative w-full max-w-[280px] aspect-[4/4.5] rounded-2xl overflow-hidden shadow-sm border border-slate-100 mb-5">
                 <Image
-                  src="/images/yazid-khadir.jpg"
-                  alt="Yazid Khadir - Business Development Manager at Talent Bridge"
+                  src="/images/yazid-kathir.jpg"
+                  alt="Yazid Kathir - Growth and Partnerships Lead at Talent Bridge"
                   fill
-                  className="object-cover"
+                  className="object-cover object-top"
                   priority
                   sizes="(max-width: 1024px) 280px, 320px"
                 />
@@ -89,10 +89,10 @@ export default function HiringTalentPage() {
 
               {/* Name & Title */}
               <h2 className="text-xl sm:text-2xl font-bold text-[#0B1E36]">
-                Yazid Khadir
+                Yazid Kathir
               </h2>
               <p className="text-sm font-semibold text-[#008080] mt-0.5">
-                Business Development Manager
+                Growth and Partnerships Lead
               </p>
 
               {/* Teal Accent Divider */}
@@ -102,13 +102,13 @@ export default function HiringTalentPage() {
               <div className="w-full space-y-3 pt-1">
                 {/* Phone */}
                 <a
-                  href="tel:+94771234567"
+                  href="tel:+94769915939"
                   className="flex items-center justify-center gap-3 text-sm font-semibold text-slate-700 hover:text-[#008080] transition-colors py-1 group"
                 >
                   <div className="w-8 h-8 rounded-full bg-[#008080] text-white flex items-center justify-center shrink-0 shadow-xs group-hover:scale-105 transition-transform">
                     <Phone className="w-4 h-4" />
                   </div>
-                  <span>+94 77 123 4567</span>
+                  <span>+94 76 991 5939</span>
                 </a>
 
                 {/* Email */}
@@ -142,7 +142,7 @@ export default function HiringTalentPage() {
                   Inquiry Received
                 </h3>
                 <p className="text-slate-600 text-sm max-w-md mx-auto leading-relaxed">
-                  Thank you for submitting your hiring requirements. Yazid Khadir and our recruitment team will review your mandate and connect with you shortly.
+                  Thank you for submitting your hiring requirements. Yazid Kathir and our recruitment team will review your mandate and connect with you shortly.
                 </p>
                 <div className="pt-4">
                   <button

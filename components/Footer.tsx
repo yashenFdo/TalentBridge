@@ -38,20 +38,20 @@ export function Footer() {
           <div className="flex flex-wrap items-center justify-center gap-5 sm:gap-7 text-xs sm:text-sm text-slate-200">
             {/* Email */}
             <a
-              href="mailto:info@talentbridge.com"
+              href="mailto:hello@talentbridge.lk"
               className="flex items-center gap-2 hover:text-[#38bdf8] transition-colors"
             >
               <Mail className="w-4 h-4 text-slate-300" />
-              <span>info@talentbridge.com</span>
+              <span>hello@talentbridge.lk</span>
             </a>
 
             {/* Phone */}
             <a
-              href="tel:+94111234567"
+              href="tel:+94761229757"
               className="flex items-center gap-2 hover:text-[#38bdf8] transition-colors"
             >
               <Phone className="w-4 h-4 text-slate-300" />
-              <span>+94 11 123 4567</span>
+              <span>+94 76 122 9757</span>
             </a>
 
             {/* Vertical Separator */}
