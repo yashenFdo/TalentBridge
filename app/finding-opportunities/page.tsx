@@ -79,7 +79,7 @@ export default function FindingOpportunitiesPage() {
               {/* Professional Photograph of Aman Siddik */}
               <div className="relative w-full max-w-[280px] aspect-[4/4.5] rounded-2xl overflow-hidden shadow-sm border border-slate-100 mb-5">
                 <Image
-                  src="/images/aman-siddik.jpg"
+                  src="/images/aman-siddik-headshot.jpg"
                   alt="Aman Siddik - Founder / Head of Recruitment at Talent Bridge"
                   fill
                   className="object-cover object-top"
