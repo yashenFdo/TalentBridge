@@ -59,7 +59,7 @@ export function Footer() {
 
             {/* LinkedIn */}
             <a
-              href="https://www.linkedin.com/company/talentbridge"
+              href="https://www.linkedin.com/company/talentbridge.lk/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Talent Bridge on LinkedIn"
