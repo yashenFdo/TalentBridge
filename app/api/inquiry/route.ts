@@ -1,4 +1,3 @@
-import nodemailer from "nodemailer";
 import {
   CV_EXTENSIONS,
   HONEYPOT_FIELD,
@@ -74,22 +73,20 @@ export async function POST(request: Request) {
   if (!PHONE_RE.test(phone)) return fail(422, PHONE_MESSAGE);
 
   // Optional CV attachment
-  const attachments: { filename: string; content: Buffer }[] = [];
+  const attachments: { filename: string; content: string }[] = [];
   const cv = form.get("cv");
   if (cv instanceof File && cv.size > 0) {
     if (cv.size > MAX_CV_BYTES) return fail(413, "Your CV must be 4MB or smaller.");
     if (!CV_EXTENSIONS.test(cv.name)) return fail(422, "Please upload your CV as a PDF or Word document.");
     attachments.push({
       filename: cv.name.replace(/[^\w.\- ]+/g, "_").slice(0, 120),
-      content: Buffer.from(await cv.arrayBuffer()),
+      content: Buffer.from(await cv.arrayBuffer()).toString("base64"),
     });
   }
 
-  // Sent through the company's Zoho Mail account (see .env.example)
-  const smtpUser = process.env.SMTP_USER;
-  const smtpPass = process.env.SMTP_PASS;
-  if (!smtpUser || !smtpPass) {
-    console.error("[inquiry] SMTP_USER / SMTP_PASS are not set; inquiry was not sent.");
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    console.error("[inquiry] RESEND_API_KEY is not set; inquiry was not sent.");
     return fail(503, FALLBACK_ERROR);
   }
 
@@ -138,28 +135,31 @@ ${
     ...(message ? ["", "Message:", message] : []),
   ].join("\n");
 
-  const port = Number(process.env.SMTP_PORT) || 465;
-  const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST || "smtp.zoho.com",
-    port,
-    secure: port === 465,
-    auth: { user: smtpUser, pass: smtpPass },
-  });
+  const to = [route.email];
+  const cc = route.email === INQUIRY_CC ? undefined : [INQUIRY_CC];
 
   try {
-    await transporter.sendMail({
-      // Zoho only allows sending as the signed-in mailbox (or its aliases).
-      from: { name: process.env.SMTP_FROM_NAME || "Talent Bridge Website", address: smtpUser },
-      to: route.email,
-      cc: route.email === INQUIRY_CC ? undefined : INQUIRY_CC,
-      replyTo: { name, address: email },
-      subject: subject.replace(/[\r\n]+/g, " "),
-      html,
-      text: plain,
-      attachments,
+    const res = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
+      body: JSON.stringify({
+        from: process.env.INQUIRY_FROM_EMAIL || "Talent Bridge Website <website@talentbridge.lk>",
+        to,
+        cc,
+        reply_to: email,
+        subject: subject.replace(/[\r\n]+/g, " "),
+        html,
+        text: plain,
+        attachments: attachments.length ? attachments : undefined,
+      }),
     });
+
+    if (!res.ok) {
+      console.error("[inquiry] Resend rejected the email:", res.status, await res.text());
+      return fail(502, FALLBACK_ERROR);
+    }
   } catch (err) {
-    console.error("[inquiry] Zoho SMTP could not send the email:", err);
+    console.error("[inquiry] Could not reach Resend:", err);
     return fail(502, FALLBACK_ERROR);
   }
 
