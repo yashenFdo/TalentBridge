@@ -4,10 +4,14 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Phone, Mail, ArrowRight, CheckCircle2 } from "lucide-react";
+import { EMAIL_FIELD, NAME_FIELD, PHONE_FIELD } from "@/lib/validation";
+import { submitInquiry } from "@/lib/submit-inquiry";
+import { HoneypotField } from "@/components/HoneypotField";
 
 export default function HiringTalentPage() {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const [formData, setFormData] = useState({
     contactPerson: "",
@@ -17,13 +21,30 @@ export default function HiringTalentPage() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Hiring inquiries go to Yazid Kathir (see lib/inquiry.ts)
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setSubmitError("");
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      await submitInquiry(
+        {
+          category: "hiring",
+          source: "Hiring Talent page",
+          name: formData.contactPerson,
+          email: formData.email,
+          phone: formData.contactNumber,
+          company: formData.companyName,
+          message: formData.message,
+        },
+        e.currentTarget
+      );
       setFormSubmitted(true);
-    }, 600);
+    } catch (err) {
+      setSubmitError(err instanceof Error ? err.message : String(err));
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -178,6 +199,7 @@ export default function HiringTalentPage() {
 
                 {/* Form */}
                 <form onSubmit={handleSubmit} className="space-y-4">
+                  <HoneypotField />
                   {/* Row 1: Contact Person & Contact Number */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-1.5">
@@ -186,6 +208,7 @@ export default function HiringTalentPage() {
                       </label>
                       <input
                         type="text"
+                        {...NAME_FIELD}
                         required
                         placeholder="e.g. John Doe"
                         value={formData.contactPerson}
@@ -200,6 +223,7 @@ export default function HiringTalentPage() {
                       </label>
                       <input
                         type="tel"
+                        {...PHONE_FIELD}
                         required
                         placeholder="e.g. +94 77 123 4567"
                         value={formData.contactNumber}
@@ -217,6 +241,7 @@ export default function HiringTalentPage() {
                       </label>
                       <input
                         type="email"
+                        {...EMAIL_FIELD}
                         required
                         placeholder="e.g. you@company.com"
                         value={formData.email}
@@ -254,6 +279,12 @@ export default function HiringTalentPage() {
                       className="w-full bg-[#F8FAFC] text-slate-900 placeholder-slate-400 text-xs sm:text-sm px-4 py-3 rounded-xl border border-slate-200 focus:bg-white focus:border-[#008080] focus:ring-1 focus:ring-[#008080] outline-none transition-all"
                     />
                   </div>
+
+                  {submitError && (
+                    <p role="alert" className="text-sm text-red-600 bg-red-50 border border-red-100 rounded-xl px-4 py-3">
+                      {submitError}
+                    </p>
+                  )}
 
                   {/* Row 4: Submit Button (Right aligned) */}
                   <div className="pt-2 flex justify-end">

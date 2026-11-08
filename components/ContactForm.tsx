@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { CheckCircle2, Send, Lock } from "lucide-react";
+import { EMAIL_FIELD, NAME_FIELD, PHONE_FIELD } from "@/lib/validation";
 
 interface ContactFormProps {
   initialType?: "employer" | "candidate";
@@ -107,6 +108,7 @@ export function ContactForm({
             </label>
             <input
               type="text"
+              {...NAME_FIELD}
               required
               placeholder="e.g. Ruwan Samarasekera"
               value={formData.fullName}
@@ -123,6 +125,7 @@ export function ContactForm({
             </label>
             <input
               type="email"
+              {...EMAIL_FIELD}
               required
               placeholder="e.g. ruwan@example.com"
               value={formData.email}
@@ -141,6 +144,7 @@ export function ContactForm({
             </label>
             <input
               type="tel"
+              {...PHONE_FIELD}
               required
               placeholder="+94 77 123 4567"
               value={formData.phone}

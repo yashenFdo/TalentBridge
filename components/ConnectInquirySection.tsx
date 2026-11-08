@@ -2,10 +2,22 @@
 
 import React, { useState } from "react";
 import { Mail, Phone, MapPin, ArrowRight, CheckCircle2 } from "lucide-react";
+import { EMAIL_FIELD, NAME_FIELD, PHONE_FIELD } from "@/lib/validation";
+import type { InquiryCategory } from "@/lib/inquiry";
+import { submitInquiry } from "@/lib/submit-inquiry";
+import { HoneypotField } from "@/components/HoneypotField";
+
+/** Dropdown option → who receives the email (see lib/inquiry.ts). */
+const INQUIRY_TYPE_CATEGORY: Record<string, InquiryCategory> = {
+  "Hiring Talent": "hiring",
+  "Finding Opportunities": "candidate",
+  "General Inquiries": "general",
+};
 
 export function ConnectInquirySection() {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const [formData, setFormData] = useState({
     fullName: "",
@@ -16,13 +28,30 @@ export function ConnectInquirySection() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setSubmitError("");
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      await submitInquiry(
+        {
+          category: INQUIRY_TYPE_CATEGORY[formData.inquiryType] ?? "general",
+          source: "Let's Connect form",
+          name: formData.fullName,
+          email: formData.email,
+          phone: formData.contactNumber,
+          company: formData.companyName,
+          message: formData.message,
+        },
+        e.currentTarget
+      );
+      setFormData({ ...formData, fullName: "", companyName: "", email: "", contactNumber: "", message: "" });
       setFormSubmitted(true);
-    }, 600);
+    } catch (err) {
+      setSubmitError(err instanceof Error ? err.message : String(err));
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -105,10 +134,12 @@ export function ConnectInquirySection() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
+                  <HoneypotField />
                   {/* Row 1: Full Name & Company Name */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <input
                       type="text"
+                      {...NAME_FIELD}
                       required
                       placeholder="Full Name *"
                       value={formData.fullName}
@@ -128,6 +159,7 @@ export function ConnectInquirySection() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <input
                       type="email"
+                      {...EMAIL_FIELD}
                       required
                       placeholder="Email Address *"
                       value={formData.email}
@@ -136,6 +168,7 @@ export function ConnectInquirySection() {
                     />
                     <input
                       type="tel"
+                      {...PHONE_FIELD}
                       required
                       placeholder="Contact Number *"
                       value={formData.contactNumber}
@@ -168,6 +201,12 @@ export function ConnectInquirySection() {
                       className="w-full bg-white text-slate-800 placeholder-slate-400 text-xs sm:text-sm px-4 py-3 rounded-xl border border-slate-200 focus:border-[#008080] focus:ring-1 focus:ring-[#008080] outline-none shadow-xs transition-all"
                     />
                   </div>
+
+                  {submitError && (
+                    <p role="alert" className="text-sm text-red-600 bg-red-50 border border-red-100 rounded-xl px-4 py-3">
+                      {submitError}
+                    </p>
+                  )}
 
                   {/* Row 5: Submit Button */}
                   <div>

@@ -2,6 +2,10 @@
 
 import React, { useState } from "react";
 import { UploadCloud, CheckCircle2, Lock, Shield, X, FileText } from "lucide-react";
+import { EMAIL_FIELD, NAME_FIELD, PHONE_FIELD } from "@/lib/validation";
+import { CV_EXTENSIONS, MAX_CV_BYTES } from "@/lib/inquiry";
+import { submitInquiry } from "@/lib/submit-inquiry";
+import { HoneypotField } from "@/components/HoneypotField";
 
 interface ExecutiveVaultModalProps {
   isOpen: boolean;
@@ -16,6 +20,8 @@ export function ExecutiveVaultModal({ isOpen, onClose }: ExecutiveVaultModalProp
   const [phone, setPhone] = useState("");
   const [currentRole, setCurrentRole] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   if (!isOpen) return null;
 
@@ -32,9 +38,42 @@ export function ExecutiveVaultModal({ isOpen, onClose }: ExecutiveVaultModalProp
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Candidate profiles (with CV) go to Aman Siddik (see lib/inquiry.ts)
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitError("");
+    if (file && file.size > MAX_CV_BYTES) {
+      setSubmitError("Your CV must be 4MB or smaller.");
+      return;
+    }
+    if (file && !CV_EXTENSIONS.test(file.name)) {
+      setSubmitError("Please upload your CV as a PDF or Word document.");
+      return;
+    }
+    setIsSubmitting(true);
+    try {
+      await submitInquiry(
+        {
+          category: "candidate",
+          source: "Careers page – Confidential profile",
+          name: fullName,
+          email,
+          phone,
+          currentRole,
+          searchStatus:
+            privacyLevel === "passive"
+              ? "Strict passive discretion (contact for consent first)"
+              : "Active – open to immediate presentation",
+          cv: file,
+        },
+        e.currentTarget
+      );
+      setSubmitted(true);
+    } catch (err) {
+      setSubmitError(err instanceof Error ? err.message : String(err));
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -85,6 +124,7 @@ export function ExecutiveVaultModal({ isOpen, onClose }: ExecutiveVaultModalProp
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="p-6 sm:p-8 space-y-5">
+            <HoneypotField />
             {/* Privacy Level Toggle */}
             <div>
               <label className="block text-xs font-bold uppercase tracking-wider text-[#0F172A] mb-2">
@@ -133,6 +173,7 @@ export function ExecutiveVaultModal({ isOpen, onClose }: ExecutiveVaultModalProp
                 <label className="block text-xs font-bold text-[#0F172A] mb-1">Full Name *</label>
                 <input
                   type="text"
+                  {...NAME_FIELD}
                   required
                   placeholder="e.g. Sanjeewa Wickramasinghe"
                   value={fullName}
@@ -145,6 +186,7 @@ export function ExecutiveVaultModal({ isOpen, onClose }: ExecutiveVaultModalProp
                 <label className="block text-xs font-bold text-[#0F172A] mb-1">Confidential Email *</label>
                 <input
                   type="email"
+                  {...EMAIL_FIELD}
                   required
                   placeholder="e.g. s.wickrama@personal.com"
                   value={email}
@@ -159,6 +201,7 @@ export function ExecutiveVaultModal({ isOpen, onClose }: ExecutiveVaultModalProp
                 <label className="block text-xs font-bold text-[#0F172A] mb-1">Direct Mobile *</label>
                 <input
                   type="tel"
+                  {...PHONE_FIELD}
                   required
                   placeholder="+94 77 000 0000"
                   value={phone}
@@ -211,21 +254,28 @@ export function ExecutiveVaultModal({ isOpen, onClose }: ExecutiveVaultModalProp
                       Click to upload or drag &amp; drop executive CV
                     </p>
                     <p className="text-[11px] text-[#718096]">
-                      PDF, DOCX up to 10MB &bull; 100% confidential under NDA
+                      PDF, DOCX up to 4MB &bull; 100% confidential under NDA
                     </p>
                   </div>
                 )}
               </div>
             </div>
 
+            {submitError && (
+              <p role="alert" className="text-sm text-red-600 bg-red-50 border border-red-100 rounded-lg px-4 py-3">
+                {submitError}
+              </p>
+            )}
+
             {/* Submit */}
             <div className="pt-2">
               <button
                 type="submit"
-                className="btn-human-primary w-full !py-3 !text-xs justify-center flex items-center gap-2"
+                disabled={isSubmitting}
+                className="btn-human-primary w-full !py-3 !text-xs justify-center flex items-center gap-2 disabled:opacity-50"
               >
                 <Shield className="w-4 h-4 text-[#D97706]" />
-                <span>Submit into Private Executive Vault</span>
+                <span>{isSubmitting ? "Submitting..." : "Submit into Private Executive Vault"}</span>
               </button>
             </div>
 

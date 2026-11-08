@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { Check, Sparkles, Shield, ArrowRight } from "lucide-react";
+import { EMAIL_FIELD, NAME_FIELD, PHONE_FIELD } from "@/lib/validation";
 
 export function HeroInteractiveForm() {
   const [activeTab, setActiveTab] = useState<"client" | "candidate">("client");
@@ -108,6 +109,8 @@ export function HeroInteractiveForm() {
               </label>
               <input
                 type="text"
+                {...NAME_FIELD}
+                autoComplete="given-name"
                 required
                 value={clientForm.firstName}
                 onChange={(e) => setClientForm({ ...clientForm, firstName: e.target.value })}
@@ -121,6 +124,8 @@ export function HeroInteractiveForm() {
               </label>
               <input
                 type="text"
+                {...NAME_FIELD}
+                autoComplete="family-name"
                 required
                 value={clientForm.lastName}
                 onChange={(e) => setClientForm({ ...clientForm, lastName: e.target.value })}
@@ -136,6 +141,7 @@ export function HeroInteractiveForm() {
             </label>
             <input
               type="email"
+              {...EMAIL_FIELD}
               required
               value={clientForm.email}
               onChange={(e) => setClientForm({ ...clientForm, email: e.target.value })}
@@ -150,6 +156,7 @@ export function HeroInteractiveForm() {
             </label>
             <input
               type="tel"
+              {...PHONE_FIELD}
               required
               value={clientForm.phone}
               onChange={(e) => setClientForm({ ...clientForm, phone: e.target.value })}
@@ -197,6 +204,7 @@ export function HeroInteractiveForm() {
             </label>
             <input
               type="text"
+              {...NAME_FIELD}
               required
               value={candidateForm.fullName}
               onChange={(e) => setCandidateForm({ ...candidateForm, fullName: e.target.value })}
@@ -226,6 +234,7 @@ export function HeroInteractiveForm() {
               </label>
               <input
                 type="email"
+                {...EMAIL_FIELD}
                 required
                 value={candidateForm.email}
                 onChange={(e) => setCandidateForm({ ...candidateForm, email: e.target.value })}
@@ -239,6 +248,7 @@ export function HeroInteractiveForm() {
               </label>
               <input
                 type="tel"
+                {...PHONE_FIELD}
                 required
                 value={candidateForm.phone}
                 onChange={(e) => setCandidateForm({ ...candidateForm, phone: e.target.value })}

@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { ArrowRight, Check, Phone, ShieldCheck } from "lucide-react";
+import { EMAIL_FIELD } from "@/lib/validation";
 
 export function BottomCtaBanner() {
   const [email, setEmail] = useState("");
@@ -52,6 +53,7 @@ export function BottomCtaBanner() {
               <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-center gap-3 pt-2">
                 <input
                   type="email"
+                  {...EMAIL_FIELD}
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}

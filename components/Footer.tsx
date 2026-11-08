@@ -65,7 +65,7 @@ export function Footer() {
               aria-label="Talent Bridge on LinkedIn"
               className="text-white hover:text-[#38bdf8] transition-colors p-1"
             >
-              <LinkedinIcon className="w-4 h-4 fill-current" />
+              <LinkedinIcon className="w-6 h-6 sm:w-7 sm:h-7 fill-current" />
             </a>
           </div>
 

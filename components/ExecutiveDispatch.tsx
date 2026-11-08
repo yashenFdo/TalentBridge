@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Download, CheckCircle2, FileText } from "lucide-react";
+import { EMAIL_FIELD } from "@/lib/validation";
 
 export function ExecutiveDispatch() {
   const [email, setEmail] = useState("");
@@ -56,6 +57,7 @@ export function ExecutiveDispatch() {
               </label>
               <input
                 type="email"
+                {...EMAIL_FIELD}
                 required
                 placeholder="work.email@enterprise.com"
                 value={email}

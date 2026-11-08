@@ -50,7 +50,7 @@ export const SITE_CONFIG = {
     email: "hello@talentbridge.lk",
     phone: "+94 76 122 9757",
     phoneRaw: "94761229757",
-    whatsappLink: "https://wa.me/94771234567",
+    whatsappLink: "https://wa.me/94761229757",
     address: {
       line1: "Colombo",
       line2: "Sri Lanka",
